@@ -1,0 +1,41 @@
+{
+    "version": 1,
+    "questions": [
+      {
+        "id": "q001",
+        "category": "general",
+        "question": "Which planet is known as the Red Planet?",
+        "answers": { "A": "Venus", "B": "Mars", "C": "Jupiter", "D": "Mercury" },
+        "correct": "B"
+      },
+      {
+        "id": "q002",
+        "category": "general",
+        "question": "What is the capital of Canada?",
+        "answers": { "A": "Toronto", "B": "Vancouver", "C": "Ottawa", "D": "Montreal" },
+        "correct": "C"
+      },
+      {
+        "id": "q003",
+        "category": "logic",
+        "question": "7 × 8 = ?",
+        "answers": { "A": "54", "B": "56", "C": "58", "D": "64" },
+        "correct": "B"
+      },
+      {
+        "id": "q004",
+        "category": "general",
+        "question": "What is the largest ocean on Earth?",
+        "answers": { "A": "Atlantic", "B": "Indian", "C": "Arctic", "D": "Pacific" },
+        "correct": "D"
+      },
+      {
+        "id": "q005",
+        "category": "general",
+        "question": "Which gas do plants absorb from the atmosphere?",
+        "answers": { "A": "Oxygen", "B": "Carbon dioxide", "C": "Nitrogen", "D": "Helium" },
+        "correct": "B"
+      }
+    ]
+  }
+  
