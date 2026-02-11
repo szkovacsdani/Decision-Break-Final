@@ -1,16 +1,19 @@
 export default function Home() {
   return (
     <main
-      style={{
-        minHeight: "100vh",
-        background: "#0B0B0D",
-        color: "#fff",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: 24,
-      }}
-    >
+    style={{
+      minHeight: "100vh",
+      background: flash
+        ? "#ff0000"
+        : timeLeft <= 3 && status === "playing"
+        ? "#3a0000"
+        : "#0B0B0D",
+      transition: "background 0.15s ease",
+      color: "#fff",
+      padding: 24
+    }}
+  >
+  
       <div style={{ maxWidth: 760, width: "100%" }}>
         <h1 style={{ fontSize: 56, margin: 0, letterSpacing: 1 }}>
           Decision Break
