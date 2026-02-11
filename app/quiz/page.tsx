@@ -20,31 +20,47 @@ function shuffle<T>(arr: T[]) {
 }
 
 function scoreRound(mode: 1 | 3 | 5, correctCount: number) {
-  // Rules you finalized
   if (mode === 1) {
-    if (correctCount === 1) return { delta: 1, action: "+1 point" };
-    return { delta: 0, action: "0" };
+    if (correctCount === 1) {
+      return { delta: 1, action: "Move forward 1 space." };
+    }
+    return { delta: 0, action: "No effect." };
   }
 
   if (mode === 3) {
-    if (correctCount === 0) return { delta: -1, action: "-1 point" };
-    if (correctCount === 1) return { delta: 1, action: "+1 point" };
-    if (correctCount === 2) return { delta: 2, action: "+2 points" };
-    return { delta: 3, action: "+3 points" };
+    if (correctCount === 0) {
+      return { delta: -1, action: "Move back 1 space." };
+    }
+    if (correctCount === 1) {
+      return { delta: 1, action: "Move forward 1 space." };
+    }
+    if (correctCount === 2) {
+      return { delta: 2, action: "Move forward 2 spaces." };
+    }
+    return { delta: 3, action: "Move forward 3 spaces." };
   }
 
   // mode === 5
-  if (correctCount === 0 || correctCount === 1)
-    return { delta: -1, action: "-1 point" };
-  if (correctCount === 2) return { delta: 1, action: "+1 point" };
-  if (correctCount === 3) return { delta: 0, action: "Choose one player: -1" };
-  if (correctCount === 4) return { delta: 3, action: "+3 points" };
-  return { delta: 0, action: "All opponents: -2" };
+  if (correctCount === 0 || correctCount === 1) {
+    return { delta: -1, action: "Move back 1 space." };
+  }
+  if (correctCount === 2) {
+    return { delta: 1, action: "Move forward 1 space." };
+  }
+  if (correctCount === 3) {
+    return { delta: 0, action: "Choose one player: they move back 1 space." };
+  }
+  if (correctCount === 4) {
+    return { delta: 3, action: "Move forward 3 spaces." };
+  }
+  return { delta: 0, action: "All opponents move back 2 spaces." };
 }
+
+
 
 export default function QuizPage() {
   const [mode, setMode] = useState<1 | 3 | 5>(3);
-  const [timePerQ, setTimePerQ] = useState<number>(15);
+  const [timePerQ] = useState<number>(10);
 
   const [questions, setQuestions] = useState<Question[]>([]);
   const [round, setRound] = useState<Question[]>([]);
@@ -163,17 +179,8 @@ export default function QuizPage() {
               </select>
             </label>
 
-            <label style={{ opacity: 0.85 }}>
-              Timer:&nbsp;
-              <select
-                value={timePerQ}
-                onChange={(e) => setTimePerQ(parseInt(e.target.value, 10))}
-              >
-                <option value={10}>10 sec</option>
-                <option value={15}>15 sec</option>
-                <option value={30}>30 sec</option>
-              </select>
-            </label>
+        
+    
 
             <button
               onClick={startRound}
@@ -316,7 +323,7 @@ export default function QuizPage() {
                   padding: 14,
                 }}
               >
-                <div style={{ opacity: 0.85 }}>Outcome</div>
+<div style={{ opacity: 0.85 }}>Action</div>
                 <div style={{ fontSize: 22, fontWeight: 900, marginTop: 6 }}>
                   Score change: {result.delta}
                 </div>
