@@ -11,6 +11,8 @@ type Question = {
   correct: "A" | "B" | "C" | "D";
 };
 
+type RoundType = "quizSpace" | "checkpoint";
+
 function shuffle<T>(arr: T[]) {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {
@@ -20,7 +22,8 @@ function shuffle<T>(arr: T[]) {
   return a;
 }
 
-function scoreRound(mode: 1 | 3 | 5, correctCount: number) {
+// QUIZ SPACE pontozás (marad, ahogy eddig)
+function scoreQuizSpace(mode: 1 | 3 | 5, correctCount: number) {
   if (mode === 1) {
     if (correctCount === 1) return { action: "Move forward 1 space." };
     return { action: "No effect." };
@@ -40,10 +43,18 @@ function scoreRound(mode: 1 | 3 | 5, correctCount: number) {
   return { action: "All opponents move back 2 spaces." };
 }
 
+// START/CHECKPOINT pontozás (új, fix 3 kérdés)
+function scoreCheckpoint(correctCount: number) {
+  if (correctCount === 0) return { action: "Stay." };
+  if (correctCount === 1) return { action: "Move forward 1 space." };
+  if (correctCount === 2) return { action: "Move forward 2 spaces." };
+  return { action: "Move forward 3 spaces." };
+}
+
 export default function QuizPage() {
   const router = useRouter();
 
-  const [mode, setMode] = useState<1 | 3 | 5>(3);
+  const [mode, setMode] = useState<1 | 3 | 5>(3); // csak a Quiz Space-hez
   const timePerQ = 10;
 
   const [questions, setQuestions] = useState<Question[]>([]);
@@ -59,12 +70,21 @@ export default function QuizPage() {
   const [showFeedback, setShowFeedback] = useState(false);
   const [lastWasCorrect, setLastWasCorrect] = useState<boolean | null>(null);
 
+  // új: melyik típusú kör fut
+  const [roundType, setRoundType] = useState<RoundType>("quizSpace");
+  // új: az aktuális kör kérdésszáma (Quiz Space: 1/3/5, Checkpoint: fix 3)
+  const [roundSize, setRoundSize] = useState<1 | 3 | 5>(3);
+
   const tickRef = useRef<HTMLAudioElement | null>(null);
   const buzzerRef = useRef<HTMLAudioElement | null>(null);
 
   const current = useMemo(() => round[idx], [round, idx]);
   const correctCount = useMemo(() => answers.filter((a) => a.correct).length, [answers]);
-  const result = useMemo(() => scoreRound(mode, correctCount), [mode, correctCount]);
+
+  const result = useMemo(() => {
+    if (roundType === "checkpoint") return scoreCheckpoint(correctCount);
+    return scoreQuizSpace(roundSize, correctCount);
+  }, [roundType, roundSize, correctCount]);
 
   useEffect(() => {
     fetch("/questions.json")
@@ -92,9 +112,33 @@ export default function QuizPage() {
     a.play().catch(() => {});
   }
 
-  function startRound() {
+  function startQuizSpaceRound() {
+    if (questions.length === 0) return;
+
     const pool = shuffle(questions);
     const pick = pool.slice(0, mode);
+
+    setRoundType("quizSpace");
+    setRoundSize(mode);
+
+    setRound(pick);
+    setIdx(0);
+    setAnswers([]);
+    setSelected(null);
+    setShowFeedback(false);
+    setLastWasCorrect(null);
+    setStatus("playing");
+  }
+
+  function startCheckpointRound() {
+    if (questions.length === 0) return;
+
+    const pool = shuffle(questions);
+    const pick = pool.slice(0, 3);
+
+    setRoundType("checkpoint");
+    setRoundSize(3);
+
     setRound(pick);
     setIdx(0);
     setAnswers([]);
@@ -117,12 +161,12 @@ export default function QuizPage() {
   }
 
   function submitAnswer(choice: "A" | "B" | "C" | "D" | null, isTimeout: boolean) {
+    if (showFeedback) return;
     if (!current) return;
 
     const isCorrect = !isTimeout && choice !== null && choice === current.correct;
 
     setAnswers((prev) => [...prev, { id: current.id, correct: isCorrect }]);
-
     setLastWasCorrect(isCorrect);
     setShowFeedback(true);
 
@@ -182,6 +226,8 @@ export default function QuizPage() {
       ? "Wrong"
       : null;
 
+  const headerTitle = roundType === "checkpoint" ? "Start / Checkpoint Quiz" : "Quiz Space";
+
   return (
     <main
       style={{
@@ -198,10 +244,15 @@ export default function QuizPage() {
             ← Home
           </a>
 
+          {/* Quiz Space vezérlők */}
           <div style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap" }}>
             <label style={{ opacity: 0.85 }}>
               Mode:&nbsp;
-              <select value={mode} onChange={(e) => setMode(parseInt(e.target.value, 10) as 1 | 3 | 5)}>
+              <select
+                value={mode}
+                disabled={status === "playing" && roundType === "checkpoint"}
+                onChange={(e) => setMode(parseInt(e.target.value, 10) as 1 | 3 | 5)}
+              >
                 <option value={1}>1 question</option>
                 <option value={3}>3 questions</option>
                 <option value={5}>5 questions</option>
@@ -209,21 +260,23 @@ export default function QuizPage() {
             </label>
 
             <button
-              onClick={startRound}
+              onClick={startQuizSpaceRound}
               style={{
-                background: "#C1121F",
+                background: "#16a34a",
                 color: "#fff",
                 border: 0,
                 padding: "10px 14px",
                 borderRadius: 10,
-                fontWeight: 900
+                fontWeight: 900,
+                cursor: "pointer"
               }}
             >
-              START ROUND
+              QUIZ SPACE
             </button>
           </div>
         </div>
 
+        {/* Fő kártya: játék */}
         <div
           style={{
             marginTop: 18,
@@ -237,9 +290,9 @@ export default function QuizPage() {
 
           {status === "idle" && (
             <>
-              <h1 style={{ margin: 0, fontSize: 34 }}>Quiz</h1>
+              <h1 style={{ margin: 0, fontSize: 34 }}>{headerTitle}</h1>
               <p style={{ marginTop: 10, opacity: 0.85 }}>
-                Press START ROUND. You have <b>{timePerQ}s</b> per question. If time runs out, it counts as wrong.
+                You have <b>{timePerQ}s</b> per question. If time runs out, it counts as wrong.
               </p>
               <p style={{ marginTop: 10, opacity: 0.85 }}>
                 Questions source: <code>/questions.json</code>
@@ -251,7 +304,7 @@ export default function QuizPage() {
             <>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
                 <div style={{ opacity: 0.85 }}>
-                  Question {idx + 1} / {round.length}
+                  {roundType === "checkpoint" ? "Start / Checkpoint" : "Quiz Space"} • Question {idx + 1} / {round.length}
                 </div>
                 <div style={{ fontWeight: 900, fontSize: 22 }}>{timeLeft}s</div>
               </div>
@@ -304,6 +357,46 @@ export default function QuizPage() {
           )}
         </div>
 
+        {/* Lentebb: Start/Checkpoint indítás */}
+        {status !== "playing" && (
+          <div
+            style={{
+              marginTop: 14,
+              background: "rgba(255,255,255,0.04)",
+              borderRadius: 16,
+              padding: 18,
+              border: "1px solid rgba(255,255,255,0.10)"
+            }}
+          >
+            <div style={{ fontWeight: 900, fontSize: 18, marginBottom: 8 }}>Start / Checkpoint</div>
+            <div style={{ opacity: 0.85, lineHeight: 1.5 }}>
+              Fixed: <b>3 questions</b>. Scoring:
+              <div style={{ marginTop: 8, opacity: 0.9 }}>
+                0 correct: stay<br />
+                1 correct: move forward 1 space<br />
+                2 correct: move forward 2 spaces<br />
+                3 correct: move forward 3 spaces
+              </div>
+            </div>
+
+            <button
+              onClick={startCheckpointRound}
+              style={{
+                marginTop: 14,
+                background: "#f97316",
+                color: "#fff",
+                border: 0,
+                padding: "12px 16px",
+                borderRadius: 12,
+                fontWeight: 900,
+                cursor: "pointer"
+              }}
+            >
+              START / CHECKPOINT
+            </button>
+          </div>
+        )}
+
         {status === "result" && (
           <>
             <div
@@ -322,7 +415,7 @@ export default function QuizPage() {
               <div style={{ fontSize: 14, letterSpacing: 4, opacity: 0.6, marginBottom: 18 }}>ROUND RESULT</div>
 
               <div style={{ fontSize: 22, opacity: 0.8, marginBottom: 12 }}>
-                {correctCount} / {mode} correct
+                {correctCount} / {roundSize} correct
               </div>
 
               <div
