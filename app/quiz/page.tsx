@@ -194,9 +194,10 @@ export default function QuizPage() {
     >
       <div style={{ maxWidth: 860, margin: "0 auto" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
-          <a href="/" style={{ color: "#fff", textDecoration: "none", opacity: 0.85 }}>
-            ← Home
-          </a>
+        <Link href="/" style={{ color: "#fff", textDecoration: "none", opacity: 0.85 }}>
+  ← Home
+</Link>
+
 
           <div style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap" }}>
             <label style={{ opacity: 0.85 }}>
