@@ -1,379 +1,391 @@
 "use client";
 
-import Link from "next/link";
-import { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 
-type NormalizedAnswer = {
-  text: string;
-  correct: boolean;
-};
-
-type NormalizedQuestion = {
+type Question = {
+  id: string;
+  category?: string;
   question: string;
-  answers: NormalizedAnswer[];
+  answers: { A: string; B: string; C: string; D: string };
+  correct: "A" | "B" | "C" | "D";
 };
 
-const QUESTION_COUNT_OPTIONS = [10, 20, 50, 100] as const;
+function shuffle<T>(arr: T[]) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function scoreRound(mode: 1 | 3 | 5, correctCount: number) {
+  if (mode === 1) {
+    if (correctCount === 1) return { action: "Move forward 1 space." };
+    return { action: "No effect." };
+  }
+
+  if (mode === 3) {
+    if (correctCount === 0) return { action: "Move back 1 space." };
+    if (correctCount === 1) return { action: "Move forward 1 space." };
+    if (correctCount === 2) return { action: "Move forward 2 spaces." };
+    return { action: "Move forward 3 spaces." };
+  }
+
+  if (correctCount === 0 || correctCount === 1) return { action: "Move back 1 space." };
+  if (correctCount === 2) return { action: "Move forward 1 space." };
+  if (correctCount === 3) return { action: "Choose one player: they move back 1 space." };
+  if (correctCount === 4) return { action: "Move forward 3 spaces." };
+  return { action: "All opponents move back 2 spaces." };
+}
 
 export default function QuizPage() {
-  const [rawQuestions, setRawQuestions] = useState<any[]>([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [selectedLocked, setSelectedLocked] = useState(false);
+  const router = useRouter();
 
-  const [questionLimit, setQuestionLimit] = useState<number>(100);
+  const [mode, setMode] = useState<1 | 3 | 5>(3);
+  const timePerQ = 10;
+
+  const [questions, setQuestions] = useState<Question[]>([]);
+  const [round, setRound] = useState<Question[]>([]);
+  const [idx, setIdx] = useState(0);
+
+  const [status, setStatus] = useState<"idle" | "playing" | "result">("idle");
+  const [selected, setSelected] = useState<"A" | "B" | "C" | "D" | null>(null);
+  const [answers, setAnswers] = useState<{ id: string; correct: boolean }[]>([]);
+  const [timeLeft, setTimeLeft] = useState(timePerQ);
+  const [flash, setFlash] = useState(false);
+
+  const [showFeedback, setShowFeedback] = useState(false);
+  const [lastWasCorrect, setLastWasCorrect] = useState<boolean | null>(null);
 
   const tickRef = useRef<HTMLAudioElement | null>(null);
   const buzzerRef = useRef<HTMLAudioElement | null>(null);
 
+  const current = useMemo(() => round[idx], [round, idx]);
+  const correctCount = useMemo(() => answers.filter((a) => a.correct).length, [answers]);
+  const result = useMemo(() => scoreRound(mode, correctCount), [mode, correctCount]);
+
   useEffect(() => {
     fetch("/questions.json")
       .then((r) => r.json())
-      .then((data) => {
-        const q = data?.questions ?? data ?? [];
-        setRawQuestions(Array.isArray(q) ? q : []);
-      })
-      .catch(() => setRawQuestions([]));
+      .then((data) => setQuestions((data?.questions || []) as Question[]))
+      .catch(() => setQuestions([]));
   }, []);
 
   useEffect(() => {
-    tickRef.current = new Audio(
-      "https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3"
-    );
-    buzzerRef.current = new Audio(
-      "https://assets.mixkit.co/active_storage/sfx/2955/2955-preview.mp3"
-    );
+    tickRef.current = new Audio("https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3");
+    buzzerRef.current = new Audio("https://assets.mixkit.co/active_storage/sfx/2955/2955-preview.mp3");
   }, []);
 
-  function playSound(correct: boolean) {
-    const audio = correct ? tickRef.current : buzzerRef.current;
-    if (!audio) return;
-    audio.currentTime = 0;
-    audio.play().catch(() => {});
+  function playTick() {
+    const a = tickRef.current;
+    if (!a) return;
+    a.currentTime = 0;
+    a.play().catch(() => {});
   }
 
-  const normalizedAll: NormalizedQuestion[] = useMemo(() => {
-    const toArray = (v: any) => {
-      if (Array.isArray(v)) return v;
-      if (v && typeof v === "object") return Object.values(v);
-      return [];
-    };
-
-    const normalizeAnswers = (q: any): NormalizedAnswer[] => {
-      const rawAnswers =
-        q?.answers ?? q?.options ?? q?.choices ?? q?.variants ?? q?.items;
-
-      const correctText =
-        q?.correctAnswer ?? q?.correct_answer ?? q?.correct ?? q?.rightAnswer;
-
-      const correctIndex =
-        typeof q?.correctIndex === "number"
-          ? q.correctIndex
-          : typeof q?.correct_index === "number"
-          ? q.correct_index
-          : typeof q?.answerIndex === "number"
-          ? q.answerIndex
-          : undefined;
-
-      const arr = toArray(rawAnswers);
-
-      if (arr.length > 0 && typeof arr[0] === "string") {
-        return arr
-          .map((t: string, i: number) => ({
-            text: String(t),
-            correct:
-              (typeof correctIndex === "number" && i === correctIndex) ||
-              (typeof correctText === "string" &&
-                String(t) === String(correctText)),
-          }))
-          .filter((a) => a.text.trim().length > 0);
-      }
-
-      return arr
-        .filter(Boolean)
-        .map((a: any, i: number) => {
-          const text = String(
-            a?.text ?? a?.answer ?? a?.label ?? a?.value ?? ""
-          );
-          const correct =
-            Boolean(
-              a?.correct ?? a?.isCorrect ?? a?.is_correct ?? a?.right ?? false
-            ) ||
-            (typeof correctIndex === "number" && i === correctIndex) ||
-            (typeof correctText === "string" && text === String(correctText));
-
-          return { text, correct };
-        })
-        .filter((a) => a.text.trim().length > 0);
-    };
-
-    return (rawQuestions || [])
-      .map((q: any) => {
-        const questionText = String(q?.question ?? q?.q ?? q?.title ?? "");
-        const answers = normalizeAnswers(q);
-
-        return {
-          question: questionText,
-          answers,
-        } as NormalizedQuestion;
-      })
-      .filter((q) => q.question.trim().length > 0);
-  }, [rawQuestions]);
-
-  const limitedQuestions = useMemo(() => {
-    if (normalizedAll.length === 0) return [];
-    const limit = Math.max(1, Math.min(questionLimit, normalizedAll.length));
-    return normalizedAll.slice(0, limit);
-  }, [normalizedAll, questionLimit]);
-
-  const currentQuestion = useMemo(() => {
-    return limitedQuestions[currentIndex] ?? null;
-  }, [limitedQuestions, currentIndex]);
-
-  const total = limitedQuestions.length;
-  const isLoading = rawQuestions.length === 0 && normalizedAll.length === 0;
-  const isFinished = !isLoading && (total === 0 || currentIndex >= total);
-
-  function goNext() {
-    setSelectedLocked(false);
-    setCurrentIndex((prev) => prev + 1);
+  function playBuzzer() {
+    const a = buzzerRef.current;
+    if (!a) return;
+    a.currentTime = 0;
+    a.play().catch(() => {});
   }
 
-  function restart() {
-    setSelectedLocked(false);
-    setCurrentIndex(0);
+  function startRound() {
+    const pool = shuffle(questions);
+    const pick = pool.slice(0, mode);
+    setRound(pick);
+    setIdx(0);
+    setAnswers([]);
+    setSelected(null);
+    setShowFeedback(false);
+    setLastWasCorrect(null);
+    setStatus("playing");
   }
 
-  function handleAnswer(correct: boolean) {
-    if (selectedLocked) return;
-    setSelectedLocked(true);
-    playSound(correct);
+  function backHome() {
+    router.push("/");
+  }
+
+  function goNextOrFinish(nextIdx: number, roundLen: number) {
+    if (nextIdx >= roundLen) {
+      setStatus("result");
+      return;
+    }
+    setIdx(nextIdx);
+  }
+
+  function submitAnswer(choice: "A" | "B" | "C" | "D" | null, isTimeout: boolean) {
+    if (!current) return;
+
+    const isCorrect = !isTimeout && choice !== null && choice === current.correct;
+
+    setAnswers((prev) => [...prev, { id: current.id, correct: isCorrect }]);
+
+    setLastWasCorrect(isCorrect);
+    setShowFeedback(true);
 
     setTimeout(() => {
-      goNext();
+      setShowFeedback(false);
+      const nextIdx = idx + 1;
+      goNextOrFinish(nextIdx, round.length);
     }, 450);
   }
 
-  // UI helpers
-  const headerRowStyle: React.CSSProperties = {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    gap: 12,
-    flexWrap: "wrap",
-  };
+  useEffect(() => {
+    if (status !== "playing") return;
+    if (!current) return;
 
-  const pillStyle: React.CSSProperties = {
-    padding: "8px 10px",
-    borderRadius: 12,
-    background: "#1b1b1b",
-    border: "1px solid #333",
-    color: "#fff",
-  };
+    setTimeLeft(timePerQ);
+    setSelected(null);
 
-  const smallBtnStyle: React.CSSProperties = {
-    padding: "10px 12px",
-    borderRadius: 12,
-    background: "#1b1b1b",
-    border: "1px solid #333",
-    color: "#fff",
-    cursor: "pointer",
-  };
+    const intervalId = setInterval(() => {
+      setTimeLeft((prev) => {
+        const next = prev - 1;
 
-  const primaryBtnStyle: React.CSSProperties = {
-    padding: "10px 12px",
-    borderRadius: 12,
-    background: "#fff",
-    border: "1px solid #fff",
-    color: "#111",
-    cursor: "pointer",
-  };
+        if (next <= 3 && next > 0) {
+          playTick();
+        }
 
-  if (isLoading) {
-    return (
-      <div style={{ padding: 40, textAlign: "center" }}>
-        <h2 style={{ marginBottom: 12 }}>Loading...</h2>
-        <div style={{ opacity: 0.7, marginBottom: 18 }}>
-          Check that <b>public/questions.json</b> exists.
-        </div>
-        <Link href="/" style={{ color: "#111", textDecoration: "underline" }}>
-          Back to Home
-        </Link>
-      </div>
-    );
-  }
+        if (next <= 0) {
+          clearInterval(intervalId);
 
-  if (isFinished) {
-    return (
-      <div
-        style={{
-          minHeight: "100vh",
-          padding: 40,
-          background: "#111",
-          color: "#fff",
-        }}
-      >
-        <div style={{ maxWidth: 860, margin: "0 auto", textAlign: "center" }}>
-          <h1 style={{ marginBottom: 10 }}>Quiz complete</h1>
+          setFlash(true);
+          playBuzzer();
+          setTimeout(() => setFlash(false), 250);
 
-          <div style={{ opacity: 0.8, marginBottom: 22 }}>
-            Total loaded questions: <b>{normalizedAll.length}</b>. Playing:{" "}
-            <b>{total}</b>.
-          </div>
+          submitAnswer(null, true);
+          return 0;
+        }
 
-          <div
-            style={{
-              display: "flex",
-              gap: 12,
-              justifyContent: "center",
-              flexWrap: "wrap",
-            }}
-          >
-            <button onClick={restart} style={primaryBtnStyle}>
-              Restart
-            </button>
+        return next;
+      });
+    }, 1000);
 
-            <Link
-              href="/"
-              style={{
-                display: "inline-block",
-                padding: "10px 12px",
-                borderRadius: 12,
-                background: "#1b1b1b",
-                border: "1px solid #333",
-                color: "#fff",
-                textDecoration: "none",
-              }}
-            >
-              Home
-            </Link>
-          </div>
-        </div>
-      </div>
-    );
-  }
+    return () => clearInterval(intervalId);
+  }, [status, current]);
 
-  const safeAnswers = currentQuestion?.answers ?? [];
-  const questionText = currentQuestion?.question ?? "";
+  const bg = flash ? "#ff0000" : timeLeft <= 3 && status === "playing" ? "#3a0000" : "#0B0B0D";
+
+  const feedbackBorder =
+    showFeedback && lastWasCorrect === true
+      ? "2px solid #22c55e"
+      : showFeedback && lastWasCorrect === false
+      ? "2px solid #ef4444"
+      : "1px solid rgba(255,255,255,0.10)";
+
+  const feedbackLabel =
+    showFeedback && lastWasCorrect === true
+      ? "Correct"
+      : showFeedback && lastWasCorrect === false
+      ? "Wrong"
+      : null;
 
   return (
-    <div
+    <main
       style={{
         minHeight: "100vh",
-        padding: 40,
-        background: "#111",
+        background: bg,
+        transition: "background 0.15s ease",
         color: "#fff",
+        padding: 24
       }}
     >
       <div style={{ maxWidth: 860, margin: "0 auto" }}>
-        <div style={headerRowStyle}>
-          <Link
-            href="/"
-            style={{ color: "#fff", textDecoration: "none", opacity: 0.85 }}
-          >
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
+          <a href="/" style={{ color: "#fff", textDecoration: "none", opacity: 0.85 }}>
             ← Home
-          </Link>
+          </a>
 
-          <div
-            style={{
-              display: "flex",
-              gap: 10,
-              alignItems: "center",
-              flexWrap: "wrap",
-            }}
-          >
-            <div style={pillStyle}>
-              Question {Math.min(currentIndex + 1, total)} / {total}
-            </div>
-
-            <div style={pillStyle}>
-              Questions to play:{" "}
-              <select
-                value={questionLimit}
-                onChange={(e) => {
-                  const v = Number(e.target.value);
-                  setQuestionLimit(v);
-                  setCurrentIndex(0);
-                  setSelectedLocked(false);
-                }}
-                style={{
-                  marginLeft: 8,
-                  padding: "6px 8px",
-                  borderRadius: 10,
-                  background: "#111",
-                  color: "#fff",
-                  border: "1px solid #333",
-                }}
-              >
-                {QUESTION_COUNT_OPTIONS.map((n) => (
-                  <option key={n} value={n}>
-                    {n}
-                  </option>
-                ))}
-                <option value={normalizedAll.length}>
-                  All ({normalizedAll.length})
-                </option>
+          <div style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap" }}>
+            <label style={{ opacity: 0.85 }}>
+              Mode:&nbsp;
+              <select value={mode} onChange={(e) => setMode(parseInt(e.target.value, 10) as 1 | 3 | 5)}>
+                <option value={1}>1 question</option>
+                <option value={3}>3 questions</option>
+                <option value={5}>5 questions</option>
               </select>
-            </div>
+            </label>
 
-            <button onClick={restart} style={smallBtnStyle}>
-              Restart
+            <button
+              onClick={startRound}
+              style={{
+                background: "#C1121F",
+                color: "#fff",
+                border: 0,
+                padding: "10px 14px",
+                borderRadius: 10,
+                fontWeight: 900
+              }}
+            >
+              START ROUND
             </button>
           </div>
         </div>
 
-        <h1 style={{ marginTop: 28, marginBottom: 18, fontSize: 28 }}>
-          {questionText}
-        </h1>
+        <div
+          style={{
+            marginTop: 18,
+            background: "rgba(255,255,255,0.06)",
+            borderRadius: 16,
+            padding: 18,
+            border: feedbackBorder
+          }}
+        >
+          {feedbackLabel && <div style={{ marginBottom: 10, fontWeight: 900, opacity: 0.95 }}>{feedbackLabel}</div>}
 
-        {safeAnswers.length === 0 ? (
-          <div style={{ opacity: 0.9, lineHeight: 1.6 }}>
-            <div style={{ marginBottom: 12 }}>
-              This question has no valid answers in the JSON.
-            </div>
-            <div style={{ marginBottom: 16, opacity: 0.75 }}>
-              Fix the structure under <b>answers</b> (recommended: array), or
-              skip this question now.
-            </div>
+          {status === "idle" && (
+            <>
+              <h1 style={{ margin: 0, fontSize: 34 }}>Quiz</h1>
+              <p style={{ marginTop: 10, opacity: 0.85 }}>
+                Press START ROUND. You have <b>{timePerQ}s</b> per question. If time runs out, it counts as wrong.
+              </p>
+              <p style={{ marginTop: 10, opacity: 0.85 }}>
+                Questions source: <code>/questions.json</code>
+              </p>
+            </>
+          )}
 
-            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-              <button onClick={goNext} style={primaryBtnStyle}>
-                Skip question
-              </button>
-              <button onClick={restart} style={smallBtnStyle}>
-                Restart from first
-              </button>
-            </div>
+          {status === "playing" && current && (
+            <>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
+                <div style={{ opacity: 0.85 }}>
+                  Question {idx + 1} / {round.length}
+                </div>
+                <div style={{ fontWeight: 900, fontSize: 22 }}>{timeLeft}s</div>
+              </div>
 
-            <div style={{ marginTop: 18, opacity: 0.7, fontSize: 14 }}>
-              Tip: put <b>questions.json</b> under <b>public</b> and ensure each
-              question has <b>answers</b> as an array.
-            </div>
-          </div>
-        ) : (
-          <div style={{ display: "grid", gap: 12 }}>
-            {safeAnswers.map((a, i) => (
-              <button
-                key={i}
-                onClick={() => handleAnswer(a.correct)}
-                disabled={selectedLocked}
+              <h2 style={{ marginTop: 14, fontSize: 26 }}>{current.question}</h2>
+
+              <div style={{ marginTop: 14, display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 10 }}>
+                {(["A", "B", "C", "D"] as const).map((k) => (
+                  <button
+                    key={k}
+                    onClick={() => setSelected(k)}
+                    disabled={showFeedback}
+                    style={{
+                      textAlign: "left",
+                      padding: 14,
+                      borderRadius: 14,
+                      border: selected === k ? "2px solid #C1121F" : "1px solid rgba(255,255,255,0.12)",
+                      background: "rgba(255,255,255,0.04)",
+                      color: "#fff",
+                      cursor: showFeedback ? "not-allowed" : "pointer",
+                      opacity: showFeedback ? 0.75 : 1
+                    }}
+                  >
+                    <div style={{ fontWeight: 900, opacity: 0.85 }}>{k}</div>
+                    <div style={{ marginTop: 6 }}>{current.answers[k]}</div>
+                  </button>
+                ))}
+              </div>
+
+              <div style={{ marginTop: 14, display: "flex", gap: 10, flexWrap: "wrap" }}>
+                <button
+                  onClick={() => submitAnswer(selected, false)}
+                  disabled={!selected || showFeedback}
+                  style={{
+                    background: selected && !showFeedback ? "#C1121F" : "rgba(255,255,255,0.12)",
+                    color: "#fff",
+                    border: 0,
+                    padding: "12px 16px",
+                    borderRadius: 12,
+                    fontWeight: 900,
+                    cursor: selected && !showFeedback ? "pointer" : "not-allowed"
+                  }}
+                >
+                  NEXT
+                </button>
+
+                <div style={{ opacity: 0.8, alignSelf: "center" }}>Correct so far: {correctCount}</div>
+              </div>
+            </>
+          )}
+        </div>
+
+        {status === "result" && (
+          <>
+            <div
+              style={{
+                position: "fixed",
+                inset: 0,
+                background: "rgba(0,0,0,0.92)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                flexDirection: "column",
+                textAlign: "center",
+                animation: "fadeIn 0.35s ease"
+              }}
+            >
+              <div style={{ fontSize: 14, letterSpacing: 4, opacity: 0.6, marginBottom: 18 }}>ROUND RESULT</div>
+
+              <div style={{ fontSize: 22, opacity: 0.8, marginBottom: 12 }}>
+                {correctCount} / {mode} correct
+              </div>
+
+              <div
                 style={{
-                  padding: 16,
-                  borderRadius: 12,
-                  background: selectedLocked ? "#151515" : "#1b1b1b",
-                  border: "1px solid #333",
-                  color: "#fff",
-                  cursor: selectedLocked ? "not-allowed" : "pointer",
-                  textAlign: "left",
-                  fontSize: 16,
-                  opacity: selectedLocked ? 0.7 : 1,
+                  fontSize: 52,
+                  fontWeight: 900,
+                  color: "#C1121F",
+                  maxWidth: "85%",
+                  lineHeight: 1.15,
+                  animation: "popIn 0.35s ease"
                 }}
               >
-                {a.text}
+                {result.action.toUpperCase()}
+              </div>
+
+              <button
+                onClick={backHome}
+                style={{
+                  marginTop: 38,
+                  background: "#C1121F",
+                  color: "#fff",
+                  border: 0,
+                  padding: "14px 22px",
+                  borderRadius: 12,
+                  fontWeight: 900,
+                  fontSize: 16,
+                  cursor: "pointer"
+                }}
+              >
+                Back Home
               </button>
-            ))}
-          </div>
+            </div>
+
+            <style jsx global>{`
+              @keyframes fadeIn {
+                from {
+                  opacity: 0;
+                }
+                to {
+                  opacity: 1;
+                }
+              }
+              @keyframes popIn {
+                from {
+                  transform: scale(0.85);
+                  opacity: 0;
+                }
+                to {
+                  transform: scale(1);
+                  opacity: 1;
+                }
+              }
+            `}</style>
+          </>
+        )}
+
+        {questions.length === 0 && (
+          <p style={{ marginTop: 14, opacity: 0.7 }}>
+            No questions loaded. Check <code>public/questions.json</code>.
+          </p>
         )}
       </div>
-    </div>
+    </main>
   );
 }
+
