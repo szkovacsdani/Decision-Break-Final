@@ -1,0 +1,18 @@
+{
+    "questions": [
+      {
+        "id": "gk-001",
+        "category": "General Knowledge",
+        "difficulty": "easy",
+        "question": "Which planet is known as the Red Planet?",
+        "answers": {
+          "A": "Venus",
+          "B": "Mars",
+          "C": "Jupiter",
+          "D": "Saturn"
+        },
+        "correct": "B"
+      }
+    ]
+  }
+  
