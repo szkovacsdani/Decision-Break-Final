@@ -22,7 +22,7 @@ function shuffle<T>(arr: T[]) {
   return a;
 }
 
-// QUIZ SPACE pontozás (marad, ahogy eddig)
+// QUIZ SPACE pontozás: marad, ahogy eddig
 function scoreQuizSpace(mode: 1 | 3 | 5, correctCount: number) {
   if (mode === 1) {
     if (correctCount === 1) return { action: "Move forward 1 space." };
@@ -43,7 +43,7 @@ function scoreQuizSpace(mode: 1 | 3 | 5, correctCount: number) {
   return { action: "All opponents move back 2 spaces." };
 }
 
-// START/CHECKPOINT pontozás (új, fix 3 kérdés)
+// START/CHECKPOINT pontozás: fix 3 kérdés
 function scoreCheckpoint(correctCount: number) {
   if (correctCount === 0) return { action: "Stay." };
   if (correctCount === 1) return { action: "Move forward 1 space." };
@@ -54,7 +54,7 @@ function scoreCheckpoint(correctCount: number) {
 export default function QuizPage() {
   const router = useRouter();
 
-  const [mode, setMode] = useState<1 | 3 | 5>(3); // csak a Quiz Space-hez
+  const [mode, setMode] = useState<1 | 3 | 5>(3); // Quiz Space-hez
   const timePerQ = 10;
 
   const [questions, setQuestions] = useState<Question[]>([]);
@@ -70,9 +70,7 @@ export default function QuizPage() {
   const [showFeedback, setShowFeedback] = useState(false);
   const [lastWasCorrect, setLastWasCorrect] = useState<boolean | null>(null);
 
-  // új: melyik típusú kör fut
   const [roundType, setRoundType] = useState<RoundType>("quizSpace");
-  // új: az aktuális kör kérdésszáma (Quiz Space: 1/3/5, Checkpoint: fix 3)
   const [roundSize, setRoundSize] = useState<1 | 3 | 5>(3);
 
   const tickRef = useRef<HTMLAudioElement | null>(null);
@@ -188,9 +186,7 @@ export default function QuizPage() {
       setTimeLeft((prev) => {
         const next = prev - 1;
 
-        if (next <= 3 && next > 0) {
-          playTick();
-        }
+        if (next <= 3 && next > 0) playTick();
 
         if (next <= 0) {
           clearInterval(intervalId);
@@ -226,7 +222,7 @@ export default function QuizPage() {
       ? "Wrong"
       : null;
 
-  const headerTitle = roundType === "checkpoint" ? "Start / Checkpoint Quiz" : "Quiz Space";
+  const modeDisabled = status === "playing";
 
   return (
     <main
@@ -239,44 +235,18 @@ export default function QuizPage() {
       }}
     >
       <div style={{ maxWidth: 860, margin: "0 auto" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <a href="/" style={{ color: "#fff", textDecoration: "none", opacity: 0.85 }}>
             ← Home
           </a>
 
-          {/* Quiz Space vezérlők */}
-          <div style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap" }}>
-            <label style={{ opacity: 0.85 }}>
-              Mode:&nbsp;
-              <select
-                value={mode}
-                disabled={status === "playing" && roundType === "checkpoint"}
-                onChange={(e) => setMode(parseInt(e.target.value, 10) as 1 | 3 | 5)}
-              >
-                <option value={1}>1 question</option>
-                <option value={3}>3 questions</option>
-                <option value={5}>5 questions</option>
-              </select>
-            </label>
-
-            <button
-              onClick={startQuizSpaceRound}
-              style={{
-                background: "#16a34a",
-                color: "#fff",
-                border: 0,
-                padding: "10px 14px",
-                borderRadius: 10,
-                fontWeight: 900,
-                cursor: "pointer"
-              }}
-            >
-              QUIZ SPACE
-            </button>
-          </div>
+          {status === "playing" && (
+            <div style={{ opacity: 0.75, fontWeight: 800 }}>
+              {roundType === "checkpoint" ? "START/CHECKPOINT" : "QUIZ SPACE"}
+            </div>
+          )}
         </div>
 
-        {/* Fő kártya: játék */}
         <div
           style={{
             marginTop: 18,
@@ -290,13 +260,72 @@ export default function QuizPage() {
 
           {status === "idle" && (
             <>
-              <h1 style={{ margin: 0, fontSize: 34 }}>{headerTitle}</h1>
-              <p style={{ marginTop: 10, opacity: 0.85 }}>
+              <div style={{ display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap" }}>
+                <button
+                  type="button"
+                  style={{
+                    background: "#16a34a",
+                    color: "#fff",
+                    border: 0,
+                    padding: "10px 14px",
+                    borderRadius: 10,
+                    fontWeight: 900
+                  }}
+                >
+                  QUIZ SPACE
+                </button>
+
+                <label style={{ opacity: 0.85, display: "flex", alignItems: "center", gap: 8 }}>
+                  <span>Mode:</span>
+                  <select
+  value={mode}
+  disabled={modeDisabled}
+  onChange={(e) => setMode(parseInt(e.target.value, 10) as 1 | 3 | 5)}
+  style={{
+    background: "rgba(255,255,255,0.06)",
+    color: "#fff",
+    border: "1px solid rgba(255,255,255,0.18)",
+    borderRadius: 10,
+    padding: "8px 10px",
+    outline: "none",
+    fontWeight: 800
+  }}
+>
+  <option value={1} style={{ color: "#000" }}>
+    1 question
+  </option>
+  <option value={3} style={{ color: "#000" }}>
+    3 questions
+  </option>
+  <option value={5} style={{ color: "#000" }}>
+    5 questions
+  </option>
+</select>
+
+                </label>
+
+                <button
+                  onClick={startQuizSpaceRound}
+                  style={{
+                    background: "rgba(255,255,255,0.06)",
+                    color: "#16a34a",
+                    border: "1px solid rgba(22,163,74,0.85)",
+                    padding: "10px 14px",
+                    borderRadius: 10,
+                    fontWeight: 900,
+                    cursor: questions.length === 0 ? "not-allowed" : "pointer",
+                    opacity: questions.length === 0 ? 0.6 : 1
+                  }}
+                  disabled={questions.length === 0}
+                >
+                  PLAY
+                </button>
+              </div>
+
+              <p style={{ marginTop: 12, opacity: 0.85 }}>
                 You have <b>{timePerQ}s</b> per question. If time runs out, it counts as wrong.
               </p>
-              <p style={{ marginTop: 10, opacity: 0.85 }}>
-                Questions source: <code>/questions.json</code>
-              </p>
+              
             </>
           )}
 
@@ -304,7 +333,7 @@ export default function QuizPage() {
             <>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
                 <div style={{ opacity: 0.85 }}>
-                  {roundType === "checkpoint" ? "Start / Checkpoint" : "Quiz Space"} • Question {idx + 1} / {round.length}
+                  Question {idx + 1} / {round.length}
                 </div>
                 <div style={{ fontWeight: 900, fontSize: 22 }}>{timeLeft}s</div>
               </div>
@@ -357,7 +386,6 @@ export default function QuizPage() {
           )}
         </div>
 
-        {/* Lentebb: Start/Checkpoint indítás */}
         {status !== "playing" && (
           <div
             style={{
@@ -368,8 +396,24 @@ export default function QuizPage() {
               border: "1px solid rgba(255,255,255,0.10)"
             }}
           >
-            <div style={{ fontWeight: 900, fontSize: 18, marginBottom: 8 }}>Start / Checkpoint</div>
-            <div style={{ opacity: 0.85, lineHeight: 1.5 }}>
+            <button
+              onClick={startCheckpointRound}
+              style={{
+                background: "#f97316",
+                color: "#fff",
+                border: 0,
+                padding: "12px 16px",
+                borderRadius: 12,
+                fontWeight: 900,
+                cursor: questions.length === 0 ? "not-allowed" : "pointer",
+                opacity: questions.length === 0 ? 0.6 : 1
+              }}
+              disabled={questions.length === 0}
+            >
+              START / CHECKPOINT
+            </button>
+
+            <div style={{ marginTop: 12, opacity: 0.85, lineHeight: 1.5 }}>
               Fixed: <b>3 questions</b>. Scoring:
               <div style={{ marginTop: 8, opacity: 0.9 }}>
                 0 correct: stay<br />
@@ -378,22 +422,6 @@ export default function QuizPage() {
                 3 correct: move forward 3 spaces
               </div>
             </div>
-
-            <button
-              onClick={startCheckpointRound}
-              style={{
-                marginTop: 14,
-                background: "#f97316",
-                color: "#fff",
-                border: 0,
-                padding: "12px 16px",
-                borderRadius: 12,
-                fontWeight: 900,
-                cursor: "pointer"
-              }}
-            >
-              START / CHECKPOINT
-            </button>
           </div>
         )}
 
