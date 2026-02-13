@@ -7449,9 +7449,9 @@
   },
   {
     "id": "DUEL-932",
-    "q": "How many players are on a standard handball team on the court?",
-    "a": 7,
-    "unit": "players",
+    "q": "How many refrees officiate a standard European football match (without VAR)?",
+    "a": 4,
+    "unit": "refrees",
     "category": "sport",
     "difficulty": "easy"
   },
@@ -7465,8 +7465,8 @@
   },
   {
     "id": "DUEL-934",
-    "q": "How many teeth does a typical adult dog have?",
-    "a": 42,
+    "q": "How many teeth does a typical adult cat have?",
+    "a": 30,
     "unit": "teeth",
     "category": "science",
     "difficulty": "hard"
@@ -7489,8 +7489,8 @@
   },
   {
     "id": "DUEL-937",
-    "q": "How many chambers does the German Bundestag have?",
-    "a": 1,
+    "q": "How many chambers does a dog have?",
+    "a": 4,
     "unit": "chambers",
     "category": "institutions",
     "difficulty": "medium"
@@ -7521,11 +7521,11 @@
   },
   {
     "id": "DUEL-941",
-    "q": "How many bones are in a human hand?",
-    "a": 27,
-    "unit": "bones",
+    "q": "How many stomach chambers does a cow have?",
+    "a": 4,
+    "unit": "stomach",
     "category": "science",
-    "difficulty": "hard"
+    "difficulty": "medium"
   },
   {
     "id": "DUEL-942",
@@ -7545,8 +7545,8 @@
   },
   {
     "id": "DUEL-944",
-    "q": "How many players are on the field in total in a standard soccer match?",
-    "a": 22,
+    "q": "How many subtitutions are allowed per team in a standard soccer match?",
+    "a": 5,
     "unit": "players",
     "category": "sport",
     "difficulty": "easy"
