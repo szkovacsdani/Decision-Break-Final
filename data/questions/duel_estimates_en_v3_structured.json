@@ -6798,5 +6798,405 @@
     "unit": "hours",
     "category": "general",
     "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-851",
+    "q": "How many seasons are there in the TV series 'Stranger Things'?",
+    "a": 5,
+    "unit": "seasons",
+    "category": "popculture",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-852",
+    "q": "In which year was Amazon Prime founded?",
+    "a": 2005,
+    "unit": "year",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-853",
+    "q": "How many Marvel Cinematic Universe films were released between 2008 and 2023 (rounded)?",
+    "a": 32,
+    "unit": "films",
+    "category": "popculture",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-854",
+    "q": "How many gigabytes of data does a 4K movie typically require (rounded)?",
+    "a": 100,
+    "unit": "gigabytes",
+    "category": "technology",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-855",
+    "q": "In which year was the first PlayStation console released?",
+    "a": 1994,
+    "unit": "year",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-856",
+    "q": "How many Oscars did the movie 'Titanic' win?",
+    "a": 11,
+    "unit": "awards",
+    "category": "popculture",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-857",
+    "q": "How many followers does a top global Instagram influencer typically have (in millions, rounded)?",
+    "a": 300,
+    "unit": "million",
+    "category": "popculture",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-858",
+    "q": "How many terabytes of data can a modern data center store (in thousands, rounded)?",
+    "a": 1000,
+    "unit": "terabytes",
+    "category": "technology",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-859",
+    "q": "How many minutes long is the average feature film (rounded)?",
+    "a": 120,
+    "unit": "minutes",
+    "category": "popculture",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-860",
+    "q": "In which year was the first Tesla released?",
+    "a": 2008,
+    "unit": "year",
+    "category": "technology",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-861",
+    "q": "How many Harry Potter books are there in the main series?",
+    "a": 7,
+    "unit": "books",
+    "category": "popculture",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-862",
+    "q": "How many cores does a high-end consumer CPU typically have (rounded)?",
+    "a": 16,
+    "unit": "cores",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-863",
+    "q": "How many Grammy Awards has Beyoncé won (rounded)?",
+    "a": 30,
+    "unit": "awards",
+    "category": "popculture",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-864",
+    "q": "How many megabytes are there in one gigabyte (binary rounded)?",
+    "a": 1024,
+    "unit": "megabytes",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-865",
+    "q": "How many seasons does the TV series 'Friends' have?",
+    "a": 10,
+    "unit": "seasons",
+    "category": "popculture",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-866",
+    "q": "In which year was ChatGpt released?",
+    "a": 2022,
+    "unit": "year",
+    "category": "technology",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-867",
+    "q": "How many movies are there in the main Star Wars saga (Episodes I–IX)?",
+    "a": 9,
+    "unit": "films",
+    "category": "popculture",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-868",
+    "q": "How many watts does a typical laptop charger provide (rounded)?",
+    "a": 65,
+    "unit": "watts",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-869",
+    "q": "How many albums did The Beatles release in the UK?",
+    "a": 12,
+    "unit": "albums",
+    "category": "popculture",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-870",
+    "q": "How many millions users does Facebook have worldwide?",
+    "a": 3070,
+    "unit": "million",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-871",
+    "q": "How many minutes long is a typical podcast episode (rounded)?",
+    "a": 45,
+    "unit": "minutes",
+    "category": "popculture",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-872",
+    "q": "Approximetaly, how many gigabytes of RAM does a modern gaming PC typically have?",
+    "a": 32,
+    "unit": "gigabytes",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-873",
+    "q": "How many Academy Awards does the movie 'The Lord of the Rings: The Return of the King' hold?",
+    "a": 11,
+    "unit": "awards",
+    "category": "popculture",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-874",
+    "q": "How many meters is the typical range of a Bluetooth connection (rounded)?",
+    "a": 10,
+    "unit": "meters",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-875",
+    "q": "How many views does a viral YouTube video typically reach (in millions, rounded)?",
+    "a": 100,
+    "unit": "million",
+    "category": "popculture",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-876",
+    "q": "How many bones does a human baby have at birth (rounded)?",
+    "a": 285,
+    "unit": "bones",
+    "category": "science",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-877",
+    "q": "How many kilometers above Earth does the International Space Station orbit?",
+    "a": 400,
+    "unit": "kilometers",
+    "category": "science",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-878",
+    "q": "How many watts does a typical microwave oven use?",
+    "a": 1000,
+    "unit": "watts",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-879",
+    "q": "How many kilometers per hour is the escape velocity from Earth?",
+    "a": 40320,
+    "unit": "km/h",
+    "category": "science",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-880",
+    "q": "How many gigabytes of storage does a standard single-layer Blu-ray disc hold?",
+    "a": 25,
+    "unit": "gigabytes",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-881",
+    "q": "How many meters per second is the speed of sound at sea level?",
+    "a": 340,
+    "unit": "m/s",
+    "category": "science",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-882",
+    "q": "How many volts does a standard household outlet provide in most of Europe?",
+    "a": 230,
+    "unit": "volts",
+    "category": "technology",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-883",
+    "q": "How many kilometers is the diameter of the Earth?",
+    "a": 12756,
+    "unit": "kilometers",
+    "category": "science",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-884",
+    "q": "How many milliliters are in a standard soda can?",
+    "a": 330,
+    "unit": "milliliters",
+    "category": "general",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-885",
+    "q": "How many transistors are in a modern high-end CPU (in billions, rounded)?",
+    "a": 50,
+    "unit": "billion",
+    "category": "technology",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-886",
+    "q": "How many meters tall is Mount Everest?",
+    "a": 8849,
+    "unit": "meters",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-887",
+    "q": "How many liters of blood does the human heart pump per day (rounded)?",
+    "a": 7000,
+    "unit": "liters",
+    "category": "science",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-888",
+    "q": "How many gigabytes of data does a typical/regular smartphone have as base storage?",
+    "a": 128,
+    "unit": "gigabytes",
+    "category": "technology",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-889",
+    "q": "How many kilometers per hour is the maximum speed of a modern bullet train?",
+    "a": 320,
+    "unit": "km/h",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-890",
+    "q": "How many lungs does a healthy adult human have?",
+    "a": 2,
+    "unit": "teeth",
+    "category": "science",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-891",
+    "q": "How many satellites orbit the Earth (active satellite)?",
+    "a": 8000,
+    "unit": "satellites",
+    "category": "technology",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-892",
+    "q": "How many kilograms does the average car battery weigh?",
+    "a": 20,
+    "unit": "kilograms",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-893",
+    "q": "How many degrees Celsius is the surface temperature of the Sun (rounded)?",
+    "a": 5500,
+    "unit": "degrees",
+    "category": "science",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-894",
+    "q": "How many gigahertz does a typical modern CPU run at?",
+    "a": 4,
+    "unit": "GHz",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-895",
+    "q": "How many kilograms of lithium are in an electric car battery (rounded)?",
+    "a": 10,
+    "unit": "kilograms",
+    "category": "technology",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-896",
+    "q": "How many kilometers is the Earth's circumference approximately?",
+    "a": 40000,
+    "unit": "kilometers",
+    "category": "science",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-897",
+    "q": "How many milligrams of caffeine are in a standard espresso (rounded)?",
+    "a": 80,
+    "unit": "milligrams",
+    "category": "science",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-898",
+    "q": "How many megabits per second is a typical home internet connection speed (rounded)?",
+    "a": 100,
+    "unit": "Mbps",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-899",
+    "q": "How many kilometers per hour is the top speed of a modern fighter jet?",
+    "a": 2400,
+    "unit": "km/h",
+    "category": "technology",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-900",
+    "q": "How many kilograms does an average washing machine weigh (rounded)?",
+    "a": 70,
+    "unit": "kilograms",
+    "category": "technology",
+    "difficulty": "medium"
   }
 ]
