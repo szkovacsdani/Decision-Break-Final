@@ -6312,12 +6312,12 @@
     "difficulty": "medium"
   },
   {
-    "id": "DUEL-790",
-    "q": "How many players are on the field in total in a standard American football game?",
-    "a": 22,
-    "unit": "players",
+    "id": "DUEL-XXX",
+    "q": "In European football (soccer), by how many goals is a match officially awarded if a team forfeits the game?",
+    "a": 3,
+    "unit": "goals",
     "category": "sport",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "DUEL-791",
