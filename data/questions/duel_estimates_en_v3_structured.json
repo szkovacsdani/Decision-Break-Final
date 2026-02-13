@@ -7398,5 +7398,205 @@
     "unit": "hearts",
     "category": "science",
     "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-926",
+    "q": "How many players are on the field in a standard rugby union match per team?",
+    "a": 15,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-927",
+    "q": "How many frets does a standard electric guitar typically have?",
+    "a": 22,
+    "unit": "frets",
+    "category": "popculture",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-928",
+    "q": "How many keys are on a standard numeric keypad?",
+    "a": 17,
+    "unit": "keys",
+    "category": "technology",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-929",
+    "q": "How many vertebrae are in the human spine?",
+    "a": 33,
+    "unit": "vertebrae",
+    "category": "science",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-930",
+    "q": "How many missions landed humans on the Moon?",
+    "a": 6,
+    "unit": "missions",
+    "category": "science",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-931",
+    "q": "How many Academy Awards did the movie 'The Lord of the Rings: The Return of the King' win?",
+    "a": 11,
+    "unit": "awards",
+    "category": "popculture",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-932",
+    "q": "How many players are on a standard handball team on the court?",
+    "a": 7,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-933",
+    "q": "How many bytes are in a kilobyte (binary)?",
+    "a": 1024,
+    "unit": "bytes",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-934",
+    "q": "How many teeth does a typical adult dog have?",
+    "a": 42,
+    "unit": "teeth",
+    "category": "science",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-935",
+    "q": "How many films are there in the original Jurassic Park series (including World films)?",
+    "a": 6,
+    "unit": "films",
+    "category": "popculture",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-936",
+    "q": "How many amps does a standard European household circuit typically support?",
+    "a": 16,
+    "unit": "amps",
+    "category": "technology",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-937",
+    "q": "How many chambers does the German Bundestag have?",
+    "a": 1,
+    "unit": "chambers",
+    "category": "institutions",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-938",
+    "q": "How many seconds are there in a standard NBA shot clock?",
+    "a": 24,
+    "unit": "seconds",
+    "category": "sport",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-939",
+    "q": "How many liters of fuel does a Formula 1 car typically use during a race?",
+    "a": 110,
+    "unit": "liters",
+    "category": "sport",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-940",
+    "q": "How many pixels are in a Full HD resolution image vertically?",
+    "a": 1080,
+    "unit": "pixels",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-941",
+    "q": "How many bones are in a human hand?",
+    "a": 27,
+    "unit": "bones",
+    "category": "science",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-942",
+    "q": "How many main films are in the Fast & Furious franchise?",
+    "a": 10,
+    "unit": "films",
+    "category": "popculture",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-943",
+    "q": "How many volts does a standard car battery provide?",
+    "a": 12,
+    "unit": "volts",
+    "category": "technology",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-944",
+    "q": "How many players are on the field in total in a standard soccer match?",
+    "a": 22,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-945",
+    "q": "How many bones are in a human foot?",
+    "a": 26,
+    "unit": "bones",
+    "category": "science",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-946",
+    "q": "How many films did Christopher Nolan direct before 2020?",
+    "a": 10,
+    "unit": "films",
+    "category": "popculture",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-947",
+    "q": "How many bits are in a 64-bit processor?",
+    "a": 64,
+    "unit": "bits",
+    "category": "technology",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-948",
+    "q": "How many liters of blood does an average adult have?",
+    "a": 5,
+    "unit": "liters",
+    "category": "science",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-949",
+    "q": "How many laps are in a standard 400m Olympic track race?",
+    "a": 1,
+    "unit": "laps",
+    "category": "sport",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-950",
+    "q": "How many movies are in the main Avengers series?",
+    "a": 4,
+    "unit": "films",
+    "category": "popculture",
+    "difficulty": "medium"
   }
 ]
