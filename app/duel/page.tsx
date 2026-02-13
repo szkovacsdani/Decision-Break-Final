@@ -5,8 +5,7 @@ import { supabase } from "@/lib/supabase";
 
 // Fontos: legyen egy ilyen fájlod. A kérdések angolul vannak, válaszok egész számok.
 // Példa elem: { "id":"DUEL-001", "q":"In which year was the Battle of Mohács?", "a":1526, "unit":"year" }
-import duelQuestions from "@/data/questions/duel_estimates_en_v2.json";
-
+import duelQuestions from "@/data/questions/duel_estimates_en_v3_structured.json";
 type DuelRoomRow = {
   code: string;
   status: string; // waiting | playing | finished

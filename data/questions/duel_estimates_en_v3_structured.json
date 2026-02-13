@@ -7598,5 +7598,405 @@
     "unit": "films",
     "category": "popculture",
     "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-951",
+    "q": "How many squares are there on a standard chessboard?",
+    "a": 64,
+    "unit": "squares",
+    "category": "general",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-952",
+    "q": "How many calories are in one gram of fat?",
+    "a": 9,
+    "unit": "calories",
+    "category": "science",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-953",
+    "q": "How many valves does the human heart have?",
+    "a": 4,
+    "unit": "valves",
+    "category": "science",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-954",
+    "q": "How many pages are in the first Harry Potter book (UK edition)?",
+    "a": 223,
+    "unit": "pages",
+    "category": "popculture",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-955",
+    "q": "How many liters are in one cubic meter?",
+    "a": 1000,
+    "unit": "liters",
+    "category": "math",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-956",
+    "q": "How many planets are officially recognized in the Solar System?",
+    "a": 8,
+    "unit": "planets",
+    "category": "science",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-957",
+    "q": "How many characters are there in the English alphabet including space?",
+    "a": 27,
+    "unit": "characters",
+    "category": "general",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-958",
+    "q": "How many tracks are on the original 'Thriller' album by Michael Jackson?",
+    "a": 9,
+    "unit": "tracks",
+    "category": "popculture",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-959",
+    "q": "How many milliseconds are in two second?",
+    "a": 2000,
+    "unit": "milliseconds",
+    "category": "math",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-960",
+    "q": "How many kilobytes are in one megabyte (binary)?",
+    "a": 1024,
+    "unit": "kilobytes",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-961",
+    "q": "How many holes are there on a standard bowling ball?",
+    "a": 3,
+    "unit": "holes",
+    "category": "sport",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-962",
+    "q": "How many films did Quentin Tarantino direct up to and including 'Once Upon a Time in Hollywood'?",
+    "a": 9,
+    "unit": "films",
+    "category": "popculture",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-963",
+    "q": "How many strings does a violin have?",
+    "a": 4,
+    "unit": "strings",
+    "category": "general",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-964",
+    "q": "How many players are there in a standard chess game?",
+    "a": 2,
+    "unit": "players",
+    "category": "general",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-965",
+    "q": "How many cards are there in a standard deck without jokers?",
+    "a": 52,
+    "unit": "cards",
+    "category": "general",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-966",
+    "q": "How many letters are there in the word 'Mississippi'?",
+    "a": 11,
+    "unit": "letters",
+    "category": "general",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-967",
+    "q": "Approximately, how many lakes are in Florida?",
+    "a": 7800,
+    "unit": "lakes",
+    "category": "geography",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-968",
+    "q": "How many books are in the main 'The Hunger Games' trilogy?",
+    "a": 3,
+    "unit": "books",
+    "category": "popculture",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-969",
+    "q": "How many sides does a regular decagon have?",
+    "a": 10,
+    "unit": "sides",
+    "category": "math",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-970",
+    "q": "How many stripes are on the flag of the United States?",
+    "a": 13,
+    "unit": "stripes",
+    "category": "general",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-971",
+    "q": "How many albums did Elvis Presley release during his lifetime?",
+    "a": 24,
+    "unit": "albums",
+    "category": "popculture",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-972",
+    "q": "How many sides does a regular icosagon have?",
+    "a": 20,
+    "unit": "sides",
+    "category": "math",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-973",
+    "q": "Approximately, how many pubs and nightclubs are in Ireland in 2025?",
+    "a": 6605,
+    "unit": "pubs and nightclubs",
+    "category": "general",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-974",
+    "q": "How many episodes are there in the first season of 'Stranger Things'?",
+    "a": 8,
+    "unit": "episodes",
+    "category": "popculture",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-975",
+    "q": "How many continents are there according to the most widely accepted model?",
+    "a": 7,
+    "unit": "continents",
+    "category": "geography",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-976",
+    "q": "How many pieces does each player start with in a standard chess game?",
+    "a": 16,
+    "unit": "pieces",
+    "category": "general",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-977",
+    "q": "How many ribs does a dog have?",
+    "a": 26,
+    "unit": "ribs",
+    "category": "science",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-978",
+    "q": "In how many countries is English an official language?",
+    "a": 67,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-979",
+    "q": "How many episodes are in Game of thrones?",
+    "a": 73,
+    "unit": "episodes",
+    "category": "popculture",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-980",
+    "q": "How many keys does a standard piano have?",
+    "a": 88,
+    "unit": "keys",
+    "category": "general",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-981",
+    "q": "How many episodes are in Stranger Things?",
+    "a": 42,
+    "unit": "episodes",
+    "category": "popculture",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-982",
+    "q": "How many seconds are there in a half day?",
+    "a": 43200,
+    "unit": "seconds",
+    "category": "math",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-983",
+    "q": "How many players are there in a standard doubles tennis match?",
+    "a": 4,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-984",
+    "q": "How many grams are there in one pound (rounded to nearest whole number)?",
+    "a": 454,
+    "unit": "grams",
+    "category": "math",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-985",
+    "q": "How many letters are there in the Hungarian alphabet?",
+    "a": 44,
+    "unit": "letters",
+    "category": "general",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-986",
+    "q": "How many judges sit on the United States Supreme Court?",
+    "a": 9,
+    "unit": "judges",
+    "category": "institutions",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-987",
+    "q": "How many frames are there in a standard professional snooker match (maximum)?",
+    "a": 35,
+    "unit": "frames",
+    "category": "sport",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-988",
+    "q": "How many colors are there in the flag of European Union?",
+    "a": 2,
+    "unit": "colors",
+    "category": "sport",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-989",
+    "q": "How many centimeters are there in one inch (rounded to nearest whole number)?",
+    "a": 2,
+    "unit": "centimeters",
+    "category": "math",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-990",
+    "q": "How many strings does a standard bass guitar have?",
+    "a": 4,
+    "unit": "strings",
+    "category": "popculture",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-991",
+    "q": "How many days are there in February during a leap year?",
+    "a": 29,
+    "unit": "days",
+    "category": "general",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-992",
+    "q": "How many colors are in the flag of Mexico?",
+    "a": 3,
+    "unit": "colors",
+    "category": "science",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-993",
+    "q": "How many cards does each player receive at the start of a Texas Hold'em poker hand?",
+    "a": 2,
+    "unit": "cards",
+    "category": "general",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-994",
+    "q": "How many tracks are there on the original 'Abbey Road' album?",
+    "a": 17,
+    "unit": "tracks",
+    "category": "popculture",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-995",
+    "q": "How many degrees are in half cirlce",
+    "a": 180,
+    "unit": "degrees",
+    "category": "math",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-996",
+    "q": "How many permanent members are there in the United Nations Security Council?",
+    "a": 5,
+    "unit": "members",
+    "category": "institutions",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-997",
+    "q": "How many laps are there in a standard Formula 1 Monaco Grand Prix?",
+    "a": 78,
+    "unit": "laps",
+    "category": "sport",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-998",
+    "q": "How many bytes are there in one gigabyte (binary)?",
+    "a": 1073741824,
+    "unit": "bytes",
+    "category": "technology",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-999",
+    "q": "How many notes are there in a standard major scale?",
+    "a": 7,
+    "unit": "notes",
+    "category": "general",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-1000",
+    "q": "How many players are on the field in total in a standard ice hockey game without penalty?",
+    "a": 12,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "medium"
   }
 ]
