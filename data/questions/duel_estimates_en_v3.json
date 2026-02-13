@@ -1,0 +1,2225 @@
+[
+  {
+    "id": "DUEL-001",
+    "q": "In which year was the Battle of Mohács?",
+    "a": 1526,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-002",
+    "q": "In which year did World War I begin?",
+    "a": 1914,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-003",
+    "q": "In which year did World War II end?",
+    "a": 1945,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-004",
+    "q": "In which year was the United Nations founded?",
+    "a": 1945,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-005",
+    "q": "In which year did the Berlin Wall fall?",
+    "a": 1989,
+    "unit": "year"
+  },
+
+  {
+    "id": "DUEL-006",
+    "q": "How many continents are there?",
+    "a": 7,
+    "unit": "continents"
+  },
+  {
+    "id": "DUEL-007",
+    "q": "How many Olympic rings are there?",
+    "a": 5,
+    "unit": "rings"
+  },
+  {
+    "id": "DUEL-008",
+    "q": "How many letters are in the English alphabet?",
+    "a": 26,
+    "unit": "letters"
+  },
+  {
+    "id": "DUEL-009",
+    "q": "How many players are on a football team on the field?",
+    "a": 11,
+    "unit": "players"
+  },
+  {
+    "id": "DUEL-010",
+    "q": "How many sides does a hexagon have?",
+    "a": 6,
+    "unit": "sides"
+  },
+
+  {
+    "id": "DUEL-011",
+    "q": "In which year was the first modern Olympic Games held?",
+    "a": 1896,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-012",
+    "q": "In which year did the Wright brothers achieve powered flight?",
+    "a": 1903,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-013",
+    "q": "In which year did the first man land on the Moon?",
+    "a": 1969,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-014",
+    "q": "In which year was the first iPhone released?",
+    "a": 2007,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-015",
+    "q": "In which year did Facebook launch?",
+    "a": 2004,
+    "unit": "year"
+  },
+
+  {
+    "id": "DUEL-016",
+    "q": "How many US states are there?",
+    "a": 50,
+    "unit": "states"
+  },
+  {
+    "id": "DUEL-017",
+    "q": "How many days are there in a leap year?",
+    "a": 366,
+    "unit": "days"
+  },
+  {
+    "id": "DUEL-018",
+    "q": "How many keys are on a piano?",
+    "a": 88,
+    "unit": "keys"
+  },
+  {
+    "id": "DUEL-019",
+    "q": "How many bones are in the human body?",
+    "a": 206,
+    "unit": "bones"
+  },
+  {
+    "id": "DUEL-020",
+    "q": "How many minutes are in 2 hours?",
+    "a": 120,
+    "unit": "minutes"
+  },
+
+  {
+    "id": "DUEL-021",
+    "q": "In which year did the Titanic sink?",
+    "a": 1912,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-022",
+    "q": "In which year did the Cold War end?",
+    "a": 1991,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-023",
+    "q": "In which year was Google founded?",
+    "a": 1998,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-024",
+    "q": "In which year did YouTube launch?",
+    "a": 2005,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-025",
+    "q": "In which year was the first PlayStation released?",
+    "a": 1994,
+    "unit": "year"
+  },
+
+  {
+    "id": "DUEL-026",
+    "q": "How many planets are in the Solar System?",
+    "a": 8,
+    "unit": "planets"
+  },
+  {
+    "id": "DUEL-027",
+    "q": "How many hours are in a day?",
+    "a": 24,
+    "unit": "hours"
+  },
+  {
+    "id": "DUEL-028",
+    "q": "How many months are in a year?",
+    "a": 12,
+    "unit": "months"
+  },
+  {
+    "id": "DUEL-029",
+    "q": "How many players start in a chess game per side?",
+    "a": 16,
+    "unit": "pieces"
+  },
+  {
+    "id": "DUEL-030",
+    "q": "How many sides does a triangle have?",
+    "a": 3,
+    "unit": "sides"
+  },
+
+  {
+    "id": "DUEL-031",
+    "q": "In which year did the Renaissance begin (approximate)?",
+    "a": 1300,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-032",
+    "q": "In which year was the Magna Carta signed?",
+    "a": 1215,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-033",
+    "q": "In which year did the American Declaration of Independence occur?",
+    "a": 1776,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-034",
+    "q": "In which year did the French Revolution begin?",
+    "a": 1789,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-035",
+    "q": "In which year did the Soviet Union collapse?",
+    "a": 1991,
+    "unit": "year"
+  },
+
+  {
+    "id": "DUEL-036",
+    "q": "How many minutes are in one day?",
+    "a": 1440,
+    "unit": "minutes"
+  },
+  {
+    "id": "DUEL-037",
+    "q": "How many seconds are in one hour?",
+    "a": 3600,
+    "unit": "seconds"
+  },
+  {
+    "id": "DUEL-038",
+    "q": "How many medals are awarded per Olympic event?",
+    "a": 3,
+    "unit": "medals"
+  },
+  {
+    "id": "DUEL-039",
+    "q": "How many Olympic rings are there?",
+    "a": 5,
+    "unit": "rings"
+  },
+  {
+    "id": "DUEL-040",
+    "q": "How many letters are in the English alphabet?",
+    "a": 26,
+    "unit": "letters"
+  },
+  {
+    "id": "DUEL-041",
+    "q": "In which year did Christopher Columbus reach the Americas?",
+    "a": 1492,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-042",
+    "q": "In which year was the Roman Empire divided into Eastern and Western parts?",
+    "a": 395,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-043",
+    "q": "In which year did Julius Caesar die?",
+    "a": 44,
+    "unit": "BC"
+  },
+  {
+    "id": "DUEL-044",
+    "q": "In which year did the Black Death reach Europe?",
+    "a": 1347,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-045",
+    "q": "In which year did the Industrial Revolution begin (approximate)?",
+    "a": 1760,
+    "unit": "year"
+  },
+
+  {
+    "id": "DUEL-046",
+    "q": "How many players are on a basketball team on the court?",
+    "a": 5,
+    "unit": "players"
+  },
+  {
+    "id": "DUEL-047",
+    "q": "How many degrees are in a full circle?",
+    "a": 360,
+    "unit": "degrees"
+  },
+  {
+    "id": "DUEL-048",
+    "q": "How many time zones are there globally?",
+    "a": 24,
+    "unit": "time zones"
+  },
+  {
+    "id": "DUEL-049",
+    "q": "How many cards are in a standard deck?",
+    "a": 52,
+    "unit": "cards"
+  },
+  {
+    "id": "DUEL-050",
+    "q": "How many judges sit on the US Supreme Court?",
+    "a": 9,
+    "unit": "judges"
+  },
+
+  {
+    "id": "DUEL-051",
+    "q": "In which year did the first Crusade begin?",
+    "a": 1096,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-052",
+    "q": "In which year did the Protestant Reformation begin?",
+    "a": 1517,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-053",
+    "q": "In which year was the first modern newspaper published?",
+    "a": 1605,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-054",
+    "q": "In which year was the first steam locomotive built?",
+    "a": 1804,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-055",
+    "q": "In which year did the first World Cup take place?",
+    "a": 1930,
+    "unit": "year"
+  },
+
+  {
+    "id": "DUEL-056",
+    "q": "How many bones are in a human hand?",
+    "a": 27,
+    "unit": "bones"
+  },
+  {
+    "id": "DUEL-057",
+    "q": "How many provinces are in Canada?",
+    "a": 10,
+    "unit": "provinces"
+  },
+  {
+    "id": "DUEL-058",
+    "q": "How many states are in Germany?",
+    "a": 16,
+    "unit": "states"
+  },
+  {
+    "id": "DUEL-059",
+    "q": "How many episodes are in a typical modern TV season (approximate)?",
+    "a": 10,
+    "unit": "episodes"
+  },
+  {
+    "id": "DUEL-060",
+    "q": "How many players are on a volleyball team on the court?",
+    "a": 6,
+    "unit": "players"
+  },
+
+  {
+    "id": "DUEL-061",
+    "q": "In which year did the Great Fire of London occur?",
+    "a": 1666,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-062",
+    "q": "In which year was the first vaccine developed?",
+    "a": 1796,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-063",
+    "q": "In which year did the Suez Canal open?",
+    "a": 1869,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-064",
+    "q": "In which year did the first Space Shuttle launch?",
+    "a": 1981,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-065",
+    "q": "In which year was Bitcoin created?",
+    "a": 2009,
+    "unit": "year"
+  },
+
+  {
+    "id": "DUEL-066",
+    "q": "How many keys are on a standard keyboard (approximate)?",
+    "a": 104,
+    "unit": "keys"
+  },
+  {
+    "id": "DUEL-067",
+    "q": "How many boroughs are in New York City?",
+    "a": 5,
+    "unit": "boroughs"
+  },
+  {
+    "id": "DUEL-068",
+    "q": "How many official EU languages are there?",
+    "a": 24,
+    "unit": "languages"
+  },
+  {
+    "id": "DUEL-069",
+    "q": "How many players are on a rugby union team on the field?",
+    "a": 15,
+    "unit": "players"
+  },
+  {
+    "id": "DUEL-070",
+    "q": "How many meters are in a kilometer?",
+    "a": 1000,
+    "unit": "meters"
+  },
+
+  {
+    "id": "DUEL-071",
+    "q": "In which year did the Cold War begin (approximate)?",
+    "a": 1947,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-072",
+    "q": "In which year was the Eiffel Tower completed?",
+    "a": 1889,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-073",
+    "q": "In which year did the first iPad release?",
+    "a": 2010,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-074",
+    "q": "In which year did the first email get sent?",
+    "a": 1971,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-075",
+    "q": "In which year did the Korean War begin?",
+    "a": 1950,
+    "unit": "year"
+  },
+
+  {
+    "id": "DUEL-076",
+    "q": "How many seconds are in one day?",
+    "a": 86400,
+    "unit": "seconds"
+  },
+  {
+    "id": "DUEL-077",
+    "q": "How many countries are members of the United Nations?",
+    "a": 193,
+    "unit": "countries"
+  },
+  {
+    "id": "DUEL-078",
+    "q": "How many players are on a cricket team?",
+    "a": 11,
+    "unit": "players"
+  },
+  {
+    "id": "DUEL-079",
+    "q": "How many sides does an octagon have?",
+    "a": 8,
+    "unit": "sides"
+  },
+  {
+    "id": "DUEL-080",
+    "q": "How many stars are on the European Union flag?",
+    "a": 12,
+    "unit": "stars"
+  },
+  {
+    "id": "DUEL-081",
+    "q": "In which year did the Roman Empire fall (Western)?",
+    "a": 476,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-082",
+    "q": "In which year was the printing press invented by Gutenberg?",
+    "a": 1440,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-083",
+    "q": "In which year did the Spanish Civil War begin?",
+    "a": 1936,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-084",
+    "q": "In which year did India gain independence?",
+    "a": 1947,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-085",
+    "q": "In which year was the first Harry Potter book published?",
+    "a": 1997,
+    "unit": "year"
+  },
+
+  {
+    "id": "DUEL-086",
+    "q": "How many US presidents have been assassinated?",
+    "a": 4,
+    "unit": "presidents"
+  },
+  {
+    "id": "DUEL-087",
+    "q": "How many squares are on a chessboard?",
+    "a": 64,
+    "unit": "squares"
+  },
+  {
+    "id": "DUEL-088",
+    "q": "How many strings does a standard guitar have?",
+    "a": 6,
+    "unit": "strings"
+  },
+  {
+    "id": "DUEL-089",
+    "q": "How many innings are in a baseball game?",
+    "a": 9,
+    "unit": "innings"
+  },
+  {
+    "id": "DUEL-090",
+    "q": "How many judges are on the International Court of Justice?",
+    "a": 15,
+    "unit": "judges"
+  },
+
+  {
+    "id": "DUEL-091",
+    "q": "In which year did the American Civil War begin?",
+    "a": 1861,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-092",
+    "q": "In which year did the first Tour de France take place?",
+    "a": 1903,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-093",
+    "q": "In which year did the first FIFA World Cup take place in Europe?",
+    "a": 1934,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-094",
+    "q": "In which year was the first PlayStation 2 released?",
+    "a": 2000,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-095",
+    "q": "In which year did the first Android phone release?",
+    "a": 2008,
+    "unit": "year"
+  },
+
+  {
+    "id": "DUEL-096",
+    "q": "How many players are on a handball team on the court?",
+    "a": 7,
+    "unit": "players"
+  },
+  {
+    "id": "DUEL-097",
+    "q": "How many medals are awarded in each Olympic event?",
+    "a": 3,
+    "unit": "medals"
+  },
+  {
+    "id": "DUEL-098",
+    "q": "How many provinces does China have?",
+    "a": 23,
+    "unit": "provinces"
+  },
+  {
+    "id": "DUEL-099",
+    "q": "How many US states border Canada?",
+    "a": 13,
+    "unit": "states"
+  },
+  {
+    "id": "DUEL-100",
+    "q": "How many countries border Germany?",
+    "a": 9,
+    "unit": "countries"
+  },
+
+  {
+    "id": "DUEL-101",
+    "q": "In which year did the Great Depression begin?",
+    "a": 1929,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-102",
+    "q": "In which year was the European Union founded (Maastricht Treaty)?",
+    "a": 1993,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-103",
+    "q": "In which year did the first email virus spread widely?",
+    "a": 2000,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-104",
+    "q": "In which year did the first Gulf War begin?",
+    "a": 1990,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-105",
+    "q": "In which year was the first modern subway opened?",
+    "a": 1863,
+    "unit": "year"
+  },
+
+  {
+    "id": "DUEL-106",
+    "q": "How many letters are in the Greek alphabet?",
+    "a": 24,
+    "unit": "letters"
+  },
+  {
+    "id": "DUEL-107",
+    "q": "How many official languages does Canada have?",
+    "a": 2,
+    "unit": "languages"
+  },
+  {
+    "id": "DUEL-108",
+    "q": "How many players are on a water polo team in the pool?",
+    "a": 7,
+    "unit": "players"
+  },
+  {
+    "id": "DUEL-109",
+    "q": "How many episodes are in the first season of Game of Thrones?",
+    "a": 10,
+    "unit": "episodes"
+  },
+  {
+    "id": "DUEL-110",
+    "q": "How many judges are on the US Supreme Court?",
+    "a": 9,
+    "unit": "judges"
+  },
+
+  {
+    "id": "DUEL-111",
+    "q": "In which year did South Africa end apartheid?",
+    "a": 1994,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-112",
+    "q": "In which year was the first Kindle released?",
+    "a": 2007,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-113",
+    "q": "In which year did the first SpaceX Falcon 9 launch?",
+    "a": 2010,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-114",
+    "q": "In which year did the first modern vaccine get developed?",
+    "a": 1796,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-115",
+    "q": "In which year did the first FIFA World Cup take place in Africa?",
+    "a": 2010,
+    "unit": "year"
+  },
+
+  {
+    "id": "DUEL-116",
+    "q": "How many boroughs are in London?",
+    "a": 32,
+    "unit": "boroughs"
+  },
+  {
+    "id": "DUEL-117",
+    "q": "How many official time zones does the US have?",
+    "a": 6,
+    "unit": "time zones"
+  },
+  {
+    "id": "DUEL-118",
+    "q": "How many Olympic sports were in Tokyo 2020?",
+    "a": 33,
+    "unit": "sports"
+  },
+  {
+    "id": "DUEL-119",
+    "q": "How many players are on an ice hockey team on the ice?",
+    "a": 6,
+    "unit": "players"
+  },
+  {
+    "id": "DUEL-120",
+    "q": "How many days are there in 5 years (without leap years)?",
+    "a": 1825,
+    "unit": "days"
+  },
+  {
+    "id": "DUEL-121",
+    "q": "In which year did the Byzantine Empire fall?",
+    "a": 1453,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-122",
+    "q": "In which year was NATO founded?",
+    "a": 1949,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-123",
+    "q": "In which year did the first manned spaceflight occur?",
+    "a": 1961,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-124",
+    "q": "In which year was the first iMac released?",
+    "a": 1998,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-125",
+    "q": "In which year did the first iPad Air release?",
+    "a": 2013,
+    "unit": "year"
+  },
+
+  {
+    "id": "DUEL-126",
+    "q": "How many countries are there in the European Union?",
+    "a": 27,
+    "unit": "countries"
+  },
+  {
+    "id": "DUEL-127",
+    "q": "How many official languages does Switzerland have?",
+    "a": 4,
+    "unit": "languages"
+  },
+  {
+    "id": "DUEL-128",
+    "q": "How many players are on a baseball team on the field?",
+    "a": 9,
+    "unit": "players"
+  },
+  {
+    "id": "DUEL-129",
+    "q": "How many Grand Slam tournaments are there in tennis per year?",
+    "a": 4,
+    "unit": "tournaments"
+  },
+  {
+    "id": "DUEL-130",
+    "q": "How many sides does a decagon have?",
+    "a": 10,
+    "unit": "sides"
+  },
+
+  {
+    "id": "DUEL-131",
+    "q": "In which year did the Vietnam War end?",
+    "a": 1975,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-132",
+    "q": "In which year was the World Wide Web invented?",
+    "a": 1989,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-133",
+    "q": "In which year did the first SMS message get sent?",
+    "a": 1992,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-134",
+    "q": "In which year did the first Kindle Fire release?",
+    "a": 2011,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-135",
+    "q": "In which year did the first Tesla Roadster release?",
+    "a": 2008,
+    "unit": "year"
+  },
+
+  {
+    "id": "DUEL-136",
+    "q": "How many seats are in the UK House of Commons?",
+    "a": 650,
+    "unit": "seats"
+  },
+  {
+    "id": "DUEL-137",
+    "q": "How many players are on a rugby league team?",
+    "a": 13,
+    "unit": "players"
+  },
+  {
+    "id": "DUEL-138",
+    "q": "How many keys does a standard numeric keypad have?",
+    "a": 17,
+    "unit": "keys"
+  },
+  {
+    "id": "DUEL-139",
+    "q": "How many countries border France (land borders)?",
+    "a": 8,
+    "unit": "countries"
+  },
+  {
+    "id": "DUEL-140",
+    "q": "How many time zones does Russia span?",
+    "a": 11,
+    "unit": "time zones"
+  },
+
+  {
+    "id": "DUEL-141",
+    "q": "In which year did the Persian Gulf War end?",
+    "a": 1991,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-142",
+    "q": "In which year was the first FIFA World Cup in Asia?",
+    "a": 2002,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-143",
+    "q": "In which year did the first iPod release?",
+    "a": 2001,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-144",
+    "q": "In which year did the first PlayStation 3 release?",
+    "a": 2006,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-145",
+    "q": "In which year did the first SpaceX Falcon Heavy launch?",
+    "a": 2018,
+    "unit": "year"
+  },
+
+  {
+    "id": "DUEL-146",
+    "q": "How many countries are there in Africa?",
+    "a": 54,
+    "unit": "countries"
+  },
+  {
+    "id": "DUEL-147",
+    "q": "How many official languages does South Africa have?",
+    "a": 11,
+    "unit": "languages"
+  },
+  {
+    "id": "DUEL-148",
+    "q": "How many players are on a standard polo team?",
+    "a": 4,
+    "unit": "players"
+  },
+  {
+    "id": "DUEL-149",
+    "q": "How many episodes are in a typical Netflix mini-series (approximate)?",
+    "a": 8,
+    "unit": "episodes"
+  },
+  {
+    "id": "DUEL-150",
+    "q": "How many judges are on the European Court of Justice?",
+    "a": 27,
+    "unit": "judges"
+  },
+
+  {
+    "id": "DUEL-151",
+    "q": "In which year did the Korean War end?",
+    "a": 1953,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-152",
+    "q": "In which year was the first email domain registered?",
+    "a": 1985,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-153",
+    "q": "In which year did the first FIFA World Cup in North America?",
+    "a": 1994,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-154",
+    "q": "In which year did the first iPhone SE release?",
+    "a": 2016,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-155",
+    "q": "In which year did the first Google Chrome version release?",
+    "a": 2008,
+    "unit": "year"
+  },
+
+  {
+    "id": "DUEL-156",
+    "q": "How many US states border Mexico?",
+    "a": 4,
+    "unit": "states"
+  },
+  {
+    "id": "DUEL-157",
+    "q": "How many judges are on the International Criminal Court?",
+    "a": 18,
+    "unit": "judges"
+  },
+  {
+    "id": "DUEL-158",
+    "q": "How many players are on a standard American football team on the field?",
+    "a": 11,
+    "unit": "players"
+  },
+  {
+    "id": "DUEL-159",
+    "q": "How many sides does a dodecagon have?",
+    "a": 12,
+    "unit": "sides"
+  },
+  {
+    "id": "DUEL-160",
+    "q": "How many countries border China?",
+    "a": 14,
+    "unit": "countries"
+  },
+  {
+    "id": "DUEL-161",
+    "q": "In which year did the English Civil War begin?",
+    "a": 1642,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-162",
+    "q": "In which year was the Declaration of Human Rights adopted?",
+    "a": 1948,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-163",
+    "q": "In which year did the first FIFA Women's World Cup take place?",
+    "a": 1991,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-164",
+    "q": "In which year did the first iPhone X release?",
+    "a": 2017,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-165",
+    "q": "In which year did the first modern Olympic Games take place in Asia?",
+    "a": 1964,
+    "unit": "year"
+  },
+
+  {
+    "id": "DUEL-166",
+    "q": "How many countries are there in South America?",
+    "a": 12,
+    "unit": "countries"
+  },
+  {
+    "id": "DUEL-167",
+    "q": "How many official languages does India recognize?",
+    "a": 22,
+    "unit": "languages"
+  },
+  {
+    "id": "DUEL-168",
+    "q": "How many players are on a standard netball team on the court?",
+    "a": 7,
+    "unit": "players"
+  },
+  {
+    "id": "DUEL-169",
+    "q": "How many episodes are in a typical anime season (approximate)?",
+    "a": 12,
+    "unit": "episodes"
+  },
+  {
+    "id": "DUEL-170",
+    "q": "How many judges sit on the German Federal Constitutional Court?",
+    "a": 16,
+    "unit": "judges"
+  },
+
+  {
+    "id": "DUEL-171",
+    "q": "In which year did the War of the Roses begin?",
+    "a": 1455,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-172",
+    "q": "In which year did the first modern census in the US take place?",
+    "a": 1790,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-173",
+    "q": "In which year did the first Olympic Games take place in Australia?",
+    "a": 1956,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-174",
+    "q": "In which year did the first Apple Watch release?",
+    "a": 2015,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-175",
+    "q": "In which year did the first SpaceX Dragon dock with the ISS?",
+    "a": 2012,
+    "unit": "year"
+  },
+
+  {
+    "id": "DUEL-176",
+    "q": "How many countries are there in Central America?",
+    "a": 7,
+    "unit": "countries"
+  },
+  {
+    "id": "DUEL-177",
+    "q": "How many official languages does Belgium have?",
+    "a": 3,
+    "unit": "languages"
+  },
+  {
+    "id": "DUEL-178",
+    "q": "How many players are on a curling team during a match?",
+    "a": 4,
+    "unit": "players"
+  },
+  {
+    "id": "DUEL-179",
+    "q": "How many judges are on the Supreme Court of India?",
+    "a": 34,
+    "unit": "judges"
+  },
+  {
+    "id": "DUEL-180",
+    "q": "How many Grand Prix races were in a typical recent Formula 1 season?",
+    "a": 23,
+    "unit": "races"
+  },
+
+  {
+    "id": "DUEL-181",
+    "q": "In which year did the Spanish Armada sail against England?",
+    "a": 1588,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-182",
+    "q": "In which year did the first Nobel Prizes get awarded?",
+    "a": 1901,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-183",
+    "q": "In which year did the first modern Olympic Games take place in the United States?",
+    "a": 1904,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-184",
+    "q": "In which year did the first PlayStation 4 release?",
+    "a": 2013,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-185",
+    "q": "In which year did the first Mars rover (Sojourner) land?",
+    "a": 1997,
+    "unit": "year"
+  },
+
+  {
+    "id": "DUEL-186",
+    "q": "How many countries border the United States (land borders)?",
+    "a": 2,
+    "unit": "countries"
+  },
+  {
+    "id": "DUEL-187",
+    "q": "How many official languages does Singapore have?",
+    "a": 4,
+    "unit": "languages"
+  },
+  {
+    "id": "DUEL-188",
+    "q": "How many players are on a field hockey team on the field?",
+    "a": 11,
+    "unit": "players"
+  },
+  {
+    "id": "DUEL-189",
+    "q": "How many judges sit on the Constitutional Court of Italy?",
+    "a": 15,
+    "unit": "judges"
+  },
+  {
+    "id": "DUEL-190",
+    "q": "How many episodes are in a typical British TV mini-series (approximate)?",
+    "a": 6,
+    "unit": "episodes"
+  },
+
+  {
+    "id": "DUEL-191",
+    "q": "In which year did the English Bill of Rights get enacted?",
+    "a": 1689,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-192",
+    "q": "In which year did the first Winter Olympic Games take place?",
+    "a": 1924,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-193",
+    "q": "In which year did the first FIFA World Cup take place in the United States?",
+    "a": 1994,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-194",
+    "q": "In which year did the first iPhone 12 release?",
+    "a": 2020,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-195",
+    "q": "In which year did the first reusable SpaceX rocket land successfully?",
+    "a": 2015,
+    "unit": "year"
+  },
+
+  {
+    "id": "DUEL-196",
+    "q": "How many countries are members of NATO (as of recent years)?",
+    "a": 31,
+    "unit": "countries"
+  },
+  {
+    "id": "DUEL-197",
+    "q": "How many official languages does the United Nations have?",
+    "a": 6,
+    "unit": "languages"
+  },
+  {
+    "id": "DUEL-198",
+    "q": "How many players are on a lacrosse team on the field?",
+    "a": 10,
+    "unit": "players"
+  },
+  {
+    "id": "DUEL-199",
+    "q": "How many judges sit on the Supreme Court of Canada?",
+    "a": 9,
+    "unit": "judges"
+  },
+  {
+    "id": "DUEL-200",
+    "q": "How many days are there in 10 years (without leap years)?",
+    "a": 3650,
+    "unit": "days"
+  },
+  {
+    "id": "DUEL-201",
+    "q": "In which year did the Ottoman Empire officially end?",
+    "a": 1922,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-202",
+    "q": "In which year was the first Olympic Games held in London?",
+    "a": 1908,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-203",
+    "q": "In which year did the first successful heart transplant occur?",
+    "a": 1967,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-204",
+    "q": "In which year was the first YouTube video uploaded?",
+    "a": 2005,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-205",
+    "q": "In which year did the first commercial jet flight take place?",
+    "a": 1952,
+    "unit": "year"
+  },
+
+  {
+    "id": "DUEL-206",
+    "q": "How many countries are there in Asia?",
+    "a": 49,
+    "unit": "countries"
+  },
+  {
+    "id": "DUEL-207",
+    "q": "How many official languages does Spain have?",
+    "a": 4,
+    "unit": "languages"
+  },
+  {
+    "id": "DUEL-208",
+    "q": "How many players are on a badminton doubles team?",
+    "a": 2,
+    "unit": "players"
+  },
+  {
+    "id": "DUEL-209",
+    "q": "How many squares are there on a standard Monopoly board (properties only)?",
+    "a": 28,
+    "unit": "properties"
+  },
+  {
+    "id": "DUEL-210",
+    "q": "How many judges sit on the Supreme Court of the United Kingdom?",
+    "a": 12,
+    "unit": "judges"
+  },
+
+  {
+    "id": "DUEL-211",
+    "q": "In which year did the Napoleonic Wars end?",
+    "a": 1815,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-212",
+    "q": "In which year did the first Olympic Games take place in Japan?",
+    "a": 1964,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-213",
+    "q": "In which year did the first successful cloning of a mammal (Dolly the sheep)?",
+    "a": 1996,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-214",
+    "q": "In which year did the first iPhone 5 release?",
+    "a": 2012,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-215",
+    "q": "In which year did the first modern Formula 1 World Championship season begin?",
+    "a": 1950,
+    "unit": "year"
+  },
+
+  {
+    "id": "DUEL-216",
+    "q": "How many countries are there in North America?",
+    "a": 23,
+    "unit": "countries"
+  },
+  {
+    "id": "DUEL-217",
+    "q": "How many official languages does Finland have?",
+    "a": 2,
+    "unit": "languages"
+  },
+  {
+    "id": "DUEL-218",
+    "q": "How many players are on a doubles tennis team?",
+    "a": 2,
+    "unit": "players"
+  },
+  {
+    "id": "DUEL-219",
+    "q": "How many chambers does the US Congress have?",
+    "a": 2,
+    "unit": "chambers"
+  },
+  {
+    "id": "DUEL-220",
+    "q": "How many judges are on the Supreme Court of Australia?",
+    "a": 7,
+    "unit": "judges"
+  },
+
+  {
+    "id": "DUEL-221",
+    "q": "In which year did the first Olympic Games take place in Germany?",
+    "a": 1936,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-222",
+    "q": "In which year did the first FIFA World Cup take place in Brazil?",
+    "a": 1950,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-223",
+    "q": "In which year did the first iPhone 6 release?",
+    "a": 2014,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-224",
+    "q": "In which year did the first FIFA World Cup take place in Russia?",
+    "a": 2018,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-225",
+    "q": "In which year did the first commercial Concorde flight occur?",
+    "a": 1976,
+    "unit": "year"
+  },
+
+  {
+    "id": "DUEL-226",
+    "q": "How many countries are there in Oceania (sovereign states)?",
+    "a": 14,
+    "unit": "countries"
+  },
+  {
+    "id": "DUEL-227",
+    "q": "How many official languages does Ireland have?",
+    "a": 2,
+    "unit": "languages"
+  },
+  {
+    "id": "DUEL-228",
+    "q": "How many players are on a standard curling team?",
+    "a": 4,
+    "unit": "players"
+  },
+  {
+    "id": "DUEL-229",
+    "q": "How many judges sit on the Supreme Court of Japan?",
+    "a": 15,
+    "unit": "judges"
+  },
+  {
+    "id": "DUEL-230",
+    "q": "How many Grand Slam singles matches must a champion win in a 128-player tournament?",
+    "a": 7,
+    "unit": "matches"
+  },
+
+  {
+    "id": "DUEL-231",
+    "q": "In which year did the first Olympic Games take place in China?",
+    "a": 2008,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-232",
+    "q": "In which year did the first FIFA World Cup take place in South Africa?",
+    "a": 2010,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-233",
+    "q": "In which year did the first iPhone 8 release?",
+    "a": 2017,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-234",
+    "q": "In which year did the first Mars rover (Curiosity) land?",
+    "a": 2012,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-235",
+    "q": "In which year did the first FIFA World Cup take place in Qatar?",
+    "a": 2022,
+    "unit": "year"
+  },
+
+  {
+    "id": "DUEL-236",
+    "q": "How many countries are there in Europe?",
+    "a": 44,
+    "unit": "countries"
+  },
+  {
+    "id": "DUEL-237",
+    "q": "How many official languages does China have?",
+    "a": 1,
+    "unit": "languages"
+  },
+  {
+    "id": "DUEL-238",
+    "q": "How many players are on a standard baseball team roster (active roster, typical)?",
+    "a": 26,
+    "unit": "players"
+  },
+  {
+    "id": "DUEL-239",
+    "q": "How many judges sit on the Supreme Court of Brazil?",
+    "a": 11,
+    "unit": "judges"
+  },
+  {
+    "id": "DUEL-240",
+    "q": "How many laps are there in a standard Olympic 10,000m race (400m track)?",
+    "a": 25,
+    "unit": "laps"
+  },
+  {
+    "id": "DUEL-241",
+    "q": "In which year did the first Olympic Games take place in Mexico?",
+    "a": 1968,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-242",
+    "q": "In which year did the first FIFA World Cup take place in France?",
+    "a": 1938,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-243",
+    "q": "In which year did the first iPhone 11 release?",
+    "a": 2019,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-244",
+    "q": "In which year did the first successful satellite (Sputnik 1) launch?",
+    "a": 1957,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-245",
+    "q": "In which year did the first commercial airline flight occur?",
+    "a": 1914,
+    "unit": "year"
+  },
+
+  {
+    "id": "DUEL-246",
+    "q": "How many countries are there in the Middle East (commonly recognized)?",
+    "a": 17,
+    "unit": "countries"
+  },
+  {
+    "id": "DUEL-247",
+    "q": "How many official languages does Pakistan have?",
+    "a": 2,
+    "unit": "languages"
+  },
+  {
+    "id": "DUEL-248",
+    "q": "How many players are on a standard handball team roster (match squad)?",
+    "a": 14,
+    "unit": "players"
+  },
+  {
+    "id": "DUEL-249",
+    "q": "How many judges sit on the Supreme Court of Spain?",
+    "a": 12,
+    "unit": "judges"
+  },
+  {
+    "id": "DUEL-250",
+    "q": "How many holes are played in a standard round of golf?",
+    "a": 18,
+    "unit": "holes"
+  },
+
+  {
+    "id": "DUEL-251",
+    "q": "In which year did the American Revolutionary War begin?",
+    "a": 1775,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-252",
+    "q": "In which year did the first Olympic Games take place in South Korea?",
+    "a": 1988,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-253",
+    "q": "In which year did the first modern computer (ENIAC) get unveiled?",
+    "a": 1946,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-254",
+    "q": "In which year did the first iPhone XR release?",
+    "a": 2018,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-255",
+    "q": "In which year did the first human step onto the International Space Station?",
+    "a": 2000,
+    "unit": "year"
+  },
+
+  {
+    "id": "DUEL-256",
+    "q": "How many countries are there in Southeast Asia?",
+    "a": 11,
+    "unit": "countries"
+  },
+  {
+    "id": "DUEL-257",
+    "q": "How many official languages does Nigeria have (federal level)?",
+    "a": 1,
+    "unit": "languages"
+  },
+  {
+    "id": "DUEL-258",
+    "q": "How many players are on a standard basketball team roster (NBA maximum)?",
+    "a": 15,
+    "unit": "players"
+  },
+  {
+    "id": "DUEL-259",
+    "q": "How many judges sit on the Supreme Court of South Africa?",
+    "a": 11,
+    "unit": "judges"
+  },
+  {
+    "id": "DUEL-260",
+    "q": "How many overs are there in a standard T20 cricket match per side?",
+    "a": 20,
+    "unit": "overs"
+  },
+
+  {
+    "id": "DUEL-261",
+    "q": "In which year did the Bolshevik Revolution take place?",
+    "a": 1917,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-262",
+    "q": "In which year did the first Olympic Games take place in Canada?",
+    "a": 1976,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-263",
+    "q": "In which year did the first PlayStation 5 release?",
+    "a": 2020,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-264",
+    "q": "In which year did the first SpaceX crewed mission launch?",
+    "a": 2020,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-265",
+    "q": "In which year did the first modern Olympic Games take place in Greece?",
+    "a": 1896,
+    "unit": "year"
+  },
+
+  {
+    "id": "DUEL-266",
+    "q": "How many countries are there in the Caribbean (sovereign states)?",
+    "a": 13,
+    "unit": "countries"
+  },
+  {
+    "id": "DUEL-267",
+    "q": "How many official languages does Afghanistan recognize?",
+    "a": 2,
+    "unit": "languages"
+  },
+  {
+    "id": "DUEL-268",
+    "q": "How many players are on a standard futsal team on the court?",
+    "a": 5,
+    "unit": "players"
+  },
+  {
+    "id": "DUEL-269",
+    "q": "How many judges sit on the Supreme Court of Mexico?",
+    "a": 11,
+    "unit": "judges"
+  },
+  {
+    "id": "DUEL-270",
+    "q": "How many sets must be won in a best-of-five tennis match?",
+    "a": 3,
+    "unit": "sets"
+  },
+
+  {
+    "id": "DUEL-271",
+    "q": "In which year did the American Civil Rights Act get signed?",
+    "a": 1964,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-272",
+    "q": "In which year did the first Olympic Games take place in Spain?",
+    "a": 1992,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-273",
+    "q": "In which year did the first iPhone 13 release?",
+    "a": 2021,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-274",
+    "q": "In which year did the first human genome get sequenced (completion)?",
+    "a": 2003,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-275",
+    "q": "In which year did the first FIFA World Cup take place in Italy?",
+    "a": 1934,
+    "unit": "year"
+  },
+
+  {
+    "id": "DUEL-276",
+    "q": "How many countries are there in the Balkans (commonly recognized)?",
+    "a": 11,
+    "unit": "countries"
+  },
+  {
+    "id": "DUEL-277",
+    "q": "How many official languages does the Philippines have?",
+    "a": 2,
+    "unit": "languages"
+  },
+  {
+    "id": "DUEL-278",
+    "q": "How many players are on a standard baseball team lineup?",
+    "a": 9,
+    "unit": "players"
+  },
+  {
+    "id": "DUEL-279",
+    "q": "How many judges sit on the Supreme Court of Argentina?",
+    "a": 5,
+    "unit": "judges"
+  },
+  {
+    "id": "DUEL-280",
+    "q": "How many points are needed to win a standard volleyball set (minimum)?",
+    "a": 25,
+    "unit": "points"
+  },
+  {
+    "id": "DUEL-281",
+    "q": "In which year did the Hundred Years' War begin?",
+    "a": 1337,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-282",
+    "q": "In which year did the first Olympic Games take place in Italy (modern era)?",
+    "a": 1960,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-283",
+    "q": "In which year did the first email spam message get sent?",
+    "a": 1978,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-284",
+    "q": "In which year did the first iPhone 14 release?",
+    "a": 2022,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-285",
+    "q": "In which year did the first FIFA World Cup take place in England?",
+    "a": 1966,
+    "unit": "year"
+  },
+
+  {
+    "id": "DUEL-286",
+    "q": "How many countries are there in Scandinavia (commonly recognized)?",
+    "a": 3,
+    "unit": "countries"
+  },
+  {
+    "id": "DUEL-287",
+    "q": "How many official languages does Israel have?",
+    "a": 2,
+    "unit": "languages"
+  },
+  {
+    "id": "DUEL-288",
+    "q": "How many players are on a standard rugby sevens team on the field?",
+    "a": 7,
+    "unit": "players"
+  },
+  {
+    "id": "DUEL-289",
+    "q": "How many judges sit on the Supreme Court of Germany?",
+    "a": 16,
+    "unit": "judges"
+  },
+  {
+    "id": "DUEL-290",
+    "q": "How many periods are in a standard ice hockey game?",
+    "a": 3,
+    "unit": "periods"
+  },
+
+  {
+    "id": "DUEL-291",
+    "q": "In which year did the First World War end?",
+    "a": 1918,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-292",
+    "q": "In which year did the first Olympic Games take place in Brazil?",
+    "a": 2016,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-293",
+    "q": "In which year did the first iPhone 3G release?",
+    "a": 2008,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-294",
+    "q": "In which year did the first commercial nuclear power plant open?",
+    "a": 1954,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-295",
+    "q": "In which year did the first FIFA World Cup take place in Germany?",
+    "a": 1974,
+    "unit": "year"
+  },
+
+  {
+    "id": "DUEL-296",
+    "q": "How many countries are there in the Caucasus region (commonly recognized)?",
+    "a": 3,
+    "unit": "countries"
+  },
+  {
+    "id": "DUEL-297",
+    "q": "How many official languages does Iraq recognize?",
+    "a": 2,
+    "unit": "languages"
+  },
+  {
+    "id": "DUEL-298",
+    "q": "How many players are on a standard indoor volleyball team on the court?",
+    "a": 6,
+    "unit": "players"
+  },
+  {
+    "id": "DUEL-299",
+    "q": "How many judges sit on the Supreme Court of India?",
+    "a": 34,
+    "unit": "judges"
+  },
+  {
+    "id": "DUEL-300",
+    "q": "How many innings are in a standard cricket Test match (maximum)?",
+    "a": 4,
+    "unit": "innings"
+  },
+
+  {
+    "id": "DUEL-301",
+    "q": "In which year did the French Revolution end (Reign of Terror)?",
+    "a": 1794,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-302",
+    "q": "In which year did the first Olympic Games take place in Norway?",
+    "a": 1952,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-303",
+    "q": "In which year did the first iPhone 4 release?",
+    "a": 2010,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-304",
+    "q": "In which year did the first artificial satellite (Explorer 1) launch in the US?",
+    "a": 1958,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-305",
+    "q": "In which year did the first FIFA World Cup take place in Argentina?",
+    "a": 1978,
+    "unit": "year"
+  },
+
+  {
+    "id": "DUEL-306",
+    "q": "How many countries are there in the Baltic region (commonly recognized)?",
+    "a": 3,
+    "unit": "countries"
+  },
+  {
+    "id": "DUEL-307",
+    "q": "How many official languages does Ethiopia recognize?",
+    "a": 1,
+    "unit": "languages"
+  },
+  {
+    "id": "DUEL-308",
+    "q": "How many players are on a standard beach volleyball team?",
+    "a": 2,
+    "unit": "players"
+  },
+  {
+    "id": "DUEL-309",
+    "q": "How many judges sit on the Supreme Court of Italy?",
+    "a": 15,
+    "unit": "judges"
+  },
+  {
+    "id": "DUEL-310",
+    "q": "How many sets are played in a standard best-of-three tennis match?",
+    "a": 3,
+    "unit": "sets"
+  },
+
+  {
+    "id": "DUEL-311",
+    "q": "In which year did the Russian Revolution take place?",
+    "a": 1917,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-312",
+    "q": "In which year did the first Olympic Games take place in Finland?",
+    "a": 1952,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-313",
+    "q": "In which year did the first iPhone 7 release?",
+    "a": 2016,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-314",
+    "q": "In which year did the first human walk in space?",
+    "a": 1965,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-315",
+    "q": "In which year did the first FIFA World Cup take place in Spain?",
+    "a": 1982,
+    "unit": "year"
+  },
+
+  {
+    "id": "DUEL-316",
+    "q": "How many countries are there in Southern Africa (commonly recognized)?",
+    "a": 5,
+    "unit": "countries"
+  },
+  {
+    "id": "DUEL-317",
+    "q": "How many official languages does Kenya recognize?",
+    "a": 2,
+    "unit": "languages"
+  },
+  {
+    "id": "DUEL-318",
+    "q": "How many players are on a standard American football team roster (maximum active)?",
+    "a": 53,
+    "unit": "players"
+  },
+  {
+    "id": "DUEL-319",
+    "q": "How many judges sit on the Supreme Court of France?",
+    "a": 9,
+    "unit": "judges"
+  },
+  {
+    "id": "DUEL-320",
+    "q": "How many laps are in a standard 5,000m race on a 400m track?",
+    "a": 12,
+    "unit": "laps"
+  },
+  {
+    "id": "DUEL-321",
+    "q": "In which year did the American War of Independence end?",
+    "a": 1783,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-322",
+    "q": "In which year did the first Olympic Games take place in Belgium?",
+    "a": 1920,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-323",
+    "q": "In which year did the first iPhone 15 release?",
+    "a": 2023,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-324",
+    "q": "In which year did the first human orbit Earth?",
+    "a": 1961,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-325",
+    "q": "In which year did the first FIFA World Cup take place in Chile?",
+    "a": 1962,
+    "unit": "year"
+  },
+
+  {
+    "id": "DUEL-326",
+    "q": "How many countries are there in Eastern Europe (commonly recognized)?",
+    "a": 10,
+    "unit": "countries"
+  },
+  {
+    "id": "DUEL-327",
+    "q": "How many official languages does Morocco recognize?",
+    "a": 2,
+    "unit": "languages"
+  },
+  {
+    "id": "DUEL-328",
+    "q": "How many players are on a standard baseball team roster in MLB playoffs?",
+    "a": 26,
+    "unit": "players"
+  },
+  {
+    "id": "DUEL-329",
+    "q": "How many judges sit on the Supreme Court of the Netherlands?",
+    "a": 5,
+    "unit": "judges"
+  },
+  {
+    "id": "DUEL-330",
+    "q": "How many rounds are there in a professional boxing championship fight?",
+    "a": 12,
+    "unit": "rounds"
+  },
+
+  {
+    "id": "DUEL-331",
+    "q": "In which year did the Treaty of Versailles get signed?",
+    "a": 1919,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-332",
+    "q": "In which year did the first Olympic Games take place in Switzerland?",
+    "a": 1928,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-333",
+    "q": "In which year did the first iPhone SE (second generation) release?",
+    "a": 2020,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-334",
+    "q": "In which year did the first permanent human presence begin on the ISS?",
+    "a": 2000,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-335",
+    "q": "In which year did the first FIFA World Cup take place in Sweden?",
+    "a": 1958,
+    "unit": "year"
+  },
+
+  {
+    "id": "DUEL-336",
+    "q": "How many countries are there in Western Europe (commonly recognized)?",
+    "a": 9,
+    "unit": "countries"
+  },
+  {
+    "id": "DUEL-337",
+    "q": "How many official languages does Cameroon recognize?",
+    "a": 2,
+    "unit": "languages"
+  },
+  {
+    "id": "DUEL-338",
+    "q": "How many players are on a standard water polo team roster (match squad)?",
+    "a": 13,
+    "unit": "players"
+  },
+  {
+    "id": "DUEL-339",
+    "q": "How many judges sit on the Supreme Court of Turkey?",
+    "a": 15,
+    "unit": "judges"
+  },
+  {
+    "id": "DUEL-340",
+    "q": "How many sets are required to win a men's Grand Slam tennis final?",
+    "a": 3,
+    "unit": "sets"
+  },
+
+  {
+    "id": "DUEL-341",
+    "q": "In which year did the first modern Olympic Games take place in the USA?",
+    "a": 1904,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-342",
+    "q": "In which year did the first Olympic Games take place in the Netherlands?",
+    "a": 1928,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-343",
+    "q": "In which year did the first iPhone 6s release?",
+    "a": 2015,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-344",
+    "q": "In which year did the first successful soft landing on the Moon occur?",
+    "a": 1966,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-345",
+    "q": "In which year did the first FIFA World Cup take place in Mexico?",
+    "a": 1970,
+    "unit": "year"
+  },
+
+  {
+    "id": "DUEL-346",
+    "q": "How many countries are there in Northern Europe (commonly recognized)?",
+    "a": 5,
+    "unit": "countries"
+  },
+  {
+    "id": "DUEL-347",
+    "q": "How many official languages does Algeria recognize?",
+    "a": 2,
+    "unit": "languages"
+  },
+  {
+    "id": "DUEL-348",
+    "q": "How many players are on a standard hockey team roster (NHL maximum)?",
+    "a": 23,
+    "unit": "players"
+  },
+  {
+    "id": "DUEL-349",
+    "q": "How many judges sit on the Supreme Court of South Korea?",
+    "a": 14,
+    "unit": "judges"
+  },
+  {
+    "id": "DUEL-350",
+    "q": "How many laps are in a standard 1,500m race on a 400m track?",
+    "a": 3,
+    "unit": "laps"
+  },
+
+  {
+    "id": "DUEL-351",
+    "q": "In which year did the Berlin Airlift begin?",
+    "a": 1948,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-352",
+    "q": "In which year did the first Olympic Games take place in Australia?",
+    "a": 1956,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-353",
+    "q": "In which year did the first iPhone 12 Pro release?",
+    "a": 2020,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-354",
+    "q": "In which year did the first private spacecraft dock with the ISS?",
+    "a": 2012,
+    "unit": "year"
+  },
+  {
+    "id": "DUEL-355",
+    "q": "In which year did the first FIFA World Cup take place in Uruguay?",
+    "a": 1930,
+    "unit": "year"
+  },
+
+  {
+    "id": "DUEL-356",
+    "q": "How many countries are there in Central Europe (commonly recognized)?",
+    "a": 7,
+    "unit": "countries"
+  },
+  {
+    "id": "DUEL-357",
+    "q": "How many official languages does Tunisia recognize?",
+    "a": 1,
+    "unit": "languages"
+  },
+  {
+    "id": "DUEL-358",
+    "q": "How many players are on a standard basketball team roster (FIBA maximum)?",
+    "a": 12,
+    "unit": "players"
+  },
+  {
+    "id": "DUEL-359",
+    "q": "How many judges sit on the Supreme Court of Pakistan?",
+    "a": 17,
+    "unit": "judges"
+  },
+  {
+    "id": "DUEL-360",
+    "q": "How many sets are required to win a women's Grand Slam tennis final?",
+    "a": 2,
+    "unit": "sets"
+  }
+]
