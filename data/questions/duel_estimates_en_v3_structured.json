@@ -7198,5 +7198,205 @@
     "unit": "kilograms",
     "category": "technology",
     "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-901",
+    "q": "How many elements are there in the periodic table?",
+    "a": 118,
+    "unit": "elements",
+    "category": "science",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-902",
+    "q": "How many strings does a standard ukulele have?",
+    "a": 4,
+    "unit": "strings",
+    "category": "popculture",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-903",
+    "q": "How many bits are there in one byte?",
+    "a": 8,
+    "unit": "bits",
+    "category": "technology",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-904",
+    "q": "How many keys does a standard computer keyboard have (US layout)?",
+    "a": 104,
+    "unit": "keys",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-905",
+    "q": "How many players are on the court in a standard basketball game at one time?",
+    "a": 10,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-906",
+    "q": "How many chromosomes does a human cell contain?",
+    "a": 46,
+    "unit": "chromosomes",
+    "category": "science",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-907",
+    "q": "How many books are there in the Old Testament?",
+    "a": 39,
+    "unit": "books",
+    "category": "general",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-908",
+    "q": "How many seasons does the TV series 'Game of Thrones' have?",
+    "a": 8,
+    "unit": "seasons",
+    "category": "popculture",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-909",
+    "q": "How many cores are there in a quad-core processor?",
+    "a": 4,
+    "unit": "cores",
+    "category": "technology",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-910",
+    "q": "How many pockets are there in a standard billiard table?",
+    "a": 6,
+    "unit": "pockets",
+    "category": "sport",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-911",
+    "q": "How many teeth does a shark typically have at one time?",
+    "a": 300,
+    "unit": "teeth",
+    "category": "science",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-912",
+    "q": "How many Academy Awards has the film 'Ben-Hur' won?",
+    "a": 11,
+    "unit": "awards",
+    "category": "popculture",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-913",
+    "q": "How many moons does Saturn have?",
+    "a": 274,
+    "unit": "moons",
+    "category": "science",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-914",
+    "q": "How many USB pins are in a standard USB-A connector?",
+    "a": 4,
+    "unit": "pins",
+    "category": "technology",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-915",
+    "q": "How many countries are permanent members of the UN Security Council?",
+    "a": 5,
+    "unit": "countries",
+    "category": "institutions",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-916",
+    "q": "How many players are on a standard volleyball team on the court?",
+    "a": 6,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-917",
+    "q": "How many ribs does a human have in total?",
+    "a": 24,
+    "unit": "ribs",
+    "category": "science",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-918",
+    "q": "How many hours long is the movie 'The Irishman' (rounded to whole hours)?",
+    "a": 3,
+    "unit": "hours",
+    "category": "popculture",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-919",
+    "q": "How many lanes does an Olympic swimming pool have?",
+    "a": 8,
+    "unit": "lanes",
+    "category": "sport",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-920",
+    "q": "How many gigabytes are there in one terabyte (decimal)?",
+    "a": 1000,
+    "unit": "gigabytes",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-921",
+    "q": "How many bones are in an adult human body?",
+    "a": 206,
+    "unit": "bones",
+    "category": "science",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-922",
+    "q": "How many films are there in the 'The Matrix' series?",
+    "a": 4,
+    "unit": "films",
+    "category": "popculture",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-923",
+    "q": "How many meters long is an Olympic swimming pool?",
+    "a": 50,
+    "unit": "meters",
+    "category": "sport",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-924",
+    "q": "How many bits are in a 32-bit processor?",
+    "a": 32,
+    "unit": "bits",
+    "category": "technology",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-925",
+    "q": "How many heart chambers does a cockroach have?",
+    "a": 13,
+    "unit": "hearts",
+    "category": "science",
+    "difficulty": "medium"
   }
 ]
