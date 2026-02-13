@@ -1,0 +1,711 @@
+[
+  {
+    "id": "DUEL-EN-001",
+    "q": "About how many kilometers is the average distance from Earth to the Moon?",
+    "a": 384000,
+    "unit": "km",
+    "tolerance": 25000
+  },
+  {
+    "id": "DUEL-EN-002",
+    "q": "About how many kilometers is Earth's circumference at the equator?",
+    "a": 40100,
+    "unit": "km",
+    "tolerance": 800
+  },
+  {
+    "id": "DUEL-EN-003",
+    "q": "About how many meters tall is Mount Everest? (rounded)",
+    "a": 8850,
+    "unit": "m",
+    "tolerance": 150
+  },
+  {
+    "id": "DUEL-EN-004",
+    "q": "About how many meters deep is the Mariana Trench at its deepest point? (rounded)",
+    "a": 11000,
+    "unit": "m",
+    "tolerance": 800
+  },
+  {
+    "id": "DUEL-EN-005",
+    "q": "About how many kilometers long is the Danube River? (rounded)",
+    "a": 2850,
+    "unit": "km",
+    "tolerance": 200
+  },
+  {
+    "id": "DUEL-EN-006",
+    "q": "About how many kilometers long is the Amazon River? (rounded)",
+    "a": 6400,
+    "unit": "km",
+    "tolerance": 600
+  },
+  {
+    "id": "DUEL-EN-007",
+    "q": "About how many kilometers long is the Nile River? (rounded)",
+    "a": 6650,
+    "unit": "km",
+    "tolerance": 500
+  },
+  {
+    "id": "DUEL-EN-008",
+    "q": "About how many kilometers long is the Great Barrier Reef? (rounded)",
+    "a": 2300,
+    "unit": "km",
+    "tolerance": 250
+  },
+  {
+    "id": "DUEL-EN-009",
+    "q": "About how many kilometers is Earth's average radius? (rounded)",
+    "a": 6370,
+    "unit": "km",
+    "tolerance": 200
+  },
+  {
+    "id": "DUEL-EN-010",
+    "q": "About how many kilometers is Earth's diameter? (rounded)",
+    "a": 12700,
+    "unit": "km",
+    "tolerance": 500
+  },
+
+  {
+    "id": "DUEL-EN-011",
+    "q": "At sea level, water boils at about how many degrees Celsius?",
+    "a": 100,
+    "unit": "°C",
+    "tolerance": 2
+  },
+  {
+    "id": "DUEL-EN-012",
+    "q": "Water freezes at about how many degrees Celsius?",
+    "a": 0,
+    "unit": "°C",
+    "tolerance": 2
+  },
+  {
+    "id": "DUEL-EN-013",
+    "q": "About how many kilometers per second is the speed of light? (rounded)",
+    "a": 300000,
+    "unit": "km/s",
+    "tolerance": 15000
+  },
+  {
+    "id": "DUEL-EN-014",
+    "q": "A non-leap year has about how many days?",
+    "a": 365,
+    "unit": "days",
+    "tolerance": 0
+  },
+  {
+    "id": "DUEL-EN-015",
+    "q": "How many hours are in a day?",
+    "a": 24,
+    "unit": "hours",
+    "tolerance": 0
+  },
+  {
+    "id": "DUEL-EN-016",
+    "q": "How many minutes are in an hour?",
+    "a": 60,
+    "unit": "minutes",
+    "tolerance": 0
+  },
+  {
+    "id": "DUEL-EN-017",
+    "q": "How many seconds are in a minute?",
+    "a": 60,
+    "unit": "seconds",
+    "tolerance": 0
+  },
+  {
+    "id": "DUEL-EN-018",
+    "q": "How many seconds are in an hour?",
+    "a": 3600,
+    "unit": "seconds",
+    "tolerance": 0
+  },
+  {
+    "id": "DUEL-EN-019",
+    "q": "How many minutes are in a day?",
+    "a": 1440,
+    "unit": "minutes",
+    "tolerance": 0
+  },
+  {
+    "id": "DUEL-EN-020",
+    "q": "How many seconds are in a day?",
+    "a": 86400,
+    "unit": "seconds",
+    "tolerance": 0
+  },
+
+  {
+    "id": "DUEL-EN-021",
+    "q": "About how many bones are in the adult human body? (rounded)",
+    "a": 210,
+    "unit": "bones",
+    "tolerance": 15
+  },
+  {
+    "id": "DUEL-EN-022",
+    "q": "How many teeth does an adult typically have (including wisdom teeth)?",
+    "a": 32,
+    "unit": "teeth",
+    "tolerance": 2
+  },
+  {
+    "id": "DUEL-EN-023",
+    "q": "About how many liters of blood are in an adult human body?",
+    "a": 5,
+    "unit": "liters",
+    "tolerance": 1
+  },
+  {
+    "id": "DUEL-EN-024",
+    "q": "A typical human body temperature is about how many degrees Celsius?",
+    "a": 37,
+    "unit": "°C",
+    "tolerance": 1
+  },
+  {
+    "id": "DUEL-EN-025",
+    "q": "A typical resting heart rate is about how many beats per minute?",
+    "a": 70,
+    "unit": "bpm",
+    "tolerance": 20
+  },
+  {
+    "id": "DUEL-EN-026",
+    "q": "A marathon is about how many meters? (rounded)",
+    "a": 42200,
+    "unit": "m",
+    "tolerance": 400
+  },
+  {
+    "id": "DUEL-EN-027",
+    "q": "About how many centimeters tall is an average adult? (rounded)",
+    "a": 170,
+    "unit": "cm",
+    "tolerance": 15
+  },
+  {
+    "id": "DUEL-EN-028",
+    "q": "About how many kilograms does an average house cat weigh?",
+    "a": 4,
+    "unit": "kg",
+    "tolerance": 2
+  },
+  {
+    "id": "DUEL-EN-029",
+    "q": "A basketball rim is about how many centimeters high from the floor?",
+    "a": 305,
+    "unit": "cm",
+    "tolerance": 5
+  },
+  {
+    "id": "DUEL-EN-030",
+    "q": "A standard doorway is about how many centimeters tall? (rounded)",
+    "a": 200,
+    "unit": "cm",
+    "tolerance": 20
+  },
+
+  {
+    "id": "DUEL-EN-031",
+    "q": "About how many kilometers long is the Suez Canal? (rounded)",
+    "a": 190,
+    "unit": "km",
+    "tolerance": 20
+  },
+  {
+    "id": "DUEL-EN-032",
+    "q": "About how many kilometers long is the Panama Canal? (rounded)",
+    "a": 80,
+    "unit": "km",
+    "tolerance": 15
+  },
+  {
+    "id": "DUEL-EN-033",
+    "q": "About how many kilometers per hour is the speed of sound in air? (rounded)",
+    "a": 1230,
+    "unit": "km/h",
+    "tolerance": 200
+  },
+  {
+    "id": "DUEL-EN-034",
+    "q": "Absolute zero is about how many degrees Celsius? (rounded)",
+    "a": -270,
+    "unit": "°C",
+    "tolerance": 10
+  },
+  {
+    "id": "DUEL-EN-035",
+    "q": "Sea-level air pressure is about how many hPa? (rounded)",
+    "a": 1010,
+    "unit": "hPa",
+    "tolerance": 40
+  },
+  {
+    "id": "DUEL-EN-036",
+    "q": "How many degrees are in a full circle?",
+    "a": 360,
+    "unit": "degrees",
+    "tolerance": 0
+  },
+  {
+    "id": "DUEL-EN-037",
+    "q": "How many degrees are in a right angle?",
+    "a": 90,
+    "unit": "degrees",
+    "tolerance": 0
+  },
+  {
+    "id": "DUEL-EN-038",
+    "q": "How many liters are in one cubic meter?",
+    "a": 1000,
+    "unit": "liters",
+    "tolerance": 0
+  },
+  {
+    "id": "DUEL-EN-039",
+    "q": "How many grams are in one kilogram?",
+    "a": 1000,
+    "unit": "g",
+    "tolerance": 0
+  },
+  {
+    "id": "DUEL-EN-040",
+    "q": "How many milliliters are in one liter?",
+    "a": 1000,
+    "unit": "ml",
+    "tolerance": 0
+  },
+
+  {
+    "id": "DUEL-EN-041",
+    "q": "One mile is about how many meters? (rounded)",
+    "a": 1610,
+    "unit": "m",
+    "tolerance": 60
+  },
+  {
+    "id": "DUEL-EN-042",
+    "q": "How many millimeters are in one meter?",
+    "a": 1000,
+    "unit": "mm",
+    "tolerance": 0
+  },
+  {
+    "id": "DUEL-EN-043",
+    "q": "A soccer match (regular time) lasts about how many minutes?",
+    "a": 90,
+    "unit": "minutes",
+    "tolerance": 0
+  },
+  {
+    "id": "DUEL-EN-044",
+    "q": "How many players are on the field for one soccer team?",
+    "a": 11,
+    "unit": "players",
+    "tolerance": 0
+  },
+  {
+    "id": "DUEL-EN-045",
+    "q": "A standard piano has about how many keys?",
+    "a": 88,
+    "unit": "keys",
+    "tolerance": 2
+  },
+  {
+    "id": "DUEL-EN-046",
+    "q": "A standard guitar has how many strings?",
+    "a": 6,
+    "unit": "strings",
+    "tolerance": 0
+  },
+  {
+    "id": "DUEL-EN-047",
+    "q": "A ping-pong ball is about how many centimeters in diameter? (rounded)",
+    "a": 4,
+    "unit": "cm",
+    "tolerance": 1
+  },
+  {
+    "id": "DUEL-EN-048",
+    "q": "A tennis ball is about how many centimeters in diameter? (rounded)",
+    "a": 7,
+    "unit": "cm",
+    "tolerance": 2
+  },
+  {
+    "id": "DUEL-EN-049",
+    "q": "A basketball is about how many centimeters in diameter? (rounded)",
+    "a": 24,
+    "unit": "cm",
+    "tolerance": 4
+  },
+  {
+    "id": "DUEL-EN-050",
+    "q": "How many degrees Fahrenheit is water's freezing point? (rounded)",
+    "a": 32,
+    "unit": "°F",
+    "tolerance": 2
+  },
+
+  {
+    "id": "DUEL-EN-051",
+    "q": "How many degrees Fahrenheit is water's boiling point (sea level)? (rounded)",
+    "a": 212,
+    "unit": "°F",
+    "tolerance": 3
+  },
+  {
+    "id": "DUEL-EN-052",
+    "q": "A typical commercial airplane cruises at about how many km/h? (rounded)",
+    "a": 900,
+    "unit": "km/h",
+    "tolerance": 150
+  },
+  {
+    "id": "DUEL-EN-053",
+    "q": "A modern high-speed train can reach about how many km/h? (rounded)",
+    "a": 300,
+    "unit": "km/h",
+    "tolerance": 80
+  },
+  {
+    "id": "DUEL-EN-054",
+    "q": "A common city speed limit is about how many km/h? (rounded)",
+    "a": 50,
+    "unit": "km/h",
+    "tolerance": 10
+  },
+  {
+    "id": "DUEL-EN-055",
+    "q": "A common highway speed limit is about how many km/h? (rounded)",
+    "a": 120,
+    "unit": "km/h",
+    "tolerance": 20
+  },
+  {
+    "id": "DUEL-EN-056",
+    "q": "About how many meters tall is the Eiffel Tower? (rounded)",
+    "a": 320,
+    "unit": "m",
+    "tolerance": 30
+  },
+  {
+    "id": "DUEL-EN-057",
+    "q": "About how many meters tall is Big Ben (Elizabeth Tower)? (rounded)",
+    "a": 100,
+    "unit": "m",
+    "tolerance": 15
+  },
+  {
+    "id": "DUEL-EN-058",
+    "q": "About how many meters tall is the Great Pyramid of Giza (original)? (rounded)",
+    "a": 150,
+    "unit": "m",
+    "tolerance": 20
+  },
+  {
+    "id": "DUEL-EN-059",
+    "q": "About how many meters long was the Titanic? (rounded)",
+    "a": 270,
+    "unit": "m",
+    "tolerance": 30
+  },
+  {
+    "id": "DUEL-EN-060",
+    "q": "The Great Wall of China is about how many kilometers long? (rounded)",
+    "a": 21000,
+    "unit": "km",
+    "tolerance": 5000
+  },
+
+  {
+    "id": "DUEL-EN-061",
+    "q": "A common daily step goal is about how many steps?",
+    "a": 10000,
+    "unit": "steps",
+    "tolerance": 3000
+  },
+  {
+    "id": "DUEL-EN-062",
+    "q": "A typical adult step length is about how many centimeters? (rounded)",
+    "a": 75,
+    "unit": "cm",
+    "tolerance": 25
+  },
+  {
+    "id": "DUEL-EN-063",
+    "q": "An espresso is about how many milliliters? (rounded)",
+    "a": 30,
+    "unit": "ml",
+    "tolerance": 20
+  },
+  {
+    "id": "DUEL-EN-064",
+    "q": "One tablespoon is about how many milliliters? (rounded)",
+    "a": 15,
+    "unit": "ml",
+    "tolerance": 8
+  },
+  {
+    "id": "DUEL-EN-065",
+    "q": "One teaspoon is about how many milliliters? (rounded)",
+    "a": 5,
+    "unit": "ml",
+    "tolerance": 4
+  },
+  {
+    "id": "DUEL-EN-066",
+    "q": "A typical shower lasts about how many minutes? (rounded)",
+    "a": 8,
+    "unit": "minutes",
+    "tolerance": 6
+  },
+  {
+    "id": "DUEL-EN-067",
+    "q": "A typical shower uses about how many liters per minute? (rounded)",
+    "a": 10,
+    "unit": "L/min",
+    "tolerance": 6
+  },
+  {
+    "id": "DUEL-EN-068",
+    "q": "A toilet flush uses about how many liters? (rounded)",
+    "a": 6,
+    "unit": "liters",
+    "tolerance": 4
+  },
+  {
+    "id": "DUEL-EN-069",
+    "q": "A typical washing machine cycle lasts about how many minutes? (rounded)",
+    "a": 90,
+    "unit": "minutes",
+    "tolerance": 40
+  },
+  {
+    "id": "DUEL-EN-070",
+    "q": "Mars can be as close as about how many kilometers from Earth? (rounded)",
+    "a": 55000000,
+    "unit": "km",
+    "tolerance": 20000000
+  },
+
+  {
+    "id": "DUEL-EN-071",
+    "q": "How many strings does a standard violin have?",
+    "a": 4,
+    "unit": "strings",
+    "tolerance": 0
+  },
+  {
+    "id": "DUEL-EN-072",
+    "q": "How many holes are in a standard golf course?",
+    "a": 18,
+    "unit": "holes",
+    "tolerance": 0
+  },
+  {
+    "id": "DUEL-EN-073",
+    "q": "How many squares are on a standard chessboard?",
+    "a": 64,
+    "unit": "squares",
+    "tolerance": 0
+  },
+  {
+    "id": "DUEL-EN-074",
+    "q": "How many faces does a standard die have?",
+    "a": 6,
+    "unit": "faces",
+    "tolerance": 0
+  },
+  {
+    "id": "DUEL-EN-075",
+    "q": "How many seconds are in 10 minutes?",
+    "a": 600,
+    "unit": "seconds",
+    "tolerance": 0
+  },
+  {
+    "id": "DUEL-EN-076",
+    "q": "How many minutes are in 3 hours?",
+    "a": 180,
+    "unit": "minutes",
+    "tolerance": 0
+  },
+  {
+    "id": "DUEL-EN-077",
+    "q": "How many months are in 5 years?",
+    "a": 60,
+    "unit": "months",
+    "tolerance": 0
+  },
+  {
+    "id": "DUEL-EN-078",
+    "q": "How many centimeters are in 2 meters?",
+    "a": 200,
+    "unit": "cm",
+    "tolerance": 0
+  },
+  {
+    "id": "DUEL-EN-079",
+    "q": "How many millimeters are in 10 centimeters?",
+    "a": 100,
+    "unit": "mm",
+    "tolerance": 0
+  },
+  {
+    "id": "DUEL-EN-080",
+    "q": "How many grams are in 2 kilograms?",
+    "a": 2000,
+    "unit": "g",
+    "tolerance": 0
+  },
+
+  {
+    "id": "DUEL-EN-081",
+    "q": "A standard swimming pool (short course) is about how many meters long?",
+    "a": 25,
+    "unit": "m",
+    "tolerance": 0
+  },
+  {
+    "id": "DUEL-EN-082",
+    "q": "An Olympic swimming pool is about how many meters long?",
+    "a": 50,
+    "unit": "m",
+    "tolerance": 0
+  },
+  {
+    "id": "DUEL-EN-083",
+    "q": "A typical basketball game has about how many quarters?",
+    "a": 4,
+    "unit": "quarters",
+    "tolerance": 0
+  },
+  {
+    "id": "DUEL-EN-084",
+    "q": "A typical American football game has about how many quarters?",
+    "a": 4,
+    "unit": "quarters",
+    "tolerance": 0
+  },
+  {
+    "id": "DUEL-EN-085",
+    "q": "A standard marathon is about how many kilometers? (rounded)",
+    "a": 42,
+    "unit": "km",
+    "tolerance": 1
+  },
+  {
+    "id": "DUEL-EN-086",
+    "q": "A half marathon is about how many kilometers? (rounded)",
+    "a": 21,
+    "unit": "km",
+    "tolerance": 1
+  },
+  {
+    "id": "DUEL-EN-087",
+    "q": "A 10K race is about how many kilometers?",
+    "a": 10,
+    "unit": "km",
+    "tolerance": 0
+  },
+  {
+    "id": "DUEL-EN-088",
+    "q": "A 5K race is about how many kilometers?",
+    "a": 5,
+    "unit": "km",
+    "tolerance": 0
+  },
+  {
+    "id": "DUEL-EN-089",
+    "q": "How many years are in a century?",
+    "a": 100,
+    "unit": "years",
+    "tolerance": 0
+  },
+  {
+    "id": "DUEL-EN-090",
+    "q": "How many years are in a decade?",
+    "a": 10,
+    "unit": "years",
+    "tolerance": 0
+  },
+
+  {
+    "id": "DUEL-EN-091",
+    "q": "A typical car fuel tank holds about how many liters? (rounded)",
+    "a": 50,
+    "unit": "liters",
+    "tolerance": 20
+  },
+  {
+    "id": "DUEL-EN-092",
+    "q": "A typical bathtub holds about how many liters? (rounded)",
+    "a": 150,
+    "unit": "liters",
+    "tolerance": 60
+  },
+  {
+    "id": "DUEL-EN-093",
+    "q": "An average apple weighs about how many grams? (rounded)",
+    "a": 200,
+    "unit": "g",
+    "tolerance": 80
+  },
+  {
+    "id": "DUEL-EN-094",
+    "q": "A peeled banana weighs about how many grams? (rounded)",
+    "a": 120,
+    "unit": "g",
+    "tolerance": 60
+  },
+  {
+    "id": "DUEL-EN-095",
+    "q": "A soft-boiled egg takes about how many minutes? (rounded)",
+    "a": 6,
+    "unit": "minutes",
+    "tolerance": 3
+  },
+  {
+    "id": "DUEL-EN-096",
+    "q": "Home ovens often bake pizza at about how many degrees Celsius? (rounded)",
+    "a": 220,
+    "unit": "°C",
+    "tolerance": 40
+  },
+  {
+    "id": "DUEL-EN-097",
+    "q": "A typical hot dog bun is about how many centimeters long? (rounded)",
+    "a": 15,
+    "unit": "cm",
+    "tolerance": 6
+  },
+  {
+    "id": "DUEL-EN-098",
+    "q": "A standard soda can contains about how many centiliters?",
+    "a": 33,
+    "unit": "cl",
+    "tolerance": 5
+  },
+  {
+    "id": "DUEL-EN-099",
+    "q": "A typical adult house cat lives about how many years? (rounded)",
+    "a": 15,
+    "unit": "years",
+    "tolerance": 5
+  },
+  {
+    "id": "DUEL-EN-100",
+    "q": "A typical dog lives about how many years? (rounded)",
+    "a": 12,
+    "unit": "years",
+    "tolerance": 5
+  }
+]
