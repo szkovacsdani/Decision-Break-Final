@@ -6398,5 +6398,405 @@
     "unit": "weeks",
     "category": "math",
     "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-801",
+    "q": "How many liters of air does an average adult breathe per day (rounded)?",
+    "a": 11000,
+    "unit": "liters",
+    "category": "science",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-802",
+    "q": "How many kilograms of potatoes does the average European consume per year (rounded)?",
+    "a": 60,
+    "unit": "kilograms",
+    "category": "general",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-803",
+    "q": "How many kilometers per hour is the maximum speed of a Formula 1 car (rounded)?",
+    "a": 370,
+    "unit": "km/h",
+    "category": "sport",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-804",
+    "q": "How many hours of sunlight does London receive per year (rounded)?",
+    "a": 1500,
+    "unit": "hours",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-805",
+    "q": "How many kilograms of meat does the average American consume per year (rounded)?",
+    "a": 100,
+    "unit": "kilograms",
+    "category": "general",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-806",
+    "q": "How many kilometers long is the Suez Canal (rounded)?",
+    "a": 190,
+    "unit": "kilometers",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-807",
+    "q": "How many hours per day does the average office worker spend sitting (rounded)?",
+    "a": 7,
+    "unit": "hours",
+    "category": "science",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-808",
+    "q": "How many kilograms does a standard Olympic shot put weigh for men?",
+    "a": 7,
+    "unit": "kilograms",
+    "category": "sport",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-809",
+    "q": "How many countries are members of NATO (rounded)?",
+    "a": 31,
+    "unit": "countries",
+    "category": "institutions",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-810",
+    "q": "How many kilometers long is the English Channel at its narrowest point (rounded)?",
+    "a": 34,
+    "unit": "kilometers",
+    "category": "geography",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-811",
+    "q": "How many hours does a professional cyclist typically train per week (rounded)?",
+    "a": 20,
+    "unit": "hours",
+    "category": "sport",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-812",
+    "q": "How many kilograms of paper does the average office worker use per year (rounded)?",
+    "a": 10,
+    "unit": "kilograms",
+    "category": "general",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-813",
+    "q": "How many kilometers per hour is the top speed of a Tour de France sprint (rounded)?",
+    "a": 70,
+    "unit": "km/h",
+    "category": "sport",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-814",
+    "q": "How many liters of water does a standard household washing machine use per cycle (rounded)?",
+    "a": 50,
+    "unit": "liters",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-815",
+    "q": "How many kilograms of fish does the average Japanese person consume per year (rounded)?",
+    "a": 45,
+    "unit": "kilograms",
+    "category": "general",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-816",
+    "q": "How many kilometers long is the Panama Canal (rounded)?",
+    "a": 80,
+    "unit": "kilometers",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-817",
+    "q": "How many hours per week does a medical doctor typically work (rounded)?",
+    "a": 60,
+    "unit": "hours",
+    "category": "general",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-818",
+    "q": "How many kilograms of CO2 does a long-haul flight emit per passenger (rounded)?",
+    "a": 1000,
+    "unit": "kilograms",
+    "category": "science",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-819",
+    "q": "How many kilometers per hour is the average speed of a city bus (rounded)?",
+    "a": 20,
+    "unit": "km/h",
+    "category": "general",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-820",
+    "q": "How many liters of milk does the average European consume per year (rounded)?",
+    "a": 60,
+    "unit": "liters",
+    "category": "general",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-821",
+    "q": "How many hours does the average person spend commuting per week (rounded)?",
+    "a": 5,
+    "unit": "hours",
+    "category": "general",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-822",
+    "q": "How many kilograms of aluminum are recycled per person per year globally (rounded)?",
+    "a": 5,
+    "unit": "kilograms",
+    "category": "science",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-823",
+    "q": "How many kilometers per hour is the average speed of a cargo ship (rounded)?",
+    "a": 40,
+    "unit": "km/h",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-824",
+    "q": "How many liters of fuel does a commercial airplane burn per hour (rounded)?",
+    "a": 10000,
+    "unit": "liters",
+    "category": "technology",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-825",
+    "q": "How many kilograms does an average mountain bike weigh (rounded)?",
+    "a": 14,
+    "unit": "kilograms",
+    "category": "sport",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-826",
+    "q": "How many kilometers per hour is the average speed of a professional marathon runner (rounded)?",
+    "a": 20,
+    "unit": "km/h",
+    "category": "sport",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-827",
+    "q": "How many kilograms of wheat does the average person consume per year globally (rounded)?",
+    "a": 70,
+    "unit": "kilograms",
+    "category": "general",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-828",
+    "q": "How many hours of daylight does Stockholm have on average in June (rounded)?",
+    "a": 18,
+    "unit": "hours",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-829",
+    "q": "How many kilograms does a typical car engine weigh (rounded)?",
+    "a": 150,
+    "unit": "kilograms",
+    "category": "technology",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-830",
+    "q": "How many kilometers per hour is the top speed of a modern cruise ship (rounded)?",
+    "a": 40,
+    "unit": "km/h",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-831",
+    "q": "How many liters of water does a person use per day in an industrialized country (rounded)?",
+    "a": 150,
+    "unit": "liters",
+    "category": "science",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-832",
+    "q": "How many kilograms of bananas does the average person consume per year globally (rounded)?",
+    "a": 12,
+    "unit": "kilograms",
+    "category": "general",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-833",
+    "q": "How many hours per week does a professional football player train (rounded)?",
+    "a": 25,
+    "unit": "hours",
+    "category": "sport",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-834",
+    "q": "How many kilometers long is the Trans-Siberian Railway (rounded)?",
+    "a": 9300,
+    "unit": "kilometers",
+    "category": "geography",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-835",
+    "q": "How many kilograms of salt does the average person consume per year (rounded)?",
+    "a": 4,
+    "unit": "kilograms",
+    "category": "science",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-836",
+    "q": "How many kilometers per hour is the average speed of a professional tennis serve (rounded)?",
+    "a": 200,
+    "unit": "km/h",
+    "category": "sport",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-837",
+    "q": "How many liters of gasoline does an average car consume per 100 kilometers (rounded)?",
+    "a": 7,
+    "unit": "liters",
+    "category": "technology",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-838",
+    "q": "How many kilograms of cheese does the average French person consume per year (rounded)?",
+    "a": 26,
+    "unit": "kilograms",
+    "category": "general",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-839",
+    "q": "How many hours of sleep does the average newborn baby need per day (rounded)?",
+    "a": 16,
+    "unit": "hours",
+    "category": "science",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-840",
+    "q": "How many kilometers per hour is the average cycling speed of a recreational rider (rounded)?",
+    "a": 15,
+    "unit": "km/h",
+    "category": "sport",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-841",
+    "q": "How many liters of coffee does the average Italian consume per year (rounded)?",
+    "a": 50,
+    "unit": "liters",
+    "category": "general",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-842",
+    "q": "How many kilometers long is the border between the United States and Canada (rounded)?",
+    "a": 8900,
+    "unit": "kilometers",
+    "category": "geography",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-843",
+    "q": "How many kilograms of paper are recycled per person per year in Europe (rounded)?",
+    "a": 60,
+    "unit": "kilograms",
+    "category": "science",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-844",
+    "q": "How many hours does it take to drive across Germany from north to south (rounded)?",
+    "a": 8,
+    "unit": "hours",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-845",
+    "q": "How many kilograms does an average road bicycle weigh (rounded)?",
+    "a": 8,
+    "unit": "kilograms",
+    "category": "sport",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-846",
+    "q": "How many kilometers per hour is the maximum speed of a professional downhill skier (rounded)?",
+    "a": 140,
+    "unit": "km/h",
+    "category": "sport",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-847",
+    "q": "How many liters of blood does the human body pump per minute at rest (rounded)?",
+    "a": 5,
+    "unit": "liters",
+    "category": "science",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-848",
+    "q": "How many kilometers per hour is the average speed of a high-speed elevator (rounded)?",
+    "a": 36,
+    "unit": "km/h",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-849",
+    "q": "How many kilograms of apples does the average European consume per year (rounded)?",
+    "a": 15,
+    "unit": "kilograms",
+    "category": "general",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-850",
+    "q": "How many hours does a standard long-haul truck driver drive per day (legal maximum, rounded)?",
+    "a": 9,
+    "unit": "hours",
+    "category": "general",
+    "difficulty": "hard"
   }
 ]
