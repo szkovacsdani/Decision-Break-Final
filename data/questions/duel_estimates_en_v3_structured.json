@@ -5998,5 +5998,405 @@
     "unit": "countries",
     "category": "geography",
     "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-751",
+    "q": "On average, how many kilograms of ice cream does a person in Germany consume per year?",
+    "a": 8,
+    "unit": "kilograms",
+    "category": "general",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-752",
+    "q": "On average, how many hours of sunshine does Barcelona get per year?",
+    "a": 2500,
+    "unit": "hours",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-753",
+    "q": "How many kilograms of chocolate does the average Swiss person consume per year?",
+    "a": 10,
+    "unit": "kilograms",
+    "category": "general",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-754",
+    "q": "How many minutes does a standard NBA game last (regulation time)?",
+    "a": 48,
+    "unit": "minutes",
+    "category": "sport",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-755",
+    "q": "How many hours are there in a non-leap year?",
+    "a": 8760,
+    "unit": "hours",
+    "category": "math",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-756",
+    "q": "How many kilograms of CO2 does an average passenger car emit per kilometer (rounded)?",
+    "a": 120,
+    "unit": "grams",
+    "category": "science",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-757",
+    "q": "How many kilometers long is the Great Wall of China (rounded)?",
+    "a": 21000,
+    "unit": "kilometers",
+    "category": "geography",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-758",
+    "q": "How many hours per day does the average person sleep?",
+    "a": 8,
+    "unit": "hours",
+    "category": "general",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-759",
+    "q": "How many liters of water does an average person drink per day?",
+    "a": 2,
+    "unit": "liters",
+    "category": "science",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-760",
+    "q": "How many kilometers is a marathon?",
+    "a": 42,
+    "unit": "kilometers",
+    "category": "sport",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-761",
+    "q": "How many billion people live in Asia (rounded)?",
+    "a": 4,
+    "unit": "billion",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-762",
+    "q": "How many minutes is halftime in a standard football (soccer) match?",
+    "a": 15,
+    "unit": "minutes",
+    "category": "sport",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-763",
+    "q": "How many kilometers per hour is the speed limit on German Autobahns where limits apply?",
+    "a": 130,
+    "unit": "km/h",
+    "category": "general",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-764",
+    "q": "How many kilograms does the average newborn baby weigh (rounded)?",
+    "a": 3,
+    "unit": "kilograms",
+    "category": "science",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-765",
+    "q": "How many hours of daylight does Barcelona have on average in July (rounded)?",
+    "a": 10,
+    "unit": "hours",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-766",
+    "q": "How many kilograms of coffee does the average Finnish person consume per year?",
+    "a": 12,
+    "unit": "kilograms",
+    "category": "general",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-767",
+    "q": "How many countries use the euro as official currency (rounded)?",
+    "a": 20,
+    "unit": "countries",
+    "category": "institutions",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-768",
+    "q": "How many hours per week does the average full-time employee work in the EU (rounded)?",
+    "a": 40,
+    "unit": "hours",
+    "category": "general",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-769",
+    "q": "How many liters of fuel does a typical car tank hold (rounded)?",
+    "a": 50,
+    "unit": "liters",
+    "category": "general",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-770",
+    "q": "How many seconds does a standard boxing round last?",
+    "a": 180,
+    "unit": "seconds",
+    "category": "sport",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-771",
+    "q": "How many kilograms of plastic waste does an average person produce per year (rounded)?",
+    "a": 30,
+    "unit": "kilograms",
+    "category": "science",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-772",
+    "q": "How many kilometers per hour is the maximum speed of a high-speed train (rounded)?",
+    "a": 300,
+    "unit": "km/h",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-773",
+    "q": "How many hours per day does the average person spend on their smartphone (rounded)?",
+    "a": 4,
+    "unit": "hours",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-774",
+    "q": "How many kilograms of rice does the average person in Asia consume per year (rounded)?",
+    "a": 70,
+    "unit": "kilograms",
+    "category": "general",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-775",
+    "q": "How many kilograms does an average adult human brain weigh (rounded)?",
+    "a": 1,
+    "unit": "kilograms",
+    "category": "science",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-776",
+    "q": "How many kilometers per hour is the average walking speed of a human (rounded)?",
+    "a": 5,
+    "unit": "km/h",
+    "category": "science",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-777",
+    "q": "How many kilograms does an average adult male weigh globally (rounded)?",
+    "a": 75,
+    "unit": "kilograms",
+    "category": "science",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-778",
+    "q": "How many liters of blood does the average adult human have (rounded)?",
+    "a": 5,
+    "unit": "liters",
+    "category": "science",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-779",
+    "q": "How many hours does a transatlantic flight between London and New York take (rounded)?",
+    "a": 8,
+    "unit": "hours",
+    "category": "general",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-780",
+    "q": "How many billion people live in Europe (rounded)?",
+    "a": 1,
+    "unit": "billion",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-781",
+    "q": "How many meters tall is the Statue of Liberty including its pedestal (rounded)?",
+    "a": 93,
+    "unit": "meters",
+    "category": "geography",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-782",
+    "q": "How many kilograms does an Olympic barbell weigh?",
+    "a": 20,
+    "unit": "kilograms",
+    "category": "sport",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-783",
+    "q": "How many hours of video are uploaded to YouTube every minute (rounded)?",
+    "a": 500,
+    "unit": "hours",
+    "category": "technology",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-784",
+    "q": "How many kilometers long is the Nile River (rounded)?",
+    "a": 6650,
+    "unit": "kilometers",
+    "category": "geography",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-785",
+    "q": "How many days does it take for the Earth to orbit the Sun?",
+    "a": 365,
+    "unit": "days",
+    "category": "science",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-786",
+    "q": "How many kilograms of sugar does the average person consume per year (rounded)?",
+    "a": 24,
+    "unit": "kilograms",
+    "category": "general",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-787",
+    "q": "How many hours does a standard Formula 1 race last at most?",
+    "a": 2,
+    "unit": "hours",
+    "category": "sport",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-788",
+    "q": "How many kilometers per hour is the cruising speed of a commercial airplane (rounded)?",
+    "a": 900,
+    "unit": "km/h",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-789",
+    "q": "How many kilograms of waste does the average person generate per day (rounded)?",
+    "a": 1,
+    "unit": "kilograms",
+    "category": "science",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-790",
+    "q": "How many players are on the field in total in a standard American football game?",
+    "a": 22,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-791",
+    "q": "How many hours does the average person spend watching TV per day (rounded)?",
+    "a": 3,
+    "unit": "hours",
+    "category": "general",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-792",
+    "q": "How many kilograms does an average suitcase allowance allow on a flight (rounded)?",
+    "a": 23,
+    "unit": "kilograms",
+    "category": "general",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-793",
+    "q": "How many kilometers long is the Amazon River (rounded)?",
+    "a": 6400,
+    "unit": "kilometers",
+    "category": "geography",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-794",
+    "q": "How many degrees Celsius is normal human body temperature (rounded)?",
+    "a": 37,
+    "unit": "degrees",
+    "category": "science",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-795",
+    "q": "How many hours does it take to fly around the world non-stop (record attempt, rounded)?",
+    "a": 46,
+    "unit": "hours",
+    "category": "technology",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-796",
+    "q": "How many kilograms does an average adult female weigh globally (rounded)?",
+    "a": 65,
+    "unit": "kilograms",
+    "category": "science",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-797",
+    "q": "How many kilometers per hour can a cheetah run (rounded)?",
+    "a": 100,
+    "unit": "km/h",
+    "category": "science",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-798",
+    "q": "How many hours per day does the average teenager sleep (rounded)?",
+    "a": 8,
+    "unit": "hours",
+    "category": "general",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-799",
+    "q": "How many meters deep is the Mariana Trench (rounded)?",
+    "a": 11000,
+    "unit": "meters",
+    "category": "geography",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-800",
+    "q": "How many weeks are there in a year (rounded)?",
+    "a": 52,
+    "unit": "weeks",
+    "category": "math",
+    "difficulty": "easy"
   }
 ]
