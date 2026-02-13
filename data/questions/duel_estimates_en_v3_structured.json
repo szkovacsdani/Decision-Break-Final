@@ -305,16 +305,16 @@
   },
   {
     "id": "DUEL-039",
-    "q": "How many Olympic rings are there?",
-    "a": 5,
-    "unit": "rings",
-    "category": "sport",
+    "q": "How many vertices does a cube have?",
+    "a": 8,
+    "unit": "vertices",
+    "category": "math",
     "difficulty": "easy"
   },
   {
     "id": "DUEL-040",
-    "q": "How many letters are in the English alphabet?",
-    "a": 26,
+    "q": "How many letters are in the Hungarian alphabet?",
+    "a": 44,
     "unit": "letters",
     "category": "general",
     "difficulty": "easy"
@@ -2809,11 +2809,11 @@
   },
   {
     "id": "DUEL-352",
-    "q": "In which year did the first Olympic Games take place in Australia?",
-    "a": 1956,
-    "unit": "year",
-    "category": "history",
-    "difficulty": "hard"
+    "q": "How many minutes are there in 6 hours?",
+    "a": 360,
+    "unit": "minutes",
+    "category": "math",
+    "difficulty": "easy"
   },
   {
     "id": "DUEL-353",
@@ -2880,6 +2880,326 @@
     "difficulty": "hard"
   },
   {
+    "id": "DUEL-361",
+    "q": "How many countries are there in South Asia?",
+    "a": 8,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-362",
+    "q": "How many players are on a standard handball team on the court?",
+    "a": 7,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-363",
+    "q": "How many players are on a standard badminton doubles team on court?",
+    "a": 4,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-364",
+    "q": "How many sides does a regular pentagon have?",
+    "a": 5,
+    "unit": "sides",
+    "category": "math",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-365",
+    "q": "In which year did the Cold War officially end?",
+    "a": 1991,
+    "unit": "year",
+    "category": "history",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-366",
+    "q": "How many countries share a border with Switzerland?",
+    "a": 5,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-367",
+    "q": "How many players are on a standard basketball team roster in the NBA (maximum)?",
+    "a": 15,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-368",
+    "q": "How many degrees are in a straight angle?",
+    "a": 180,
+    "unit": "degrees",
+    "category": "math",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-369",
+    "q": "How many states does Brazil have?",
+    "a": 26,
+    "unit": "states",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-370",
+    "q": "How many countries are there in East Africa (commonly recognized)?",
+    "a": 6,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-371",
+    "q": "How many bones are there in the human skull?",
+    "a": 22,
+    "unit": "bones",
+    "category": "science",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-372",
+    "q": "How many minutes are there in 3 hours?",
+    "a": 180,
+    "unit": "minutes",
+    "category": "math",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-373",
+    "q": "In which year did the first iMac release?",
+    "a": 1998,
+    "unit": "year",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-374",
+    "q": "How many players are on the field in total in a standard field hockey match?",
+    "a": 22,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-375",
+    "q": "How many countries are there in North Africa?",
+    "a": 6,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-376",
+    "q": "In which year did the first iPhone with a notch release?",
+    "a": 2017,
+    "unit": "year",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-377",
+    "q": "How many judges sit on the Supreme Court of Australia?",
+    "a": 7,
+    "unit": "judges",
+    "category": "institutions",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-378",
+    "q": "How many players are on a baseball team roster during the World Series?",
+    "a": 26,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-379",
+    "q": "How many days are there in 10 years (ignoring leap years)?",
+    "a": 3650,
+    "unit": "days",
+    "category": "math",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-380",
+    "q": "In which year did the first modern Olympic Games take place in Athens?",
+    "a": 1896,
+    "unit": "year",
+    "category": "history",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-381",
+    "q": "How many countries share a border with Norway?",
+    "a": 3,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-382",
+    "q": "How many minutes are in a standard rugby match (regular time)?",
+    "a": 80,
+    "unit": "minutes",
+    "category": "sport",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-383",
+    "q": "In which year did the first iPhone with OLED display release?",
+    "a": 2017,
+    "unit": "year",
+    "category": "technology",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-384",
+    "q": "How many countries are there in Western Africa?",
+    "a": 16,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-385",
+    "q": "How many players are on the field in total in a standard handball match?",
+    "a": 14,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-386",
+    "q": "How many seconds are there in one year (365 days)?",
+    "a": 31536000,
+    "unit": "seconds",
+    "category": "math",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-387",
+    "q": "In which year did the first modern Olympic Games take place in Paris?",
+    "a": 1900,
+    "unit": "year",
+    "category": "history",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-388",
+    "q": "How many countries share a border with Belgium?",
+    "a": 4,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-389",
+    "q": "How many players are on the field in total in a standard lacrosse match?",
+    "a": 20,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-390",
+    "q": "How many milliliters are there in one liter?",
+    "a": 1000,
+    "unit": "milliliters",
+    "category": "math",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-391",
+    "q": "In which year did the first modern Olympic Games take place in London?",
+    "a": 1908,
+    "unit": "year",
+    "category": "history",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-392",
+    "q": "How many countries share a border with the Netherlands?",
+    "a": 2,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-393",
+    "q": "How many players are on a standard water polo team roster?",
+    "a": 13,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-394",
+    "q": "How many seconds are there in one hour?",
+    "a": 3600,
+    "unit": "seconds",
+    "category": "math",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-395",
+    "q": "In which year did the first Olympic Games take place in Los Angeles?",
+    "a": 1932,
+    "unit": "year",
+    "category": "history",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-396",
+    "q": "How many countries share a border with Romania?",
+    "a": 5,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-397",
+    "q": "How many players are on the field in total in a standard rugby league match?",
+    "a": 26,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-398",
+    "q": "How many days are there in 100 years (ignoring leap years)?",
+    "a": 36500,
+    "unit": "days",
+    "category": "math",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-399",
+    "q": "In which year did the first Olympic Games take place in Berlin?",
+    "a": 1936,
+    "unit": "year",
+    "category": "history",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-400",
+    "q": "How many countries share a border with Sweden?",
+    "a": 2,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
     "id": "DUEL-401",
     "q": "How many bones are in the adult human body?",
     "a": 206,
@@ -2889,10 +3209,10 @@
   },
   {
     "id": "DUEL-402",
-    "q": "How many days are there in a leap year?",
-    "a": 366,
-    "unit": "days",
-    "category": "science",
+    "q": "How many months have 31 days in a year?",
+    "a": 7,
+    "unit": "months",
+    "category": "math",
     "difficulty": "easy"
   },
   {
@@ -2913,11 +3233,11 @@
   },
   {
     "id": "DUEL-405",
-    "q": "In which year did World War II end?",
-    "a": 1945,
-    "unit": "year",
-    "category": "history",
-    "difficulty": "easy"
+    "q": "How many keys are there on a standard piano keyboard?",
+    "a": 88,
+    "unit": "keys",
+    "category": "general",
+    "difficulty": "medium"
   },
   {
     "id": "DUEL-406",
@@ -2953,11 +3273,11 @@
   },
   {
     "id": "DUEL-410",
-    "q": "In which year did the Berlin Wall fall?",
-    "a": 1989,
-    "unit": "year",
-    "category": "history",
-    "difficulty": "medium"
+    "q": "How many players are on a standard baseball team roster in MLB postseason?",
+    "a": 26,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "hard"
   },
   {
     "id": "DUEL-411",
@@ -2977,18 +3297,18 @@
   },
   {
     "id": "DUEL-413",
-    "q": "How many Olympic rings are there?",
-    "a": 5,
-    "unit": "rings",
-    "category": "sport",
-    "difficulty": "easy"
+    "q": "How many sides does a regular heptagon have?",
+    "a": 7,
+    "unit": "sides",
+    "category": "math",
+    "difficulty": "medium"
   },
   {
     "id": "DUEL-414",
-    "q": "In which year did the Titanic sink?",
-    "a": 1912,
-    "unit": "year",
-    "category": "history",
+    "q": "How many vertebrae are there in the thoracic spine?",
+    "a": 12,
+    "unit": "vertebrae",
+    "category": "science",
     "difficulty": "medium"
   },
   {
@@ -3025,11 +3345,11 @@
   },
   {
     "id": "DUEL-419",
-    "q": "In which year did the first man land on the Moon?",
-    "a": 1969,
-    "unit": "year",
-    "category": "science",
-    "difficulty": "medium"
+    "q": "How many minutes are there in 4 hours?",
+    "a": 240,
+    "unit": "minutes",
+    "category": "math",
+    "difficulty": "easy"
   },
   {
     "id": "DUEL-420",
@@ -3041,11 +3361,11 @@
   },
   {
     "id": "DUEL-421",
-    "q": "How many countries are there in Africa?",
-    "a": 54,
-    "unit": "countries",
-    "category": "geography",
-    "difficulty": "medium"
+    "q": "How many players are on a standard water polo team in the pool?",
+    "a": 7,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "easy"
   },
   {
     "id": "DUEL-422",
@@ -3081,11 +3401,11 @@
   },
   {
     "id": "DUEL-426",
-    "q": "In which year did the French Revolution begin?",
-    "a": 1789,
-    "unit": "year",
-    "category": "history",
-    "difficulty": "medium"
+    "q": "How many provinces are there in Spain?",
+    "a": 50,
+    "unit": "provinces",
+    "category": "geography",
+    "difficulty": "hard"
   },
   {
     "id": "DUEL-427",
@@ -3177,11 +3497,11 @@
   },
   {
     "id": "DUEL-438",
-    "q": "In which year did the Soviet Union collapse?",
-    "a": 1991,
-    "unit": "year",
-    "category": "history",
-    "difficulty": "medium"
+    "q": "How many legs does a crab have?",
+    "a": 10,
+    "unit": "legs",
+    "category": "science",
+    "difficulty": "easy"
   },
   {
     "id": "DUEL-439",
@@ -3209,9 +3529,9 @@
   },
   {
     "id": "DUEL-442",
-    "q": "How many judges sit on the US Supreme Court?",
-    "a": 9,
-    "unit": "judges",
+    "q": "How many members are there in the G7?",
+    "a": 7,
+    "unit": "members",
     "category": "institutions",
     "difficulty": "easy"
   },
@@ -3257,43 +3577,43 @@
   },
   {
     "id": "DUEL-448",
-    "q": "In which year did Facebook launch?",
-    "a": 2004,
-    "unit": "year",
-    "category": "technology",
-    "difficulty": "medium"
-  },
-  {
-    "id": "DUEL-449",
-    "q": "How many players are on a standard American football team on the field?",
-    "a": 11,
+    "q": "How many players are on a standard rugby league team on the field?",
+    "a": 13,
     "unit": "players",
     "category": "sport",
     "difficulty": "medium"
   },
   {
-    "id": "DUEL-450",
-    "q": "How many seconds are there in one hour?",
-    "a": 3600,
-    "unit": "seconds",
+    "id": "DUEL-449",
+    "q": "How many degrees are there in a triangle?",
+    "a": 180,
+    "unit": "degrees",
     "category": "math",
-    "difficulty": "medium"
-  },
-  {
-    "id": "DUEL-451",
-    "q": "How many countries are there in South America?",
-    "a": 12,
-    "unit": "countries",
-    "category": "geography",
     "difficulty": "easy"
   },
   {
-    "id": "DUEL-452",
-    "q": "In which year did YouTube launch?",
-    "a": 2005,
-    "unit": "year",
-    "category": "technology",
+    "id": "DUEL-450",
+    "q": "How many bones are there in the human arm?",
+    "a": 3,
+    "unit": "bones",
+    "category": "science",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-451",
+    "q": "How many main islands make up the United Kingdom?",
+    "a": 2,
+    "unit": "islands",
+    "category": "geography",
     "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-452",
+    "q": "How many lanes are there in a standard Olympic swimming final?",
+    "a": 8,
+    "unit": "lanes",
+    "category": "sport",
+    "difficulty": "easy"
   },
   {
     "id": "DUEL-453",
@@ -3393,10 +3713,10 @@
   },
   {
     "id": "DUEL-465",
-    "q": "How many countries are there in Central America?",
-    "a": 7,
-    "unit": "countries",
-    "category": "geography",
+    "q": "How many sides does a regular dodecagon have?",
+    "a": 12,
+    "unit": "sides",
+    "category": "math",
     "difficulty": "medium"
   },
   {
@@ -3433,11 +3753,11 @@
   },
   {
     "id": "DUEL-470",
-    "q": "In which year did the first iPad release?",
-    "a": 2010,
-    "unit": "year",
-    "category": "technology",
-    "difficulty": "medium"
+    "q": "How many players are on a standard curling team during a match?",
+    "a": 4,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "easy"
   },
   {
     "id": "DUEL-471",
@@ -3449,10 +3769,10 @@
   },
   {
     "id": "DUEL-472",
-    "q": "How many players are on a rugby union team on the field?",
-    "a": 15,
-    "unit": "players",
-    "category": "sport",
+    "q": "How many liters are there in one cubic meter?",
+    "a": 1000,
+    "unit": "liters",
+    "category": "math",
     "difficulty": "medium"
   },
   {
@@ -3489,18 +3809,18 @@
   },
   {
     "id": "DUEL-477",
-    "q": "In which year did the first Android phone release?",
-    "a": 2008,
-    "unit": "year",
-    "category": "technology",
-    "difficulty": "medium"
+    "q": "How many satellites does Mars have?",
+    "a": 2,
+    "unit": "satellites",
+    "category": "science",
+    "difficulty": "easy"
   },
   {
     "id": "DUEL-478",
-    "q": "How many countries are there in Oceania (sovereign states)?",
-    "a": 14,
+    "q": "How many countries are there in the Nordic Council?",
+    "a": 5,
     "unit": "countries",
-    "category": "geography",
+    "category": "institutions",
     "difficulty": "medium"
   },
   {
@@ -3545,9 +3865,9 @@
   },
   {
     "id": "DUEL-484",
-    "q": "In which year did the first iPod release?",
-    "a": 2001,
-    "unit": "year",
+    "q": "How many keys does a standard computer keyboard usually have (full size)?",
+    "a": 104,
+    "unit": "keys",
     "category": "technology",
     "difficulty": "medium"
   },
@@ -3561,16 +3881,16 @@
   },
   {
     "id": "DUEL-486",
-    "q": "How many judges sit on the Supreme Court of Canada?",
-    "a": 9,
-    "unit": "judges",
-    "category": "institutions",
-    "difficulty": "medium"
+    "q": "How many pairs of wings does a typical bee have?",
+    "a": 2,
+    "unit": "pairs",
+    "category": "science",
+    "difficulty": "easy"
   },
   {
     "id": "DUEL-487",
-    "q": "How many players are on a volleyball team on the court?",
-    "a": 6,
+    "q": "How many players are on a standard cricket team?",
+    "a": 11,
     "unit": "players",
     "category": "sport",
     "difficulty": "easy"
@@ -3641,19 +3961,19 @@
   },
   {
     "id": "DUEL-496",
-    "q": "How many countries are there in Asia?",
-    "a": 49,
-    "unit": "countries",
+    "q": "How many provinces are there in Italy?",
+    "a": 107,
+    "unit": "provinces",
     "category": "geography",
-    "difficulty": "medium"
+    "difficulty": "hard"
   },
   {
     "id": "DUEL-497",
-    "q": "How many players are on a standard handball team on the court?",
-    "a": 7,
+    "q": "How many players are on the field in total in a standard Australian rules football match?",
+    "a": 36,
     "unit": "players",
     "category": "sport",
-    "difficulty": "medium"
+    "difficulty": "hard"
   },
   {
     "id": "DUEL-498",
@@ -3673,11 +3993,11 @@
   },
   {
     "id": "DUEL-500",
-    "q": "How many chambers does the US Congress have?",
-    "a": 2,
-    "unit": "chambers",
-    "category": "institutions",
-    "difficulty": "easy"
+    "q": "How many bytes are there in one megabyte (binary standard)?",
+    "a": 1048576,
+    "unit": "bytes",
+    "category": "technology",
+    "difficulty": "hard"
   },
   {
     "id": "DUEL-501",
@@ -3713,18 +4033,18 @@
   },
   {
     "id": "DUEL-505",
-    "q": "How many degrees are in a full circle?",
-    "a": 360,
-    "unit": "degrees",
-    "category": "math",
+    "q": "How many chambers does the French Parliament have?",
+    "a": 2,
+    "unit": "chambers",
+    "category": "institutions",
     "difficulty": "easy"
   },
   {
     "id": "DUEL-506",
-    "q": "In which year did the first Tesla Roadster release?",
-    "a": 2008,
-    "unit": "year",
-    "category": "technology",
+    "q": "How many planets in our Solar System are gas giants?",
+    "a": 4,
+    "unit": "planets",
+    "category": "science",
     "difficulty": "medium"
   },
   {
@@ -3737,11 +4057,11 @@
   },
   {
     "id": "DUEL-508",
-    "q": "How many players are on a field hockey team on the field?",
-    "a": 11,
-    "unit": "players",
-    "category": "sport",
-    "difficulty": "medium"
+    "q": "How many days are there in 5 weeks?",
+    "a": 35,
+    "unit": "days",
+    "category": "math",
+    "difficulty": "easy"
   },
   {
     "id": "DUEL-509",
@@ -3777,11 +4097,11 @@
   },
   {
     "id": "DUEL-513",
-    "q": "How many countries are there in the European Union?",
-    "a": 27,
+    "q": "How many member states does the Commonwealth of Nations have (as of 2023)?",
+    "a": 56,
     "unit": "countries",
     "category": "institutions",
-    "difficulty": "easy"
+    "difficulty": "hard"
   },
   {
     "id": "DUEL-514",
@@ -3809,11 +4129,11 @@
   },
   {
     "id": "DUEL-517",
-    "q": "How many judges sit on the Supreme Court of India?",
-    "a": 34,
-    "unit": "judges",
-    "category": "institutions",
-    "difficulty": "hard"
+    "q": "How many legs does a spider have?",
+    "a": 8,
+    "unit": "legs",
+    "category": "science",
+    "difficulty": "easy"
   },
   {
     "id": "DUEL-518",
@@ -3953,11 +4273,11 @@
   },
   {
     "id": "DUEL-535",
-    "q": "How many players are on a standard futsal team on the court?",
-    "a": 5,
+    "q": "How many players are on a standard ice hockey team on the ice?",
+    "a": 6,
     "unit": "players",
     "category": "sport",
-    "difficulty": "medium"
+    "difficulty": "easy"
   },
   {
     "id": "DUEL-536",
@@ -3993,11 +4313,11 @@
   },
   {
     "id": "DUEL-540",
-    "q": "How many players are on a lacrosse team on the field?",
-    "a": 10,
-    "unit": "players",
-    "category": "sport",
-    "difficulty": "medium"
+    "q": "How many continents are there according to the seven-continent model?",
+    "a": 7,
+    "unit": "continents",
+    "category": "geography",
+    "difficulty": "easy"
   },
   {
     "id": "DUEL-541",
@@ -4078,5 +4398,1605 @@
     "unit": "players",
     "category": "sport",
     "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-551",
+    "q": "How many countries share a border with Croatia?",
+    "a": 5,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-552",
+    "q": "How many players are on the field in total in a standard soccer match?",
+    "a": 22,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-553",
+    "q": "In which year did the first Olympic Games take place in Montreal?",
+    "a": 1976,
+    "unit": "year",
+    "category": "history",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-554",
+    "q": "How many minutes are there in 12 hours?",
+    "a": 720,
+    "unit": "minutes",
+    "category": "math",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-555",
+    "q": "How many permanent members are there in NATO?",
+    "a": 0,
+    "unit": "permanent members",
+    "category": "institutions",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-556",
+    "q": "In which year did the first iPhone Plus model release?",
+    "a": 2014,
+    "unit": "year",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-557",
+    "q": "How many countries are there in Central Asia?",
+    "a": 5,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-558",
+    "q": "How many players are on a standard baseball team lineup (batting order)?",
+    "a": 9,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-559",
+    "q": "How many seconds are there in 5 minutes?",
+    "a": 300,
+    "unit": "seconds",
+    "category": "math",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-560",
+    "q": "In which year did the first Olympic Games take place in Mexico City?",
+    "a": 1968,
+    "unit": "year",
+    "category": "history",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-561",
+    "q": "How many countries share a border with Serbia?",
+    "a": 8,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-562",
+    "q": "How many players are on the field in total in a standard Australian rules football match?",
+    "a": 36,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-563",
+    "q": "In which year did the first iPhone Mini model release?",
+    "a": 2020,
+    "unit": "year",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-564",
+    "q": "How many hours are there in 3 days?",
+    "a": 72,
+    "unit": "hours",
+    "category": "math",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-565",
+    "q": "How many countries share a border with Greece?",
+    "a": 4,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-566",
+    "q": "How many rings are there in the Olympic logo?",
+    "a": 5,
+    "unit": "rings",
+    "category": "sport",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-567",
+    "q": "In which year did the first iPhone SE release?",
+    "a": 2016,
+    "unit": "year",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-568",
+    "q": "How many players are on the field in total in a standard Gaelic football match?",
+    "a": 30,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-569",
+    "q": "How many seconds are there in 24 hours?",
+    "a": 86400,
+    "unit": "seconds",
+    "category": "math",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-570",
+    "q": "In which year did the first Olympic Games take place in Barcelona?",
+    "a": 1992,
+    "unit": "year",
+    "category": "history",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-571",
+    "q": "How many countries share a border with Finland?",
+    "a": 3,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-572",
+    "q": "How many players are on the court in total in a standard volleyball match?",
+    "a": 12,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-573",
+    "q": "In which year did the first iPhone XR release?",
+    "a": 2018,
+    "unit": "year",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-574",
+    "q": "How many countries are there in the G8 group (when it was active)?",
+    "a": 8,
+    "unit": "countries",
+    "category": "institutions",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-575",
+    "q": "How many days are there in 50 years (ignoring leap years)?",
+    "a": 18250,
+    "unit": "days",
+    "category": "math",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-576",
+    "q": "How many countries share a border with Bulgaria?",
+    "a": 5,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-577",
+    "q": "How many players are on the field in total in a standard polo match?",
+    "a": 8,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-578",
+    "q": "In which year did the first Olympic Games take place in Sydney?",
+    "a": 2000,
+    "unit": "year",
+    "category": "history",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-579",
+    "q": "How many seconds are there in 2 hours?",
+    "a": 7200,
+    "unit": "seconds",
+    "category": "math",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-580",
+    "q": "How many judges sit on the Supreme Court of South Africa?",
+    "a": 11,
+    "unit": "judges",
+    "category": "institutions",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-581",
+    "q": "In which year did the first Olympic Games take place in Seoul?",
+    "a": 1988,
+    "unit": "year",
+    "category": "history",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-582",
+    "q": "How many countries share a border with Turkey?",
+    "a": 8,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-583",
+    "q": "How many players are on the field in total in a standard ice hockey match?",
+    "a": 12,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-584",
+    "q": "How many minutes are there in 2 days?",
+    "a": 2880,
+    "unit": "minutes",
+    "category": "math",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-585",
+    "q": "In which year did the first Olympic Games take place in Moscow?",
+    "a": 1980,
+    "unit": "year",
+    "category": "history",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-586",
+    "q": "How many countries share a border with Ukraine?",
+    "a": 7,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-587",
+    "q": "How many players are on the court in total in a standard basketball game?",
+    "a": 10,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-588",
+    "q": "How many seconds are there in 3 days?",
+    "a": 259200,
+    "unit": "seconds",
+    "category": "math",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-589",
+    "q": "In which year did the first Olympic Games take place in Rio de Janeiro?",
+    "a": 2016,
+    "unit": "year",
+    "category": "history",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-590",
+    "q": "How many countries share a border with Slovenia?",
+    "a": 4,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-591",
+    "q": "How many players are on the field in total in a standard American football game?",
+    "a": 22,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-592",
+    "q": "How many hours are there in 10 days?",
+    "a": 240,
+    "unit": "hours",
+    "category": "math",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-593",
+    "q": "In which year did the first Olympic Games take place in Atlanta?",
+    "a": 1996,
+    "unit": "year",
+    "category": "history",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-594",
+    "q": "How many countries share a border with Portugal?",
+    "a": 1,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-595",
+    "q": "How many players are on the field in total in a standard rugby union match?",
+    "a": 30,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-596",
+    "q": "How many seconds are there in 12 hours?",
+    "a": 43200,
+    "unit": "seconds",
+    "category": "math",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-597",
+    "q": "In which year did the first Olympic Games take place in Beijing?",
+    "a": 2008,
+    "unit": "year",
+    "category": "history",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-598",
+    "q": "How many countries share a border with Slovakia?",
+    "a": 5,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-599",
+    "q": "How many players are on the field in total in a standard cricket match (Test match, two teams)?",
+    "a": 22,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-600",
+    "q": "How many minutes are there in one week?",
+    "a": 10080,
+    "unit": "minutes",
+    "category": "math",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-601",
+    "q": "How many countries share a border with Germany?",
+    "a": 9,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-602",
+    "q": "How many countries share a border with France (metropolitan France only)?",
+    "a": 8,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-603",
+    "q": "How many countries are there in South America?",
+    "a": 12,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-604",
+    "q": "How many countries share a border with Brazil?",
+    "a": 10,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-605",
+    "q": "How many countries share a border with Canada?",
+    "a": 1,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-606",
+    "q": "How many bones are there in an adult human body?",
+    "a": 206,
+    "unit": "bones",
+    "category": "science",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-607",
+    "q": "How many planets are classified as gas giants in our solar system?",
+    "a": 4,
+    "unit": "planets",
+    "category": "science",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-608",
+    "q": "How many elements are in the periodic table (as of 2023)?",
+    "a": 118,
+    "unit": "elements",
+    "category": "science",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-609",
+    "q": "How many chromosomes does a typical human cell contain?",
+    "a": 46,
+    "unit": "chromosomes",
+    "category": "science",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-610",
+    "q": "How many phases are there in the Moon's primary cycle?",
+    "a": 8,
+    "unit": "phases",
+    "category": "science",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-611",
+    "q": "In which year was YouTube founded?",
+    "a": 2005,
+    "unit": "year",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-612",
+    "q": "In which year was Facebook founded?",
+    "a": 2004,
+    "unit": "year",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-613",
+    "q": "In which year was Google founded?",
+    "a": 1998,
+    "unit": "year",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-614",
+    "q": "In which year was Twitter launched?",
+    "a": 2006,
+    "unit": "year",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-615",
+    "q": "In which year was Instagram launched?",
+    "a": 2010,
+    "unit": "year",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-616",
+    "q": "In which year was the first Harry Potter book published?",
+    "a": 1997,
+    "unit": "year",
+    "category": "popculture",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-617",
+    "q": "In which year did the first Game of Thrones episode air?",
+    "a": 2011,
+    "unit": "year",
+    "category": "popculture",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-618",
+    "q": "How many films are in the main Harry Potter movie series?",
+    "a": 8,
+    "unit": "films",
+    "category": "popculture",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-619",
+    "q": "In which year did the first Toy Story movie release?",
+    "a": 1995,
+    "unit": "year",
+    "category": "popculture",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-620",
+    "q": "How many players are on the court in total in a standard tennis doubles match?",
+    "a": 4,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-621",
+    "q": "How many rounds are there in a professional boxing championship fight (men)?",
+    "a": 12,
+    "unit": "rounds",
+    "category": "sport",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-622",
+    "q": "How many players are on a standard cricket team?",
+    "a": 11,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-623",
+    "q": "How many permanent members are there in the UN Security Council?",
+    "a": 5,
+    "unit": "members",
+    "category": "institutions",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-624",
+    "q": "How many sides does a regular hexagon have?",
+    "a": 6,
+    "unit": "sides",
+    "category": "math",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-625",
+    "q": "How many countries are there in North America (sovereign states)?",
+    "a": 23,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-626",
+    "q": "How many continents are there on Earth?",
+    "a": 7,
+    "unit": "continents",
+    "category": "geography",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-627",
+    "q": "How many oceans are there on Earth?",
+    "a": 5,
+    "unit": "oceans",
+    "category": "geography",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-628",
+    "q": "How many countries are there in Europe?",
+    "a": 44,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-629",
+    "q": "How many countries share a border with Argentina?",
+    "a": 5,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-630",
+    "q": "How many bones are there in the human hand (including wrist)?",
+    "a": 27,
+    "unit": "bones",
+    "category": "science",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-631",
+    "q": "How many lungs does a human have?",
+    "a": 2,
+    "unit": "lungs",
+    "category": "science",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-632",
+    "q": "How many planets are there in the Solar System?",
+    "a": 8,
+    "unit": "planets",
+    "category": "science",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-633",
+    "q": "How many hearts does an octopus have?",
+    "a": 3,
+    "unit": "hearts",
+    "category": "science",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-634",
+    "q": "In which year was Netflix founded?",
+    "a": 1997,
+    "unit": "year",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-635",
+    "q": "In which year was Apple founded?",
+    "a": 1976,
+    "unit": "year",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-636",
+    "q": "In which year was Microsoft founded?",
+    "a": 1975,
+    "unit": "year",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-637",
+    "q": "How many seasons are there in the TV series Breaking Bad?",
+    "a": 5,
+    "unit": "seasons",
+    "category": "popculture",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-638",
+    "q": "How many films are in the original Star Wars trilogy?",
+    "a": 3,
+    "unit": "films",
+    "category": "popculture",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-639",
+    "q": "How many players are on the field in total in a standard baseball game?",
+    "a": 18,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-640",
+    "q": "How many players are on the field in total in a standard field hockey match?",
+    "a": 22,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-641",
+    "q": "How many permanent members are there in the UN Security Council?",
+    "a": 5,
+    "unit": "members",
+    "category": "institutions",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-642",
+    "q": "How many sides does a regular octagon have?",
+    "a": 8,
+    "unit": "sides",
+    "category": "math",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-643",
+    "q": "How many countries share a border with Russia?",
+    "a": 14,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-644",
+    "q": "How many countries share a border with China?",
+    "a": 14,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-645",
+    "q": "How many vertebrae are there in the human spine (typical count)?",
+    "a": 33,
+    "unit": "vertebrae",
+    "category": "science",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-646",
+    "q": "How many players are on the field in total in a standard American football game?",
+    "a": 22,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-647",
+    "q": "In which year was TikTok launched internationally?",
+    "a": 2017,
+    "unit": "year",
+    "category": "technology",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-648",
+    "q": "How many films are in The Lord of the Rings trilogy?",
+    "a": 3,
+    "unit": "films",
+    "category": "popculture",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-649",
+    "q": "How many countries share a border with Egypt?",
+    "a": 4,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-650",
+    "q": "How many seconds are there in 30 minutes?",
+    "a": 1800,
+    "unit": "seconds",
+    "category": "math",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-651",
+    "q": "How many countries are there in Africa?",
+    "a": 54,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-652",
+    "q": "How many countries share a border with India?",
+    "a": 6,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-653",
+    "q": "How many countries share a border with Chile?",
+    "a": 3,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-654",
+    "q": "How many ribs does a typical human have in total?",
+    "a": 24,
+    "unit": "ribs",
+    "category": "science",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-655",
+    "q": "How many planets are classified as terrestrial planets in our Solar System?",
+    "a": 4,
+    "unit": "planets",
+    "category": "science",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-656",
+    "q": "How many teeth does a typical adult human have (including wisdom teeth)?",
+    "a": 32,
+    "unit": "teeth",
+    "category": "science",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-657",
+    "q": "How many states are there in the United States?",
+    "a": 50,
+    "unit": "states",
+    "category": "geography",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-658",
+    "q": "In which year was Amazon founded?",
+    "a": 1994,
+    "unit": "year",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-659",
+    "q": "In which year was LinkedIn founded?",
+    "a": 2003,
+    "unit": "year",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-660",
+    "q": "How many films are in the main Marvel Avengers series?",
+    "a": 4,
+    "unit": "films",
+    "category": "popculture",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-661",
+    "q": "How many seasons are there in the TV series Friends?",
+    "a": 10,
+    "unit": "seasons",
+    "category": "popculture",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-662",
+    "q": "How many players are on the field in total in a standard rugby sevens match?",
+    "a": 14,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-663",
+    "q": "How many players are on the field in total in a standard ice hockey game?",
+    "a": 12,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-664",
+    "q": "How many member states are there in NATO (as of 2023)?",
+    "a": 31,
+    "unit": "countries",
+    "category": "institutions",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-665",
+    "q": "How many millimeters are there in 5 meters?",
+    "a": 5000,
+    "unit": "millimeters",
+    "category": "math",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-666",
+    "q": "How many countries share a border with Kazakhstan?",
+    "a": 5,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-667",
+    "q": "How many bones are there in the human foot?",
+    "a": 26,
+    "unit": "bones",
+    "category": "science",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-668",
+    "q": "In which year was Spotify launched?",
+    "a": 2008,
+    "unit": "year",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-669",
+    "q": "How many films are in the Jurassic Park and Jurassic World series combined?",
+    "a": 6,
+    "unit": "films",
+    "category": "popculture",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-670",
+    "q": "How many players are on the field in total in a standard cricket match?",
+    "a": 22,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-671",
+    "q": "How many countries share a border with Spain (including Portugal and Andorra)?",
+    "a": 5,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-672",
+    "q": "How many hearts does a typical human have?",
+    "a": 1,
+    "unit": "hearts",
+    "category": "science",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-673",
+    "q": "How many players are on the court in total in a standard badminton doubles match?",
+    "a": 4,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-674",
+    "q": "In which year was Airbnb founded?",
+    "a": 2008,
+    "unit": "year",
+    "category": "technology",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-675",
+    "q": "How many sides does a regular dodecagon have?",
+    "a": 12,
+    "unit": "sides",
+    "category": "math",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-676",
+    "q": "How many countries are there in Central America?",
+    "a": 7,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-677",
+    "q": "How many countries share a border with Peru?",
+    "a": 5,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-678",
+    "q": "How many countries share a border with Colombia?",
+    "a": 5,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-679",
+    "q": "How many teeth does a typical adult dog have?",
+    "a": 42,
+    "unit": "teeth",
+    "category": "science",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-680",
+    "q": "How many moons does Mars have?",
+    "a": 2,
+    "unit": "moons",
+    "category": "science",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-681",
+    "q": "How many legs does an insect have?",
+    "a": 6,
+    "unit": "legs",
+    "category": "science",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-682",
+    "q": "In which year was WhatsApp founded?",
+    "a": 2009,
+    "unit": "year",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-683",
+    "q": "In which year was Tesla founded?",
+    "a": 2003,
+    "unit": "year",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-684",
+    "q": "How many films are in the Fast & Furious main series (up to Fast X)?",
+    "a": 10,
+    "unit": "films",
+    "category": "popculture",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-685",
+    "q": "How many seasons are there in the TV series The Office (US version)?",
+    "a": 9,
+    "unit": "seasons",
+    "category": "popculture",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-686",
+    "q": "How many players are on a standard Formula 1 starting grid?",
+    "a": 20,
+    "unit": "drivers",
+    "category": "sport",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-687",
+    "q": "How many holes are there in a standard round of golf?",
+    "a": 18,
+    "unit": "holes",
+    "category": "sport",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-688",
+    "q": "How many member states are there in the European Union (as of 2023)?",
+    "a": 27,
+    "unit": "countries",
+    "category": "institutions",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-689",
+    "q": "How many centimeters are there in one meter?",
+    "a": 100,
+    "unit": "centimeters",
+    "category": "math",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-690",
+    "q": "How many countries share a border with Mexico?",
+    "a": 3,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-691",
+    "q": "How many bones are there in the human ear?",
+    "a": 3,
+    "unit": "bones",
+    "category": "science",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-692",
+    "q": "How many players are on a standard ice hockey team roster in the NHL (maximum)?",
+    "a": 23,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-693",
+    "q": "How many countries share a border with South Africa?",
+    "a": 6,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-694",
+    "q": "In which year was Snapchat launched?",
+    "a": 2011,
+    "unit": "year",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-695",
+    "q": "How many films are in The Matrix franchise (main series)?",
+    "a": 4,
+    "unit": "films",
+    "category": "popculture",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-696",
+    "q": "How many players are on the field in total in a standard polo match?",
+    "a": 8,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-697",
+    "q": "How many milligrams are there in one gram?",
+    "a": 1000,
+    "unit": "milligrams",
+    "category": "math",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-698",
+    "q": "How many countries share a border with Bolivia?",
+    "a": 5,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-699",
+    "q": "How many eyes does a typical spider have?",
+    "a": 8,
+    "unit": "eyes",
+    "category": "science",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-700",
+    "q": "How many players are on a standard basketball team roster in the NBA (maximum)?",
+    "a": 15,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-701",
+    "q": "How many countries are landlocked in Europe?",
+    "a": 14,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-702",
+    "q": "How many time zones does Russia span?",
+    "a": 11,
+    "unit": "time zones",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-703",
+    "q": "How many time zones does China officially use?",
+    "a": 1,
+    "unit": "time zones",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-704",
+    "q": "How many stripes are there on the flag of the United States?",
+    "a": 13,
+    "unit": "stripes",
+    "category": "geography",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-705",
+    "q": "How many stars are there on the flag of the European Union?",
+    "a": 12,
+    "unit": "stars",
+    "category": "institutions",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-706",
+    "q": "How many elements are there in the human nervous system (major divisions)?",
+    "a": 2,
+    "unit": "divisions",
+    "category": "science",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-707",
+    "q": "How many pairs of cranial nerves do humans have?",
+    "a": 12,
+    "unit": "pairs",
+    "category": "science",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-708",
+    "q": "How many planets have rings in our Solar System?",
+    "a": 4,
+    "unit": "planets",
+    "category": "science",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-709",
+    "q": "How many gigabytes are in one terabyte?",
+    "a": 1024,
+    "unit": "gigabytes",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-710",
+    "q": "In which year was the first iPad released?",
+    "a": 2010,
+    "unit": "year",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-711",
+    "q": "How many episodes are there in the first season of Game of Thrones?",
+    "a": 10,
+    "unit": "episodes",
+    "category": "popculture",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-712",
+    "q": "How many films are in The Hobbit trilogy?",
+    "a": 3,
+    "unit": "films",
+    "category": "popculture",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-713",
+    "q": "How many laps are there in the Monaco Grand Prix (standard race)?",
+    "a": 78,
+    "unit": "laps",
+    "category": "sport",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-714",
+    "q": "How many players are on the court in total in a standard squash doubles match?",
+    "a": 4,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-715",
+    "q": "How many permanent seats are there in the UN Security Council?",
+    "a": 5,
+    "unit": "seats",
+    "category": "institutions",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-716",
+    "q": "How many centimeters are there in 2 meters?",
+    "a": 200,
+    "unit": "centimeters",
+    "category": "math",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-717",
+    "q": "How many countries are there in the Caribbean (sovereign states)?",
+    "a": 13,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-718",
+    "q": "How many planets in our Solar System are larger than Earth?",
+    "a": 4,
+    "unit": "planets",
+    "category": "science",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-719",
+    "q": "How many seasons are there in the TV series Stranger Things (as of 2023)?",
+    "a": 4,
+    "unit": "seasons",
+    "category": "popculture",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-720",
+    "q": "How many players are on the field in total in a standard Gaelic football match?",
+    "a": 30,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-721",
+    "q": "How many digits are there in a standard ISBN-13 number?",
+    "a": 13,
+    "unit": "digits",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-722",
+    "q": "How many member countries are there in OPEC (as of 2023)?",
+    "a": 13,
+    "unit": "countries",
+    "category": "institutions",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-723",
+    "q": "How many degrees are there in a right angle?",
+    "a": 90,
+    "unit": "degrees",
+    "category": "math",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-724",
+    "q": "How many films are in the main Pirates of the Caribbean series?",
+    "a": 5,
+    "unit": "films",
+    "category": "popculture",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-725",
+    "q": "How many countries are there in Southeast Asia?",
+    "a": 11,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-726",
+    "q": "How many islands make up Japan (main islands)?",
+    "a": 4,
+    "unit": "islands",
+    "category": "geography",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-727",
+    "q": "How many provinces are there in Canada?",
+    "a": 10,
+    "unit": "provinces",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-728",
+    "q": "How many territories does Canada have?",
+    "a": 3,
+    "unit": "territories",
+    "category": "geography",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-729",
+    "q": "How many moons does Jupiter have (confirmed major count as of 2023)?",
+    "a": 95,
+    "unit": "moons",
+    "category": "science",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-730",
+    "q": "How many chambers does the UK Parliament have?",
+    "a": 2,
+    "unit": "chambers",
+    "category": "institutions",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-731",
+    "q": "How many bytes are there in one kilobyte (binary standard)?",
+    "a": 1024,
+    "unit": "bytes",
+    "category": "technology",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-732",
+    "q": "How many films are in the main Indiana Jones series?",
+    "a": 5,
+    "unit": "films",
+    "category": "popculture",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-733",
+    "q": "How many players are on the court in total in a standard table tennis doubles match?",
+    "a": 4,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-734",
+    "q": "How many days are there in April?",
+    "a": 30,
+    "unit": "days",
+    "category": "math",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-735",
+    "q": "How many vertebrae are there in the cervical spine?",
+    "a": 7,
+    "unit": "vertebrae",
+    "category": "science",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-736",
+    "q": "How many states are there in Australia?",
+    "a": 6,
+    "unit": "states",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-737",
+    "q": "How many Grand Slam tournaments are there in tennis each year?",
+    "a": 4,
+    "unit": "tournaments",
+    "category": "sport",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-738",
+    "q": "How many films are in the main Transformers series (up to Rise of the Beasts)?",
+    "a": 7,
+    "unit": "films",
+    "category": "popculture",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-739",
+    "q": "How many member countries are there in the African Union (as of 2023)?",
+    "a": 55,
+    "unit": "countries",
+    "category": "institutions",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-740",
+    "q": "How many seconds are there in 15 minutes?",
+    "a": 900,
+    "unit": "seconds",
+    "category": "math",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-741",
+    "q": "How many players are on a standard Olympic relay team in track (4x100)?",
+    "a": 4,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-742",
+    "q": "How many planets are visible to the naked eye from Earth?",
+    "a": 5,
+    "unit": "planets",
+    "category": "science",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-743",
+    "q": "How many letters are there in the Greek alphabet?",
+    "a": 24,
+    "unit": "letters",
+    "category": "science",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-744",
+    "q": "How many countries are there in Scandinavia (core definition)?",
+    "a": 3,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-745",
+    "q": "How many films are in the main Mission: Impossible series?",
+    "a": 7,
+    "unit": "films",
+    "category": "popculture",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-746",
+    "q": "How many players are on the court in total in a standard netball match?",
+    "a": 14,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "medium"
+  },
+  {
+    "id": "DUEL-747",
+    "q": "How many days are there in a leap year?",
+    "a": 366,
+    "unit": "days",
+    "category": "math",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-748",
+    "q": "How many permanent seats does the International Court of Justice have?",
+    "a": 15,
+    "unit": "judges",
+    "category": "institutions",
+    "difficulty": "hard"
+  },
+  {
+    "id": "DUEL-749",
+    "q": "How many ribs does a typical human have on one side?",
+    "a": 12,
+    "unit": "ribs",
+    "category": "science",
+    "difficulty": "easy"
+  },
+  {
+    "id": "DUEL-750",
+    "q": "How many countries are there in the Middle East (commonly recognized core countries)?",
+    "a": 14,
+    "unit": "countries",
+    "category": "geography",
+    "difficulty": "hard"
   }
 ]
