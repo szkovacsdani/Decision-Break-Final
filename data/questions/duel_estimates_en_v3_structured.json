@@ -4081,8 +4081,8 @@
   },
   {
     "id": "DUEL-511",
-    "q": "How many days are there in 5 weeks?",
-    "a": 35,
+    "q": "How many days are there in 7 weeks?",
+    "a": 49,
     "unit": "days",
     "category": "math",
     "difficulty": "easy"
@@ -4489,11 +4489,11 @@
   },
   {
     "id": "DUEL-562",
-    "q": "How many players are on the field in total in a standard Australian rules football match?",
-    "a": 36,
-    "unit": "players",
+    "q": "In football (soccer), how many yellow cards lead to an automatic red card?",
+    "a": 2,
+    "unit": "yellow cards",
     "category": "sport",
-    "difficulty": "hard"
+    "difficulty": "medium"
   },
   {
     "id": "DUEL-563",
@@ -4529,8 +4529,8 @@
   },
   {
     "id": "DUEL-567",
-    "q": "In which year did the first iPhone SE release?",
-    "a": 2016,
+    "q": "In which year was the first iPad Air released?",
+    "a": 2013,
     "unit": "year",
     "category": "technology",
     "difficulty": "medium"
@@ -4577,11 +4577,11 @@
   },
   {
     "id": "DUEL-573",
-    "q": "In which year did the first iPhone XR release?",
-    "a": 2018,
-    "unit": "year",
-    "category": "technology",
-    "difficulty": "medium"
+    "q": "How many vertices does a rectangular prism have?",
+    "a": 8,
+    "unit": "vertices",
+    "category": "math",
+    "difficulty": "easy"
   },
   {
     "id": "DUEL-574",
@@ -4633,9 +4633,9 @@
   },
   {
     "id": "DUEL-580",
-    "q": "How many judges sit on the Supreme Court of South Africa?",
-    "a": 11,
-    "unit": "judges",
+    "q": "How many chambers does the German Bundestag system effectively have?",
+    "a": 1,
+    "unit": "chambers",
     "category": "institutions",
     "difficulty": "medium"
   },
@@ -4689,8 +4689,8 @@
   },
   {
     "id": "DUEL-587",
-    "q": "How many players are on the court in total in a standard basketball game?",
-    "a": 10,
+    "q": "How many players are on a standard softball team on the field?",
+    "a": 9,
     "unit": "players",
     "category": "sport",
     "difficulty": "easy"
@@ -4769,10 +4769,10 @@
   },
   {
     "id": "DUEL-597",
-    "q": "In which year did the first Olympic Games take place in Beijing?",
-    "a": 2008,
-    "unit": "year",
-    "category": "history",
+    "q": "How many years are there in a decade?",
+    "a": 10,
+    "unit": "years",
+    "category": "general",
     "difficulty": "easy"
   },
   {
@@ -4801,11 +4801,11 @@
   },
   {
     "id": "DUEL-601",
-    "q": "How many countries share a border with Germany?",
-    "a": 9,
-    "unit": "countries",
+    "q": "How many provinces are there in China?",
+    "a": 23,
+    "unit": "provinces",
     "category": "geography",
-    "difficulty": "medium"
+    "difficulty": "hard"
   },
   {
     "id": "DUEL-602",
@@ -4817,10 +4817,10 @@
   },
   {
     "id": "DUEL-603",
-    "q": "How many countries are there in South America?",
-    "a": 12,
-    "unit": "countries",
-    "category": "geography",
+    "q": "How many faces does a tetrahedron have?",
+    "a": 4,
+    "unit": "faces",
+    "category": "math",
     "difficulty": "medium"
   },
   {
@@ -4897,11 +4897,11 @@
   },
   {
     "id": "DUEL-613",
-    "q": "In which year was Google founded?",
-    "a": 1998,
-    "unit": "year",
-    "category": "technology",
-    "difficulty": "medium"
+    "q": "How many players are on a standard beach volleyball team per side?",
+    "a": 2,
+    "unit": "players",
+    "category": "sport",
+    "difficulty": "easy"
   },
   {
     "id": "DUEL-614",
@@ -4921,11 +4921,11 @@
   },
   {
     "id": "DUEL-616",
-    "q": "In which year was the first Harry Potter book published?",
-    "a": 1997,
-    "unit": "year",
-    "category": "popculture",
-    "difficulty": "medium"
+    "q": "How many days are there in 8 weeks?",
+    "a": 56,
+    "unit": "days",
+    "category": "math",
+    "difficulty": "easy"
   },
   {
     "id": "DUEL-617",
@@ -4969,11 +4969,11 @@
   },
   {
     "id": "DUEL-622",
-    "q": "How many players are on a standard cricket team?",
-    "a": 11,
-    "unit": "players",
+    "q": "How many minutes is a standard minor penalty in ice hockey?",
+    "a": 2,
+    "unit": "minutes",
     "category": "sport",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "DUEL-623",
@@ -4985,26 +4985,26 @@
   },
   {
     "id": "DUEL-624",
-    "q": "How many sides does a regular hexagon have?",
-    "a": 6,
-    "unit": "sides",
-    "category": "math",
+    "q": "How many moons does Earth have?",
+    "a": 1,
+    "unit": "moons",
+    "category": "science",
     "difficulty": "easy"
   },
   {
     "id": "DUEL-625",
-    "q": "How many countries are there in North America (sovereign states)?",
-    "a": 23,
+    "q": "How many countries are members of the G20?",
+    "a": 19,
     "unit": "countries",
-    "category": "geography",
+    "category": "institutions",
     "difficulty": "medium"
   },
   {
     "id": "DUEL-626",
-    "q": "How many continents are there on Earth?",
-    "a": 7,
-    "unit": "continents",
-    "category": "geography",
+    "q": "How many teeth does an adult human typically have?",
+    "a": 32,
+    "unit": "teeth",
+    "category": "science",
     "difficulty": "easy"
   },
   {
@@ -5017,11 +5017,11 @@
   },
   {
     "id": "DUEL-628",
-    "q": "How many countries are there in Europe?",
-    "a": 44,
-    "unit": "countries",
-    "category": "geography",
-    "difficulty": "medium"
+    "q": "How many strings does a standard violin have?",
+    "a": 4,
+    "unit": "strings",
+    "category": "general",
+    "difficulty": "easy"
   },
   {
     "id": "DUEL-629",
@@ -5057,10 +5057,10 @@
   },
   {
     "id": "DUEL-633",
-    "q": "How many hearts does an octopus have?",
-    "a": 3,
-    "unit": "hearts",
-    "category": "science",
+    "q": "How many players are on a standard dodgeball team in international competition?",
+    "a": 6,
+    "unit": "players",
+    "category": "sport",
     "difficulty": "medium"
   },
   {
@@ -5113,15 +5113,15 @@
   },
   {
     "id": "DUEL-640",
-    "q": "How many players are on the field in total in a standard field hockey match?",
-    "a": 22,
-    "unit": "players",
-    "category": "sport",
+    "q": "How many centimeters are there in 3 meters?",
+    "a": 300,
+    "unit": "centimeters",
+    "category": "math",
     "difficulty": "easy"
   },
   {
     "id": "DUEL-641",
-    "q": "How many permanent members are there in the UN Security Council?",
+    "q": "How many permanent members does the UN Security Council have?",
     "a": 5,
     "unit": "members",
     "category": "institutions",
@@ -5129,11 +5129,11 @@
   },
   {
     "id": "DUEL-642",
-    "q": "How many sides does a regular octagon have?",
-    "a": 8,
-    "unit": "sides",
+    "q": "How many edges does a cube have?",
+    "a": 12,
+    "unit": "edges",
     "category": "math",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "DUEL-643",
@@ -5145,24 +5145,24 @@
   },
   {
     "id": "DUEL-644",
-    "q": "How many countries share a border with China?",
-    "a": 14,
+    "q": "How many countries are in the Baltic states group?",
+    "a": 3,
     "unit": "countries",
     "category": "geography",
-    "difficulty": "hard"
+    "difficulty": "easy"
   },
   {
     "id": "DUEL-645",
-    "q": "How many vertebrae are there in the human spine (typical count)?",
-    "a": 33,
-    "unit": "vertebrae",
-    "category": "science",
-    "difficulty": "hard"
+    "q": "How many chambers does the Italian Parliament have?",
+    "a": 2,
+    "unit": "chambers",
+    "category": "institutions",
+    "difficulty": "easy"
   },
   {
     "id": "DUEL-646",
-    "q": "How many players are on the field in total in a standard American football game?",
-    "a": 22,
+    "q": "How many players are on a standard baseball team on the field?",
+    "a": 9,
     "unit": "players",
     "category": "sport",
     "difficulty": "easy"
@@ -5201,11 +5201,11 @@
   },
   {
     "id": "DUEL-651",
-    "q": "How many countries are there in Africa?",
-    "a": 54,
-    "unit": "countries",
-    "category": "geography",
-    "difficulty": "medium"
+    "q": "How many centimeters are there in 5 meters?",
+    "a": 500,
+    "unit": "centimeters",
+    "category": "math",
+    "difficulty": "easy"
   },
   {
     "id": "DUEL-652",
@@ -5249,11 +5249,11 @@
   },
   {
     "id": "DUEL-657",
-    "q": "How many states are there in the United States?",
-    "a": 50,
+    "q": "How many states does Mexico have?",
+    "a": 32,
     "unit": "states",
     "category": "geography",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "DUEL-658",
@@ -5393,18 +5393,18 @@
   },
   {
     "id": "DUEL-675",
-    "q": "How many sides does a regular dodecagon have?",
+    "q": "How many faces does a dodecahedron have?",
     "a": 12,
-    "unit": "sides",
+    "unit": "faces",
     "category": "math",
     "difficulty": "hard"
   },
   {
     "id": "DUEL-676",
-    "q": "How many countries are there in Central America?",
+    "q": "How many players are on a standard kabaddi team on the court?",
     "a": 7,
-    "unit": "countries",
-    "category": "geography",
+    "unit": "players",
+    "category": "sport",
     "difficulty": "medium"
   },
   {
@@ -5561,10 +5561,10 @@
   },
   {
     "id": "DUEL-696",
-    "q": "How many players are on the field in total in a standard polo match?",
-    "a": 8,
-    "unit": "players",
-    "category": "sport",
+    "q": "How many faces does a cube have?",
+    "a": 6,
+    "unit": "faces",
+    "category": "math",
     "difficulty": "easy"
   },
   {
@@ -5593,11 +5593,11 @@
   },
   {
     "id": "DUEL-700",
-    "q": "How many players are on a standard basketball team roster in the NBA (maximum)?",
-    "a": 15,
-    "unit": "players",
-    "category": "sport",
-    "difficulty": "hard"
+    "q": "How many seconds are there in half an hour?",
+    "a": 1800,
+    "unit": "seconds",
+    "category": "math",
+    "difficulty": "medium"
   },
   {
     "id": "DUEL-701",
@@ -5609,11 +5609,11 @@
   },
   {
     "id": "DUEL-702",
-    "q": "How many time zones does Russia span?",
-    "a": 11,
-    "unit": "time zones",
-    "category": "geography",
-    "difficulty": "medium"
+    "q": "How many member states does the United Nations have (as of 2023)?",
+    "a": 193,
+    "unit": "countries",
+    "category": "institutions",
+    "difficulty": "hard"
   },
   {
     "id": "DUEL-703",
@@ -5729,9 +5729,9 @@
   },
   {
     "id": "DUEL-717",
-    "q": "How many countries are there in the Caribbean (sovereign states)?",
-    "a": 13,
-    "unit": "countries",
+    "q": "How many provinces are there in South Africa?",
+    "a": 9,
+    "unit": "provinces",
     "category": "geography",
     "difficulty": "medium"
   },
@@ -5753,11 +5753,11 @@
   },
   {
     "id": "DUEL-720",
-    "q": "How many players are on the field in total in a standard Gaelic football match?",
-    "a": 30,
+    "q": "How many players are on a standard 5-a-side football team on the field?",
+    "a": 5,
     "unit": "players",
     "category": "sport",
-    "difficulty": "medium"
+    "difficulty": "easy"
   },
   {
     "id": "DUEL-721",
@@ -5793,10 +5793,10 @@
   },
   {
     "id": "DUEL-725",
-    "q": "How many countries are there in Southeast Asia?",
-    "a": 11,
+    "q": "How many countries are members of the European Free Trade Association (EFTA)?",
+    "a": 4,
     "unit": "countries",
-    "category": "geography",
+    "category": "institutions",
     "difficulty": "medium"
   },
   {
@@ -5833,10 +5833,10 @@
   },
   {
     "id": "DUEL-730",
-    "q": "How many chambers does the UK Parliament have?",
-    "a": 2,
-    "unit": "chambers",
-    "category": "institutions",
+    "q": "How many pieces are in one dozen?",
+    "a": 12,
+    "unit": "pieces",
+    "category": "general",
     "difficulty": "easy"
   },
   {
@@ -5969,9 +5969,9 @@
   },
   {
     "id": "DUEL-747",
-    "q": "How many days are there in a leap year?",
-    "a": 366,
-    "unit": "days",
+    "q": "How many minutes are there in 2 hours?",
+    "a": 120,
+    "unit": "minutes",
     "category": "math",
     "difficulty": "easy"
   },
