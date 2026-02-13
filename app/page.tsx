@@ -1,4 +1,14 @@
+"use client";
+
+import { useEffect } from "react";
+import { supabase } from "@/lib/supabase";
+
 export default function Home() {
+
+  useEffect(() => {
+    console.log("Supabase URL:", process.env.NEXT_PUBLIC_SUPABASE_URL);
+  }, []);
+
   return (
     <main
       style={{
@@ -12,9 +22,13 @@ export default function Home() {
       }}
     >
       <div style={{ maxWidth: 760, width: "100%" }}>
-        <h1 style={{ fontSize: 56, margin: 0, letterSpacing: 1 }}>Decision Break</h1>
+        <h1 style={{ fontSize: 56, margin: 0, letterSpacing: 1 }}>
+          Decision Break
+        </h1>
 
-        <p style={{ fontSize: 24, marginTop: 16, opacity: 0.9 }}>Think fast. Or lose ground.</p>
+        <p style={{ fontSize: 24, marginTop: 16, opacity: 0.9 }}>
+          Think fast. Or lose ground.
+        </p>
 
         <div style={{ marginTop: 28 }}>
           <a
