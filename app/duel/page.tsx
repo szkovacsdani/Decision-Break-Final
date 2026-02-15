@@ -1,27 +1,31 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useState, useRef, useMemo } from "react";
 import { supabase } from "@/lib/supabase";
 import duelQuestions from "@/data/questions/duel_estimates_en_v3_structured.json";
 
-type Question = {
-  id: string;
-  q: string;
-  a: number;
-  unit?: string;
+type Room = {
+  code: string;
+  status: "waiting" | "playing" | "finished";
+  current_q: number;
+  question_ids: string[];
+};
+
+type Player = {
+  player_token: string;
+  slot: "A" | "B";
 };
 
 type Submission = {
   slot: "A" | "B";
   guess: number;
   submitted_at: string;
-  response_ms: number;
 };
 
-function randomCode(len = 5) {
+function randomCode() {
   const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
   let out = "";
-  for (let i = 0; i < len; i++) {
+  for (let i = 0; i < 5; i++) {
     out += chars[Math.floor(Math.random() * chars.length)];
   }
   return out;
@@ -29,80 +33,75 @@ function randomCode(len = 5) {
 
 export default function DuelPage() {
   const [roomCode, setRoomCode] = useState("");
-  const [room, setRoom] = useState<any>(null);
-  const [slot, setSlot] = useState<"A" | "B" | null>(null);
+  const [room, setRoom] = useState<Room | null>(null);
+  const [players, setPlayers] = useState<Player[]>([]);
+  const [mySlot, setMySlot] = useState<"A" | "B" | null>(null);
   const [guess, setGuess] = useState("");
-  const [locked, setLocked] = useState(false);
   const [submissions, setSubmissions] = useState<Submission[]>([]);
-  const [roundResult, setRoundResult] = useState<any>(null);
-  const [duelResult, setDuelResult] = useState<any>(null);
-  const [timeLeft, setTimeLeft] = useState(10);
-  const [roundStart, setRoundStart] = useState<number | null>(null);
-
+  const [timer, setTimer] = useState(10);
   const pollRef = useRef<any>(null);
   const timerRef = useRef<any>(null);
 
-  const questionMap = useMemo(() => {
-    const map = new Map<string, Question>();
-    (duelQuestions as Question[]).forEach(q => map.set(q.id, q));
+  const questionsMap = useMemo(() => {
+    const map = new Map();
+    (duelQuestions as any[]).forEach(q => map.set(q.id, q));
     return map;
   }, []);
 
-  const currentQuestion =
-    room?.question_ids?.length === 3
-      ? questionMap.get(room.question_ids[room.current_q])
-      : null;
+  function startPolling(code: string) {
+    if (pollRef.current) clearInterval(pollRef.current);
+    pollRef.current = setInterval(() => refresh(code), 800);
+  }
 
-  // ---------- ROOM CREATION ----------
+  function startTimer() {
+    setTimer(10);
+    if (timerRef.current) clearInterval(timerRef.current);
+    timerRef.current = setInterval(() => {
+      setTimer(t => {
+        if (t <= 1) {
+          clearInterval(timerRef.current);
+          return 0;
+        }
+        return t - 1;
+      });
+    }, 1000);
+  }
+
   async function createRoom() {
     const code = randomCode();
     await supabase.from("duel_rooms").insert({
       code,
       status: "waiting",
       current_q: 0,
-      question_ids: [],
+      question_ids: []
     });
+
+    const token = crypto.randomUUID();
+    localStorage.setItem("duel_token", token);
 
     await supabase.from("duel_players").insert({
       room_code: code,
-      slot: "A",
-      player_token: crypto.randomUUID(),
+      player_token: token,
+      slot: "A"
     });
 
-    setSlot("A");
+    setMySlot("A");
     setRoomCode(code);
     startPolling(code);
   }
 
   async function joinRoom() {
-    const code = roomCode.trim().toUpperCase();
+    const token = crypto.randomUUID();
+    localStorage.setItem("duel_token", token);
 
-    const { data } = await supabase
-      .from("duel_players")
-      .select("*")
-      .eq("room_code", code);
+    await supabase.from("duel_players").insert({
+      room_code: roomCode,
+      player_token: token,
+      slot: "B"
+    });
 
-    if (data && data.length < 2) {
-      await supabase.from("duel_players").insert({
-        room_code: code,
-        slot: "B",
-        player_token: crypto.randomUUID(),
-      });
-
-      setSlot("B");
-      startPolling(code);
-    }
-  }
-
-  // ---------- POLLING ----------
-  function startPolling(code: string) {
-    stopPolling();
-    refresh(code);
-    pollRef.current = setInterval(() => refresh(code), 800);
-  }
-
-  function stopPolling() {
-    if (pollRef.current) clearInterval(pollRef.current);
+    setMySlot("B");
+    startPolling(roomCode);
   }
 
   async function refresh(code: string) {
@@ -114,7 +113,31 @@ export default function DuelPage() {
 
     if (!r) return;
 
+    const { data: p } = await supabase
+      .from("duel_players")
+      .select("*")
+      .eq("room_code", code);
+
+    if (r.status === "waiting" && p.length === 2) {
+      const shuffled = (duelQuestions as any[])
+        .sort(() => 0.5 - Math.random())
+        .slice(0, 3)
+        .map(q => q.id);
+
+      await supabase
+        .from("duel_rooms")
+        .update({
+          status: "playing",
+          question_ids: shuffled
+        })
+        .eq("code", code);
+
+      startTimer();
+      return;
+    }
+
     setRoom(r);
+    setPlayers(p);
 
     if (r.status === "playing") {
       const { data: subs } = await supabase
@@ -124,163 +147,90 @@ export default function DuelPage() {
         .eq("q_index", r.current_q);
 
       setSubmissions(subs || []);
-    }
 
-    if (r.status === "finished") {
-      calculateFinal(r.code);
+      if (subs && subs.length === 2) {
+        evaluateRound(r, subs);
+      }
+
+      if (timer === 0) {
+        evaluateRound(r, subs || []);
+      }
     }
   }
 
-  // ---------- COUNTDOWN ----------
-  useEffect(() => {
-    if (room?.status !== "playing") return;
-
-    setTimeLeft(10);
-    setRoundStart(Date.now());
-    setLocked(false);
-    setRoundResult(null);
-
-    timerRef.current = setInterval(() => {
-      setTimeLeft(prev => {
-        if (prev <= 1) {
-          clearInterval(timerRef.current);
-          return 0;
-        }
-        return prev - 1;
-      });
-    }, 1000);
-
-    return () => clearInterval(timerRef.current);
-  }, [room?.current_q]);
-
-  // ---------- AUTO RESULT IF BOTH SUBMITTED ----------
-  useEffect(() => {
-    if (submissions.length === 2 && !roundResult) {
-      clearInterval(timerRef.current);
-      evaluateRound();
-    }
-  }, [submissions]);
-
   async function submitGuess() {
-    if (!room || locked) return;
-
-    const number = parseInt(guess);
-    if (!Number.isFinite(number)) return;
-
-    const response_ms = Date.now() - (roundStart || Date.now());
+    if (!room || !mySlot) return;
+    if (!guess) return;
 
     await supabase.from("duel_submissions").insert({
       room_code: room.code,
       q_index: room.current_q,
-      slot,
-      guess: number,
-      response_ms,
+      slot: mySlot,
+      guess: parseInt(guess)
     });
-
-    setLocked(true);
-  }
-
-  async function evaluateRound() {
-    const q = currentQuestion;
-    if (!q) return;
-
-    const A = submissions.find(s => s.slot === "A");
-    const B = submissions.find(s => s.slot === "B");
-
-    if (!A || !B) return;
-
-    const diffA = Math.abs(A.guess - q.a);
-    const diffB = Math.abs(B.guess - q.a);
-
-    let winner: "A" | "B";
-
-    if (diffA < diffB) winner = "A";
-    else if (diffB < diffA) winner = "B";
-    else winner = A.response_ms <= B.response_ms ? "A" : "B";
-
-    setRoundResult({
-      winner,
-      A,
-      B,
-      correct: q.a,
-      diffA,
-      diffB,
-    });
-
-    setTimeout(() => nextRound(winner), 5000);
-  }
-
-  async function nextRound(winner: "A" | "B") {
-    if (room.current_q >= 2) {
-      await supabase
-        .from("duel_rooms")
-        .update({ status: "finished" })
-        .eq("code", room.code);
-      return;
-    }
-
-    await supabase
-      .from("duel_rooms")
-      .update({ current_q: room.current_q + 1 })
-      .eq("code", room.code);
 
     setGuess("");
   }
 
-  async function calculateFinal(code: string) {
-    const { data } = await supabase
-      .from("duel_submissions")
-      .select("*")
-      .eq("room_code", code);
+  async function evaluateRound(r: Room, subs: Submission[]) {
+    clearInterval(timerRef.current);
 
-    if (!data) return;
+    const q = questionsMap.get(r.question_ids[r.current_q]);
+    const answer = q.a;
 
-    let winsA = 0;
-    let winsB = 0;
+    const subA = subs.find(s => s.slot === "A");
+    const subB = subs.find(s => s.slot === "B");
 
-    for (let i = 0; i < 3; i++) {
-      const roundSubs = data.filter(d => d.q_index === i);
-      if (roundSubs.length < 2) continue;
+    let winner: "A" | "B";
 
-      const q = questionMap.get(room.question_ids[i]);
-      const A = roundSubs.find(s => s.slot === "A");
-      const B = roundSubs.find(s => s.slot === "B");
-
-      if (!A || !B || !q) continue;
-
-      const diffA = Math.abs(A.guess - q.a);
-      const diffB = Math.abs(B.guess - q.a);
-
-      if (diffA < diffB) winsA++;
-      else if (diffB < diffA) winsB++;
-      else winsA++;
+    if (!subA) winner = "B";
+    else if (!subB) winner = "A";
+    else {
+      const diffA = Math.abs(subA.guess - answer);
+      const diffB = Math.abs(subB.guess - answer);
+      if (diffA < diffB) winner = "A";
+      else if (diffB < diffA) winner = "B";
+      else {
+        winner =
+          new Date(subA.submitted_at) <
+          new Date(subB.submitted_at)
+            ? "A"
+            : "B";
+      }
     }
 
-    const winner = winsA > winsB ? "A" : "B";
-
-    let winnerMove = winsA === 3 || winsB === 3 ? 3 : 2;
-    let loserMove = winsA === 3 || winsB === 3 ? -1 : 0;
-
-    setDuelResult({
-      winsA,
-      winsB,
-      winner,
-      winnerMove,
-      loserMove,
+    await supabase.from("duel_results").insert({
+      room_code: r.code,
+      q_index: r.current_q,
+      winner
     });
+
+    if (r.current_q >= 2) {
+      await supabase
+        .from("duel_rooms")
+        .update({ status: "finished" })
+        .eq("code", r.code);
+    } else {
+      await supabase
+        .from("duel_rooms")
+        .update({ current_q: r.current_q + 1 })
+        .eq("code", r.code);
+      startTimer();
+    }
   }
 
   return (
-    <main style={{ padding: 30, background: "#000", color: "white", minHeight: "100vh" }}>
+    <div style={{ padding: 30, color: "white", background: "black", minHeight: "100vh" }}>
       <h1>Duel</h1>
 
       {!room && (
         <>
           <button onClick={createRoom}>Create Room</button>
+          <br /><br />
           <input
             value={roomCode}
-            onChange={e => setRoomCode(e.target.value)}
-            placeholder="Enter room code"
+            onChange={e => setRoomCode(e.target.value.toUpperCase())}
+            style={{ background: "#111", color: "white" }}
           />
           <button onClick={joinRoom}>Join</button>
         </>
@@ -288,61 +238,45 @@ export default function DuelPage() {
 
       {room && (
         <>
-          <h2>Room: {room.code}</h2>
+          <p>Room: {room.code}</p>
           <p>Status: {room.status}</p>
-          <p>You are Player {slot}</p>
 
-          {room.status === "playing" && currentQuestion && (
+          {room.status === "playing" && (
             <>
-              <h3>{currentQuestion.q}</h3>
-              <p>Time left: {timeLeft}s</p>
+              <p>Round: {room.current_q + 1}/3</p>
+              <p>Time left: {timer}s</p>
 
-              {!roundResult && (
-                <>
-                  <input
-                    value={guess}
-                    onChange={e => setGuess(e.target.value)}
-                    disabled={locked}
-                  />
-                  <button onClick={submitGuess} disabled={locked}>
-                    Submit
-                  </button>
-                </>
-              )}
+              <p>
+                {
+                  questionsMap.get(
+                    room.question_ids[room.current_q]
+                  )?.q
+                }
+              </p>
 
-              {roundResult && (
-                <>
-                  <h3>Round Result</h3>
-                  <p>Correct answer: {roundResult.correct}</p>
-                  <p>
-                    A guessed {roundResult.A.guess} ({roundResult.A.response_ms}ms)
-                  </p>
-                  <p>
-                    B guessed {roundResult.B.guess} ({roundResult.B.response_ms}ms)
-                  </p>
-                  <p>Winner: {roundResult.winner}</p>
-                </>
-              )}
+              <input
+                value={guess}
+                onChange={e => setGuess(e.target.value)}
+                style={{ background: "#111", color: "white" }}
+              />
+              <button onClick={submitGuess}>Submit</button>
             </>
           )}
 
-          {duelResult && (
+          {room.status === "finished" && (
             <>
               <h2>Duel Finished</h2>
-              <p>Rounds won: A {duelResult.winsA} | B {duelResult.winsB}</p>
-              <p>Winner: Player {duelResult.winner}</p>
+              <p>Check board movement rules:</p>
               <p>
-                Winner moves forward {duelResult.winnerMove} spaces.
+                3-0 → Winner move forward 3 spaces, loser move back 1 space
               </p>
               <p>
-                Loser {duelResult.loserMove === 0
-                  ? "stays in place."
-                  : "moves back 1 space."}
+                2-1 → Winner move forward 2 spaces
               </p>
             </>
           )}
         </>
       )}
-    </main>
+    </div>
   );
 }
