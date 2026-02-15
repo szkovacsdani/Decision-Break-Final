@@ -83,6 +83,7 @@ export default function DuelPage() {
 
   async function createRoom() {
     const code = randomCode();
+
     await supabase.from("duel_rooms").insert({
       code,
       status: "waiting",
@@ -148,11 +149,11 @@ export default function DuelPage() {
           question_ids: shuffled
         })
         .eq("code", code);
-
-      startTimer();
     }
 
     if (r.status === "playing") {
+      startTimer();
+
       const { data: subs } = await supabase
         .from("duel_submissions")
         .select("*")
@@ -181,7 +182,8 @@ export default function DuelPage() {
       room_code: room.code,
       q_index: room.current_q,
       slot: mySlot,
-      guess: parseInt(guess)
+      guess: parseInt(guess),
+      submitted_at: new Date().toISOString()
     });
 
     setGuess("");
@@ -198,11 +200,14 @@ export default function DuelPage() {
 
     let winner: "A" | "B";
 
-    if (!subA) winner = "B";
+    if (!subA && !subB) {
+      winner = Math.random() < 0.5 ? "A" : "B";
+    } else if (!subA) winner = "B";
     else if (!subB) winner = "A";
     else {
       const diffA = Math.abs(subA.guess - answer);
       const diffB = Math.abs(subB.guess - answer);
+
       if (diffA < diffB) winner = "A";
       else if (diffB < diffA) winner = "B";
       else {
@@ -220,11 +225,27 @@ export default function DuelPage() {
       winner
     });
 
+    const timeA = subA
+      ? Math.round(
+          (new Date(subA.submitted_at).getTime() -
+            new Date().getTime() + timer * 1000) / 1000
+        )
+      : null;
+
+    const timeB = subB
+      ? Math.round(
+          (new Date(subB.submitted_at).getTime() -
+            new Date().getTime() + timer * 1000) / 1000
+        )
+      : null;
+
     setRoundResult({
       winner,
       subA,
       subB,
-      answer
+      answer,
+      timeA,
+      timeB
     });
 
     setTimeout(async () => {
@@ -239,10 +260,14 @@ export default function DuelPage() {
           .update({ current_q: r.current_q + 1 })
           .eq("code", r.code);
         setRoundResult(null);
-        startTimer();
       }
     }, 5000);
   }
+
+  const scoreA = allResults.filter(r => r.winner === "A").length;
+  const scoreB = allResults.filter(r => r.winner === "B").length;
+  const finalWinner =
+    scoreA > scoreB ? "Player A" : scoreB > scoreA ? "Player B" : "Draw";
 
   return (
     <div style={{ padding: 30, color: "white", background: "black", minHeight: "100vh" }}>
@@ -265,13 +290,12 @@ export default function DuelPage() {
         <>
           <p>Room: {room.code}</p>
           <p>Status: {room.status}</p>
-          <p>Player A vs Player B</p>
+          <p>Player A (Room Creator) vs Player B (Join Player)</p>
 
           {room.status === "playing" && (
             <>
               <p>Round {room.current_q + 1}/3</p>
               <p>Time left: {timer}s</p>
-
               <p>{questionsMap.get(room.question_ids[room.current_q])?.q}</p>
 
               <input
@@ -285,9 +309,9 @@ export default function DuelPage() {
                 <>
                   <h3>Round Result</h3>
                   <p>Answer: {roundResult.answer}</p>
-                  <p>A guess: {roundResult.subA?.guess}</p>
-                  <p>B guess: {roundResult.subB?.guess}</p>
-                  <p>Winner: {roundResult.winner}</p>
+                  <p>A guess: {roundResult.subA?.guess} ({roundResult.timeA}s)</p>
+                  <p>B guess: {roundResult.subB?.guess} ({roundResult.timeB}s)</p>
+                  <p>Winner: Player {roundResult.winner}</p>
                 </>
               )}
             </>
@@ -296,6 +320,8 @@ export default function DuelPage() {
           {room.status === "finished" && (
             <>
               <h2>Duel Finished</h2>
+              <p>Final Score: {scoreA} - {scoreB}</p>
+              <p>Winner: {finalWinner}</p>
               <p>
                 3-0 → Winner move forward 3 spaces, loser move back 1 space
               </p>
