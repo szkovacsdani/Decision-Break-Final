@@ -221,9 +221,13 @@ export default function DuelPage() {
 
     const chosen = pick3UniqueQuestionIds(duelQuestions as DuelQuestion[]);
     const upd = await supabase
-      .from("duel_rooms")
-      .update({ question_ids: chosen })
-      .eq("code", nextRoom.code);
+  .from("duel_rooms")
+  .update({
+    question_ids: chosen,
+    question_started_at: new Date().toISOString()
+  })
+  .eq("code", nextRoom.code);
+
 
     if (!upd.error) lastSeedRef.current = key;
   }
@@ -323,11 +327,15 @@ export default function DuelPage() {
     }
 
     const upd = await supabase
-      .from("duel_rooms")
-      .update({ current_q: qIndex + 1 })
-      .eq("code", code)
-      .eq("current_q", qIndex)
-      .eq("status", "playing");
+  .from("duel_rooms")
+  .update({
+    current_q: qIndex + 1,
+    question_started_at: new Date().toISOString()
+  })
+  .eq("code", code)
+  .eq("current_q", qIndex)
+  .eq("status", "playing");
+
 
     if (!upd.error) {
       lastAdvanceRef.current = key;
