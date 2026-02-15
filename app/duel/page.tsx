@@ -312,8 +312,8 @@ if (subs.length === 2) {
 // ---- TIMEOUT CASE ----
 if (!isTimeUp) return;
 
-const key = `${code}_timeout_${qIndex}`;
-if (lastFinalizeRef.current === key) return;
+const timeoutKey = `${code}_timeout_${qIndex}`;
+if (lastFinalizeRef.current === timeoutKey) return;
 
 let winner: "A" | "B";
 
@@ -340,8 +340,8 @@ const row: DuelResultRow = {
 const insertResult = await supabase.from("duel_results").insert(row);
 
 if (!insertResult.error) {
-  lastFinalizeRef.current = key;
-  setRoundResult(row);
+  lastFinalizeRef.current = timeoutKey;
+    setRoundResult(row);
 } else {
   const after = await fetchRoundResult(code, qIndex);
   if (after) setRoundResult(after);
@@ -351,16 +351,16 @@ if (!insertResult.error) {
     const subB = subs.find((s) => s.slot === "B");
     if (!subA || !subB) return;
 
-    const key = `${code}_final_${qIndex}`;
-    if (lastFinalizeRef.current === key) return;
+    const finalKey = `${code}_final_${qIndex}`;
+if (lastFinalizeRef.current === finalKey) return;
 
     const row = computeWinnerFromSubs(q, subA, subB);
 
     // Unique(room_code,q_index) miatt race-safe: az egyik nyer, a másik hibát kap, de következő poll betölti.
     const ins = await supabase.from("duel_results").insert(row);
     if (!ins.error) {
-      lastFinalizeRef.current = key;
-      setRoundResult(row);
+      lastFinalizeRef.current = finalKey;
+            setRoundResult(row);
     } else {
       // Ha már beszúrta a másik fél, csak beolvassuk.
       const after = await fetchRoundResult(code, qIndex);
@@ -378,8 +378,8 @@ if (!insertResult.error) {
     const rr = await fetchRoundResult(code, qIndex);
     if (!rr) return;
 
-    const key = `${code}_adv_${qIndex}`;
-    if (lastAdvanceRef.current === key) return;
+    const advanceKey = `${code}_adv_${qIndex}`;
+if (lastAdvanceRef.current === advanceKey) return;
 
     if (qIndex >= 2) {
       const upd = await supabase
@@ -404,7 +404,7 @@ if (!insertResult.error) {
 
 
     if (!upd.error) {
-      lastAdvanceRef.current = key;
+      lastAdvanceRef.current = advanceKey;
       setMyGuess("");
       setRoundResult(null);
       setSubmissions([]);
