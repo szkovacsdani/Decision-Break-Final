@@ -95,6 +95,7 @@ function parseTsToMs(ts: string) {
   const ms = new Date(ts).getTime();
   return Number.isFinite(ms) ? ms : 0;
 }
+const TIME_LIMIT_MS = 10000; // 10 seconds
 
 export default function DuelPage() {
   const [loading, setLoading] = useState(false);
@@ -269,6 +270,12 @@ export default function DuelPage() {
 
     const q = questionsById.get(ids[qIndex]);
     if (!q) return;
+    // ---- TIME CHECK ----
+const started = nextRoom.question_started_at;
+if (!started) return;
+
+const elapsed = Date.now() - new Date(started).getTime();
+const isTimeUp = elapsed >= TIME_LIMIT_MS;
 
     const existing = await fetchRoundResult(code, qIndex);
     if (existing) {
@@ -277,9 +284,68 @@ export default function DuelPage() {
     }
 
     const subs = await fetchSubmissions(code, qIndex);
-    setSubmissions(subs);
+setSubmissions(subs);
 
-    if (subs.length < 2) return;
+// ---- NORMAL CASE: 2 submissions before timeout ----
+if (subs.length === 2) {
+  const subA = subs.find((s) => s.slot === "A");
+  const subB = subs.find((s) => s.slot === "B");
+  if (!subA || !subB) return;
+
+  const finalKey = `${code}_final_${qIndex}`;
+  if (lastFinalizeRef.current === finalKey) return;
+
+  const row = computeWinnerFromSubs(q, subA, subB);
+
+  const ins = await supabase.from("duel_results").insert(row);
+  if (!ins.error) {
+    lastFinalizeRef.current = finalKey;
+    setRoundResult(row);
+  } else {
+    const after = await fetchRoundResult(code, qIndex);
+    if (after) setRoundResult(after);
+  }
+
+  return;
+}
+
+// ---- TIMEOUT CASE ----
+if (!isTimeUp) return;
+
+const key = `${code}_timeout_${qIndex}`;
+if (lastFinalizeRef.current === key) return;
+
+let winner: "A" | "B";
+
+// 1 submission -> submitter wins
+if (subs.length === 1) {
+  winner = subs[0].slot;
+}
+// 0 submissions -> random winner
+else {
+  winner = Math.random() < 0.5 ? "A" : "B";
+}
+
+const row: DuelResultRow = {
+  room_code: code,
+  q_index: qIndex,
+  answer: q.a,
+  p1_guess: subs.find((s) => s.slot === "A")?.guess ?? null,
+  p2_guess: subs.find((s) => s.slot === "B")?.guess ?? null,
+  p1_diff: null,
+  p2_diff: null,
+  winner,
+};
+
+const insertResult = await supabase.from("duel_results").insert(row);
+
+if (!insertResult.error) {
+  lastFinalizeRef.current = key;
+  setRoundResult(row);
+} else {
+  const after = await fetchRoundResult(code, qIndex);
+  if (after) setRoundResult(after);
+}
 
     const subA = subs.find((s) => s.slot === "A");
     const subB = subs.find((s) => s.slot === "B");
