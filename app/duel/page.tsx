@@ -40,6 +40,7 @@ export default function DuelPage() {
   const [timer, setTimer] = useState(10);
   const [roundResult, setRoundResult] = useState<any>(null);
   const [allResults, setAllResults] = useState<any[]>([]);
+
   const pollRef = useRef<any>(null);
   const timerRef = useRef<any>(null);
 
@@ -83,6 +84,7 @@ export default function DuelPage() {
 
   async function createRoom() {
     const code = randomCode();
+
     await supabase.from("duel_rooms").insert({
       code,
       status: "waiting",
@@ -265,7 +267,13 @@ export default function DuelPage() {
         <>
           <p>Room: {room.code}</p>
           <p>Status: {room.status}</p>
-          <p>Player A vs Player B</p>
+
+          <p>
+            Player A (Room Creator) vs Player B (Join Player)
+          </p>
+          <p>
+            You are: <strong>Player {mySlot}</strong>
+          </p>
 
           {room.status === "playing" && (
             <>
@@ -284,10 +292,25 @@ export default function DuelPage() {
               {roundResult && (
                 <>
                   <h3>Round Result</h3>
-                  <p>Answer: {roundResult.answer}</p>
-                  <p>A guess: {roundResult.subA?.guess}</p>
-                  <p>B guess: {roundResult.subB?.guess}</p>
-                  <p>Winner: {roundResult.winner}</p>
+                  <p>Correct answer: {roundResult.answer}</p>
+
+                  <p>
+                    Player A guessed: {roundResult.subA?.guess ?? "No answer"} |
+                    Time: {roundResult.subA
+                      ? new Date(roundResult.subA.submitted_at).toLocaleTimeString()
+                      : "—"}
+                  </p>
+
+                  <p>
+                    Player B guessed: {roundResult.subB?.guess ?? "No answer"} |
+                    Time: {roundResult.subB
+                      ? new Date(roundResult.subB.submitted_at).toLocaleTimeString()
+                      : "—"}
+                  </p>
+
+                  <p>
+                    Round winner: <strong>Player {roundResult.winner}</strong>
+                  </p>
                 </>
               )}
             </>
@@ -296,12 +319,44 @@ export default function DuelPage() {
           {room.status === "finished" && (
             <>
               <h2>Duel Finished</h2>
-              <p>
-                3-0 → Winner move forward 3 spaces, loser move back 1 space
-              </p>
-              <p>
-                2-1 → Winner move forward 2 spaces
-              </p>
+
+              {allResults.length === 3 && (() => {
+                const winsA = allResults.filter(r => r.winner === "A").length;
+                const winsB = allResults.filter(r => r.winner === "B").length;
+
+                const duelWinner = winsA > winsB ? "A" : "B";
+                const winnerWins = Math.max(winsA, winsB);
+
+                return (
+                  <>
+                    <p>
+                      Final score: Player A {winsA} – Player B {winsB}
+                    </p>
+
+                    <p>
+                      Duel winner: <strong>Player {duelWinner}</strong>
+                    </p>
+
+                    {winnerWins === 3 && (
+                      <>
+                        <p>Player {duelWinner} moves forward 3 spaces.</p>
+                        <p>
+                          Player {duelWinner === "A" ? "B" : "A"} moves back 1 space.
+                        </p>
+                      </>
+                    )}
+
+                    {winnerWins === 2 && (
+                      <>
+                        <p>Player {duelWinner} moves forward 2 spaces.</p>
+                        <p>
+                          Player {duelWinner === "A" ? "B" : "A"} stays in place.
+                        </p>
+                      </>
+                    )}
+                  </>
+                );
+              })()}
             </>
           )}
         </>
