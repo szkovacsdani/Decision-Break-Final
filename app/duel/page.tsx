@@ -87,52 +87,74 @@ export default function DuelPage() {
 
   function startPolling(code: string) {
     if (pollRef.current) clearInterval(pollRef.current);
-
+  
     pollRef.current = setInterval(async () => {
       const { data } = await supabase
         .from("duel_rooms")
         .select("*")
         .eq("code", code)
         .single();
-
+  
       if (!data) return;
-
+  
       setRoom(data);
-
-      // kör indul
+  
+      // 🔴 HA FINISHED → MINDENT LEÁLLÍTUNK
+      if (data.status === "finished") {
+        stopTimer();
+        if (pollRef.current) {
+          clearInterval(pollRef.current);
+          pollRef.current = null;
+        }
+        return;
+      }
+  
+      // 🟢 Kör indul
       if (data.round_active && timer === null) {
         startTimer();
       }
-
-      // kör vége
+  
+      // 🔵 Kör vége
       if (!data.round_active && timer !== null) {
         stopTimer();
         await loadRoundResult(code, data.current_q);
       }
+  
     }, 1000);
   }
+  
 
   /* ---------------- TIMER ---------------- */
 
   function startTimer() {
     if (timerRef.current) return;
-
+  
     setTimer(10);
     setLocked(false);
     setRoundResult(null);
-
-    timerRef.current = setInterval(() => {
+  
+    timerRef.current = setInterval(async () => {
       setTimer(prev => {
         if (prev === null) return null;
+  
         if (prev <= 1) {
           stopTimer();
           setLocked(true);
+  
+          // 🔥 TIMEOUT EVALUATE
+          if (room) {
+            supabase.rpc("evaluate_duel_round", {
+              room_code_input: room.code
+            });
+          }
+  
           return 0;
         }
+  
         return prev - 1;
       });
     }, 1000);
-  }
+  }  
 
   function stopTimer() {
     if (timerRef.current) {
