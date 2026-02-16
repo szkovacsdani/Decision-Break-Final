@@ -87,19 +87,19 @@ export default function DuelPage() {
 
   function startPolling(code: string) {
     if (pollRef.current) clearInterval(pollRef.current);
-  
+
     pollRef.current = setInterval(async () => {
       const { data } = await supabase
         .from("duel_rooms")
         .select("*")
         .eq("code", code)
         .single();
-  
+
       if (!data) return;
-  
+
       setRoom(data);
-  
-      // 🔴 HA FINISHED → MINDENT LEÁLLÍTUNK
+
+      // 🔴 FINISHED → STOP EVERYTHING
       if (data.status === "finished") {
         stopTimer();
         if (pollRef.current) {
@@ -108,53 +108,49 @@ export default function DuelPage() {
         }
         return;
       }
-  
-      // 🟢 Kör indul
+
+      // 🟢 ROUND START
       if (data.round_active && timer === null) {
         startTimer();
       }
-  
-      // 🔵 Kör vége
+
+      // 🔵 ROUND END
       if (!data.round_active && timer !== null) {
         stopTimer();
         await loadRoundResult(code, data.current_q);
       }
-  
+
     }, 1000);
   }
-  
 
   /* ---------------- TIMER ---------------- */
 
   function startTimer() {
     if (timerRef.current) return;
-  
+
     setTimer(10);
     setLocked(false);
     setRoundResult(null);
-  
+
     timerRef.current = setInterval(async () => {
       setTimer(prev => {
         if (prev === null) return null;
-  
+
         if (prev <= 1) {
           stopTimer();
           setLocked(true);
-  
-          // 🔥 TIMEOUT EVALUATE
+
           if (room) {
-            supabase.rpc("evaluate_duel_round", {
-              room_code_input: room.code
-            });
+            evaluateRound(room.code);
           }
-  
+
           return 0;
         }
-  
+
         return prev - 1;
       });
     }, 1000);
-  }  
+  }
 
   function stopTimer() {
     if (timerRef.current) {
@@ -162,6 +158,18 @@ export default function DuelPage() {
       timerRef.current = null;
     }
     setTimer(null);
+  }
+
+  /* ---------------- EVALUATE ---------------- */
+
+  async function evaluateRound(code: string) {
+    const { error } = await supabase.rpc("evaluate_duel_round", {
+      room_code_input: code
+    });
+
+    if (error) {
+      console.error("EVALUATE ERROR:", error);
+    }
   }
 
   /* ---------------- SUBMIT ---------------- */
@@ -182,10 +190,7 @@ export default function DuelPage() {
     setLocked(true);
     setGuess("");
 
-    // ha mindkét submission megvan → evaluate
-    await supabase.rpc("evaluate_duel_round", {
-      room_code_input: room.code
-    });
+    await evaluateRound(room.code);
   }
 
   /* ---------------- LOAD RESULT ---------------- */
@@ -230,7 +235,7 @@ export default function DuelPage() {
 
   return (
     <div style={{ padding: 40 }}>
-      <h1>Duel Engine Stable</h1>
+      <h1>Duel Final Stable Engine</h1>
 
       {!room && (
         <>
@@ -272,7 +277,7 @@ export default function DuelPage() {
 
               {roundResult && (
                 <h3>
-                  {roundResult === "Draw"
+                  {roundResult === "draw"
                     ? "Draw"
                     : `Winner: ${roundResult}`}
                 </h3>
