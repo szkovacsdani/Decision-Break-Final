@@ -1,228 +1,227 @@
-"use client"
+"use client";
 
-import { useEffect, useRef, useState } from "react"
-import { supabase } from "@/lib/supabase"
+import { useState, useEffect, useRef } from "react";
+import { supabase } from "@/lib/supabase";
 
-type RoomStatus = "waiting" | "playing" | "finished"
+type Room = {
+  code: string;
+  status: "waiting" | "playing";
+  current_q: number;
+};
+
+const CORRECT_ANSWER = 100;
 
 function randomCode() {
-  const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"
-  let out = ""
+  const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+  let out = "";
   for (let i = 0; i < 5; i++) {
-    out += chars[Math.floor(Math.random() * chars.length)]
+    out += chars[Math.floor(Math.random() * chars.length)];
   }
-  return out
+  return out;
 }
 
 export default function DuelPage() {
-  const [roomCode, setRoomCode] = useState("")
-  const [room, setRoom] = useState<any>(null)
-  const [players, setPlayers] = useState<any[]>([])
-  const [mySlot, setMySlot] = useState<"A" | "B" | null>(null)
+  const [roomCode, setRoomCode] = useState("");
+  const [room, setRoom] = useState<Room | null>(null);
+  const [mySlot, setMySlot] = useState<"A" | "B" | null>(null);
 
-  const [timer, setTimer] = useState(10)
-  const [roundClosed, setRoundClosed] = useState(false)
-  const [guess, setGuess] = useState("")
-  const [scoreA, setScoreA] = useState(0)
-  const [scoreB, setScoreB] = useState(0)
+  const [timer, setTimer] = useState<number | null>(null);
+  const [locked, setLocked] = useState(false);
+  const [guess, setGuess] = useState("");
 
-  const pollRef = useRef<any>(null)
-  const timerRef = useRef<any>(null)
+  const [roundResult, setRoundResult] = useState<any>(null);
 
-  const correctAnswer = 100
-  const currentQIndex = 0
+  const pollRef = useRef<any>(null);
+  const timerRef = useRef<any>(null);
+  const previousStatusRef = useRef<string | null>(null);
 
-  useEffect(() => {
-    return () => {
-      clearInterval(pollRef.current)
-      clearInterval(timerRef.current)
-    }
-  }, [])
-
-  // ---------------- CREATE ROOM ----------------
+  /* ---------------- CREATE ROOM ---------------- */
 
   async function createRoom() {
-    const code = randomCode()
-    const token = crypto.randomUUID()
+    const code = randomCode();
 
-    localStorage.setItem("duel_token", token)
+    const { error: roomError } = await supabase
+      .from("duel_rooms")
+      .insert({
+        code,
+        status: "waiting",
+        current_q: 0,
+        question_ids: []
+      });
 
-    await supabase.from("duel_rooms").insert({
-      code,
-      status: "waiting",
-      current_q: 0
-    })
+    if (roomError) return;
 
     await supabase.from("duel_players").insert({
       room_code: code,
-      player_token: token,
+      player_token: crypto.randomUUID(),
       slot: "A"
-    })
+    });
 
-    setMySlot("A")
-    setRoomCode(code)
-    startPolling(code)
+    setRoom({ code, status: "waiting", current_q: 0 });
+    setMySlot("A");
+    startPolling(code);
   }
 
-  // ---------------- JOIN ROOM ----------------
+  /* ---------------- JOIN ROOM ---------------- */
 
   async function joinRoom() {
-    const token = crypto.randomUUID()
+    const { data, error } = await supabase
+      .from("duel_rooms")
+      .select("*")
+      .eq("code", roomCode)
+      .single();
 
-    localStorage.setItem("duel_token", token)
+    if (error || !data) return;
 
     await supabase.from("duel_players").insert({
       room_code: roomCode,
-      player_token: token,
+      player_token: crypto.randomUUID(),
       slot: "B"
-    })
+    });
 
-    setMySlot("B")
-    startPolling(roomCode)
+    setRoom(data);
+    setMySlot("B");
+    startPolling(roomCode);
   }
 
-  // ---------------- POLLING ----------------
+  /* ---------------- POLLING ---------------- */
 
   function startPolling(code: string) {
-    clearInterval(pollRef.current)
+    if (pollRef.current) clearInterval(pollRef.current);
 
     pollRef.current = setInterval(async () => {
-      const { data: r } = await supabase
+      const { data } = await supabase
         .from("duel_rooms")
         .select("*")
         .eq("code", code)
-        .single()
+        .single();
 
-      if (!r) return
+      if (!data) return;
 
-      setRoom(r)
+      setRoom(data);
 
-      const { data: p } = await supabase
-        .from("duel_players")
-        .select("*")
-        .eq("room_code", code)
-
-      setPlayers(p || [])
-
-      // Auto start
-      if (r.status === "waiting" && p && p.length === 2) {
-        await supabase
-          .from("duel_rooms")
-          .update({ status: "playing" })
-          .eq("code", code)
-
-        startTimer()
+      if (
+        previousStatusRef.current !== "playing" &&
+        data.status === "playing"
+      ) {
+        startTimer();
       }
 
-      // Poll submissions
-      if (r.status === "playing" && !roundClosed) {
+      previousStatusRef.current = data.status;
+
+      // -------- CHECK SUBMISSIONS --------
+
+      if (data.status === "playing") {
         const { data: subs } = await supabase
           .from("duel_submissions")
           .select("*")
           .eq("room_code", code)
-          .eq("q_index", currentQIndex)
+          .eq("q_index", data.current_q);
 
-        if (subs && subs.length >= 2) {
-          closeRound(subs)
+        if (subs && subs.length === 2 && !roundResult) {
+          evaluateRound(subs);
         }
       }
-    }, 1000)
+    }, 1000);
   }
 
-  // ---------------- TIMER ----------------
+  /* ---------------- TIMER ---------------- */
 
   function startTimer() {
-    setTimer(10)
-    setRoundClosed(false)
+    if (timerRef.current) return;
 
-    clearInterval(timerRef.current)
+    setTimer(10);
+    setLocked(false);
+    setRoundResult(null);
 
     timerRef.current = setInterval(() => {
       setTimer(prev => {
+        if (prev === null) return null;
+
         if (prev <= 1) {
-          clearInterval(timerRef.current)
-          return 0
+          clearInterval(timerRef.current);
+          timerRef.current = null;
+          setLocked(true);
+          return 0;
         }
-        return prev - 1
-      })
-    }, 1000)
+
+        return prev - 1;
+      });
+    }, 1000);
   }
 
-  // ---------------- SUBMIT ----------------
+  /* ---------------- SUBMIT ---------------- */
 
   async function submitGuess() {
-    if (!room || !mySlot || !guess || roundClosed) return
+    if (!room || !mySlot || !guess || locked) return;
 
-    const responseTime = 10 - timer
+    const responseTime = 10 - (timer ?? 0);
 
     await supabase.from("duel_submissions").insert({
       room_code: room.code,
-      q_index: currentQIndex,
+      q_index: room.current_q,
       slot: mySlot,
       guess: parseInt(guess),
       response_time: responseTime
-    })
+    });
 
-    setGuess("")
+    setGuess("");
   }
 
-  // ---------------- CLOSE ROUND ----------------
+  /* ---------------- ROUND EVALUATION ---------------- */
 
-  async function closeRound(submissions: any[]) {
-    if (roundClosed) return
-    setRoundClosed(true)
+  function evaluateRound(subs: any[]) {
+    clearInterval(timerRef.current);
+    setLocked(true);
 
-    clearInterval(timerRef.current)
+    const subA = subs.find(s => s.slot === "A");
+    const subB = subs.find(s => s.slot === "B");
 
-    const subA = submissions.find(s => s.slot === "A")
-    const subB = submissions.find(s => s.slot === "B")
+    const distA = Math.abs(subA.guess - CORRECT_ANSWER);
+    const distB = Math.abs(subB.guess - CORRECT_ANSWER);
 
-    const guessA = subA?.guess ?? null
-    const guessB = subB?.guess ?? null
+    let winner: "A" | "B" | "draw" = "draw";
 
-    const timeA = subA?.response_time ?? null
-    const timeB = subB?.response_time ?? null
-
-    let winner: "A" | "B" | "draw" = "draw"
-
-    if (guessA !== null && guessB === null) winner = "A"
-    if (guessB !== null && guessA === null) winner = "B"
-
-    if (guessA !== null && guessB !== null) {
-      const distA = Math.abs(guessA - correctAnswer)
-      const distB = Math.abs(guessB - correctAnswer)
-
-      if (distA < distB) winner = "A"
-      else if (distB < distA) winner = "B"
-      else {
-        if (timeA < timeB) winner = "A"
-        else if (timeB < timeA) winner = "B"
-        else winner = "draw"
-      }
+    if (distA < distB) winner = "A";
+    else if (distB < distA) winner = "B";
+    else {
+      if (subA.response_time < subB.response_time) winner = "A";
+      else if (subB.response_time < subA.response_time) winner = "B";
     }
 
-    if (winner === "A") setScoreA(prev => prev + 1)
-    if (winner === "B") setScoreB(prev => prev + 1)
-
-    await supabase.from("duel_round_results").insert({
-      room_code: room.code,
-      q_index: currentQIndex,
+    setRoundResult({
+      guessA: subA.guess,
+      guessB: subB.guess,
+      timeA: subA.response_time,
+      timeB: subB.response_time,
       winner
-    })
-
-    // Finish after 3 rounds
-    if (scoreA + scoreB >= 2) {
-      await supabase
-        .from("duel_rooms")
-        .update({ status: "finished" })
-        .eq("code", room.code)
-    }
+    });
   }
 
-  // ---------------- UI ----------------
+  /* ---------------- START GAME ---------------- */
+
+  async function startGame() {
+    if (!room) return;
+
+    await supabase
+      .from("duel_rooms")
+      .update({ status: "playing" })
+      .eq("code", room.code);
+  }
+
+  /* ---------------- CLEANUP ---------------- */
+
+  useEffect(() => {
+    return () => {
+      if (pollRef.current) clearInterval(pollRef.current);
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
+  }, []);
+
+  /* ---------------- UI ---------------- */
 
   return (
-    <div style={{ padding: 40, background: "black", color: "white", minHeight: "100vh" }}>
+    <div style={{ padding: 40 }}>
       <h1>Duel</h1>
 
       {!room && (
@@ -231,9 +230,10 @@ export default function DuelPage() {
           <br /><br />
           <input
             value={roomCode}
-            onChange={e => setRoomCode(e.target.value.toUpperCase())}
+            onChange={(e) => setRoomCode(e.target.value.toUpperCase())}
+            placeholder="Room code"
           />
-          <button onClick={joinRoom}>Join</button>
+          <button onClick={joinRoom}>Join Room</button>
         </>
       )}
 
@@ -241,40 +241,39 @@ export default function DuelPage() {
         <>
           <p>Room: {room.code}</p>
           <p>Status: {room.status}</p>
-          <p>Score A: {scoreA} | Score B: {scoreB}</p>
+          <p>You are Player {mySlot}</p>
+
+          {room.status === "waiting" && mySlot === "A" && (
+            <button onClick={startGame}>Start Game</button>
+          )}
 
           {room.status === "playing" && (
             <>
-              <p>Time left: {timer}</p>
-              {timer === 0 && <p>Time is up</p>}
-
-              <p>Guess the number closest to 100</p>
+              <h2>{timer !== null ? `Time left: ${timer}` : ""}</h2>
+              {locked && <p>Time is up</p>}
 
               <input
+                type="number"
                 value={guess}
-                onChange={e => setGuess(e.target.value)}
-                disabled={roundClosed}
+                onChange={(e) => setGuess(e.target.value)}
+                disabled={locked}
               />
 
-              <button
-                onClick={submitGuess}
-                disabled={roundClosed}
-              >
+              <button onClick={submitGuess} disabled={locked}>
                 Submit
               </button>
-            </>
-          )}
 
-          {room.status === "finished" && (
-            <>
-              <h2>Duel Finished</h2>
-              {scoreA > scoreB && <p>Player A wins</p>}
-              {scoreB > scoreA && <p>Player B wins</p>}
-              {scoreA === scoreB && <p>Draw</p>}
+              {roundResult && (
+                <div style={{ marginTop: 20 }}>
+                  <p>A guessed: {roundResult.guessA} ({roundResult.timeA}s)</p>
+                  <p>B guessed: {roundResult.guessB} ({roundResult.timeB}s)</p>
+                  <h3>Winner: {roundResult.winner}</h3>
+                </div>
+              )}
             </>
           )}
         </>
       )}
     </div>
-  )
+  );
 }
