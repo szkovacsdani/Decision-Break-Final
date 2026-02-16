@@ -30,11 +30,20 @@ export default function DuelPage() {
 
   const pollRef = useRef<any>(null);
   const timerRef = useRef<any>(null);
+  const lastRoundRef = useRef<number | null>(null);
+
+  /* ---------------- CREATE ROOM ---------------- */
 
   async function createRoom() {
     const code = randomCode();
 
-    await supabase.rpc("create_duel_room", { p_code: code });
+    await supabase.from("duel_rooms").insert({
+      code,
+      status: "waiting",
+      current_q: 0,
+      question_ids: [],
+      round_active: false,
+    });
 
     await supabase.from("duel_players").insert({
       room_code: code,
@@ -50,9 +59,10 @@ export default function DuelPage() {
     });
 
     setMySlot("A");
-    setRoomCode(code);
     startPolling(code);
   }
+
+  /* ---------------- JOIN ROOM ---------------- */
 
   async function joinRoom() {
     const { data } = await supabase
@@ -74,18 +84,7 @@ export default function DuelPage() {
     startPolling(roomCode);
   }
 
-  async function startGame() {
-    if (!room) return;
-
-    await supabase
-      .from("duel_rooms")
-      .update({
-        status: "playing",
-        round_active: true,
-        round_started_at: new Date().toISOString(),
-      })
-      .eq("code", room.code);
-  }
+  /* ---------------- POLLING ---------------- */
 
   function startPolling(code: string) {
     if (pollRef.current) clearInterval(pollRef.current);
@@ -106,7 +105,8 @@ export default function DuelPage() {
         return;
       }
 
-      if (data.round_active && timer === null) {
+      if (data.round_active && lastRoundRef.current !== data.current_q) {
+        lastRoundRef.current = data.current_q;
         startTimer(code);
       }
 
@@ -116,6 +116,8 @@ export default function DuelPage() {
       }
     }, 1000);
   }
+
+  /* ---------------- TIMER ---------------- */
 
   function startTimer(code: string) {
     if (timerRef.current) return;
@@ -132,7 +134,9 @@ export default function DuelPage() {
           clearInterval(timerRef.current);
           timerRef.current = null;
           setLocked(true);
+
           evaluateRound(code);
+
           return 0;
         }
 
@@ -149,9 +153,15 @@ export default function DuelPage() {
     setTimer(null);
   }
 
+  /* ---------------- EVALUATE ---------------- */
+
   async function evaluateRound(code: string) {
-    await supabase.rpc("evaluate_duel_round", { p_room: code });
+    await supabase.rpc("evaluate_duel_round", {
+      p_room: code,
+    });
   }
+
+  /* ---------------- SUBMIT ---------------- */
 
   async function submitGuess() {
     if (!room || !mySlot || locked || !guess) return;
@@ -170,6 +180,8 @@ export default function DuelPage() {
     setGuess("");
   }
 
+  /* ---------------- LOAD RESULT ---------------- */
+
   async function loadRoundResult(code: string, roundIndex: number) {
     const { data } = await supabase
       .from("duel_round_results")
@@ -183,12 +195,31 @@ export default function DuelPage() {
     }
   }
 
+  /* ---------------- START GAME ---------------- */
+
+  async function startGame() {
+    if (!room) return;
+
+    await supabase
+      .from("duel_rooms")
+      .update({
+        status: "playing",
+        round_active: true,
+        current_q: 0,
+      })
+      .eq("code", room.code);
+  }
+
+  /* ---------------- CLEANUP ---------------- */
+
   useEffect(() => {
     return () => {
       if (pollRef.current) clearInterval(pollRef.current);
       if (timerRef.current) clearInterval(timerRef.current);
     };
   }, []);
+
+  /* ---------------- UI ---------------- */
 
   return (
     <div style={{ padding: 40 }}>
@@ -212,6 +243,7 @@ export default function DuelPage() {
         <>
           <p>Room: {room.code}</p>
           <p>Status: {room.status}</p>
+          <p>Round: {room.current_q + 1} / 3</p>
           <p>You are Player {mySlot}</p>
 
           {room.status === "waiting" && mySlot === "A" && (
