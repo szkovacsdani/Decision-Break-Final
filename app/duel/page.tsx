@@ -1,240 +1,229 @@
-"use client";
+"use client"
 
-import { useState, useEffect, useRef } from "react";
-import { supabase } from "@/lib/supabase";
+import { useEffect, useRef, useState } from "react"
+import { supabase } from "@/lib/supabase"
 
-type Room = {
-  code: string;
-  status: "waiting" | "playing";
-  current_q: number;
-};
+type RoomStatus = "waiting" | "playing" | "finished"
 
 function randomCode() {
-  const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
-  let out = "";
+  const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"
+  let out = ""
   for (let i = 0; i < 5; i++) {
-    out += chars[Math.floor(Math.random() * chars.length)];
+    out += chars[Math.floor(Math.random() * chars.length)]
   }
-  return out;
+  return out
 }
 
 export default function DuelPage() {
-  const [roomCode, setRoomCode] = useState("");
-  const [room, setRoom] = useState<Room | null>(null);
-  const [mySlot, setMySlot] = useState<"A" | "B" | null>(null);
+  const [roomCode, setRoomCode] = useState("")
+  const [room, setRoom] = useState<any>(null)
+  const [players, setPlayers] = useState<any[]>([])
+  const [mySlot, setMySlot] = useState<"A" | "B" | null>(null)
 
-  const [timer, setTimer] = useState<number | null>(null);
-  const [locked, setLocked] = useState(false);
-  const [guess, setGuess] = useState("");
+  const [timer, setTimer] = useState(10)
+  const [roundClosed, setRoundClosed] = useState(false)
+  const [guess, setGuess] = useState("")
+  const [scoreA, setScoreA] = useState(0)
+  const [scoreB, setScoreB] = useState(0)
 
-  const pollRef = useRef<any>(null);
-  const timerRef = useRef<any>(null);
-  const previousStatusRef = useRef<string | null>(null);
+  const pollRef = useRef<any>(null)
+  const timerRef = useRef<any>(null)
 
-  /* ---------------- CREATE ROOM ---------------- */
-
-  async function createRoom() {
-    const code = randomCode();
-
-    console.log("Creating room:", code);
-
-    const { error: roomError } = await supabase
-      .from("duel_rooms")
-      .insert({
-        code,
-        status: "waiting",
-        current_q: 0,
-        question_ids: []
-      });
-
-    if (roomError) {
-      console.log("ROOM INSERT ERROR:", roomError);
-      return;
-    }
-
-    const { error: playerError } = await supabase
-      .from("duel_players")
-      .insert({
-        room_code: code,
-        player_token: crypto.randomUUID(),
-        slot: "A"
-      });
-
-    if (playerError) {
-      console.log("PLAYER INSERT ERROR:", playerError);
-      return;
-    }
-
-    console.log("ROOM CREATED SUCCESS");
-
-    setRoom({ code, status: "waiting", current_q: 0 });
-    setMySlot("A");
-    startPolling(code);
-  }
-
-  /* ---------------- JOIN ROOM ---------------- */
-
-  async function joinRoom() {
-    console.log("Joining room:", roomCode);
-
-    const { data, error } = await supabase
-      .from("duel_rooms")
-      .select("*")
-      .eq("code", roomCode)
-      .single();
-
-    if (error || !data) {
-      console.log("ROOM NOT FOUND:", error);
-      return;
-    }
-
-    const { error: playerError } = await supabase
-      .from("duel_players")
-      .insert({
-        room_code: roomCode,
-        player_token: crypto.randomUUID(),
-        slot: "B"
-      });
-
-    if (playerError) {
-      console.log("JOIN PLAYER ERROR:", playerError);
-      return;
-    }
-
-    console.log("JOIN SUCCESS");
-
-    setRoom(data);
-    setMySlot("B");
-    startPolling(roomCode);
-  }
-
-  /* ---------------- POLLING ---------------- */
-
-  function startPolling(code: string) {
-    if (pollRef.current) clearInterval(pollRef.current);
-
-    pollRef.current = setInterval(async () => {
-      const { data, error } = await supabase
-        .from("duel_rooms")
-        .select("*")
-        .eq("code", code)
-        .single();
-
-      if (error) {
-        console.log("POLL ERROR:", error);
-        return;
-      }
-
-      if (!data) return;
-
-      setRoom(data);
-
-      // STATUS TRANSITION alapú timer indítás
-      if (
-        previousStatusRef.current !== "playing" &&
-        data.status === "playing"
-      ) {
-        startTimer();
-      }
-
-      previousStatusRef.current = data.status;
-    }, 1000);
-  }
-
-  /* ---------------- TIMER ---------------- */
-
-  function startTimer() {
-    if (timerRef.current) return;
-
-    console.log("TIMER STARTED");
-
-    setTimer(10);
-    setLocked(false);
-
-    timerRef.current = setInterval(() => {
-      setTimer(prev => {
-        if (prev === null) return null;
-
-        if (prev <= 1) {
-          clearInterval(timerRef.current);
-          timerRef.current = null;
-
-          console.log("TIMER ENDED");
-
-          setLocked(true);
-          return 0;
-        }
-
-        return prev - 1;
-      });
-    }, 1000);
-  }
-
-  /* ---------------- SUBMIT ---------------- */
-
-  async function submitGuess() {
-    if (!room || !mySlot || !guess || locked) return;
-
-    const responseTime = 10 - (timer ?? 0);
-
-    console.log("Submitting guess:", {
-      room: room.code,
-      slot: mySlot,
-      guess,
-      responseTime
-    });
-
-    const { error } = await supabase
-      .from("duel_submissions")
-      .insert({
-        room_code: room.code,
-        q_index: room.current_q,
-        slot: mySlot,
-        guess: parseInt(guess),
-        response_time: responseTime
-      });
-
-    if (error) {
-      console.log("SUBMISSION ERROR:", error);
-      return;
-    }
-
-    console.log("SUBMISSION SUCCESS");
-
-    setGuess("");
-  }
-
-  /* ---------------- START GAME ---------------- */
-
-  async function startGame() {
-    if (!room) return;
-
-    console.log("Starting game");
-
-    const { error } = await supabase
-      .from("duel_rooms")
-      .update({ status: "playing" })
-      .eq("code", room.code);
-
-    if (error) {
-      console.log("START GAME ERROR:", error);
-    }
-  }
-
-  /* ---------------- CLEANUP ---------------- */
+  const correctAnswer = 100
+  const currentQIndex = 0
 
   useEffect(() => {
     return () => {
-      if (pollRef.current) clearInterval(pollRef.current);
-      if (timerRef.current) clearInterval(timerRef.current);
-    };
-  }, []);
+      clearInterval(pollRef.current)
+      clearInterval(timerRef.current)
+    }
+  }, [])
 
-  /* ---------------- UI ---------------- */
+  // ---------------- CREATE ROOM ----------------
+
+  async function createRoom() {
+    const code = randomCode()
+    const token = crypto.randomUUID()
+
+    localStorage.setItem("duel_token", token)
+
+    await supabase.from("duel_rooms").insert({
+      code,
+      status: "waiting",
+      current_q: 0
+    })
+
+    await supabase.from("duel_players").insert({
+      room_code: code,
+      player_token: token,
+      slot: "A"
+    })
+
+    setMySlot("A")
+    setRoomCode(code)
+    startPolling(code)
+  }
+
+  // ---------------- JOIN ROOM ----------------
+
+  async function joinRoom() {
+    const token = crypto.randomUUID()
+
+    localStorage.setItem("duel_token", token)
+
+    await supabase.from("duel_players").insert({
+      room_code: roomCode,
+      player_token: token,
+      slot: "B"
+    })
+
+    setMySlot("B")
+    startPolling(roomCode)
+  }
+
+  // ---------------- POLLING ----------------
+
+  function startPolling(code: string) {
+    clearInterval(pollRef.current)
+
+    pollRef.current = setInterval(async () => {
+      const { data: r } = await supabase
+        .from("duel_rooms")
+        .select("*")
+        .eq("code", code)
+        .single()
+
+      if (!r) return
+
+      setRoom(r)
+
+      const { data: p } = await supabase
+        .from("duel_players")
+        .select("*")
+        .eq("room_code", code)
+
+      setPlayers(p || [])
+
+      // Auto start
+      if (r.status === "waiting" && p && p.length === 2) {
+        await supabase
+          .from("duel_rooms")
+          .update({ status: "playing" })
+          .eq("code", code)
+
+        startTimer()
+      }
+
+      // Poll submissions
+      if (r.status === "playing" && !roundClosed) {
+        const { data: subs } = await supabase
+          .from("duel_submissions")
+          .select("*")
+          .eq("room_code", code)
+          .eq("q_index", currentQIndex)
+
+        if (subs && subs.length >= 2) {
+          closeRound(subs)
+        }
+      }
+    }, 1000)
+  }
+
+  // ---------------- TIMER ----------------
+
+  function startTimer() {
+    setTimer(10)
+    setRoundClosed(false)
+
+    clearInterval(timerRef.current)
+
+    timerRef.current = setInterval(() => {
+      setTimer(prev => {
+        if (prev <= 1) {
+          clearInterval(timerRef.current)
+          return 0
+        }
+        return prev - 1
+      })
+    }, 1000)
+  }
+
+  // ---------------- SUBMIT ----------------
+
+  async function submitGuess() {
+    if (!room || !mySlot || !guess || roundClosed) return
+
+    const responseTime = 10 - timer
+
+    await supabase.from("duel_submissions").insert({
+      room_code: room.code,
+      q_index: currentQIndex,
+      slot: mySlot,
+      guess: parseInt(guess),
+      response_time: responseTime
+    })
+
+    setGuess("")
+  }
+
+  // ---------------- CLOSE ROUND ----------------
+
+  async function closeRound(submissions: any[]) {
+    if (roundClosed) return
+    setRoundClosed(true)
+
+    clearInterval(timerRef.current)
+
+    const subA = submissions.find(s => s.slot === "A")
+    const subB = submissions.find(s => s.slot === "B")
+
+    const guessA = subA?.guess ?? null
+    const guessB = subB?.guess ?? null
+
+    const timeA = subA?.response_time ?? null
+    const timeB = subB?.response_time ?? null
+
+    let winner: "A" | "B" | "draw" = "draw"
+
+    if (guessA !== null && guessB === null) winner = "A"
+    if (guessB !== null && guessA === null) winner = "B"
+
+    if (guessA !== null && guessB !== null) {
+      const distA = Math.abs(guessA - correctAnswer)
+      const distB = Math.abs(guessB - correctAnswer)
+
+      if (distA < distB) winner = "A"
+      else if (distB < distA) winner = "B"
+      else {
+        if (timeA < timeB) winner = "A"
+        else if (timeB < timeA) winner = "B"
+        else winner = "draw"
+      }
+    }
+
+    if (winner === "A") setScoreA(prev => prev + 1)
+    if (winner === "B") setScoreB(prev => prev + 1)
+
+    await supabase.from("duel_round_results").insert({
+      room_code: room.code,
+      q_index: currentQIndex,
+      winner
+    })
+
+    // Finish after 3 rounds
+    if (scoreA + scoreB >= 2) {
+      await supabase
+        .from("duel_rooms")
+        .update({ status: "finished" })
+        .eq("code", room.code)
+    }
+  }
+
+  // ---------------- UI ----------------
 
   return (
-    <div style={{ padding: 40 }}>
-      <h1>Duel Stable Two-Side Submission</h1>
+    <div style={{ padding: 40, background: "black", color: "white", minHeight: "100vh" }}>
+      <h1>Duel</h1>
 
       {!room && (
         <>
@@ -242,10 +231,9 @@ export default function DuelPage() {
           <br /><br />
           <input
             value={roomCode}
-            onChange={(e) => setRoomCode(e.target.value.toUpperCase())}
-            placeholder="Room code"
+            onChange={e => setRoomCode(e.target.value.toUpperCase())}
           />
-          <button onClick={joinRoom}>Join Room</button>
+          <button onClick={joinRoom}>Join</button>
         </>
       )}
 
@@ -253,37 +241,40 @@ export default function DuelPage() {
         <>
           <p>Room: {room.code}</p>
           <p>Status: {room.status}</p>
-          <p>You are Player {mySlot}</p>
-
-          {room.status === "waiting" && mySlot === "A" && (
-            <button onClick={startGame}>Start Game</button>
-          )}
+          <p>Score A: {scoreA} | Score B: {scoreB}</p>
 
           {room.status === "playing" && (
             <>
-              <h2>
-                {timer !== null ? `Time left: ${timer}` : ""}
-              </h2>
+              <p>Time left: {timer}</p>
+              {timer === 0 && <p>Time is up</p>}
 
-              {locked && <p>Time is up</p>}
-
-              <br />
+              <p>Guess the number closest to 100</p>
 
               <input
-                type="number"
                 value={guess}
-                onChange={(e) => setGuess(e.target.value)}
-                disabled={locked}
-                placeholder="Your guess"
+                onChange={e => setGuess(e.target.value)}
+                disabled={roundClosed}
               />
 
-              <button onClick={submitGuess} disabled={locked}>
+              <button
+                onClick={submitGuess}
+                disabled={roundClosed}
+              >
                 Submit
               </button>
+            </>
+          )}
+
+          {room.status === "finished" && (
+            <>
+              <h2>Duel Finished</h2>
+              {scoreA > scoreB && <p>Player A wins</p>}
+              {scoreB > scoreA && <p>Player B wins</p>}
+              {scoreA === scoreB && <p>Draw</p>}
             </>
           )}
         </>
       )}
     </div>
-  );
+  )
 }
