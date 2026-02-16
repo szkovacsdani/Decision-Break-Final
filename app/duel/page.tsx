@@ -31,37 +31,28 @@ export default function DuelPage() {
   const pollRef = useRef<any>(null);
   const timerRef = useRef<any>(null);
 
-  /* ---------------- CREATE ROOM ---------------- */
-
   async function createRoom() {
     const code = randomCode();
 
-    await supabase.from("duel_rooms").insert({
-      code,
-      status: "waiting",
-      current_q: 0,
-      question_ids: [],
-      round_active: false
-    });
+    await supabase.rpc("create_duel_room", { p_code: code });
 
     await supabase.from("duel_players").insert({
       room_code: code,
       player_token: crypto.randomUUID(),
-      slot: "A"
+      slot: "A",
     });
 
     setRoom({
       code,
       status: "waiting",
       current_q: 0,
-      round_active: false
+      round_active: false,
     });
 
     setMySlot("A");
+    setRoomCode(code);
     startPolling(code);
   }
-
-  /* ---------------- JOIN ROOM ---------------- */
 
   async function joinRoom() {
     const { data } = await supabase
@@ -75,7 +66,7 @@ export default function DuelPage() {
     await supabase.from("duel_players").insert({
       room_code: roomCode,
       player_token: crypto.randomUUID(),
-      slot: "B"
+      slot: "B",
     });
 
     setRoom(data);
@@ -83,7 +74,18 @@ export default function DuelPage() {
     startPolling(roomCode);
   }
 
-  /* ---------------- POLLING ---------------- */
+  async function startGame() {
+    if (!room) return;
+
+    await supabase
+      .from("duel_rooms")
+      .update({
+        status: "playing",
+        round_active: true,
+        round_started_at: new Date().toISOString(),
+      })
+      .eq("code", room.code);
+  }
 
   function startPolling(code: string) {
     if (pollRef.current) clearInterval(pollRef.current);
@@ -105,30 +107,17 @@ export default function DuelPage() {
       }
 
       if (data.round_active && timer === null) {
-        startTimer();
+        startTimer(code);
       }
 
       if (!data.round_active && timer !== null) {
         stopTimer();
         await loadRoundResult(code, data.current_q - 1);
       }
-
-      // 🔥 AUTO EVALUATE HA 2 SUBMISSION MEGVAN
-      const { count } = await supabase
-        .from("duel_submissions")
-        .select("*", { count: "exact", head: true })
-        .eq("room_code", code)
-        .eq("q_index", data.current_q);
-
-      if (count === 2 && data.round_active) {
-        await evaluateRound(code);
-      }
     }, 1000);
   }
 
-  /* ---------------- TIMER ---------------- */
-
-  function startTimer() {
+  function startTimer(code: string) {
     if (timerRef.current) return;
 
     setTimer(10);
@@ -136,15 +125,17 @@ export default function DuelPage() {
     setRoundResult(null);
 
     timerRef.current = setInterval(() => {
-      setTimer(prev => {
+      setTimer((prev) => {
         if (prev === null) return null;
+
         if (prev <= 1) {
           clearInterval(timerRef.current);
           timerRef.current = null;
           setLocked(true);
-          if (room) evaluateRound(room.code);
+          evaluateRound(code);
           return 0;
         }
+
         return prev - 1;
       });
     }, 1000);
@@ -158,15 +149,9 @@ export default function DuelPage() {
     setTimer(null);
   }
 
-  /* ---------------- EVALUATE ---------------- */
-
   async function evaluateRound(code: string) {
-    await supabase.rpc("evaluate_duel_round", {
-      room_code_input: code
-    });
+    await supabase.rpc("evaluate_duel_round", { p_room: code });
   }
-
-  /* ---------------- SUBMIT ---------------- */
 
   async function submitGuess() {
     if (!room || !mySlot || locked || !guess) return;
@@ -178,14 +163,12 @@ export default function DuelPage() {
       q_index: room.current_q,
       slot: mySlot,
       guess: parseInt(guess),
-      response_time: responseTime
+      response_time: responseTime,
     });
 
     setLocked(true);
     setGuess("");
   }
-
-  /* ---------------- LOAD RESULT ---------------- */
 
   async function loadRoundResult(code: string, roundIndex: number) {
     const { data } = await supabase
@@ -198,20 +181,6 @@ export default function DuelPage() {
     if (data) {
       setRoundResult(data.winner_slot ?? "Draw");
     }
-  }
-
-  /* ---------------- START GAME ---------------- */
-
-  async function startGame() {
-    if (!room) return;
-
-    await supabase
-      .from("duel_rooms")
-      .update({
-        status: "playing",
-        round_active: true
-      })
-      .eq("code", room.code);
   }
 
   useEffect(() => {
@@ -228,7 +197,8 @@ export default function DuelPage() {
       {!room && (
         <>
           <button onClick={createRoom}>Create Room</button>
-          <br /><br />
+          <br />
+          <br />
           <input
             value={roomCode}
             onChange={(e) => setRoomCode(e.target.value.toUpperCase())}
@@ -265,17 +235,13 @@ export default function DuelPage() {
 
               {roundResult && (
                 <h3>
-                  {roundResult === "Draw"
-                    ? "Draw"
-                    : `Winner: ${roundResult}`}
+                  {roundResult === "Draw" ? "Draw" : `Winner: ${roundResult}`}
                 </h3>
               )}
             </>
           )}
 
-          {room.status === "finished" && (
-            <h2>Duel finished</h2>
-          )}
+          {room.status === "finished" && <h2>Duel finished</h2>}
         </>
       )}
     </div>
