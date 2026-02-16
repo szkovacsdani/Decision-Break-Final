@@ -112,6 +112,17 @@ export default function DuelPage() {
         stopTimer();
         await loadRoundResult(code, data.current_q - 1);
       }
+
+      // 🔥 AUTO EVALUATE HA 2 SUBMISSION MEGVAN
+      const { count } = await supabase
+        .from("duel_submissions")
+        .select("*", { count: "exact", head: true })
+        .eq("room_code", code)
+        .eq("q_index", data.current_q);
+
+      if (count === 2 && data.round_active) {
+        await evaluateRound(code);
+      }
     }, 1000);
   }
 
@@ -131,7 +142,7 @@ export default function DuelPage() {
           clearInterval(timerRef.current);
           timerRef.current = null;
           setLocked(true);
-          evaluateRound();
+          if (room) evaluateRound(room.code);
           return 0;
         }
         return prev - 1;
@@ -149,16 +160,10 @@ export default function DuelPage() {
 
   /* ---------------- EVALUATE ---------------- */
 
-  async function evaluateRound() {
-    if (!room) return;
-
-    const { error } = await supabase.rpc("evaluate_duel_round", {
-      room_code_input: room.code
+  async function evaluateRound(code: string) {
+    await supabase.rpc("evaluate_duel_round", {
+      room_code_input: code
     });
-
-    if (error) {
-      console.error("EVALUATE ERROR:", error);
-    }
   }
 
   /* ---------------- SUBMIT ---------------- */
@@ -209,16 +214,12 @@ export default function DuelPage() {
       .eq("code", room.code);
   }
 
-  /* ---------------- CLEANUP ---------------- */
-
   useEffect(() => {
     return () => {
       if (pollRef.current) clearInterval(pollRef.current);
       if (timerRef.current) clearInterval(timerRef.current);
     };
   }, []);
-
-  /* ---------------- UI ---------------- */
 
   return (
     <div style={{ padding: 40 }}>
