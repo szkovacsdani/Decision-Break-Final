@@ -166,7 +166,7 @@ export default function DuelPage() {
     // evaluate round
     await supabase.rpc("evaluate_duel_round", {
       room_code_input: room.code
-    });
+          });
   }
 
   /* ---------------- LOAD ROUND RESULT ---------------- */
