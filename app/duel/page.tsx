@@ -35,6 +35,7 @@ export default function DuelPage() {
 
   const pollRef = useRef<any>(null);
   const timerRef = useRef<any>(null);
+  const lastRoundRef = useRef<number | null>(null);
 
   const questionsMap = useMemo(() => {
     const map = new Map();
@@ -52,7 +53,7 @@ export default function DuelPage() {
       .slice(0, 3)
       .map(q => q.id);
 
-    await supabase.from("duel_rooms").insert({
+    const { error } = await supabase.from("duel_rooms").insert({
       code,
       status: "waiting",
       current_q: 0,
@@ -61,6 +62,11 @@ export default function DuelPage() {
       score_b: 0,
       round_locked: false
     });
+
+    if (error) {
+      console.log("ROOM CREATE ERROR:", error);
+      return;
+    }
 
     await supabase.from("duel_players").insert({
       room_code: code,
@@ -85,19 +91,35 @@ export default function DuelPage() {
   /* ================= JOIN ROOM ================= */
 
   async function joinRoom() {
-    const { data } = await supabase
+    if (!roomCode) {
+      alert("Enter room code");
+      return;
+    }
+
+    const { data, error } = await supabase
       .from("duel_rooms")
       .select("*")
       .eq("code", roomCode)
-      .single();
+      .maybeSingle();
 
-    if (!data) return;
+    if (error || !data) {
+      console.log("JOIN ERROR:", error);
+      alert("Room not found");
+      return;
+    }
 
-    await supabase.from("duel_players").insert({
-      room_code: roomCode,
-      player_token: crypto.randomUUID(),
-      slot: "B"
-    });
+    const { error: playerError } = await supabase
+      .from("duel_players")
+      .insert({
+        room_code: roomCode,
+        player_token: crypto.randomUUID(),
+        slot: "B"
+      });
+
+    if (playerError) {
+      console.log("PLAYER INSERT ERROR:", playerError);
+      return;
+    }
 
     setRoom(data);
     setMySlot("B");
@@ -114,24 +136,24 @@ export default function DuelPage() {
         .from("duel_rooms")
         .select("*")
         .eq("code", code)
-        .single();
+        .maybeSingle();
 
       if (!data) return;
 
       setRoom(data);
 
-      if (data.status === "playing" && timer === null) {
+      // 🔥 TIMER ROUND ALAPON
+      if (
+        data.status === "playing" &&
+        lastRoundRef.current !== data.current_q
+      ) {
+        lastRoundRef.current = data.current_q;
         startTimer();
       }
 
       // 🔥 ONLY PLAYER A EVALUATES
       if (!data.round_locked && mySlot === "A") {
         evaluateRound(data);
-      }
-
-      if (data.status === "finished") {
-        setLocked(true);
-        setTimer(null);
       }
     }, 1000);
   }
@@ -168,13 +190,18 @@ export default function DuelPage() {
 
     const responseTime = 10 - (timer ?? 0);
 
-    await supabase.from("duel_submissions").insert({
+    const { error } = await supabase.from("duel_submissions").insert({
       room_code: room.code,
       q_index: room.current_q,
       slot: mySlot,
       guess: parseInt(guess),
       response_time: responseTime
     });
+
+    if (error) {
+      console.log("SUBMIT ERROR:", error);
+      return;
+    }
 
     setGuess("");
   }
@@ -194,7 +221,7 @@ export default function DuelPage() {
       .eq("q_index", r.current_q);
 
     const q = questionsMap.get(r.question_ids[r.current_q]);
-    const answer = q.a;
+    const answer = q?.a ?? 0;
 
     const subA = subs?.find(s => s.slot === "A");
     const subB = subs?.find(s => s.slot === "B");
@@ -215,11 +242,11 @@ export default function DuelPage() {
       }
     }
 
-    let scoreA = r.score_a;
-    let scoreB = r.score_b;
+    let newScoreA = r.score_a;
+    let newScoreB = r.score_b;
 
-    if (winner === "A") scoreA++;
-    if (winner === "B") scoreB++;
+    if (winner === "A") newScoreA++;
+    if (winner === "B") newScoreB++;
 
     setRoundResult(`Winner: ${winner}`);
 
@@ -229,8 +256,8 @@ export default function DuelPage() {
           .from("duel_rooms")
           .update({
             status: "finished",
-            score_a: scoreA,
-            score_b: scoreB
+            score_a: newScoreA,
+            score_b: newScoreB
           })
           .eq("code", r.code);
       } else {
@@ -238,13 +265,11 @@ export default function DuelPage() {
           .from("duel_rooms")
           .update({
             current_q: r.current_q + 1,
-            score_a: scoreA,
-            score_b: scoreB,
+            score_a: newScoreA,
+            score_b: newScoreB,
             round_locked: false
           })
           .eq("code", r.code);
-
-        startTimer();
       }
     }, 3000);
   }
@@ -311,7 +336,6 @@ export default function DuelPage() {
                 value={guess}
                 onChange={(e) => setGuess(e.target.value)}
                 disabled={locked}
-                placeholder="Your guess"
               />
               <button onClick={submitGuess} disabled={locked}>
                 Submit
