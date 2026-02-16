@@ -20,6 +20,7 @@ type Submission = {
   slot: "A" | "B";
   guess: number;
   submitted_at: string;
+  response_time: number;
 };
 
 function randomCode() {
@@ -38,8 +39,11 @@ export default function DuelPage() {
   const [mySlot, setMySlot] = useState<"A" | "B" | null>(null);
   const [guess, setGuess] = useState("");
   const [timer, setTimer] = useState(10);
+  const [locked, setLocked] = useState(false);
   const [roundResult, setRoundResult] = useState<any>(null);
   const [allResults, setAllResults] = useState<any[]>([]);
+  const [lastQ, setLastQ] = useState<number | null>(null);
+
   const pollRef = useRef<any>(null);
   const timerRef = useRef<any>(null);
 
@@ -51,16 +55,20 @@ export default function DuelPage() {
 
   function startPolling(code: string) {
     if (pollRef.current) clearInterval(pollRef.current);
-    pollRef.current = setInterval(() => refresh(code), 800);
+    pollRef.current = setInterval(() => refresh(code), 1000);
   }
 
   function startTimer() {
     setTimer(10);
+    setLocked(false);
+
     if (timerRef.current) clearInterval(timerRef.current);
+
     timerRef.current = setInterval(() => {
       setTimer(t => {
         if (t <= 1) {
           clearInterval(timerRef.current);
+          setLocked(true);
           handleTimeout();
           return 0;
         }
@@ -144,15 +152,15 @@ export default function DuelPage() {
 
       await supabase
         .from("duel_rooms")
-        .update({
-          status: "playing",
-          question_ids: shuffled
-        })
+        .update({ status: "playing", question_ids: shuffled })
         .eq("code", code);
     }
 
     if (r.status === "playing") {
-      startTimer();
+      if (lastQ !== r.current_q) {
+        setLastQ(r.current_q);
+        startTimer();
+      }
 
       const { data: subs } = await supabase
         .from("duel_submissions")
@@ -176,16 +184,17 @@ export default function DuelPage() {
   }
 
   async function submitGuess() {
-    if (!room || !mySlot || !guess) return;
+    if (!room || !mySlot || !guess || locked) return;
 
     await supabase.from("duel_submissions").insert({
       room_code: room.code,
       q_index: room.current_q,
       slot: mySlot,
       guess: parseInt(guess),
-      submitted_at: new Date().toISOString()
+      response_time: 10 - timer
     });
 
+    setLocked(true);
     setGuess("");
   }
 
@@ -200,9 +209,7 @@ export default function DuelPage() {
 
     let winner: "A" | "B";
 
-    if (!subA && !subB) {
-      winner = Math.random() < 0.5 ? "A" : "B";
-    } else if (!subA) winner = "B";
+    if (!subA) winner = "B";
     else if (!subB) winner = "A";
     else {
       const diffA = Math.abs(subA.guess - answer);
@@ -212,8 +219,7 @@ export default function DuelPage() {
       else if (diffB < diffA) winner = "B";
       else {
         winner =
-          new Date(subA.submitted_at) <
-          new Date(subB.submitted_at)
+          new Date(subA.submitted_at) < new Date(subB.submitted_at)
             ? "A"
             : "B";
       }
@@ -225,27 +231,11 @@ export default function DuelPage() {
       winner
     });
 
-    const timeA = subA
-      ? Math.round(
-          (new Date(subA.submitted_at).getTime() -
-            new Date().getTime() + timer * 1000) / 1000
-        )
-      : null;
-
-    const timeB = subB
-      ? Math.round(
-          (new Date(subB.submitted_at).getTime() -
-            new Date().getTime() + timer * 1000) / 1000
-        )
-      : null;
-
     setRoundResult({
       winner,
       subA,
       subB,
-      answer,
-      timeA,
-      timeB
+      answer
     });
 
     setTimeout(async () => {
@@ -259,15 +249,18 @@ export default function DuelPage() {
           .from("duel_rooms")
           .update({ current_q: r.current_q + 1 })
           .eq("code", r.code);
+
         setRoundResult(null);
       }
     }, 5000);
   }
 
-  const scoreA = allResults.filter(r => r.winner === "A").length;
-  const scoreB = allResults.filter(r => r.winner === "B").length;
-  const finalWinner =
-    scoreA > scoreB ? "Player A" : scoreB > scoreA ? "Player B" : "Draw";
+  useEffect(() => {
+    return () => {
+      if (pollRef.current) clearInterval(pollRef.current);
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
+  }, []);
 
   return (
     <div style={{ padding: 30, color: "white", background: "black", minHeight: "100vh" }}>
@@ -290,7 +283,6 @@ export default function DuelPage() {
         <>
           <p>Room: {room.code}</p>
           <p>Status: {room.status}</p>
-          <p>Player A (Room Creator) vs Player B (Join Player)</p>
 
           {room.status === "playing" && (
             <>
@@ -301,17 +293,20 @@ export default function DuelPage() {
               <input
                 value={guess}
                 onChange={e => setGuess(e.target.value)}
+                disabled={locked}
                 style={{ background: "#111", color: "white" }}
               />
-              <button onClick={submitGuess}>Submit</button>
+              <button onClick={submitGuess} disabled={locked}>
+                Submit
+              </button>
 
               {roundResult && (
                 <>
                   <h3>Round Result</h3>
                   <p>Answer: {roundResult.answer}</p>
-                  <p>A guess: {roundResult.subA?.guess} ({roundResult.timeA}s)</p>
-                  <p>B guess: {roundResult.subB?.guess} ({roundResult.timeB}s)</p>
-                  <p>Winner: Player {roundResult.winner}</p>
+                  <p>A guess: {roundResult.subA?.guess} | Time: {roundResult.subA?.response_time}s</p>
+                  <p>B guess: {roundResult.subB?.guess} | Time: {roundResult.subB?.response_time}s</p>
+                  <p>Winner: {roundResult.winner}</p>
                 </>
               )}
             </>
@@ -320,14 +315,34 @@ export default function DuelPage() {
           {room.status === "finished" && (
             <>
               <h2>Duel Finished</h2>
-              <p>Final Score: {scoreA} - {scoreB}</p>
-              <p>Winner: {finalWinner}</p>
-              <p>
-                3-0 → Winner move forward 3 spaces, loser move back 1 space
-              </p>
-              <p>
-                2-1 → Winner move forward 2 spaces
-              </p>
+              {(() => {
+                const winsA = allResults.filter(r => r.winner === "A").length;
+                const winsB = allResults.filter(r => r.winner === "B").length;
+
+                if (winsA > winsB) {
+                  return (
+                    <>
+                      <h3>Player A wins the duel</h3>
+                      {winsA === 3 ? (
+                        <p>Move forward 3 spaces. Opponent move back 1 space.</p>
+                      ) : (
+                        <p>Move forward 2 spaces.</p>
+                      )}
+                    </>
+                  );
+                } else {
+                  return (
+                    <>
+                      <h3>Player B wins the duel</h3>
+                      {winsB === 3 ? (
+                        <p>Move forward 3 spaces. Opponent move back 1 space.</p>
+                      ) : (
+                        <p>Move forward 2 spaces.</p>
+                      )}
+                    </>
+                  );
+                }
+              })()}
             </>
           )}
         </>
