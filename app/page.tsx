@@ -4,9 +4,8 @@ import { useEffect } from "react";
 import { supabase } from "@/lib/supabase";
 
 export default function Home() {
-
   useEffect(() => {
-    console.log("Supabase URL:", process.env.NEXT_PUBLIC_SUPABASE_URL);
+    console.log("SUPABASE URL:", process.env.NEXT_PUBLIC_SUPABASE_URL);
   }, []);
 
   return (
@@ -18,7 +17,7 @@ export default function Home() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        padding: 24
+        padding: 24,
       }}
     >
       <div style={{ maxWidth: 760, width: "100%" }}>
@@ -40,7 +39,7 @@ export default function Home() {
               padding: "14px 22px",
               borderRadius: 10,
               fontWeight: 900,
-              textDecoration: "none"
+              textDecoration: "none",
             }}
           >
             PLAY QUIZ
@@ -52,25 +51,49 @@ export default function Home() {
             marginTop: 28,
             display: "grid",
             gridTemplateColumns: "repeat(4, minmax(0, 1fr))",
-            gap: 12
+            gap: 12,
           }}
         >
-          <div style={{ background: "rgba(255,255,255,0.06)", padding: 12, borderRadius: 12 }}>
+          <div
+            style={{
+              background: "rgba(255,255,255,0.06)",
+              padding: 12,
+              borderRadius: 12,
+            }}
+          >
             <div style={{ fontWeight: 900 }}>2–8</div>
             <div style={{ opacity: 0.8, fontSize: 12 }}>Players</div>
           </div>
 
-          <div style={{ background: "rgba(255,255,255,0.06)", padding: 12, borderRadius: 12 }}>
+          <div
+            style={{
+              background: "rgba(255,255,255,0.06)",
+              padding: 12,
+              borderRadius: 12,
+            }}
+          >
             <div style={{ fontWeight: 900 }}>14+</div>
             <div style={{ opacity: 0.8, fontSize: 12 }}>Age</div>
           </div>
 
-          <div style={{ background: "rgba(255,255,255,0.06)", padding: 12, borderRadius: 12 }}>
+          <div
+            style={{
+              background: "rgba(255,255,255,0.06)",
+              padding: 12,
+              borderRadius: 12,
+            }}
+          >
             <div style={{ fontWeight: 900 }}>60–120</div>
             <div style={{ opacity: 0.8, fontSize: 12 }}>Minutes</div>
           </div>
 
-          <div style={{ background: "rgba(255,255,255,0.06)", padding: 12, borderRadius: 12 }}>
+          <div
+            style={{
+              background: "rgba(255,255,255,0.06)",
+              padding: 12,
+              borderRadius: 12,
+            }}
+          >
             <div style={{ fontWeight: 900 }}>Hybrid</div>
             <div style={{ opacity: 0.8, fontSize: 12 }}>Physical + Digital</div>
           </div>
