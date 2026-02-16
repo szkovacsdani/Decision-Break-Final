@@ -30,7 +30,7 @@ export default function DuelPage() {
 
   const pollRef = useRef<any>(null);
   const timerRef = useRef<any>(null);
-  const lastRoundRef = useRef<number | null>(null);
+  const lastRoundRef = useRef<number>(-1);
 
   /* ---------------- CREATE ROOM ---------------- */
 
@@ -42,20 +42,20 @@ export default function DuelPage() {
       status: "waiting",
       current_q: 0,
       question_ids: [],
-      round_active: false,
+      round_active: false
     });
 
     await supabase.from("duel_players").insert({
       room_code: code,
       player_token: crypto.randomUUID(),
-      slot: "A",
+      slot: "A"
     });
 
     setRoom({
       code,
       status: "waiting",
       current_q: 0,
-      round_active: false,
+      round_active: false
     });
 
     setMySlot("A");
@@ -76,7 +76,7 @@ export default function DuelPage() {
     await supabase.from("duel_players").insert({
       room_code: roomCode,
       player_token: crypto.randomUUID(),
-      slot: "B",
+      slot: "B"
     });
 
     setRoom(data);
@@ -105,21 +105,26 @@ export default function DuelPage() {
         return;
       }
 
-      if (data.round_active && lastRoundRef.current !== data.current_q) {
+      if (
+        data.round_active &&
+        lastRoundRef.current !== data.current_q
+      ) {
         lastRoundRef.current = data.current_q;
-        startTimer(code);
+        stopTimer();
+        startTimer();
       }
 
-      if (!data.round_active && timer !== null) {
+      if (!data.round_active) {
         stopTimer();
-        await loadRoundResult(code, data.current_q - 1);
+        await loadRoundResult(code, data.current_q);
       }
+
     }, 1000);
   }
 
   /* ---------------- TIMER ---------------- */
 
-  function startTimer(code: string) {
+  function startTimer() {
     if (timerRef.current) return;
 
     setTimer(10);
@@ -127,19 +132,14 @@ export default function DuelPage() {
     setRoundResult(null);
 
     timerRef.current = setInterval(() => {
-      setTimer((prev) => {
+      setTimer(prev => {
         if (prev === null) return null;
-
         if (prev <= 1) {
           clearInterval(timerRef.current);
           timerRef.current = null;
           setLocked(true);
-
-          evaluateRound(code);
-
           return 0;
         }
-
         return prev - 1;
       });
     }, 1000);
@@ -151,14 +151,6 @@ export default function DuelPage() {
       timerRef.current = null;
     }
     setTimer(null);
-  }
-
-  /* ---------------- EVALUATE ---------------- */
-
-  async function evaluateRound(code: string) {
-    await supabase.rpc("evaluate_duel_round", {
-      p_room: code,
-    });
   }
 
   /* ---------------- SUBMIT ---------------- */
@@ -173,7 +165,7 @@ export default function DuelPage() {
       q_index: room.current_q,
       slot: mySlot,
       guess: parseInt(guess),
-      response_time: responseTime,
+      response_time: responseTime
     });
 
     setLocked(true);
@@ -206,6 +198,7 @@ export default function DuelPage() {
         status: "playing",
         round_active: true,
         current_q: 0,
+        round_started_at: new Date().toISOString()
       })
       .eq("code", room.code);
   }
@@ -228,8 +221,7 @@ export default function DuelPage() {
       {!room && (
         <>
           <button onClick={createRoom}>Create Room</button>
-          <br />
-          <br />
+          <br /><br />
           <input
             value={roomCode}
             onChange={(e) => setRoomCode(e.target.value.toUpperCase())}
@@ -267,13 +259,17 @@ export default function DuelPage() {
 
               {roundResult && (
                 <h3>
-                  {roundResult === "Draw" ? "Draw" : `Winner: ${roundResult}`}
+                  {roundResult === "Draw"
+                    ? "Draw"
+                    : `Winner: ${roundResult}`}
                 </h3>
               )}
             </>
           )}
 
-          {room.status === "finished" && <h2>Duel finished</h2>}
+          {room.status === "finished" && (
+            <h2>Duel finished</h2>
+          )}
         </>
       )}
     </div>
