@@ -129,6 +129,7 @@ export default function DuelPage() {
 
       setRoom(data);
 
+      // STATUS TRANSITION alapú timer indítás
       if (
         previousStatusRef.current !== "playing" &&
         data.status === "playing"
@@ -169,7 +170,7 @@ export default function DuelPage() {
     }, 1000);
   }
 
-  /* ---------------- SUBMIT GUESS ---------------- */
+  /* ---------------- SUBMIT ---------------- */
 
   async function submitGuess() {
     if (!room || !mySlot || !guess || locked) return;
@@ -200,7 +201,6 @@ export default function DuelPage() {
 
     console.log("SUBMISSION SUCCESS");
 
-    setLocked(true);
     setGuess("");
   }
 
@@ -234,7 +234,7 @@ export default function DuelPage() {
 
   return (
     <div style={{ padding: 40 }}>
-      <h1>Duel Debug Version</h1>
+      <h1>Duel Stable Two-Side Submission</h1>
 
       {!room && (
         <>
@@ -265,7 +265,7 @@ export default function DuelPage() {
                 {timer !== null ? `Time left: ${timer}` : ""}
               </h2>
 
-              {locked && <p>Locked</p>}
+              {locked && <p>Time is up</p>}
 
               <br />
 
