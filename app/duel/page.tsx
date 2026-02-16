@@ -99,17 +99,19 @@ export default function DuelPage() {
 
       setRoom(data);
 
-      // kör indul
-      if (data.round_active && timer === null && data.status === "playing") {
+      if (data.status === "finished") {
+        stopTimer();
+        return;
+      }
+
+      if (data.round_active && timer === null) {
         startTimer();
       }
 
-      // kör lezárva
       if (!data.round_active && timer !== null) {
         stopTimer();
         await loadRoundResult(code, data.current_q - 1);
       }
-
     }, 1000);
   }
 
@@ -125,13 +127,13 @@ export default function DuelPage() {
     timerRef.current = setInterval(() => {
       setTimer(prev => {
         if (prev === null) return null;
-
         if (prev <= 1) {
-          stopTimer();
+          clearInterval(timerRef.current);
+          timerRef.current = null;
           setLocked(true);
+          evaluateRound();
           return 0;
         }
-
         return prev - 1;
       });
     }, 1000);
@@ -143,6 +145,20 @@ export default function DuelPage() {
       timerRef.current = null;
     }
     setTimer(null);
+  }
+
+  /* ---------------- EVALUATE ---------------- */
+
+  async function evaluateRound() {
+    if (!room) return;
+
+    const { error } = await supabase.rpc("evaluate_duel_round", {
+      room_code_input: room.code
+    });
+
+    if (error) {
+      console.error("EVALUATE ERROR:", error);
+    }
   }
 
   /* ---------------- SUBMIT ---------------- */
@@ -162,14 +178,9 @@ export default function DuelPage() {
 
     setLocked(true);
     setGuess("");
-
-    // evaluate round
-    await supabase.rpc("evaluate_duel_round", {
-      room_code_input: room.code
-          });
   }
 
-  /* ---------------- LOAD ROUND RESULT ---------------- */
+  /* ---------------- LOAD RESULT ---------------- */
 
   async function loadRoundResult(code: string, roundIndex: number) {
     const { data } = await supabase
@@ -180,11 +191,7 @@ export default function DuelPage() {
       .single();
 
     if (data) {
-      if (data.winner_slot) {
-        setRoundResult(`Winner: ${data.winner_slot}`);
-      } else {
-        setRoundResult("Draw");
-      }
+      setRoundResult(data.winner_slot ?? "Draw");
     }
   }
 
@@ -215,7 +222,7 @@ export default function DuelPage() {
 
   return (
     <div style={{ padding: 40 }}>
-      <h1>Duel Engine Stable</h1>
+      <h1>Duel Engine</h1>
 
       {!room && (
         <>
@@ -251,19 +258,22 @@ export default function DuelPage() {
                 onChange={(e) => setGuess(e.target.value)}
                 disabled={locked}
               />
-
               <button onClick={submitGuess} disabled={locked}>
                 Submit
               </button>
 
-              {roundResult && <h3>{roundResult}</h3>}
+              {roundResult && (
+                <h3>
+                  {roundResult === "Draw"
+                    ? "Draw"
+                    : `Winner: ${roundResult}`}
+                </h3>
+              )}
             </>
           )}
 
           {room.status === "finished" && (
-            <>
-              <h2>Duel Finished</h2>
-            </>
+            <h2>Duel finished</h2>
           )}
         </>
       )}
