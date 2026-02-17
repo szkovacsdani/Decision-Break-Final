@@ -1,39 +1,43 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 
-export default function DuelV2() {
-  const searchParams = useSearchParams();
-  const duelId = searchParams.get("duel");
+function generateCode() {
+  const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+  let out = "";
+  for (let i = 0; i < 5; i++) {
+    out += chars[Math.floor(Math.random() * chars.length)];
+  }
+  return out;
+}
 
+export default function DuelRoom() {
+  const [roomCode, setRoomCode] = useState("");
+  const [duelId, setDuelId] = useState<string | null>(null);
   const [players, setPlayers] = useState<any[]>([]);
   const [round, setRound] = useState<any>(null);
   const [guess, setGuess] = useState("");
   const [loading, setLoading] = useState(false);
+  const [isCreator, setIsCreator] = useState(false);
 
   // ---------------- FETCH PLAYERS
-  async function fetchPlayers() {
-    if (!duelId) return;
-
+  async function fetchPlayers(id: string) {
     const { data } = await supabase
       .from("db_duel_players")
       .select("*")
-      .eq("duel_id", duelId)
+      .eq("duel_id", id)
       .order("slot");
 
     setPlayers(data || []);
   }
 
-  // ---------------- FETCH ACTIVE ROUND
-  async function fetchActiveRound() {
-    if (!duelId) return;
-
+  // ---------------- FETCH ROUND
+  async function fetchRound(id: string) {
     const { data } = await supabase
       .from("db_duel_rounds")
       .select("*")
-      .eq("duel_id", duelId)
+      .eq("duel_id", id)
       .eq("status", "active")
       .limit(1);
 
@@ -44,14 +48,47 @@ export default function DuelV2() {
     }
   }
 
-  // ---------------- JOIN
-  async function join() {
-    if (!duelId) return;
+  // ---------------- CREATE ROOM
+  async function createRoom() {
+    const code = generateCode();
 
+    const { data } = await supabase
+      .from("db_duels")
+      .insert({
+        status: "waiting",
+        current_round: 0,
+        room_code: code,
+      })
+      .select()
+      .single();
+
+    setRoomCode(code);
+    setDuelId(data.id);
+    setIsCreator(true);
+
+    await join(data.id);
+  }
+
+  // ---------------- JOIN BY CODE
+  async function joinByCode() {
+    const { data } = await supabase
+      .from("db_duels")
+      .select("*")
+      .eq("room_code", roomCode)
+      .single();
+
+    if (!data) return;
+
+    setDuelId(data.id);
+    await join(data.id);
+  }
+
+  // ---------------- JOIN SLOT
+  async function join(id: string) {
     const { data } = await supabase
       .from("db_duel_players")
       .select("*")
-      .eq("duel_id", duelId);
+      .eq("duel_id", id);
 
     const slots = data?.map((p) => p.slot) || [];
 
@@ -63,83 +100,93 @@ export default function DuelV2() {
     if (!slot) return;
 
     await supabase.from("db_duel_players").insert({
-      duel_id: duelId,
+      duel_id: id,
       player_token: crypto.randomUUID(),
       slot,
     });
 
-    await fetchPlayers();
+    await fetchPlayers(id);
   }
 
   // ---------------- START ROUND
   async function startRound() {
-    if (!duelId) return;
+    if (!duelId || players.length < 2) return;
 
     await supabase.rpc("db_start_round", {
       p_duel_id: duelId,
       p_question_id: "Q1",
       p_duration: 10,
     });
-
-    await fetchActiveRound();
   }
 
   // ---------------- SUBMIT
   async function submitGuess(slot: "A" | "B") {
-    if (!duelId || loading) return;
+    if (!round || loading) return;
 
     setLoading(true);
 
-    // mindig friss round lekérés submit előtt
-    const { data } = await supabase
-      .from("db_duel_rounds")
-      .select("*")
-      .eq("duel_id", duelId)
-      .eq("status", "active")
-      .limit(1);
-
-    if (!data || data.length === 0) {
-      setLoading(false);
-      return;
-    }
-
-    const activeRound = data[0];
-
     await supabase.from("db_duel_submissions").insert({
-      round_id: activeRound.id,
+      round_id: round.id,
       slot,
       guess: Number(guess),
     });
 
     setGuess("");
-
-    // kis delay resolve után
-    setTimeout(async () => {
-      await fetchPlayers();
-      await fetchActiveRound();
-      setLoading(false);
-    }, 800);
+    setLoading(false);
   }
 
-  useEffect(() => {
-    if (duelId) {
-      fetchPlayers();
-      fetchActiveRound();
-    }
+  // ---------------- REALTIME SYNC
+  ect(() => {
+    if (!duelId) return;
+
+    fetchPlayers(duelId);
+    fetchRound(duelId);
+useEff
+    const channel = supabase
+      .channel("duel-room")
+      .on(
+        "postgres_changes",
+        { event: "*", schema: "public", table: "db_duel_players" },
+        () => fetchPlayers(duelId)
+      )
+      .on(
+        "postgres_changes",
+        { event: "*", schema: "public", table: "db_duel_rounds" },
+        () => fetchRound(duelId)
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
   }, [duelId]);
 
   return (
     <div style={{ padding: 40 }}>
-      <h1>Duel Multiplayer Stable</h1>
+      <h1>Duel Room Realtime</h1>
 
-      {!duelId && <p>No duel ID in URL</p>}
+      {!duelId && (
+        <>
+          <button onClick={createRoom}>Create Room</button>
+
+          <div style={{ marginTop: 20 }}>
+            <input
+              placeholder="Enter Room Code"
+              value={roomCode}
+              onChange={(e) => setRoomCode(e.target.value.toUpperCase())}
+            />
+            <button onClick={joinByCode}>Join Room</button>
+          </div>
+        </>
+      )}
 
       {duelId && (
         <>
-          <p>Duel ID: {duelId}</p>
+          <p>Room Code: {roomCode}</p>
 
-          <button onClick={join}>Join Duel</button>
-          <button onClick={startRound}>Start Round</button>
+          {isCreator && players.length === 2 && (
+            <button onClick={startRound}>Start Duel</button>
+          )}
 
           {round && (
             <>
@@ -161,7 +208,7 @@ export default function DuelV2() {
             </>
           )}
 
-          <h3>Scores</h3>
+          <h3>Players</h3>
           {players.map((p) => (
             <div key={p.id}>
               {p.slot}: {p.score}
