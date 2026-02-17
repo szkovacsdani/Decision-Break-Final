@@ -52,7 +52,7 @@ export default function DuelRoom() {
   async function createRoom() {
     const code = generateCode();
 
-    const { data } = await supabase
+    const { data, error } = await supabase
       .from("db_duels")
       .insert({
         status: "waiting",
@@ -61,6 +61,11 @@ export default function DuelRoom() {
       })
       .select()
       .single();
+
+    if (error) {
+      console.error(error);
+      return;
+    }
 
     setRoomCode(code);
     setDuelId(data.id);
@@ -71,13 +76,16 @@ export default function DuelRoom() {
 
   // ---------------- JOIN BY CODE
   async function joinByCode() {
-    const { data } = await supabase
+    const { data, error } = await supabase
       .from("db_duels")
       .select("*")
       .eq("room_code", roomCode)
       .single();
 
-    if (!data) return;
+    if (error || !data) {
+      console.error("Room not found");
+      return;
+    }
 
     setDuelId(data.id);
     await join(data.id);
@@ -99,11 +107,16 @@ export default function DuelRoom() {
 
     if (!slot) return;
 
-    await supabase.from("db_duel_players").insert({
+    const { error } = await supabase.from("db_duel_players").insert({
       duel_id: id,
       player_token: crypto.randomUUID(),
       slot,
     });
+
+    if (error) {
+      console.error(error);
+      return;
+    }
 
     await fetchPlayers(id);
   }
@@ -112,46 +125,64 @@ export default function DuelRoom() {
   async function startRound() {
     if (!duelId || players.length < 2) return;
 
-    await supabase.rpc("db_start_round", {
+    const { error } = await supabase.rpc("db_start_round", {
       p_duel_id: duelId,
       p_question_id: "Q1",
       p_duration: 10,
     });
+
+    if (error) {
+      console.error(error);
+    }
   }
 
-  // ---------------- SUBMIT
+  // ---------------- SUBMIT GUESS
   async function submitGuess(slot: "A" | "B") {
     if (!round || loading) return;
 
     setLoading(true);
 
-    await supabase.from("db_duel_submissions").insert({
+    const { error } = await supabase.from("db_duel_submissions").insert({
       round_id: round.id,
       slot,
       guess: Number(guess),
     });
 
+    if (error) {
+      console.error(error);
+    }
+
     setGuess("");
     setLoading(false);
   }
 
-  // ---------------- REALTIME SYNC
-  ect(() => {
+  // ---------------- REALTIME SYNC (DUEL-SCOPED)
+  useEffect(() => {
     if (!duelId) return;
 
     fetchPlayers(duelId);
     fetchRound(duelId);
-useEff
+
     const channel = supabase
-      .channel("duel-room")
+      .channel(`duel-${duelId}`)
       .on(
         "postgres_changes",
-        { event: "*", schema: "public", table: "db_duel_players" },
+        {
+          event: "*",
+          schema: "public",
+          table: "db_duel_players",
+          filter: `duel_id=eq.${duelId}`,
+        },
         () => fetchPlayers(duelId)
       )
       .on(
         "postgres_changes",
-        { event: "*", schema: "public", table: "db_duel_rounds" },
+        {
+          event: "*",
+          schema: "public",
+          table: "db_duel_rounds",
+          filter: `duel_id=eq.${duelId}`,
+        },
         () => fetchRound(duelId)
       )
       .subscribe();
