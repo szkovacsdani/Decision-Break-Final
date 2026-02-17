@@ -1,245 +1,246 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { supabase } from "@/lib/supabase";
 
-function generateCode() {
-  const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
-  let out = "";
-  for (let i = 0; i < 5; i++) {
-    out += chars[Math.floor(Math.random() * chars.length)];
+function getOrCreatePlayerToken() {
+  if (typeof window === "undefined") return null;
+  let token = localStorage.getItem("player_token");
+  if (!token) {
+    token = crypto.randomUUID();
+    localStorage.setItem("player_token", token);
   }
-  return out;
+  return token;
 }
 
-export default function DuelRoom() {
+export default function DuelPage() {
+  const playerToken = useMemo(() => getOrCreatePlayerToken(), []);
+
   const [roomCode, setRoomCode] = useState("");
-  const [duelId, setDuelId] = useState<string | null>(null);
-  const [players, setPlayers] = useState<any[]>([]);
+  const [inputCode, setInputCode] = useState("");
+  const [duel, setDuel] = useState<any>(null);
   const [round, setRound] = useState<any>(null);
   const [guess, setGuess] = useState("");
   const [loading, setLoading] = useState(false);
-  const [isCreator, setIsCreator] = useState(false);
 
-  // ---------------- FETCH PLAYERS
-  async function fetchPlayers(id: string) {
-    const { data } = await supabase
-      .from("db_duel_players")
-      .select("*")
-      .eq("duel_id", id)
-      .order("slot");
+  // -----------------------------------
+  // CREATE ROOM
+  // -----------------------------------
 
-    setPlayers(data || []);
-  }
-
-  // ---------------- FETCH ACTIVE ROUND
-  async function fetchRound(id: string) {
-    const { data } = await supabase
-      .from("db_duel_rounds")
-      .select("*")
-      .eq("duel_id", id)
-      .eq("status", "active")
-      .limit(1);
-
-    if (data && data.length > 0) {
-      setRound(data[0]);
-    } else {
-      setRound(null);
-    }
-  }
-
-  // ---------------- CREATE ROOM
   async function createRoom() {
-    const code = generateCode();
-
-    const { data, error } = await supabase
-      .from("db_duels")
-      .insert({
-        status: "waiting",
-        current_round: 0,
-        room_code: code,
-      })
-      .select()
-      .single();
-
-    if (error) {
-      console.error(error);
-      return;
-    }
-
-    setRoomCode(code);
-    setDuelId(data.id);
-    setIsCreator(true);
-
-    await join(data.id);
-  }
-
-  // ---------------- JOIN BY CODE
-  async function joinByCode() {
-    const { data, error } = await supabase
-      .from("db_duels")
-      .select("*")
-      .eq("room_code", roomCode)
-      .single();
-
-    if (error || !data) {
-      alert("Room not found");
-      return;
-    }
-
-    setDuelId(data.id);
-    await join(data.id);
-  }
-
-  // ---------------- JOIN SLOT
-  async function join(id: string) {
-    const { data } = await supabase
-      .from("db_duel_players")
-      .select("*")
-      .eq("duel_id", id);
-
-    const slots = data?.map((p) => p.slot) || [];
-
-    let slot: "A" | "B" | null = null;
-
-    if (!slots.includes("A")) slot = "A";
-    else if (!slots.includes("B")) slot = "B";
-
-    if (!slot) return;
-
-    const { error } = await supabase.from("db_duel_players").insert({
-      duel_id: id,
-      player_token: crypto.randomUUID(),
-      slot,
+    setLoading(true);
+    const { data, error } = await supabase.rpc("create_duel", {
+      p_player: playerToken,
     });
-
-    if (error) {
-      console.error(error);
-      return;
+    if (!error) {
+      setRoomCode(data[0].room_code);
+      await fetchDuel(data[0].room_code);
     }
-
-    await fetchPlayers(id);
+    setLoading(false);
   }
 
-  // ---------------- START ROUND
-  async function startRound() {
-    if (!duelId) return;
+  // -----------------------------------
+  // JOIN ROOM
+  // -----------------------------------
 
-    const { data } = await supabase
-      .from("db_duel_players")
-      .select("*")
-      .eq("duel_id", duelId);
-
-    if (!data || data.length < 2) {
-      alert("Waiting for second player");
-      return;
-    }
-
-    const { error } = await supabase.rpc("db_start_round", {
-      p_duel_id: duelId,
-      p_question_id: "Q1",
-      p_duration: 10,
-    });
-
-    if (error) {
-      console.error(error);
-      return;
-    }
-
-    await fetchRound(duelId);
-  }
-
-  // ---------------- SUBMIT GUESS
-  async function submitGuess(slot: "A" | "B") {
-    if (!round || loading) return;
-
+  async function joinRoom() {
+    if (!inputCode) return;
     setLoading(true);
 
-    const { error } = await supabase.from("db_duel_submissions").insert({
-      round_id: round.id,
-      slot,
-      guess: Number(guess),
+    await supabase.rpc("join_duel", {
+      p_room_code: inputCode,
+      p_player: playerToken,
     });
 
-    if (error) {
-      console.error(error);
-    }
+    setRoomCode(inputCode);
+    await fetchDuel(inputCode);
 
-    setGuess("");
-
-    // kis delay a resolve miatt
-    setTimeout(async () => {
-      if (duelId) {
-        await fetchPlayers(duelId);
-        await fetchRound(duelId);
-      }
-      setLoading(false);
-    }, 1000);
+    setLoading(false);
   }
 
-  // ---------------- INITIAL LOAD
-  useEffect(() => {
-    if (duelId) {
-      fetchPlayers(duelId);
-      fetchRound(duelId);
+  // -----------------------------------
+  // FETCH DUEL
+  // -----------------------------------
+
+  async function fetchDuel(code: string) {
+    const { data } = await supabase
+      .from("db_duels")
+      .select("*")
+      .eq("room_code", code)
+      .single();
+
+    if (data) {
+      setDuel(data);
+
+      if (data.status === "playing") {
+        fetchRound(data.id, data.current_round);
+      }
     }
-  }, [duelId]);
+  }
+
+  // -----------------------------------
+  // FETCH ROUND
+  // -----------------------------------
+
+  async function fetchRound(duelId: string, roundNumber: number) {
+    const { data } = await supabase
+      .from("db_duel_rounds")
+      .select("*, db_questions(*)")
+      .eq("duel_id", duelId)
+      .eq("round_number", roundNumber)
+      .single();
+
+    if (data) setRound(data);
+  }
+
+  // -----------------------------------
+  // START DUEL
+  // -----------------------------------
+
+  async function startDuel() {
+    if (!duel) return;
+    await supabase.rpc("start_duel", {
+      p_duel_id: duel.id,
+    });
+    await fetchDuel(roomCode);
+  }
+
+  // -----------------------------------
+  // SUBMIT
+  // -----------------------------------
+
+  async function submitGuess() {
+    if (!duel || !guess) return;
+
+    await supabase.rpc("submit_guess", {
+      p_duel_id: duel.id,
+      p_player: playerToken,
+      p_guess: Number(guess),
+    });
+
+    setGuess("");
+  }
+
+  // -----------------------------------
+  // POLLING
+  // -----------------------------------
+
+  useEffect(() => {
+    if (!roomCode) return;
+
+    const interval = setInterval(() => {
+      fetchDuel(roomCode);
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, [roomCode]);
+
+  // -----------------------------------
+  // TIMER (UI ONLY)
+  // -----------------------------------
+
+  const timeLeft =
+    round &&
+    10 -
+      Math.floor(
+        (Date.now() - new Date(round.started_at).getTime()) / 1000
+      );
+
+  const isCreator = duel?.created_by === playerToken;
+
+  const canStart =
+    duel?.status === "waiting" &&
+    duel?.player_a &&
+    duel?.player_b &&
+    isCreator;
+
+  const duelFinished = duel?.status === "finished";
+
+  // -----------------------------------
+  // UI
+  // -----------------------------------
 
   return (
     <div style={{ padding: 40 }}>
-      <h1>Duel Room Stable</h1>
+      <h1>Decision Break Duel</h1>
 
-      {!duelId && (
+      {!duel && (
         <>
-          <button onClick={createRoom}>Create Room</button>
+          <button onClick={createRoom} disabled={loading}>
+            Create Room
+          </button>
 
           <div style={{ marginTop: 20 }}>
             <input
               placeholder="Enter Room Code"
-              value={roomCode}
-              onChange={(e) => setRoomCode(e.target.value.toUpperCase())}
+              value={inputCode}
+              onChange={(e) => setInputCode(e.target.value.toUpperCase())}
             />
-            <button onClick={joinByCode}>Join Room</button>
+            <button onClick={joinRoom}>Join</button>
           </div>
         </>
       )}
 
-      {duelId && (
+      {duel && (
         <>
-          <p>Room Code: {roomCode}</p>
+          <h2>Room: {roomCode}</h2>
+          <p>Status: {duel.status}</p>
+          <p>
+            Score A: {duel.score_a} | Score B: {duel.score_b}
+          </p>
 
-          {isCreator && (
-            <button onClick={startRound}>
-              Start Duel
-            </button>
+          {canStart && (
+            <button onClick={startDuel}>Start Duel</button>
           )}
 
-          {round && (
+          {round && duel.status === "playing" && (
             <>
-              <h2>Round {round.round_number}</h2>
+              <h3>Round {duel.current_round}</h3>
+              <p>{round.db_questions.question_text}</p>
 
-              <input
-                value={guess}
-                onChange={(e) => setGuess(e.target.value)}
-                placeholder="Enter guess"
-              />
+              {round.resolved_at ? (
+                <>
+                  <p>
+                    Winner:{" "}
+                    {round.winner_slot
+                      ? round.winner_slot
+                      : "DRAW"}
+                  </p>
+                  <p>
+                    Correct: {round.db_questions.correct_value}
+                  </p>
+                </>
+              ) : (
+                <>
+                  <p>Time Left: {timeLeft > 0 ? timeLeft : 0}</p>
 
-              <button disabled={loading} onClick={() => submitGuess("A")}>
-                Submit as A
-              </button>
-
-              <button disabled={loading} onClick={() => submitGuess("B")}>
-                Submit as B
-              </button>
+                  {timeLeft > 0 && (
+                    <>
+                      <input
+                        type="number"
+                        value={guess}
+                        onChange={(e) =>
+                          setGuess(e.target.value)
+                        }
+                      />
+                      <button onClick={submitGuess}>
+                        Submit
+                      </button>
+                    </>
+                  )}
+                </>
+              )}
             </>
           )}
 
-          <h3>Players</h3>
-          {players.map((p) => (
-            <div key={p.id}>
-              {p.slot}: {p.score}
-            </div>
-          ))}
+          {duelFinished && (
+            <>
+              <h2>DUEL FINISHED</h2>
+              {duel.score_a > duel.score_b && <p>A Wins</p>}
+              {duel.score_b > duel.score_a && <p>B Wins</p>}
+              {duel.score_a === duel.score_b && <p>DRAW</p>}
+            </>
+          )}
         </>
       )}
     </div>
