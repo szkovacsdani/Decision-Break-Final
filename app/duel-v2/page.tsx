@@ -11,16 +11,11 @@ export default function DuelV2() {
   const [loading, setLoading] = useState(false);
 
   async function createDuel() {
-    const { data, error } = await supabase
+    const { data } = await supabase
       .from("db_duels")
       .insert({ status: "waiting" })
       .select()
       .single();
-
-    if (error) {
-      console.error("Create duel error:", error);
-      return;
-    }
 
     setDuelId(data.id);
   }
@@ -28,16 +23,11 @@ export default function DuelV2() {
   async function joinAs(slot: "A" | "B") {
     if (!duelId) return;
 
-    const { error } = await supabase.from("db_duel_players").insert({
+    await supabase.from("db_duel_players").insert({
       duel_id: duelId,
       player_token: crypto.randomUUID(),
       slot,
     });
-
-    if (error) {
-      console.error("Join error:", error);
-      return;
-    }
 
     await fetchPlayers();
   }
@@ -45,15 +35,10 @@ export default function DuelV2() {
   async function fetchPlayers() {
     if (!duelId) return;
 
-    const { data, error } = await supabase
+    const { data } = await supabase
       .from("db_duel_players")
       .select("*")
       .eq("duel_id", duelId);
-
-    if (error) {
-      console.error("Fetch players error:", error);
-      return;
-    }
 
     setPlayers(data || []);
   }
@@ -61,35 +46,23 @@ export default function DuelV2() {
   async function startRound() {
     if (!duelId) return;
 
-    const { error } = await supabase.rpc("db_start_round", {
+    await supabase.rpc("db_start_round", {
       p_duel_id: duelId,
       p_question_id: "Q1",
     });
 
-    if (error) {
-      console.error("Start round error:", error);
-      return;
-    }
-
     await fetchRound();
-    await fetchPlayers();
   }
 
   async function fetchRound() {
     if (!duelId) return;
 
-    const { data, error } = await supabase
+    const { data } = await supabase
       .from("db_duel_rounds")
       .select("*")
       .eq("duel_id", duelId)
       .eq("status", "active")
       .limit(1);
-
-    if (error) {
-      console.error("Fetch round error:", error);
-      setRound(null);
-      return;
-    }
 
     if (data && data.length > 0) {
       setRound(data[0]);
@@ -103,11 +76,15 @@ export default function DuelV2() {
 
     setLoading(true);
 
-    const { error } = await supabase.from("db_duel_submissions").insert({
-      round_id: round.id,
-      slot,
-      guess: Number(guess),
-    });
+    const currentRoundId = round.id;
+
+    const { error } = await supabase
+      .from("db_duel_submissions")
+      .insert({
+        round_id: currentRoundId,
+        slot,
+        guess: Number(guess),
+      });
 
     if (error) {
       console.error("Submit error:", error);
@@ -117,12 +94,12 @@ export default function DuelV2() {
 
     setGuess("");
 
-    // Allow backend resolve to finish
+    // Wait for backend resolve + next round
     setTimeout(async () => {
       await fetchPlayers();
       await fetchRound();
       setLoading(false);
-    }, 300);
+    }, 500);
   }
 
   useEffect(() => {
