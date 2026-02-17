@@ -32,7 +32,7 @@ export default function DuelRoom() {
     setPlayers(data || []);
   }
 
-  // ---------------- FETCH ROUND
+  // ---------------- FETCH ACTIVE ROUND
   async function fetchRound(id: string) {
     const { data } = await supabase
       .from("db_duel_rounds")
@@ -83,7 +83,7 @@ export default function DuelRoom() {
       .single();
 
     if (error || !data) {
-      console.error("Room not found");
+      alert("Room not found");
       return;
     }
 
@@ -123,7 +123,17 @@ export default function DuelRoom() {
 
   // ---------------- START ROUND
   async function startRound() {
-    if (!duelId || players.length < 2) return;
+    if (!duelId) return;
+
+    const { data } = await supabase
+      .from("db_duel_players")
+      .select("*")
+      .eq("duel_id", duelId);
+
+    if (!data || data.length < 2) {
+      alert("Waiting for second player");
+      return;
+    }
 
     const { error } = await supabase.rpc("db_start_round", {
       p_duel_id: duelId,
@@ -133,7 +143,10 @@ export default function DuelRoom() {
 
     if (error) {
       console.error(error);
+      return;
     }
+
+    await fetchRound(duelId);
   }
 
   // ---------------- SUBMIT GUESS
@@ -153,48 +166,28 @@ export default function DuelRoom() {
     }
 
     setGuess("");
-    setLoading(false);
+
+    // kis delay a resolve miatt
+    setTimeout(async () => {
+      if (duelId) {
+        await fetchPlayers(duelId);
+        await fetchRound(duelId);
+      }
+      setLoading(false);
+    }, 1000);
   }
 
-  // ---------------- REALTIME SYNC (DUEL-SCOPED)
+  // ---------------- INITIAL LOAD
   useEffect(() => {
-    if (!duelId) return;
-
-    fetchPlayers(duelId);
-    fetchRound(duelId);
-
-    const channel = supabase
-      .channel(`duel-${duelId}`)
-      .on(
-        "postgres_changes",
-        {
-          event: "*",
-          schema: "public",
-          table: "db_duel_players",
-          filter: `duel_id=eq.${duelId}`,
-        },
-        () => fetchPlayers(duelId)
-      )
-      .on(
-        "postgres_changes",
-        {
-          event: "*",
-          schema: "public",
-          table: "db_duel_rounds",
-          filter: `duel_id=eq.${duelId}`,
-        },
-        () => fetchRound(duelId)
-      )
-      .subscribe();
-
-    return () => {
-      supabase.removeChannel(channel);
-    };
+    if (duelId) {
+      fetchPlayers(duelId);
+      fetchRound(duelId);
+    }
   }, [duelId]);
 
   return (
     <div style={{ padding: 40 }}>
-      <h1>Duel Room Realtime</h1>
+      <h1>Duel Room Stable</h1>
 
       {!duelId && (
         <>
@@ -215,8 +208,10 @@ export default function DuelRoom() {
         <>
           <p>Room Code: {roomCode}</p>
 
-          {isCreator && players.length === 2 && (
-            <button onClick={startRound}>Start Duel</button>
+          {isCreator && (
+            <button onClick={startRound}>
+              Start Duel
+            </button>
           )}
 
           {round && (
