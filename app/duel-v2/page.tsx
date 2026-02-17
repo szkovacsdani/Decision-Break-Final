@@ -1,43 +1,75 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 
 export default function DuelV2() {
-  const [duelId, setDuelId] = useState("");
-  const [round, setRound] = useState<any>(null);
+  const searchParams = useSearchParams();
+  const duelFromUrl = searchParams.get("duel");
+
+  const [duelId, setDuelId] = useState<string | null>(duelFromUrl);
   const [players, setPlayers] = useState<any[]>([]);
+  const [round, setRound] = useState<any>(null);
   const [guess, setGuess] = useState("");
   const [loading, setLoading] = useState(false);
 
+  // -------------------------
+  // CREATE DUEL
+  // -------------------------
   async function createDuel() {
     const { data, error } = await supabase
       .from("db_duels")
-      .insert({ status: "waiting" })
+      .insert({ status: "waiting", current_round: 0 })
       .select()
       .single();
 
     if (error) {
-      console.error("Create duel error:", error);
+      console.error(error);
       return;
     }
 
-    setDuelId(data.id);
+    const newId = data.id;
+    setDuelId(newId);
+
+    window.history.replaceState({}, "", `/duel-v2?duel=${newId}`);
   }
 
-  async function joinAs(slot: "A" | "B") {
+  // -------------------------
+  // FETCH PLAYERS
+  // -------------------------
+  async function fetchPlayers() {
     if (!duelId) return;
 
-    // check if slot already taken
-    const { data: existing } = await supabase
+    const { data } = await supabase
       .from("db_duel_players")
       .select("*")
       .eq("duel_id", duelId)
-      .eq("slot", slot)
-      .limit(1);
+      .order("slot");
 
-    if (existing && existing.length > 0) {
-      console.log("Slot already taken");
+    setPlayers(data || []);
+  }
+
+  // -------------------------
+  // JOIN LOGIC (AUTO SLOT)
+  // -------------------------
+  async function join() {
+    if (!duelId) return;
+
+    const { data } = await supabase
+      .from("db_duel_players")
+      .select("*")
+      .eq("duel_id", duelId);
+
+    const existingSlots = data?.map((p) => p.slot) || [];
+
+    let slot: "A" | "B" | null = null;
+
+    if (!existingSlots.includes("A")) slot = "A";
+    else if (!existingSlots.includes("B")) slot = "B";
+
+    if (!slot) {
+      console.log("Both slots taken");
       return;
     }
 
@@ -50,61 +82,40 @@ export default function DuelV2() {
       });
 
     if (error) {
-      console.error("Join error:", error);
+      console.error("Join error:", error.message);
       return;
     }
 
     await fetchPlayers();
   }
 
-  async function fetchPlayers() {
-    if (!duelId) return;
-
-    const { data, error } = await supabase
-      .from("db_duel_players")
-      .select("*")
-      .eq("duel_id", duelId);
-
-    if (error) {
-      console.error("Fetch players error:", error);
-      return;
-    }
-
-    setPlayers(data || []);
-  }
-
+  // -------------------------
+  // START ROUND
+  // -------------------------
   async function startRound() {
     if (!duelId) return;
 
-    const { error } = await supabase.rpc("db_start_round", {
+    await supabase.rpc("db_start_round", {
       p_duel_id: duelId,
       p_question_id: "Q1",
       p_duration: 10,
     });
 
-    if (error) {
-      console.error("Start round error:", error);
-      return;
-    }
-
     await fetchRound();
   }
 
+  // -------------------------
+  // FETCH ROUND
+  // -------------------------
   async function fetchRound() {
     if (!duelId) return;
 
-    const { data, error } = await supabase
+    const { data } = await supabase
       .from("db_duel_rounds")
       .select("*")
       .eq("duel_id", duelId)
       .eq("status", "active")
       .limit(1);
-
-    if (error) {
-      console.error("Fetch round error:", error);
-      setRound(null);
-      return;
-    }
 
     if (data && data.length > 0) {
       setRound(data[0]);
@@ -113,32 +124,47 @@ export default function DuelV2() {
     }
   }
 
+  // -------------------------
+  // SUBMIT GUESS
+  // -------------------------
   async function submitGuess(slot: "A" | "B") {
     if (!round || loading) return;
 
     setLoading(true);
 
-    const { error } = await supabase
-      .from("db_duel_submissions")
-      .insert({
-        round_id: round.id,
-        slot,
-        guess: Number(guess),
-      });
-
-    if (error) {
-      console.error("Submit error:", error);
-      setLoading(false);
-      return;
-    }
+    await supabase.from("db_duel_submissions").insert({
+      round_id: round.id,
+      slot,
+      guess: Number(guess),
+    });
 
     setGuess("");
 
-    setTimeout(async () => {
-      await fetchPlayers();
-      await fetchRound();
-      setLoading(false);
-    }, 500);
+    await waitForResolve();
+    await fetchPlayers();
+    await fetchRound();
+
+    setLoading(false);
+  }
+
+  async function waitForResolve() {
+    if (!round) return;
+
+    let done = false;
+
+    while (!done) {
+      const { data } = await supabase
+        .from("db_duel_rounds")
+        .select("status")
+        .eq("id", round.id)
+        .single();
+
+      if (data?.status === "resolved") {
+        done = true;
+      } else {
+        await new Promise((r) => setTimeout(r, 300));
+      }
+    }
   }
 
   useEffect(() => {
@@ -150,7 +176,7 @@ export default function DuelV2() {
 
   return (
     <div style={{ padding: 40 }}>
-      <h1>Duel V2</h1>
+      <h1>Duel V2 Multiplayer</h1>
 
       {!duelId && (
         <button onClick={createDuel}>
@@ -162,12 +188,8 @@ export default function DuelV2() {
         <>
           <p>Duel ID: {duelId}</p>
 
-          <button onClick={() => joinAs("A")}>
-            Join as A
-          </button>
-
-          <button onClick={() => joinAs("B")}>
-            Join as B
+          <button onClick={join}>
+            Join Duel
           </button>
 
           <button onClick={startRound}>
@@ -184,24 +206,17 @@ export default function DuelV2() {
                 placeholder="Enter guess"
               />
 
-              <button
-                disabled={loading}
-                onClick={() => submitGuess("A")}
-              >
+              <button disabled={loading} onClick={() => submitGuess("A")}>
                 Submit as A
               </button>
 
-              <button
-                disabled={loading}
-                onClick={() => submitGuess("B")}
-              >
+              <button disabled={loading} onClick={() => submitGuess("B")}>
                 Submit as B
               </button>
             </>
           )}
 
-          <h3>Scores</h3>
-
+          <h3>Players</h3>
           {players.map((p) => (
             <div key={p.id}>
               {p.slot}: {p.score}
