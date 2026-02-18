@@ -1,301 +1,206 @@
-"use client"
+"use client";
 
-import { useEffect, useState, useRef } from "react"
-import { supabase } from "@/lib/supabase"
+import { useEffect, useState, useRef } from "react";
+import { supabase } from "@/lib/supabase";
 
-function getOrCreatePlayerToken() {
-  let token = localStorage.getItem("player_token")
-  if (!token) {
-    token = crypto.randomUUID()
-    localStorage.setItem("player_token", token)
-  }
-  return token
-}
-
-type Phase = "waiting" | "active" | "resolving" | "finished"
+type Phase = "answering" | "evaluating" | "finished";
 
 export default function DuelPage() {
-  const [playerToken, setPlayerToken] = useState<string | null>(null)
-  const [roomCode, setRoomCode] = useState("")
-  const [inputCode, setInputCode] = useState("")
-  const [duel, setDuel] = useState<any>(null)
-  const [round, setRound] = useState<any>(null)
-  const [guess, setGuess] = useState("")
-  const [phase, setPhase] = useState<Phase>("waiting")
-  const [timer, setTimer] = useState<number>(10)
+  const [duel, setDuel] = useState<any>(null);
+  const [round, setRound] = useState<any>(null);
+  const [question, setQuestion] = useState<any>(null);
 
-  const intervalRef = useRef<NodeJS.Timeout | null>(null)
+  const [phase, setPhase] = useState<Phase>("answering");
 
-  useEffect(() => {
-    setPlayerToken(getOrCreatePlayerToken())
-  }, [])
+  const [timeLeft, setTimeLeft] = useState(10);
+  const [evaluationTime, setEvaluationTime] = useState(5);
 
-  // ---------------- CREATE ----------------
+  const duelIdRef = useRef<string | null>(null);
+  const resolvingRef = useRef(false);
 
-  async function createRoom() {
-    if (!playerToken) return
+  // ------------------------------------------
+  // FETCH DUEL + ROUND
+  // ------------------------------------------
 
-    const { data } = await supabase.rpc("create_duel", {
-      p_player: playerToken,
-    })
+  const fetchState = async () => {
+    if (!duelIdRef.current) return;
 
-    if (data) {
-      const code = data[0].out_room_code
-      setRoomCode(code)
-      fetchDuel(code)
-    }
-  }
-
-  // ---------------- JOIN ----------------
-
-  async function joinRoom() {
-    if (!playerToken || !inputCode) return
-
-    await supabase.rpc("join_duel", {
-      p_room_code: inputCode,
-      p_player: playerToken,
-    })
-
-    setRoomCode(inputCode)
-    fetchDuel(inputCode)
-  }
-
-  // ---------------- FETCH DUEL ----------------
-
-  async function fetchDuel(code: string) {
-    const { data } = await supabase
+    const { data: duelData } = await supabase
       .from("db_duels")
       .select("*")
-      .eq("room_code", code)
-      .single()
+      .eq("id", duelIdRef.current)
+      .single();
 
-    if (!data) return
+    setDuel(duelData);
 
-    setDuel(data)
-
-    if (data.status === "playing") {
-      fetchRound(data.id, data.current_round)
-    }
-
-    if (data.status === "waiting") {
-      setPhase("waiting")
-    }
-
-    if (data.status === "finished") {
-      setPhase("finished")
-    }
-  }
-
-  // ---------------- FETCH ROUND ----------------
-
-  async function fetchRound(duelId: string, roundNumber: number) {
-    const { data } = await supabase
+    const { data: roundData } = await supabase
       .from("db_duel_rounds")
       .select("*")
-      .eq("duel_id", duelId)
-      .eq("round_number", roundNumber)
-      .single()
+      .eq("duel_id", duelIdRef.current)
+      .is("resolved_at", null)
+      .order("round_number", { ascending: false })
+      .limit(1)
+      .single();
 
-    if (!data) return
+    setRound(roundData);
 
-    const { data: question } = await supabase
-      .from("db_questions")
-      .select("*")
-      .eq("id", data.question_id)
-      .single()
+    if (roundData) {
+      const { data: questionData } = await supabase
+        .from("db_questions")
+        .select("*")
+        .eq("id", roundData.question_id)
+        .single();
 
-    setRound({ ...data, question })
-
-    if (!data.resolved_at) {
-      setPhase("active")
+      setQuestion(questionData);
     }
-  }
+  };
 
-  // ---------------- GLOBAL POLLING (ALL STATES) ----------------
+  // ------------------------------------------
+  // START DUEL
+  // ------------------------------------------
 
-  useEffect(() => {
-    if (!roomCode) return
-
-    const interval = setInterval(() => {
-      fetchDuel(roomCode)
-    }, 2000)
-
-    return () => clearInterval(interval)
-  }, [roomCode])
-
-  // ---------------- ACTIVE TIMER ----------------
-
-  useEffect(() => {
-    if (phase !== "active") return
-
-    setTimer(10)
-
-    if (intervalRef.current) clearInterval(intervalRef.current)
-
-    intervalRef.current = setInterval(() => {
-      setTimer((prev) => {
-        if (prev <= 1) {
-          clearInterval(intervalRef.current!)
-          return 0
-        }
-        return prev - 1
-      })
-    }, 1000)
-
-    return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current)
-    }
-  }, [round?.id, phase])
-
-  // ---------------- AUTO RESOLVE ----------------
-
-  useEffect(() => {
-    if (phase !== "active") return
-    if (timer !== 0) return
-    if (!duel) return
-
-    supabase.rpc("resolve_round", {
-      p_duel_id: duel.id,
-    })
-
-    setPhase("resolving")
-    setTimer(5)
-  }, [timer])
-
-  // ---------------- RESOLVING PHASE ----------------
-
-  useEffect(() => {
-    if (phase !== "resolving") return
-
-    if (intervalRef.current) clearInterval(intervalRef.current)
-
-    intervalRef.current = setInterval(() => {
-      setTimer((prev) => {
-        if (prev <= 1) {
-          clearInterval(intervalRef.current!)
-          fetchDuel(roomCode)
-          return 0
-        }
-        return prev - 1
-      })
-    }, 1000)
-
-    return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current)
-    }
-  }, [phase])
-
-  // ---------------- SUBMIT ----------------
-
-  async function submitGuess() {
-    if (!duel || !round || !guess || !playerToken) return
-
-    await supabase.from("db_duel_submissions").insert({
-      id: crypto.randomUUID(),
-      round_id: round.id,
-      slot: duel.player_a === playerToken ? "A" : "B",
-      guess: Number(guess),
-      submitted_at: new Date().toISOString(),
-    })
-
-    setGuess("")
-  }
-
-  // ---------------- START BUTTON ----------------
-
-  async function startDuel() {
-    if (!duel) return
+  const startDuel = async () => {
+    if (!duelIdRef.current) return;
 
     await supabase.rpc("start_duel", {
-      p_duel_id: duel.id,
-    })
+      p_duel_id: duelIdRef.current,
+    });
 
-    fetchDuel(roomCode)
-  }
+    await fetchState();
+    setPhase("answering");
+    setTimeLeft(10);
+  };
 
-  const isCreator = duel?.player_a === playerToken
+  // ------------------------------------------
+  // RESOLVE ROUND
+  // ------------------------------------------
 
-  const canStart =
-    duel?.status === "waiting" &&
-    duel?.player_b &&
-    isCreator
+  const resolveRound = async () => {
+    if (resolvingRef.current) return;
+    resolvingRef.current = true;
 
-  // ---------------- UI ----------------
+    await supabase.rpc("resolve_round", {
+      p_duel_id: duelIdRef.current,
+    });
+
+    await fetchState();
+
+    resolvingRef.current = false;
+  };
+
+  // ------------------------------------------
+  // ANSWERING TIMER (10 MP)
+  // ------------------------------------------
+
+  useEffect(() => {
+    if (phase !== "answering") return;
+
+    if (timeLeft <= 0) {
+      resolveRound();
+      setPhase("evaluating");
+      setEvaluationTime(5);
+      return;
+    }
+
+    const interval = setInterval(() => {
+      setTimeLeft((prev) => prev - 1);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [timeLeft, phase]);
+
+  // ------------------------------------------
+  // EVALUATION TIMER (5 MP)
+  // ------------------------------------------
+
+  useEffect(() => {
+    if (phase !== "evaluating") return;
+
+    if (evaluationTime <= 0) {
+      if (duel?.status === "finished") {
+        setPhase("finished");
+      } else {
+        setPhase("answering");
+        setTimeLeft(10);
+      }
+      return;
+    }
+
+    const interval = setInterval(() => {
+      setEvaluationTime((prev) => prev - 1);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [evaluationTime, phase, duel]);
+
+  // ------------------------------------------
+  // AUTO POLL (BACKEND SYNC)
+  // ------------------------------------------
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      fetchState();
+    }, 1500);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // ------------------------------------------
+  // INITIAL LOAD
+  // ------------------------------------------
+
+  useEffect(() => {
+    const stored = localStorage.getItem("duel_id");
+    if (stored) {
+      duelIdRef.current = stored;
+      fetchState();
+    }
+  }, []);
+
+  // ------------------------------------------
+  // RENDER
+  // ------------------------------------------
+
+  if (!duel) return <div>Loading...</div>;
 
   return (
     <div style={{ padding: 40 }}>
-      <h1>Decision Break Duel</h1>
+      <h2>Decision Break Duel</h2>
 
-      {!duel && (
+      <p>Room: {duel.room_code}</p>
+      <p>Status: {duel.status}</p>
+      <p>
+        Score A: {duel.score_a} | Score B: {duel.score_b}
+      </p>
+
+      {duel.status === "waiting" && (
+        <button onClick={startDuel}>Start Duel</button>
+      )}
+
+      {phase === "answering" && round && question && (
         <>
-          <button onClick={createRoom}>Create Room</button>
-
-          <div style={{ marginTop: 20 }}>
-            <input
-              placeholder="Enter Room Code"
-              value={inputCode}
-              onChange={(e) =>
-                setInputCode(e.target.value.toUpperCase())
-              }
-            />
-            <button onClick={joinRoom}>Join</button>
-          </div>
+          <h3>Round {round.round_number}</h3>
+          <p>{question.question}</p>
+          <h1 style={{ color: timeLeft <= 3 ? "red" : "black" }}>
+            {timeLeft}
+          </h1>
         </>
       )}
 
-      {duel && (
+      {phase === "evaluating" && round && (
         <>
-          <h2>Room: {roomCode}</h2>
-          <p>Status: {duel.status}</p>
-          <p>
-            Score A: {duel.score_a} | Score B: {duel.score_b}
-          </p>
+          <h3>Round Result</h3>
+          <p>Correct Answer: {round.correct_value}</p>
+          <h2>{evaluationTime}</h2>
+        </>
+      )}
 
-          {canStart && (
-            <button onClick={startDuel}>
-              Start Duel
-            </button>
-          )}
-
-          {round && phase === "active" && (
-            <>
-              <h3>Round {duel.current_round}</h3>
-              <p>{round.question?.question_text}</p>
-              <p style={{ fontSize: 40 }}>{timer}</p>
-
-              {timer > 0 && (
-                <>
-                  <input
-                    type="number"
-                    value={guess}
-                    onChange={(e) =>
-                      setGuess(e.target.value)
-                    }
-                  />
-                  <button onClick={submitGuess}>
-                    Submit
-                  </button>
-                </>
-              )}
-            </>
-          )}
-
-          {round && phase === "resolving" && (
-            <>
-              <h3>Round Result</h3>
-              <p>
-                Correct answer:{" "}
-                {round.question?.correct_value}
-              </p>
-              <p>Next round in {timer}</p>
-            </>
-          )}
-
-          {phase === "finished" && (
-            <h2>Duel Finished</h2>
-          )}
+      {phase === "finished" && (
+        <>
+          <h2>Duel Finished</h2>
+          <p>Winner: {duel.winner_slot}</p>
         </>
       )}
     </div>
-  )
+  );
 }
