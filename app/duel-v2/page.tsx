@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { supabase } from "@/lib/supabase"
 
 function getOrCreatePlayerToken() {
@@ -12,6 +12,8 @@ function getOrCreatePlayerToken() {
   return token
 }
 
+type Phase = "waiting" | "active" | "resolving" | "finished"
+
 export default function DuelPage() {
   const [playerToken, setPlayerToken] = useState<string | null>(null)
   const [roomCode, setRoomCode] = useState("")
@@ -19,7 +21,10 @@ export default function DuelPage() {
   const [duel, setDuel] = useState<any>(null)
   const [round, setRound] = useState<any>(null)
   const [guess, setGuess] = useState("")
-  const [loading, setLoading] = useState(false)
+  const [phase, setPhase] = useState<Phase>("waiting")
+  const [timer, setTimer] = useState<number>(10)
+
+  const intervalRef = useRef<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
     setPlayerToken(getOrCreatePlayerToken())
@@ -30,14 +35,14 @@ export default function DuelPage() {
   async function createRoom() {
     if (!playerToken) return
 
-    const { data, error } = await supabase.rpc("create_duel", {
+    const { data } = await supabase.rpc("create_duel", {
       p_player: playerToken,
     })
 
-    if (!error && data) {
+    if (data) {
       const code = data[0].out_room_code
       setRoomCode(code)
-      await fetchDuel(code)
+      fetchDuel(code)
     }
   }
 
@@ -52,7 +57,7 @@ export default function DuelPage() {
     })
 
     setRoomCode(inputCode)
-    await fetchDuel(inputCode)
+    fetchDuel(inputCode)
   }
 
   // ---------------- FETCH DUEL ----------------
@@ -70,6 +75,14 @@ export default function DuelPage() {
 
     if (data.status === "playing") {
       fetchRound(data.id, data.current_round)
+    }
+
+    if (data.status === "waiting") {
+      setPhase("waiting")
+    }
+
+    if (data.status === "finished") {
+      setPhase("finished")
     }
   }
 
@@ -91,39 +104,14 @@ export default function DuelPage() {
       .eq("id", data.question_id)
       .single()
 
-    setRound({
-      ...data,
-      question,
-    })
+    setRound({ ...data, question })
+
+    if (!data.resolved_at) {
+      setPhase("active")
+    }
   }
 
-  // ---------------- START ----------------
-
-  async function startDuel() {
-    if (!duel) return
-
-    await supabase.rpc("start_duel", {
-      p_duel_id: duel.id,
-    })
-
-    await fetchDuel(roomCode)
-  }
-
-  // ---------------- SUBMIT ----------------
-
-  async function submitGuess() {
-    if (!duel || !guess || !playerToken) return
-
-    await supabase.rpc("submit_guess", {
-      p_duel_id: duel.id,
-      p_player: playerToken,
-      p_guess: Number(guess),
-    })
-
-    setGuess("")
-  }
-
-  // ---------------- POLLING ----------------
+  // ---------------- GLOBAL POLLING (ALL STATES) ----------------
 
   useEffect(() => {
     if (!roomCode) return
@@ -135,15 +123,95 @@ export default function DuelPage() {
     return () => clearInterval(interval)
   }, [roomCode])
 
-  // ---------------- TIMER ----------------
+  // ---------------- ACTIVE TIMER ----------------
 
-  const timeLeft =
-    round &&
-    10 -
-      Math.floor(
-        (Date.now() - new Date(round.round_start_at).getTime()) /
-          1000
-      )
+  useEffect(() => {
+    if (phase !== "active") return
+
+    setTimer(10)
+
+    if (intervalRef.current) clearInterval(intervalRef.current)
+
+    intervalRef.current = setInterval(() => {
+      setTimer((prev) => {
+        if (prev <= 1) {
+          clearInterval(intervalRef.current!)
+          return 0
+        }
+        return prev - 1
+      })
+    }, 1000)
+
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current)
+    }
+  }, [round?.id, phase])
+
+  // ---------------- AUTO RESOLVE ----------------
+
+  useEffect(() => {
+    if (phase !== "active") return
+    if (timer !== 0) return
+    if (!duel) return
+
+    supabase.rpc("resolve_round", {
+      p_duel_id: duel.id,
+    })
+
+    setPhase("resolving")
+    setTimer(5)
+  }, [timer])
+
+  // ---------------- RESOLVING PHASE ----------------
+
+  useEffect(() => {
+    if (phase !== "resolving") return
+
+    if (intervalRef.current) clearInterval(intervalRef.current)
+
+    intervalRef.current = setInterval(() => {
+      setTimer((prev) => {
+        if (prev <= 1) {
+          clearInterval(intervalRef.current!)
+          fetchDuel(roomCode)
+          return 0
+        }
+        return prev - 1
+      })
+    }, 1000)
+
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current)
+    }
+  }, [phase])
+
+  // ---------------- SUBMIT ----------------
+
+  async function submitGuess() {
+    if (!duel || !round || !guess || !playerToken) return
+
+    await supabase.from("db_duel_submissions").insert({
+      id: crypto.randomUUID(),
+      round_id: round.id,
+      slot: duel.player_a === playerToken ? "A" : "B",
+      guess: Number(guess),
+      submitted_at: new Date().toISOString(),
+    })
+
+    setGuess("")
+  }
+
+  // ---------------- START BUTTON ----------------
+
+  async function startDuel() {
+    if (!duel) return
+
+    await supabase.rpc("start_duel", {
+      p_duel_id: duel.id,
+    })
+
+    fetchDuel(roomCode)
+  }
 
   const isCreator = duel?.player_a === playerToken
 
@@ -160,9 +228,7 @@ export default function DuelPage() {
 
       {!duel && (
         <>
-          <button onClick={createRoom} disabled={loading}>
-            Create Room
-          </button>
+          <button onClick={createRoom}>Create Room</button>
 
           <div style={{ marginTop: 20 }}>
             <input
@@ -186,61 +252,47 @@ export default function DuelPage() {
           </p>
 
           {canStart && (
-            <button onClick={startDuel}>Start Duel</button>
+            <button onClick={startDuel}>
+              Start Duel
+            </button>
           )}
 
-          {round && duel.status === "playing" && (
+          {round && phase === "active" && (
             <>
               <h3>Round {duel.current_round}</h3>
-
               <p>{round.question?.question_text}</p>
+              <p style={{ fontSize: 40 }}>{timer}</p>
 
-              {round.resolved_at ? (
+              {timer > 0 && (
                 <>
-                  <p>
-                    Winner:{" "}
-                    {round.winner_slot
-                      ? round.winner_slot
-                      : "Draw"}
-                  </p>
-                  <p>
-                    Correct Answer:{" "}
-                    {round.question?.correct_value}
-                  </p>
-                </>
-              ) : (
-                <>
-                  <p
-                    style={{
-                      fontSize: 40,
-                      color:
-                        timeLeft <= 3
-                          ? "red"
-                          : timeLeft <= 5
-                          ? "orange"
-                          : "black",
-                    }}
-                  >
-                    {timeLeft > 0 ? timeLeft : 0}
-                  </p>
-
-                  {timeLeft > 0 && (
-                    <>
-                      <input
-                        type="number"
-                        value={guess}
-                        onChange={(e) =>
-                          setGuess(e.target.value)
-                        }
-                      />
-                      <button onClick={submitGuess}>
-                        Submit
-                      </button>
-                    </>
-                  )}
+                  <input
+                    type="number"
+                    value={guess}
+                    onChange={(e) =>
+                      setGuess(e.target.value)
+                    }
+                  />
+                  <button onClick={submitGuess}>
+                    Submit
+                  </button>
                 </>
               )}
             </>
+          )}
+
+          {round && phase === "resolving" && (
+            <>
+              <h3>Round Result</h3>
+              <p>
+                Correct answer:{" "}
+                {round.question?.correct_value}
+              </p>
+              <p>Next round in {timer}</p>
+            </>
+          )}
+
+          {phase === "finished" && (
+            <h2>Duel Finished</h2>
           )}
         </>
       )}
