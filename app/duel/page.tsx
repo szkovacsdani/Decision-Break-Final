@@ -35,15 +35,20 @@ export default function DuelPage() {
   /* ---------------- CREATE ROOM ---------------- */
 
   async function createRoom() {
-    const code = randomCode();
-
-    await supabase.from("duel_rooms").insert({
-      code,
-      status: "waiting",
-      current_q: 0,
-      question_ids: [],
-      round_active: false
-    });
+    console.log("CREATE CLICKED")
+    console.log("Player token:", playerToken)
+  
+    const { data, error } = await supabase.rpc("create_duel", {
+      p_player: playerToken,
+    })
+  
+    console.log("RPC RESPONSE:", data)
+    console.log("RPC ERROR:", error)
+  
+    if (!error && data) {
+      setRoomCode(data[0].room_code)
+      await fetchDuel(data[0].room_code)
+    }
 
     await supabase.from("duel_players").insert({
       room_code: code,
