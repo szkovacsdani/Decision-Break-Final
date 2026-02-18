@@ -1,86 +1,94 @@
-"use client";
+"use client"
 
-import { useEffect, useMemo, useState } from "react";
-import { supabase } from "@/lib/supabase";
+import { useEffect, useState } from "react"
+import { supabase } from "@/lib/supabase"
 
 function getOrCreatePlayerToken() {
-  if (typeof window === "undefined") return null;
-  let token = localStorage.getItem("player_token");
+  let token = localStorage.getItem("player_token")
   if (!token) {
-    token = crypto.randomUUID();
-    localStorage.setItem("player_token", token);
+    token = crypto.randomUUID()
+    localStorage.setItem("player_token", token)
   }
-  return token;
+  return token
 }
 
 export default function DuelPage() {
-  const playerToken = useMemo(() => getOrCreatePlayerToken(), []);
+  const [playerToken, setPlayerToken] = useState<string | null>(null)
+  const [roomCode, setRoomCode] = useState("")
+  const [inputCode, setInputCode] = useState("")
+  const [duel, setDuel] = useState<any>(null)
+  const [round, setRound] = useState<any>(null)
+  const [roundHistory, setRoundHistory] = useState<any[]>([])
+  const [guess, setGuess] = useState("")
+  const [loading, setLoading] = useState(false)
 
-  const [roomCode, setRoomCode] = useState("");
-  const [inputCode, setInputCode] = useState("");
-  const [duel, setDuel] = useState<any>(null);
-  const [round, setRound] = useState<any>(null);
-  const [guess, setGuess] = useState("");
-  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    setPlayerToken(getOrCreatePlayerToken())
+  }, [])
 
-  // -----------------------------------
-  // CREATE ROOM
-  // -----------------------------------
+  // ---------------- CREATE ----------------
 
   async function createRoom() {
-    setLoading(true);
+    if (!playerToken) return
+
+    setLoading(true)
+
     const { data, error } = await supabase.rpc("create_duel", {
       p_player: playerToken,
-    });
-    if (!error) {
-      setRoomCode(data[0].room_code);
-      await fetchDuel(data[0].room_code);
+    })
+
+    console.log("CREATE RESPONSE:", data, error)
+
+    if (!error && data) {
+      const code = data[0].out_room_code
+      setRoomCode(code)
+      await fetchDuel(code)
     }
-    setLoading(false);
+
+    setLoading(false)
   }
 
-  // -----------------------------------
-  // JOIN ROOM
-  // -----------------------------------
+  // ---------------- JOIN ----------------
 
   async function joinRoom() {
-    if (!inputCode) return;
-    setLoading(true);
+    if (!playerToken || !inputCode) return
+
+    setLoading(true)
 
     await supabase.rpc("join_duel", {
       p_room_code: inputCode,
       p_player: playerToken,
-    });
+    })
 
-    setRoomCode(inputCode);
-    await fetchDuel(inputCode);
+    setRoomCode(inputCode)
+    await fetchDuel(inputCode)
 
-    setLoading(false);
+    setLoading(false)
   }
 
-  // -----------------------------------
-  // FETCH DUEL
-  // -----------------------------------
+  // ---------------- FETCH DUEL ----------------
 
   async function fetchDuel(code: string) {
     const { data } = await supabase
       .from("db_duels")
       .select("*")
       .eq("room_code", code)
-      .single();
+      .single()
 
-    if (data) {
-      setDuel(data);
+    if (!data) return
 
-      if (data.status === "playing") {
-        fetchRound(data.id, data.current_round);
-      }
+    setDuel(data)
+
+    if (data.status === "playing") {
+      fetchRound(data.id, data.current_round)
+    }
+
+    if (data.status === "finished") {
+      fetchRoundHistory(data.id)
     }
   }
 
-  // -----------------------------------
-  // FETCH ROUND
-  // -----------------------------------
+  // ---------------- FETCH ROUND ----------------
 
   async function fetchRound(duelId: string, roundNumber: number) {
     const { data } = await supabase
@@ -88,77 +96,101 @@ export default function DuelPage() {
       .select("*, db_questions(*)")
       .eq("duel_id", duelId)
       .eq("round_number", roundNumber)
-      .single();
+      .single()
 
-    if (data) setRound(data);
+    if (data) setRound(data)
   }
 
-  // -----------------------------------
-  // START DUEL
-  // -----------------------------------
+  // ---------------- FETCH ROUND HISTORY ----------------
+
+  async function fetchRoundHistory(duelId: string) {
+    const { data } = await supabase
+      .from("db_duel_rounds")
+      .select("*")
+      .eq("duel_id", duelId)
+      .order("round_number")
+
+    if (data) setRoundHistory(data)
+  }
+
+  // ---------------- START ----------------
 
   async function startDuel() {
-    if (!duel) return;
+    if (!duel) return
+
     await supabase.rpc("start_duel", {
       p_duel_id: duel.id,
-    });
-    await fetchDuel(roomCode);
+    })
+
+    await fetchDuel(roomCode)
   }
 
-  // -----------------------------------
-  // SUBMIT
-  // -----------------------------------
+  // ---------------- SUBMIT ----------------
 
   async function submitGuess() {
-    if (!duel || !guess) return;
+    if (!duel || !guess || !playerToken) return
 
     await supabase.rpc("submit_guess", {
       p_duel_id: duel.id,
       p_player: playerToken,
       p_guess: Number(guess),
-    });
+    })
 
-    setGuess("");
+    setGuess("")
   }
 
-  // -----------------------------------
-  // POLLING
-  // -----------------------------------
+  // ---------------- POLLING ----------------
 
   useEffect(() => {
-    if (!roomCode) return;
+    if (!roomCode) return
 
     const interval = setInterval(() => {
-      fetchDuel(roomCode);
-    }, 2000);
+      fetchDuel(roomCode)
+    }, 2000)
 
-    return () => clearInterval(interval);
-  }, [roomCode]);
+    return () => clearInterval(interval)
+  }, [roomCode])
 
-  // -----------------------------------
-  // TIMER (UI ONLY)
-  // -----------------------------------
+  // ---------------- TIMER ----------------
 
   const timeLeft =
     round &&
     10 -
       Math.floor(
         (Date.now() - new Date(round.started_at).getTime()) / 1000
-      );
+      )
 
-  const isCreator = duel?.created_by === playerToken;
+  // ---------------- BOARD ACTION ----------------
+
+  function boardActionText() {
+    if (!duel) return ""
+
+    if (duel.score_a === 3)
+      return "Player A → Move forward 2 spaces | Player B → Move back 1 space"
+
+    if (duel.score_b === 3)
+      return "Player B → Move forward 2 spaces | Player A → Move back 1 space"
+
+    if (duel.score_a === 2)
+      return "Player A → Move forward 1 space | Player B → Stay"
+
+    if (duel.score_b === 2)
+      return "Player B → Move forward 1 space | Player A → Stay"
+
+    return "Draw → Both move forward 1 space"
+  }
+
+  const isCreator = duel?.created_by === playerToken
 
   const canStart =
     duel?.status === "waiting" &&
     duel?.player_a &&
     duel?.player_b &&
-    isCreator;
+    isCreator
 
-  const duelFinished = duel?.status === "finished";
+  const duelFinished = duel?.status === "finished"
 
-  // -----------------------------------
-  // UI
-  // -----------------------------------
+  // ---------------- UI ----------------
 
   return (
     <div style={{ padding: 40 }}>
@@ -174,7 +206,9 @@ export default function DuelPage() {
             <input
               placeholder="Enter Room Code"
               value={inputCode}
-              onChange={(e) => setInputCode(e.target.value.toUpperCase())}
+              onChange={(e) =>
+                setInputCode(e.target.value.toUpperCase())
+              }
             />
             <button onClick={joinRoom}>Join</button>
           </div>
@@ -204,15 +238,28 @@ export default function DuelPage() {
                     Winner:{" "}
                     {round.winner_slot
                       ? round.winner_slot
-                      : "DRAW"}
+                      : "Draw"}
                   </p>
                   <p>
-                    Correct: {round.db_questions.correct_value}
+                    Correct Answer:{" "}
+                    {round.db_questions.correct_value}
                   </p>
                 </>
               ) : (
                 <>
-                  <p>Time Left: {timeLeft > 0 ? timeLeft : 0}</p>
+                  <p
+                    style={{
+                      fontSize: 40,
+                      color:
+                        timeLeft <= 3
+                          ? "red"
+                          : timeLeft <= 5
+                          ? "orange"
+                          : "black",
+                    }}
+                  >
+                    {timeLeft > 0 ? timeLeft : 0}
+                  </p>
 
                   {timeLeft > 0 && (
                     <>
@@ -235,14 +282,26 @@ export default function DuelPage() {
 
           {duelFinished && (
             <>
-              <h2>DUEL FINISHED</h2>
-              {duel.score_a > duel.score_b && <p>A Wins</p>}
-              {duel.score_b > duel.score_a && <p>B Wins</p>}
-              {duel.score_a === duel.score_b && <p>DRAW</p>}
+              <h2>DUEL RESULT</h2>
+
+              {roundHistory.map((r) => (
+                <p key={r.id}>
+                  Round {r.round_number}:{" "}
+                  {r.winner_slot
+                    ? r.winner_slot + " wins"
+                    : "Draw"}
+                </p>
+              ))}
+
+              <h3>
+                Final Score: {duel.score_a} – {duel.score_b}
+              </h3>
+
+              <h3>{boardActionText()}</h3>
             </>
           )}
         </>
       )}
     </div>
-  );
+  )
 }
