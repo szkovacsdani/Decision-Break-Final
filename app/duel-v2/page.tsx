@@ -116,14 +116,22 @@ export default function DuelPage() {
   // ---------------- START ----------------
 
   async function startDuel() {
-    if (!duel) return
-
-    await supabase.rpc("start_duel", {
+    if (!duel) {
+      console.log("NO DUEL")
+      return
+    }
+  
+    console.log("START WITH ID:", duel.id)
+  
+    const { data, error } = await supabase.rpc("start_duel", {
       p_duel_id: duel.id,
     })
-
+  
+    console.log("START RESPONSE:", data, error)
+  
     await fetchDuel(roomCode)
   }
+  
 
   // ---------------- SUBMIT ----------------
 
