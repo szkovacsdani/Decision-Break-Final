@@ -20,15 +20,14 @@ export default function DuelPage() {
   const [room, setRoom] = useState<any>(null);
   const [round, setRound] = useState<any>(null);
   const [question, setQuestion] = useState<any>(null);
-  const [playersCount, setPlayersCount] = useState(0);
+  const [players, setPlayers] = useState<any[]>([]);
 
   const [guess, setGuess] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [timeLeft, setTimeLeft] = useState(10);
-
   const [resolving, setResolving] = useState(false);
 
-  // Reset on new round
+  // Reset when round changes
   useEffect(() => {
     setSubmitted(false);
     setGuess("");
@@ -50,15 +49,17 @@ export default function DuelPage() {
 
       setRoom(roomData);
 
-      const { count } = await supabase
+      const { data: playersData } = await supabase
         .from("duel_players")
-        .select("*", { count: "exact", head: true })
+        .select("*")
         .eq("duel_id", duelId);
 
-      setPlayersCount(count || 0);
+      setPlayers(playersData || []);
+
+      const playerCount = playersData?.length || 0;
 
       // AUTO START
-      if (count === 2 && roomData.status === "waiting") {
+      if (playerCount === 2 && roomData.status === "waiting") {
         await supabase.rpc("start_duel", {
           p_room_code: roomData.code,
         });
@@ -85,14 +86,13 @@ export default function DuelPage() {
         setQuestion(questionData);
 
         const start = new Date(roundData.started_at).getTime();
-        const timeExpired = Date.now() - start >= roundData.duration_sec * 1000;
-
         const diff =
           roundData.duration_sec - Math.floor((Date.now() - start) / 1000);
 
+        const timeExpired = Date.now() - start >= roundData.duration_sec * 1000;
+
         setTimeLeft(diff > 0 ? diff : 0);
 
-        // RESOLVE CHECK
         if (!roundData.resolved && !resolving) {
           const { count: submissionCount } = await supabase
             .from("duel_submissions")
@@ -126,8 +126,6 @@ export default function DuelPage() {
         status: "waiting",
         current_q: 0,
         question_ids: [],
-        round_active: false,
-        scored: false,
       })
       .select()
       .single();
@@ -167,7 +165,7 @@ export default function DuelPage() {
     setRoom(data);
   }
 
-  // SUBMIT GUESS
+  // SUBMIT
   async function submitGuess() {
     if (!duelId || !slot || !guess) return;
 
@@ -203,14 +201,17 @@ export default function DuelPage() {
     );
   }
 
+  const playerA = players.find((p) => p.slot === "A");
+  const playerB = players.find((p) => p.slot === "B");
+
   // WAITING
   if (room?.status === "waiting") {
     return (
       <div style={{ padding: 40 }}>
         <h2>Room Code: {room.code}</h2>
         <h3>You are Player {slot}</h3>
-        <h3>Waiting for opponent...</h3>
-        <p>Players: {playersCount}/2</p>
+        <p>Waiting for opponent...</p>
+        <p>Players: {players.length}/2</p>
       </div>
     );
   }
@@ -223,6 +224,12 @@ export default function DuelPage() {
       <div style={{ padding: 40 }}>
         <h3>You are Player {slot}</h3>
         <h2>Round {room.current_q}</h2>
+
+        <div>
+          <strong>Score</strong>
+          <p>Player A: {playerA?.position || 0}</p>
+          <p>Player B: {playerB?.position || 0}</p>
+        </div>
 
         {question && <p>{question.question}</p>}
 
@@ -245,17 +252,42 @@ export default function DuelPage() {
           </>
         )}
 
-        {round?.resolved && <h3>Round resolved</h3>}
+        {round?.resolved && (
+          <div style={{ marginTop: 20 }}>
+            <h3>Round Result</h3>
+            <p>Correct answer: {round.correct_answer}</p>
+            <p>Player A diff: {round.diff_a}</p>
+            <p>Player B diff: {round.diff_b}</p>
+
+            {round.winner_slot === "DRAW" ? (
+              <h3>Draw</h3>
+            ) : (
+              <h3>Winner: Player {round.winner_slot}</h3>
+            )}
+          </div>
+        )}
       </div>
     );
   }
 
   // FINISHED
   if (room?.status === "finished") {
+    const winner =
+      (playerA?.position || 0) > (playerB?.position || 0)
+        ? "A"
+        : (playerB?.position || 0) > (playerA?.position || 0)
+        ? "B"
+        : "DRAW";
+
     return (
       <div style={{ padding: 40 }}>
         <h3>You are Player {slot}</h3>
         <h2>Game Finished</h2>
+
+        <p>Player A: {playerA?.position || 0}</p>
+        <p>Player B: {playerB?.position || 0}</p>
+
+        {winner === "DRAW" ? <h2>Draw</h2> : <h2>Winner: Player {winner}</h2>}
       </div>
     );
   }
