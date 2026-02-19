@@ -334,24 +334,55 @@ export default function DuelPage() {
   }
 
   if (room?.status === "finished") {
-    const winner =
-      (playerA?.position || 0) > (playerB?.position || 0)
-        ? "A"
-        : (playerB?.position || 0) > (playerA?.position || 0)
-        ? "B"
-        : "DRAW";
-
+    const aScore = playerA?.position || 0;
+    const bScore = playerB?.position || 0;
+  
+    let winner: "A" | "B" | "DRAW" = "DRAW";
+    if (aScore > bScore) winner = "A";
+    if (bScore > aScore) winner = "B";
+  
+    let rewardText = "";
+    let penaltyText = "";
+  
+    if (winner === "DRAW") {
+      rewardText = "No movement.";
+    } else {
+      rewardText = "Winner: Move +2 spaces forward.";
+      penaltyText = "Loser: Move -1 space backward.";
+    }
+  
     return (
       <div style={containerStyle}>
         <div style={cardStyle}>
           <h3>You are Player {slot}</h3>
-          <h2>Game Finished</h2>
-          <p>Player A: {playerA?.position || 0}</p>
-          <p>Player B: {playerB?.position || 0}</p>
-          <h2>
-            {winner === "DRAW" ? "Draw" : `Winner: Player ${winner}`}
+          <h2 style={{ marginBottom: 20 }}>Game Finished</h2>
+  
+          <p>Player A: {aScore}</p>
+          <p>Player B: {bScore}</p>
+  
+          <h2 style={{ marginTop: 20 }}>
+            {winner === "DRAW"
+              ? "Draw"
+              : `Winner: Player ${winner}`}
           </h2>
-
+  
+          <div
+            style={{
+              marginTop: 30,
+              padding: 20,
+              background: "rgba(255,0,0,0.1)",
+              border: "1px solid rgba(255,0,0,0.3)",
+              borderRadius: 12,
+              textAlign: "center",
+            }}
+          >
+            <h3 style={{ color: "#ff1a1a" }}>Board Action</h3>
+            <p style={{ fontSize: 18 }}>{rewardText}</p>
+            {penaltyText && (
+              <p style={{ fontSize: 18 }}>{penaltyText}</p>
+            )}
+          </div>
+  
           <button
             style={buttonStyle}
             onClick={() => (window.location.href = "/")}
@@ -362,6 +393,4 @@ export default function DuelPage() {
       </div>
     );
   }
-
-  return null;
-}
+  
