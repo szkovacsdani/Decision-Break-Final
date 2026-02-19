@@ -20,17 +20,19 @@ export default function DuelPage() {
   const [room, setRoom] = useState<any>(null);
   const [round, setRound] = useState<any>(null);
   const [question, setQuestion] = useState<any>(null);
-
   const [playersCount, setPlayersCount] = useState(0);
 
   const [guess, setGuess] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [timeLeft, setTimeLeft] = useState(10);
 
-  // Reset guess on new round
+  const [resolving, setResolving] = useState(false);
+
+  // Reset on new round
   useEffect(() => {
     setSubmitted(false);
     setGuess("");
+    setResolving(false);
   }, [room?.current_q]);
 
   // MAIN POLLING LOOP
@@ -55,14 +57,13 @@ export default function DuelPage() {
 
       setPlayersCount(count || 0);
 
-      // AUTO START WHEN 2 PLAYERS
+      // AUTO START
       if (count === 2 && roomData.status === "waiting") {
         await supabase.rpc("start_duel", {
-          p_duel_id: duelId,
+          p_room_code: roomData.code,
         });
       }
 
-      // LOAD ROUND DATA
       if (roomData.status === "playing") {
         const { data: roundData } = await supabase
           .from("duel_rounds")
@@ -71,31 +72,48 @@ export default function DuelPage() {
           .eq("round_index", roomData.current_q)
           .maybeSingle();
 
-        if (roundData) {
-          setRound(roundData);
+        if (!roundData) return;
 
-          const { data: questionData } = await supabase
-            .from("duel_questions")
-            .select("question_text")
-            .eq("id", roundData.question_id)
-            .single();
+        setRound(roundData);
 
-          setQuestion(questionData);
+        const { data: questionData } = await supabase
+          .from("duel_questions")
+          .select("question")
+          .eq("id", roundData.question_id)
+          .single();
 
-          if (!roundData.resolved) {
-            const start = new Date(roundData.started_at).getTime();
-            const diff =
-              roundData.duration_sec -
-              Math.floor((Date.now() - start) / 1000);
+        setQuestion(questionData);
 
-            setTimeLeft(diff > 0 ? diff : 0);
+        const start = new Date(roundData.started_at).getTime();
+        const timeExpired = Date.now() - start >= roundData.duration_sec * 1000;
+
+        const diff =
+          roundData.duration_sec - Math.floor((Date.now() - start) / 1000);
+
+        setTimeLeft(diff > 0 ? diff : 0);
+
+        // RESOLVE CHECK
+        if (!roundData.resolved && !resolving) {
+          const { count: submissionCount } = await supabase
+            .from("duel_submissions")
+            .select("*", { count: "exact", head: true })
+            .eq("duel_id", duelId)
+            .eq("q_index", roomData.current_q);
+
+          if (submissionCount === 2 || timeExpired) {
+            setResolving(true);
+
+            await supabase.rpc("resolve_round", {
+              p_duel_id: duelId,
+              p_round_index: roomData.current_q,
+            });
           }
         }
       }
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [duelId]);
+  }, [duelId, resolving]);
 
   // CREATE ROOM
   async function createRoom() {
@@ -163,9 +181,7 @@ export default function DuelPage() {
     setSubmitted(true);
   }
 
-  // ---------------- UI STATES ----------------
-
-  // ENTRY STATE
+  // ENTRY
   if (!duelId) {
     return (
       <div style={{ padding: 40 }}>
@@ -187,32 +203,32 @@ export default function DuelPage() {
     );
   }
 
-  // WAITING STATE
+  // WAITING
   if (room?.status === "waiting") {
     return (
       <div style={{ padding: 40 }}>
         <h2>Room Code: {room.code}</h2>
+        <h3>You are Player {slot}</h3>
         <h3>Waiting for opponent...</h3>
         <p>Players: {playersCount}/2</p>
       </div>
     );
   }
 
-  // PLAYING STATE
+  // PLAYING
   if (room?.status === "playing") {
     const danger = timeLeft <= 3 && !round?.resolved;
 
     return (
       <div style={{ padding: 40 }}>
+        <h3>You are Player {slot}</h3>
         <h2>Round {room.current_q}</h2>
 
-        {question && <p>{question.question_text}</p>}
+        {question && <p>{question.question}</p>}
 
         {!round?.resolved && (
           <>
-            <h1 style={{ color: danger ? "red" : "black" }}>
-              {timeLeft}
-            </h1>
+            <h1 style={{ color: danger ? "red" : "black" }}>{timeLeft}</h1>
 
             {!submitted ? (
               <>
@@ -234,10 +250,11 @@ export default function DuelPage() {
     );
   }
 
-  // FINISHED STATE
+  // FINISHED
   if (room?.status === "finished") {
     return (
       <div style={{ padding: 40 }}>
+        <h3>You are Player {slot}</h3>
         <h2>Game Finished</h2>
       </div>
     );
