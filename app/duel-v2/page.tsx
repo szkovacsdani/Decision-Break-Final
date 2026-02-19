@@ -1,205 +1,102 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 
-type Phase = "answering" | "evaluating" | "finished";
+type Room = {
+  id: string;
+  status: "waiting" | "playing" | "finished";
+  current_q: number;
+};
+
+type Round = {
+  round_index: number;
+  resolved: boolean;
+  started_at: string;
+  duration_sec: number;
+};
 
 export default function DuelPage() {
-  const [duel, setDuel] = useState<any>(null);
-  const [round, setRound] = useState<any>(null);
-  const [question, setQuestion] = useState<any>(null);
+  const searchParams = useSearchParams();
+  const duelId = searchParams.get("id");
 
-  const [phase, setPhase] = useState<Phase>("answering");
+  const [room, setRoom] = useState<Room | null>(null);
+  const [round, setRound] = useState<Round | null>(null);
+  const [timeLeft, setTimeLeft] = useState<number>(10);
 
-  const [timeLeft, setTimeLeft] = useState(10);
-  const [evaluationTime, setEvaluationTime] = useState(5);
+  // Poll backend
+  useEffect(() => {
+    if (!duelId) return;
 
-  const duelIdRef = useRef<string | null>(null);
-  const resolvingRef = useRef(false);
-
-  // ------------------------------------------
-  // FETCH DUEL + ROUND
-  // ------------------------------------------
-
-  const fetchState = async () => {
-    if (!duelIdRef.current) return;
-
-    const { data: duelData } = await supabase
-      .from("db_duels")
-      .select("*")
-      .eq("id", duelIdRef.current)
-      .single();
-
-    setDuel(duelData);
-
-    const { data: roundData } = await supabase
-      .from("db_duel_rounds")
-      .select("*")
-      .eq("duel_id", duelIdRef.current)
-      .is("resolved_at", null)
-      .order("round_number", { ascending: false })
-      .limit(1)
-      .single();
-
-    setRound(roundData);
-
-    if (roundData) {
-      const { data: questionData } = await supabase
-        .from("db_questions")
-        .select("*")
-        .eq("id", roundData.question_id)
+    const interval = setInterval(async () => {
+      // fetch room
+      const { data: roomData } = await supabase
+        .from("duel_rooms")
+        .select("id,status,current_q")
+        .eq("id", duelId)
         .single();
 
-      setQuestion(questionData);
-    }
-  };
+      if (!roomData) return;
 
-  // ------------------------------------------
-  // START DUEL
-  // ------------------------------------------
+      setRoom(roomData);
 
-  const startDuel = async () => {
-    if (!duelIdRef.current) return;
+      // fetch round
+      const { data: roundData } = await supabase
+        .from("duel_rounds")
+        .select("round_index,resolved,started_at,duration_sec")
+        .eq("duel_id", duelId)
+        .eq("round_index", roomData.current_q)
+        .maybeSingle();
 
-    await supabase.rpc("start_duel", {
-      p_duel_id: duelIdRef.current,
-    });
+      if (roundData) {
+        setRound(roundData);
 
-    await fetchState();
-    setPhase("answering");
-    setTimeLeft(10);
-  };
+        if (!roundData.resolved) {
+          const start = new Date(roundData.started_at).getTime();
+          const now = Date.now();
+          const diff =
+            roundData.duration_sec -
+            Math.floor((now - start) / 1000);
 
-  // ------------------------------------------
-  // RESOLVE ROUND
-  // ------------------------------------------
-
-  const resolveRound = async () => {
-    if (resolvingRef.current) return;
-    resolvingRef.current = true;
-
-    await supabase.rpc("resolve_round", {
-      p_duel_id: duelIdRef.current,
-    });
-
-    await fetchState();
-
-    resolvingRef.current = false;
-  };
-
-  // ------------------------------------------
-  // ANSWERING TIMER (10 MP)
-  // ------------------------------------------
-
-  useEffect(() => {
-    if (phase !== "answering") return;
-
-    if (timeLeft <= 0) {
-      resolveRound();
-      setPhase("evaluating");
-      setEvaluationTime(5);
-      return;
-    }
-
-    const interval = setInterval(() => {
-      setTimeLeft((prev) => prev - 1);
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, [timeLeft, phase]);
-
-  // ------------------------------------------
-  // EVALUATION TIMER (5 MP)
-  // ------------------------------------------
-
-  useEffect(() => {
-    if (phase !== "evaluating") return;
-
-    if (evaluationTime <= 0) {
-      if (duel?.status === "finished") {
-        setPhase("finished");
-      } else {
-        setPhase("answering");
-        setTimeLeft(10);
+          setTimeLeft(diff > 0 ? diff : 0);
+        }
       }
-      return;
-    }
-
-    const interval = setInterval(() => {
-      setEvaluationTime((prev) => prev - 1);
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [evaluationTime, phase, duel]);
+  }, [duelId]);
 
-  // ------------------------------------------
-  // AUTO POLL (BACKEND SYNC)
-  // ------------------------------------------
+  if (!duelId) {
+    return <div style={{ padding: 20 }}>No duel id provided.</div>;
+  }
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      fetchState();
-    }, 1500);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  // ------------------------------------------
-  // INITIAL LOAD
-  // ------------------------------------------
-
-  useEffect(() => {
-    const stored = localStorage.getItem("duel_id");
-    if (stored) {
-      duelIdRef.current = stored;
-      fetchState();
-    }
-  }, []);
-
-  // ------------------------------------------
-  // RENDER
-  // ------------------------------------------
-
-  if (!duel) return <div>Loading...</div>;
+  if (!room) {
+    return <div style={{ padding: 20 }}>Loading duel...</div>;
+  }
 
   return (
-    <div style={{ padding: 40 }}>
-      <h2>Decision Break Duel</h2>
+    <div style={{ padding: 20 }}>
+      <h1>Duel</h1>
 
-      <p>Room: {duel.room_code}</p>
-      <p>Status: {duel.status}</p>
-      <p>
-        Score A: {duel.score_a} | Score B: {duel.score_b}
-      </p>
+      <p>Status: {room.status}</p>
+      <p>Current Round: {room.current_q}</p>
 
-      {duel.status === "waiting" && (
-        <button onClick={startDuel}>Start Duel</button>
+      {round && !round.resolved && (
+        <div>
+          <h2>Round {round.round_index}</h2>
+          <p>Time left: {timeLeft}</p>
+        </div>
       )}
 
-      {phase === "answering" && round && question && (
-        <>
-          <h3>Round {round.round_number}</h3>
-          <p>{question.question}</p>
-          <h1 style={{ color: timeLeft <= 3 ? "red" : "black" }}>
-            {timeLeft}
-          </h1>
-        </>
+      {round && round.resolved && (
+        <div>
+          <h2>Round {round.round_index} resolved</h2>
+        </div>
       )}
 
-      {phase === "evaluating" && round && (
-        <>
-          <h3>Round Result</h3>
-          <p>Correct Answer: {round.correct_value}</p>
-          <h2>{evaluationTime}</h2>
-        </>
-      )}
-
-      {phase === "finished" && (
-        <>
-          <h2>Duel Finished</h2>
-          <p>Winner: {duel.winner_slot}</p>
-        </>
+      {room.status === "finished" && (
+        <h2>Game Finished</h2>
       )}
     </div>
   );
