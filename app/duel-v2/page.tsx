@@ -25,14 +25,16 @@ export default function DuelPage() {
   const [guess, setGuess] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [timeLeft, setTimeLeft] = useState(10);
+  const [showResultUntil, setShowResultUntil] = useState<number | null>(null);
 
-  // RESET ON ROUND CHANGE
+  // Reset on new round
   useEffect(() => {
     setSubmitted(false);
     setGuess("");
+    setShowResultUntil(null);
   }, [room?.current_q]);
 
-  // MAIN POLLING LOOP
+  // Main polling
   useEffect(() => {
     if (!duelId) return;
 
@@ -53,7 +55,6 @@ export default function DuelPage() {
 
       setPlayers(playersData || []);
 
-      // AUTO START
       if (playersData?.length === 2 && roomData.status === "waiting") {
         await supabase.rpc("start_duel", {
           p_room_code: roomData.code,
@@ -69,6 +70,7 @@ export default function DuelPage() {
           .maybeSingle();
 
         if (!roundData) return;
+
         setRound(roundData);
 
         const { data: questionData } = await supabase
@@ -80,14 +82,13 @@ export default function DuelPage() {
         setQuestion(questionData);
 
         const start = new Date(roundData.started_at).getTime();
-        const diff =
-          roundData.duration_sec -
-          Math.floor((Date.now() - start) / 1000);
+        const elapsed = Math.floor((Date.now() - start) / 1000);
+        const remaining = roundData.duration_sec - elapsed;
+
+        setTimeLeft(remaining > 0 ? remaining : 0);
 
         const timeExpired =
           Date.now() - start >= roundData.duration_sec * 1000;
-
-        setTimeLeft(diff > 0 ? diff : 0);
 
         if (!roundData.resolved) {
           const { count } = await supabase
@@ -103,13 +104,16 @@ export default function DuelPage() {
             });
           }
         }
+
+        if (roundData.resolved && !showResultUntil) {
+          setShowResultUntil(Date.now() + 4000);
+        }
       }
     }, 1000);
 
     return () => clearInterval(interval);
   }, [duelId]);
 
-  // CREATE ROOM
   async function createRoom() {
     const code = generateCode();
 
@@ -134,7 +138,6 @@ export default function DuelPage() {
     setSlot("A");
   }
 
-  // JOIN ROOM
   async function joinRoom() {
     const { data } = await supabase
       .from("duel_rooms")
@@ -142,10 +145,7 @@ export default function DuelPage() {
       .eq("code", roomCodeInput.toUpperCase())
       .single();
 
-    if (!data) {
-      alert("Room not found");
-      return;
-    }
+    if (!data) return alert("Room not found");
 
     await supabase.from("duel_players").insert({
       duel_id: data.id,
@@ -157,128 +157,182 @@ export default function DuelPage() {
     setSlot("B");
   }
 
-  // SUBMIT GUESS
   async function submitGuess() {
-    if (!duelId || !slot) return;
+    if (!duelId || !slot || !round) return;
     if (guess === "") return;
-    if (!round) return;
-  
+
     const start = new Date(round.started_at).getTime();
     const responseTime = Math.floor((Date.now() - start) / 1000);
-  
-    const { error } = await supabase
-      .from("duel_submissions")
-      .insert({
-        duel_id: duelId,
-        q_index: round.round_index,
-        slot,
-        guess: Number(guess),
-        response_time: responseTime,
-      });
-  
-    if (error) {
-      console.error("Insert error:", error);
-      return;
-    }
-  
-    setSubmitted(true);
-  }
-  
 
-  // ENTRY
-  if (!duelId) {
-    return (
-      <div style={{ padding: 40 }}>
-        <h1>Duel</h1>
+    const { error } = await supabase.from("duel_submissions").insert({
+      duel_id: duelId,
+      q_index: round.round_index,
+      slot,
+      guess: Number(guess),
+      response_time: responseTime,
+    });
 
-        <button onClick={createRoom} style={{ marginBottom: 20 }}>
-          Create Room
-        </button>
-
-        <div>
-          <input
-            placeholder="Enter Room Code"
-            value={roomCodeInput}
-            onChange={(e) => setRoomCodeInput(e.target.value)}
-          />
-          <button onClick={joinRoom}>Join</button>
-        </div>
-      </div>
-    );
+    if (!error) setSubmitted(true);
   }
 
   const playerA = players.find((p) => p.slot === "A");
   const playerB = players.find((p) => p.slot === "B");
 
-  // WAITING
+  const containerStyle = {
+    minHeight: "100vh",
+    background: "radial-gradient(circle at center, #1a0000 0%, #000000 70%)",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    color: "white",
+  };
+
+  const cardStyle = {
+    background: "#0d0d0d",
+    padding: "40px",
+    borderRadius: "20px",
+    width: "100%",
+    maxWidth: "600px",
+    boxShadow: "0 0 60px rgba(255,0,0,0.3)",
+    border: "1px solid rgba(255,0,0,0.2)",
+  };
+
+  const buttonStyle = {
+    width: "100%",
+    padding: 12,
+    background: "#b30000",
+    color: "white",
+    fontWeight: "bold",
+    borderRadius: 8,
+    border: "none",
+    cursor: "pointer",
+  };
+
+  const inputStyle = {
+    width: "100%",
+    padding: 12,
+    marginBottom: 10,
+    background: "#ffffff",
+    color: "#000000",
+    fontSize: 18,
+    borderRadius: 8,
+    border: "none",
+  };
+
+  if (!duelId) {
+    return (
+      <div style={containerStyle}>
+        <div style={cardStyle}>
+          <h1 style={{ textAlign: "center" }}>Duel</h1>
+          <button style={buttonStyle} onClick={createRoom}>
+            Create Room
+          </button>
+
+          <input
+            placeholder="Enter Room Code"
+            value={roomCodeInput}
+            onChange={(e) => setRoomCodeInput(e.target.value)}
+            style={{ ...inputStyle, marginTop: 20 }}
+          />
+
+          <button style={buttonStyle} onClick={joinRoom}>
+            Join
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   if (room?.status === "waiting") {
     return (
-      <div style={{ padding: 40 }}>
-        <h2>Room Code: {room.code}</h2>
-        <h3>You are Player {slot}</h3>
-        <p>Waiting for opponent...</p>
-        <p>Players: {players.length}/2</p>
+      <div style={containerStyle}>
+        <div style={cardStyle}>
+          <h3>You are Player {slot}</h3>
+          <h2>Room Code: {room.code}</h2>
+          <p>Waiting for opponent...</p>
+        </div>
       </div>
     );
   }
 
-  // PLAYING
   if (room?.status === "playing") {
+    const isPaused =
+      round?.resolved &&
+      showResultUntil &&
+      Date.now() < showResultUntil;
+
     const danger = timeLeft <= 3 && !round?.resolved;
+    const blink = timeLeft <= 3 && timeLeft % 2 === 0;
 
     return (
-      <div style={{ padding: 40 }}>
-        <h3>You are Player {slot}</h3>
-        <h2>Round {room.current_q}</h2>
+      <div style={containerStyle}>
+        <div style={cardStyle}>
+          <h3>You are Player {slot}</h3>
+          <h2>Round {room.current_q}</h2>
 
-        <div>
-          <strong>Score</strong>
-          <p>Player A: {playerA?.position || 0}</p>
-          <p>Player B: {playerB?.position || 0}</p>
-        </div>
-
-        {question && <p>{question.question}</p>}
-
-        {!round?.resolved && (
-          <>
-            <h1 style={{ color: danger ? "red" : "black" }}>
-              {timeLeft}
-            </h1>
-
-            {!submitted ? (
-              <>
-                <input
-                  type="number"
-                  value={guess}
-                  onChange={(e) => setGuess(e.target.value)}
-                />
-                <button onClick={submitGuess}>Submit</button>
-              </>
-            ) : (
-              <p>Waiting for opponent...</p>
-            )}
-          </>
-        )}
-
-        {round?.resolved && (
-          <div style={{ marginTop: 20 }}>
-            <h3>Round Result</h3>
-            <p>Correct answer: {round.correct_answer}</p>
-            <p>Player A diff: {round.diff_a}</p>
-            <p>Player B diff: {round.diff_b}</p>
-
-            {round.winner_slot === "DRAW" ? (
-              <h3>Draw</h3>
-            ) : (
-              <h3>Winner: Player {round.winner_slot}</h3>
-            )}
+          <div style={{ marginBottom: 20 }}>
+            <h3 style={{ color: "#ff1a1a" }}>Score</h3>
+            <p>Player A: {playerA?.position || 0}</p>
+            <p>Player B: {playerB?.position || 0}</p>
           </div>
-        )}
+
+          {question && (
+            <p style={{ fontSize: 18, marginBottom: 20 }}>
+              {question.question}
+            </p>
+          )}
+
+          {!round?.resolved && !isPaused && (
+            <>
+              <h1
+                style={{
+                  fontSize: 60,
+                  textAlign: "center",
+                  color: danger ? "#ff1a1a" : "white",
+                  textShadow: danger ? "0 0 20px red" : "none",
+                  opacity: blink ? 0.4 : 1,
+                  transition: "opacity 0.2s",
+                }}
+              >
+                {timeLeft}
+              </h1>
+
+              {!submitted ? (
+                <>
+                  <input
+                    type="number"
+                    value={guess}
+                    onChange={(e) => setGuess(e.target.value)}
+                    style={inputStyle}
+                  />
+                  <button style={buttonStyle} onClick={submitGuess}>
+                    Submit
+                  </button>
+                </>
+              ) : (
+                <p>Waiting for opponent...</p>
+              )}
+            </>
+          )}
+
+          {round?.resolved && (
+            <div style={{ textAlign: "center", marginTop: 20 }}>
+              <h3>Round Result</h3>
+              <p>Correct answer: {round.correct_answer}</p>
+              <p>Player A diff: {round.diff_a}</p>
+              <p>Player B diff: {round.diff_b}</p>
+              <h2>
+                {round.winner_slot === "DRAW"
+                  ? "Draw"
+                  : `Winner: Player ${round.winner_slot}`}
+              </h2>
+            </div>
+          )}
+        </div>
       </div>
     );
   }
 
-  // FINISHED
   if (room?.status === "finished") {
     const winner =
       (playerA?.position || 0) > (playerB?.position || 0)
@@ -288,18 +342,23 @@ export default function DuelPage() {
         : "DRAW";
 
     return (
-      <div style={{ padding: 40 }}>
-        <h3>You are Player {slot}</h3>
-        <h2>Game Finished</h2>
+      <div style={containerStyle}>
+        <div style={cardStyle}>
+          <h3>You are Player {slot}</h3>
+          <h2>Game Finished</h2>
+          <p>Player A: {playerA?.position || 0}</p>
+          <p>Player B: {playerB?.position || 0}</p>
+          <h2>
+            {winner === "DRAW" ? "Draw" : `Winner: Player ${winner}`}
+          </h2>
 
-        <p>Player A: {playerA?.position || 0}</p>
-        <p>Player B: {playerB?.position || 0}</p>
-
-        {winner === "DRAW" ? (
-          <h2>Draw</h2>
-        ) : (
-          <h2>Winner: Player {winner}</h2>
-        )}
+          <button
+            style={buttonStyle}
+            onClick={() => (window.location.href = "/")}
+          >
+            Back to Home
+          </button>
+        </div>
       </div>
     );
   }
