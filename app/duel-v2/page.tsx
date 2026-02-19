@@ -167,17 +167,37 @@ export default function DuelPage() {
 
   // SUBMIT
   async function submitGuess() {
-    if (!duelId || !slot || !guess) return;
-
-    await supabase.from("duel_submissions").insert({
-      duel_id: duelId,
-      q_index: room.current_q,
-      slot,
-      guess: Number(guess),
-    });
-
-    setSubmitted(true);
+    console.log("Submitting guess:", guess);
+    console.log("DuelId:", duelId);
+    console.log("Slot:", slot);
+    console.log("Round:", round);
+  
+    if (!duelId || !slot) {
+      console.log("Missing duelId or slot");
+      return;
+    }
+  
+    if (guess === "") {
+      console.log("Guess empty");
+      return;
+    }
+  
+    const { data, error } = await supabase
+      .from("duel_submissions")
+      .insert({
+        duel_id: duelId,
+        q_index: round?.round_index,
+        slot,
+        guess: Number(guess),
+      });
+  
+    console.log("Insert result:", data, error);
+  
+    if (!error) {
+      setSubmitted(true);
+    }
   }
+  
 
   // ENTRY
   if (!duelId) {
