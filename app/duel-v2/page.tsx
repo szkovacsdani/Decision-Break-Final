@@ -25,13 +25,11 @@ export default function DuelPage() {
   const [guess, setGuess] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [timeLeft, setTimeLeft] = useState(10);
-  const [resolving, setResolving] = useState(false);
 
-  // Reset when round changes
+  // RESET ON ROUND CHANGE
   useEffect(() => {
     setSubmitted(false);
     setGuess("");
-    setResolving(false);
   }, [room?.current_q]);
 
   // MAIN POLLING LOOP
@@ -46,7 +44,6 @@ export default function DuelPage() {
         .single();
 
       if (!roomData) return;
-
       setRoom(roomData);
 
       const { data: playersData } = await supabase
@@ -56,10 +53,8 @@ export default function DuelPage() {
 
       setPlayers(playersData || []);
 
-      const playerCount = playersData?.length || 0;
-
       // AUTO START
-      if (playerCount === 2 && roomData.status === "waiting") {
+      if (playersData?.length === 2 && roomData.status === "waiting") {
         await supabase.rpc("start_duel", {
           p_room_code: roomData.code,
         });
@@ -74,7 +69,6 @@ export default function DuelPage() {
           .maybeSingle();
 
         if (!roundData) return;
-
         setRound(roundData);
 
         const { data: questionData } = await supabase
@@ -87,25 +81,25 @@ export default function DuelPage() {
 
         const start = new Date(roundData.started_at).getTime();
         const diff =
-          roundData.duration_sec - Math.floor((Date.now() - start) / 1000);
+          roundData.duration_sec -
+          Math.floor((Date.now() - start) / 1000);
 
-        const timeExpired = Date.now() - start >= roundData.duration_sec * 1000;
+        const timeExpired =
+          Date.now() - start >= roundData.duration_sec * 1000;
 
         setTimeLeft(diff > 0 ? diff : 0);
 
-        if (!roundData.resolved && !resolving) {
-          const { count: submissionCount } = await supabase
+        if (!roundData.resolved) {
+          const { count } = await supabase
             .from("duel_submissions")
             .select("*", { count: "exact", head: true })
             .eq("duel_id", duelId)
-            .eq("q_index", roomData.current_q);
+            .eq("q_index", roundData.round_index);
 
-          if (submissionCount === 2 || timeExpired) {
-            setResolving(true);
-
+          if (count === 2 || timeExpired) {
             await supabase.rpc("resolve_round", {
               p_duel_id: duelId,
-              p_round_index: roomData.current_q,
+              p_round_index: roundData.round_index,
             });
           }
         }
@@ -113,7 +107,7 @@ export default function DuelPage() {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [duelId, resolving]);
+  }, [duelId]);
 
   // CREATE ROOM
   async function createRoom() {
@@ -138,7 +132,6 @@ export default function DuelPage() {
 
     setDuelId(data.id);
     setSlot("A");
-    setRoom(data);
   }
 
   // JOIN ROOM
@@ -162,40 +155,33 @@ export default function DuelPage() {
 
     setDuelId(data.id);
     setSlot("B");
-    setRoom(data);
   }
 
-  // SUBMIT
+  // SUBMIT GUESS
   async function submitGuess() {
-    console.log("Submitting guess:", guess);
-    console.log("DuelId:", duelId);
-    console.log("Slot:", slot);
-    console.log("Round:", round);
+    if (!duelId || !slot) return;
+    if (guess === "") return;
+    if (!round) return;
   
-    if (!duelId || !slot) {
-      console.log("Missing duelId or slot");
-      return;
-    }
+    const start = new Date(round.started_at).getTime();
+    const responseTime = Math.floor((Date.now() - start) / 1000);
   
-    if (guess === "") {
-      console.log("Guess empty");
-      return;
-    }
-  
-    const { data, error } = await supabase
+    const { error } = await supabase
       .from("duel_submissions")
       .insert({
         duel_id: duelId,
-        q_index: round?.round_index,
+        q_index: round.round_index,
         slot,
         guess: Number(guess),
+        response_time: responseTime,
       });
   
-    console.log("Insert result:", data, error);
-  
-    if (!error) {
-      setSubmitted(true);
+    if (error) {
+      console.error("Insert error:", error);
+      return;
     }
+  
+    setSubmitted(true);
   }
   
 
@@ -255,7 +241,9 @@ export default function DuelPage() {
 
         {!round?.resolved && (
           <>
-            <h1 style={{ color: danger ? "red" : "black" }}>{timeLeft}</h1>
+            <h1 style={{ color: danger ? "red" : "black" }}>
+              {timeLeft}
+            </h1>
 
             {!submitted ? (
               <>
@@ -307,7 +295,11 @@ export default function DuelPage() {
         <p>Player A: {playerA?.position || 0}</p>
         <p>Player B: {playerB?.position || 0}</p>
 
-        {winner === "DRAW" ? <h2>Draw</h2> : <h2>Winner: Player {winner}</h2>}
+        {winner === "DRAW" ? (
+          <h2>Draw</h2>
+        ) : (
+          <h2>Winner: Player {winner}</h2>
+        )}
       </div>
     );
   }
