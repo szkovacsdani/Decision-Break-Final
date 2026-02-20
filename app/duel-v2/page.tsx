@@ -25,13 +25,16 @@ export default function DuelPage() {
   const [guess, setGuess] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [timeLeft, setTimeLeft] = useState(10);
+
   const [showResultUntil, setShowResultUntil] = useState<number | null>(null);
+  const [handledRound, setHandledRound] = useState<number | null>(null);
 
   // Reset on new round
   useEffect(() => {
     setSubmitted(false);
     setGuess("");
     setShowResultUntil(null);
+    setHandledRound(null);
   }, [room?.current_q]);
 
   // Main polling
@@ -76,8 +79,6 @@ export default function DuelPage() {
           showResultUntil &&
           Date.now() < showResultUntil;
 
-        // csak akkor frissítjük a round state-et,
-        // ha nem result pause-ban vagyunk
         if (!isPaused) {
           setRound(roundData);
         }
@@ -114,15 +115,19 @@ export default function DuelPage() {
           }
         }
 
-        // 5 mp stabil pause
-        if (roundData.resolved && !showResultUntil) {
+        // Stabil 5 mp pause minden kör végén
+        if (
+          roundData.resolved &&
+          handledRound !== roundData.round_index
+        ) {
+          setHandledRound(roundData.round_index);
           setShowResultUntil(Date.now() + 5000);
         }
       }
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [duelId, showResultUntil]);
+  }, [duelId, showResultUntil, handledRound]);
 
   async function createRoom() {
     const code = generateCode();
@@ -354,11 +359,20 @@ export default function DuelPage() {
     let rewardText = "";
     let penaltyText = "";
 
-    if (winner === "DRAW") {
-      rewardText = "No movement.";
-    } else {
+    if (aScore === 3 && bScore === 0) {
       rewardText = "Winner: Move +2 spaces forward.";
       penaltyText = "Loser: Move -1 space backward.";
+    }
+    else if (bScore === 3 && aScore === 0) {
+      rewardText = "Winner: Move +2 spaces forward.";
+      penaltyText = "Loser: Move -1 space backward.";
+    }
+    else if (winner !== "DRAW") {
+      rewardText = "Winner: Move +1 space forward.";
+      penaltyText = "Loser: Stay.";
+    }
+    else {
+      rewardText = "Draw: Both of you move +1 space forward.";
     }
 
     return (
