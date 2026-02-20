@@ -139,12 +139,15 @@ export default function DuelPage() {
         setIsShowingResult(true);
 
         setTimeout(async () => {
+
+          setIsShowingResult(false);
+        
           await supabase.rpc("advance_round", {
             p_duel_id: duelId,
           });
-
-          setIsShowingResult(false);
+        
         }, 5000);
+        
       }
 
     }, 1000);
