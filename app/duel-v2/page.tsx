@@ -115,38 +115,39 @@ export default function DuelPage() {
       }
 
       // SHOW RESULT ONLY ONCE PER ROUND
-      if (roundData.resolved && handledRound !== roundData.round_index) {
+if (roundData.resolved && handledRound !== roundData.round_index) {
 
-        setHandledRound(roundData.round_index);
+  setHandledRound(roundData.round_index);
 
-        const { data: submissions } = await supabase
-          .from("duel_submissions")
-          .select("slot, guess")
-          .eq("duel_id", duelId)
-          .eq("q_index", roundData.round_index);
+  const { data: submissions } = await supabase
+    .from("duel_submissions")
+    .select("slot, guess")
+    .eq("duel_id", duelId)
+    .eq("q_index", roundData.round_index);
 
-        const guessA =
-          submissions?.find((s) => s.slot === "A")?.guess ?? "-";
-        const guessB =
-          submissions?.find((s) => s.slot === "B")?.guess ?? "-";
+  const guessA =
+    submissions?.find((s) => s.slot === "A")?.guess ?? "-";
+  const guessB =
+    submissions?.find((s) => s.slot === "B")?.guess ?? "-";
 
-        setRound({
-          ...roundData,
-          guessA,
-          guessB,
-        });
+  setRound({
+    ...roundData,
+    guessA,
+    guessB,
+  });
 
-        setIsShowingResult(true);
+  setIsShowingResult(true);
 
-        setTimeout(async () => {
+  setTimeout(async () => {
 
-          setIsShowingResult(false);
-        
-          await supabase.rpc("advance_round", {
-            p_duel_id: duelId,
-          });
-        
-        }, 5000);
+  
+    await supabase.rpc("advance_round", {
+      p_duel_id: duelId,
+    });
+
+    setIsShowingResult(false);
+
+  }, 5000);
         
       }
 
