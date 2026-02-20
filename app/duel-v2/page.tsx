@@ -305,8 +305,8 @@ return (
  <h3>You are Player {slot}</h3>
  <h2>Round {room.current_q}</h2>
 
- <p>Player A: {playerA?.position || 0}</p>
- <p>Player B: {playerB?.position || 0}</p>
+ <p>Player A: {playerA?.round_points || 0}</p>
+<p>Player B: {playerB?.round_points || 0}</p>
 
  {question && <p>{question.question}</p>}
 
@@ -362,8 +362,8 @@ return (
 }
 
 if (room?.status === "finished") {
-const aScore = playerA?.position || 0;
-const bScore = playerB?.position || 0;
+const aScore = playerA?.round_points || 0;
+const bScore = playerB?.round_points || 0;
 
 let winner: "A" | "B" | "DRAW" = "DRAW";
 if (aScore > bScore) winner = "A";
@@ -373,16 +373,40 @@ return (
 <div style={containerStyle}>
  <div style={cardStyle}>
  <h2>Game Finished</h2>
- <p>Player A: {aScore}</p>
- <p>Player B: {bScore}</p>
- <h2>
- {winner === "DRAW"
- ? "Draw"
- : `Winner: Player ${winner}`}
- </h2>
- {winner !== "DRAW" && (
+<p>Player A: {aScore}</p>
+<p>Player B: {bScore}</p>
+
+<h2>
+{winner === "DRAW"
+? "Draw"
+: `Winner: Player ${winner}`}
+</h2>
+
+{aScore === 3 && (
+ <>
+ <p>Winner: Move +2 spaces forward.</p>
+ <p>Loser: Move -1 space backward.</p>
+ </>
+)}
+
+{bScore === 3 && (
+ <>
+ <p>Winner: Move +2 spaces forward.</p>
+ <p>Loser: Move -1 space backward.</p>
+ </>
+)}
+
+{aScore === 2 && bScore === 1 && (
  <p>Winner: Move +1 space forward.</p>
- )}
+)}
+
+{bScore === 2 && aScore === 1 && (
+ <p>Winner: Move +1 space forward.</p>
+)}
+
+{aScore === 1 && bScore === 1 && (
+ <p>Draw: Both move +1 space.</p>
+)}
  <button
  style={buttonStyle}
  onClick={() => (window.location.href = "/")}
@@ -396,5 +420,4 @@ return (
 
 return null;
 }
-
 
