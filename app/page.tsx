@@ -29,23 +29,49 @@ export default function Home() {
           Think fast. Or lose ground.
         </p>
 
-        <div style={{ marginTop: 28 }}>
+        {/* BUTTONS */}
+        <div
+          style={{
+            marginTop: 28,
+            display: "flex",
+            gap: 16,
+            flexWrap: "wrap",
+          }}
+        >
+          {/* PLAY QUIZ - GREEN */}
           <a
             href="/quiz"
             style={{
               display: "inline-block",
-              background: "#C1121F",
-              color: "#fff",
+              backgroundColor: "#1f8f3a",
+              color: "#ffffff",
               padding: "14px 22px",
-              borderRadius: 10,
+              borderRadius: "10px",
               fontWeight: 900,
               textDecoration: "none",
             }}
           >
             PLAY QUIZ
           </a>
+
+          {/* PLAY DUEL - RED */}
+          <a
+            href="/duel-v2"
+            style={{
+              display: "inline-block",
+              backgroundColor: "#b30000",
+              color: "#ffffff",
+              padding: "14px 22px",
+              borderRadius: "10px",
+              fontWeight: 900,
+              textDecoration: "none",
+            }}
+          >
+            PLAY DUEL
+          </a>
         </div>
 
+        {/* INFO GRID */}
         <div
           style={{
             marginTop: 28,
@@ -95,7 +121,9 @@ export default function Home() {
             }}
           >
             <div style={{ fontWeight: 900 }}>Hybrid</div>
-            <div style={{ opacity: 0.8, fontSize: 12 }}>Physical + Digital</div>
+            <div style={{ opacity: 0.8, fontSize: 12 }}>
+              Physical + Digital
+            </div>
           </div>
         </div>
       </div>
