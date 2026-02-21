@@ -12,15 +12,15 @@
     {
       "id": "q002",
       "category": "geography",
-      "difficulty": "easy",
-      "question": "What is the capital of Canada?",
+      "difficulty": "normal",
+      "question": "Why was Ottawa chosen as the capital of Canada instead of Toronto or Montreal?",
       "answers": {
-        "A": "Toronto",
-        "B": "Vancouver",
-        "C": "Ottawa",
-        "D": "Montreal"
+        "A": "It was the largest city",
+        "B": "It was geographically central between English and French regions",
+        "C": "It had the strongest economy",
+        "D": "It was the oldest settlement"
       },
-      "correct": "C"
+      "correct": "B"
     },
     {
       "id": "q003",
@@ -54,10 +54,15 @@
     {
       "id": "q006",
       "category": "geography",
-      "difficulty": "easy",
-      "question": "Which country has the city of Barcelona?",
-      "answers": { "A": "Portugal", "B": "Italy", "C": "Spain", "D": "France" },
-      "correct": "C"
+      "difficulty": "normal",
+      "question": "Barcelona is the capital of which autonomous region within Spain?",
+      "answers": {
+        "A": "Andalusia",
+        "B": "Catalonia",
+        "C": "Basque Country",
+        "D": "Galicia"
+      },
+      "correct": "B"
     },
     {
       "id": "q007",
@@ -149,15 +154,15 @@
     {
       "id": "q016",
       "category": "geography",
-      "difficulty": "easy",
-      "question": "Which country uses the yen?",
+      "difficulty": "normal",
+      "question": "The yen is the official currency of which major East Asian economy?",
       "answers": {
-        "A": "China",
-        "B": "Japan",
-        "C": "South Korea",
-        "D": "Thailand"
+        "A": "South Korea",
+        "B": "China",
+        "C": "Japan",
+        "D": "Vietnam"
       },
-      "correct": "B"
+      "correct": "C"
     },
     {
       "id": "q017",
@@ -782,10 +787,15 @@
     {
       "id": "q077",
       "category": "geography",
-      "difficulty": "easy",
-      "question": "Which country is shaped like a boot?",
-      "answers": { "A": "Italy", "B": "Greece", "C": "Chile", "D": "Norway" },
-      "correct": "A"
+      "difficulty": "normal",
+      "question": "Italy's peninsula extends into which sea?",
+      "answers": {
+        "A": "Black Sea",
+        "B": "Baltic Sea",
+        "C": "Mediterranean Sea",
+        "D": "North Sea"
+      },
+      "correct": "C"
     },
     {
       "id": "q078",
@@ -3315,6 +3325,5219 @@
         "D": "Persian Empire"
       },
       "correct": "C"
+    },
+    {
+      "id": "q301",
+      "category": "history",
+      "difficulty": "easy",
+      "question": "Which civilization built the city of Petra?",
+      "answers": {
+        "A": "Romans",
+        "B": "Nabataeans",
+        "C": "Persians",
+        "D": "Phoenicians"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q302",
+      "category": "literature",
+      "difficulty": "easy",
+      "question": "Who wrote 'The Old Man and the Sea'?",
+      "answers": {
+        "A": "Ernest Hemingway",
+        "B": "John Steinbeck",
+        "C": "F. Scott Fitzgerald",
+        "D": "William Faulkner"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q303",
+      "category": "music",
+      "difficulty": "easy",
+      "question": "Which band was led by Mick Jagger?",
+      "answers": {
+        "A": "The Who",
+        "B": "The Rolling Stones",
+        "C": "The Doors",
+        "D": "AC/DC"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q304",
+      "category": "entertainment",
+      "difficulty": "easy",
+      "question": "Which movie features the character Forrest Gump?",
+      "answers": {
+        "A": "Cast Away",
+        "B": "The Green Mile",
+        "C": "Forrest Gump",
+        "D": "Apollo 13"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q305",
+      "category": "logic_math",
+      "difficulty": "easy",
+      "question": "If a car travels 80 km in 1 hour, how far does it travel in 2 hours?",
+      "answers": {
+        "A": "140 km",
+        "B": "150 km",
+        "C": "160 km",
+        "D": "180 km"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q306",
+      "category": "history",
+      "difficulty": "normal",
+      "question": "Which event marked the beginning of World War I in 1914?",
+      "answers": {
+        "A": "Invasion of Poland",
+        "B": "Assassination of Archduke Franz Ferdinand",
+        "C": "Treaty of Versailles",
+        "D": "Russian Revolution"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q307",
+      "category": "literature",
+      "difficulty": "normal",
+      "question": "Which novel features the character Raskolnikov?",
+      "answers": {
+        "A": "War and Peace",
+        "B": "Crime and Punishment",
+        "C": "Anna Karenina",
+        "D": "The Brothers Karamazov"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q308",
+      "category": "music",
+      "difficulty": "normal",
+      "question": "Which band released the album 'Nevermind'?",
+      "answers": {
+        "A": "Pearl Jam",
+        "B": "Nirvana",
+        "C": "Radiohead",
+        "D": "Green Day"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q309",
+      "category": "entertainment",
+      "difficulty": "normal",
+      "question": "Which actor played Jack Sparrow in the 'Pirates of the Caribbean' series?",
+      "answers": {
+        "A": "Orlando Bloom",
+        "B": "Johnny Depp",
+        "C": "Hugh Jackman",
+        "D": "Brad Pitt"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q310",
+      "category": "logic_math",
+      "difficulty": "normal",
+      "question": "If 3 pens cost 9, how much do 5 pens cost at the same rate?",
+      "answers": {
+        "A": "12",
+        "B": "13",
+        "C": "14",
+        "D": "15"
+      },
+      "correct": "D"
+    },
+    {
+      "id": "q311",
+      "category": "history",
+      "difficulty": "hard",
+      "question": "Which battle in 1815 marked the final defeat of Napoleon Bonaparte?",
+      "answers": {
+        "A": "Battle of Trafalgar",
+        "B": "Battle of Austerlitz",
+        "C": "Battle of Waterloo",
+        "D": "Battle of Leipzig"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q312",
+      "category": "literature",
+      "difficulty": "hard",
+      "question": "Who wrote the novel 'The Trial'?",
+      "answers": {
+        "A": "Franz Kafka",
+        "B": "Albert Camus",
+        "C": "Hermann Hesse",
+        "D": "Thomas Mann"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q313",
+      "category": "music",
+      "difficulty": "hard",
+      "question": "Which composer wrote the opera 'The Magic Flute'?",
+      "answers": {
+        "A": "Mozart",
+        "B": "Verdi",
+        "C": "Wagner",
+        "D": "Puccini"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q314",
+      "category": "entertainment",
+      "difficulty": "hard",
+      "question": "Which director created the 'Lord of the Rings' film trilogy released between 2001 and 2003?",
+      "answers": {
+        "A": "Peter Jackson",
+        "B": "Ridley Scott",
+        "C": "James Cameron",
+        "D": "George Lucas"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q315",
+      "category": "logic_math",
+      "difficulty": "hard",
+      "question": "If a number is divisible by both 3 and 4, it must also be divisible by which number?",
+      "answers": {
+        "A": "6",
+        "B": "9",
+        "C": "12",
+        "D": "15"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q316",
+      "category": "history",
+      "difficulty": "easy",
+      "question": "Which ancient civilization was centered in present-day Mexico and built Tenochtitlán?",
+      "answers": {
+        "A": "Maya",
+        "B": "Inca",
+        "C": "Aztec",
+        "D": "Olmec"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q317",
+      "category": "literature",
+      "difficulty": "easy",
+      "question": "Who wrote 'The Picture of Dorian Gray'?",
+      "answers": {
+        "A": "Oscar Wilde",
+        "B": "Charles Dickens",
+        "C": "H.G. Wells",
+        "D": "Bram Stoker"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q318",
+      "category": "music",
+      "difficulty": "normal",
+      "question": "Which British band is known for the song 'Yellow'?",
+      "answers": {
+        "A": "Oasis",
+        "B": "Coldplay",
+        "C": "Blur",
+        "D": "Muse"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q319",
+      "category": "entertainment",
+      "difficulty": "normal",
+      "question": "Which film features the character Neo?",
+      "answers": {
+        "A": "Blade Runner",
+        "B": "The Matrix",
+        "C": "Minority Report",
+        "D": "Tron"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q320",
+      "category": "logic_math",
+      "difficulty": "normal",
+      "question": "If the perimeter of a square is 24, what is the length of one side?",
+      "answers": {
+        "A": "4",
+        "B": "5",
+        "C": "6",
+        "D": "8"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q321",
+      "category": "history",
+      "difficulty": "hard",
+      "question": "Which empire controlled Constantinople before it fell in 1453?",
+      "answers": {
+        "A": "Roman Empire",
+        "B": "Byzantine Empire",
+        "C": "Ottoman Empire",
+        "D": "Persian Empire"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q322",
+      "category": "literature",
+      "difficulty": "hard",
+      "question": "Who wrote 'The Sound and the Fury'?",
+      "answers": {
+        "A": "William Faulkner",
+        "B": "John Steinbeck",
+        "C": "Ernest Hemingway",
+        "D": "F. Scott Fitzgerald"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q323",
+      "category": "music",
+      "difficulty": "easy",
+      "question": "Which singer is known for the song 'Shape of You'?",
+      "answers": {
+        "A": "Ed Sheeran",
+        "B": "Bruno Mars",
+        "C": "Shawn Mendes",
+        "D": "Justin Bieber"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q324",
+      "category": "entertainment",
+      "difficulty": "easy",
+      "question": "Which animated movie features a clownfish named Nemo?",
+      "answers": {
+        "A": "Finding Nemo",
+        "B": "Shrek",
+        "C": "Cars",
+        "D": "Toy Story"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q325",
+      "category": "logic_math",
+      "difficulty": "hard",
+      "question": "If the ratio of boys to girls in a class is 3:2 and there are 25 students, how many boys are there?",
+      "answers": {
+        "A": "10",
+        "B": "12",
+        "C": "15",
+        "D": "18"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q326",
+      "category": "history",
+      "difficulty": "easy",
+      "question": "Which civilization built the Colosseum in Rome?",
+      "answers": {
+        "A": "Greeks",
+        "B": "Romans",
+        "C": "Egyptians",
+        "D": "Byzantines"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q327",
+      "category": "literature",
+      "difficulty": "easy",
+      "question": "Who wrote 'The Adventures of Tom Sawyer'?",
+      "answers": {
+        "A": "Mark Twain",
+        "B": "Charles Dickens",
+        "C": "Robert Louis Stevenson",
+        "D": "Herman Melville"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q328",
+      "category": "logic_math",
+      "difficulty": "easy",
+      "question": "What is 14 × 3?",
+      "answers": {
+        "A": "36",
+        "B": "38",
+        "C": "40",
+        "D": "42"
+      },
+      "correct": "D"
+    },
+    {
+      "id": "q329",
+      "category": "music",
+      "difficulty": "easy",
+      "question": "Which instrument typically has 88 keys?",
+      "answers": {
+        "A": "Organ",
+        "B": "Piano",
+        "C": "Harpsichord",
+        "D": "Accordion"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q330",
+      "category": "entertainment",
+      "difficulty": "easy",
+      "question": "Which film features a time-traveling DeLorean car?",
+      "answers": {
+        "A": "Looper",
+        "B": "The Matrix",
+        "C": "Back to the Future",
+        "D": "Interstellar"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q331",
+      "category": "history",
+      "difficulty": "normal",
+      "question": "Which empire was centered in present-day Istanbul before 1453?",
+      "answers": {
+        "A": "Ottoman Empire",
+        "B": "Byzantine Empire",
+        "C": "Roman Empire",
+        "D": "Persian Empire"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q332",
+      "category": "literature",
+      "difficulty": "normal",
+      "question": "Which novel begins with the line 'It was the best of times, it was the worst of times'?",
+      "answers": {
+        "A": "Great Expectations",
+        "B": "A Tale of Two Cities",
+        "C": "Oliver Twist",
+        "D": "Les Misérables"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q333",
+      "category": "logic_math",
+      "difficulty": "normal",
+      "question": "If 4 machines produce 4 items in 4 minutes, how many minutes would 8 machines need to produce 8 items?",
+      "answers": {
+        "A": "2",
+        "B": "4",
+        "C": "6",
+        "D": "8"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q334",
+      "category": "music",
+      "difficulty": "normal",
+      "question": "Which composer wrote the ballet 'Swan Lake'?",
+      "answers": {
+        "A": "Tchaikovsky",
+        "B": "Stravinsky",
+        "C": "Debussy",
+        "D": "Ravel"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q335",
+      "category": "entertainment",
+      "difficulty": "normal",
+      "question": "Which director is known for the film 'The Grand Budapest Hotel'?",
+      "answers": {
+        "A": "Tim Burton",
+        "B": "Wes Anderson",
+        "C": "David Lynch",
+        "D": "Guillermo del Toro"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q336",
+      "category": "history",
+      "difficulty": "hard",
+      "question": "Which treaty formally dissolved the Austro-Hungarian Empire after World War I?",
+      "answers": {
+        "A": "Treaty of Versailles",
+        "B": "Treaty of Trianon",
+        "C": "Treaty of Brest-Litovsk",
+        "D": "Treaty of Paris"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q337",
+      "category": "literature",
+      "difficulty": "hard",
+      "question": "Who wrote 'The Brothers Karamazov'?",
+      "answers": {
+        "A": "Leo Tolstoy",
+        "B": "Fyodor Dostoevsky",
+        "C": "Ivan Turgenev",
+        "D": "Anton Chekhov"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q338",
+      "category": "logic_math",
+      "difficulty": "hard",
+      "question": "If the probability of rain on any given day is 0.2, what is the probability it does NOT rain?",
+      "answers": {
+        "A": "0.2",
+        "B": "0.5",
+        "C": "0.8",
+        "D": "1.0"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q339",
+      "category": "music",
+      "difficulty": "hard",
+      "question": "Which composer is associated with the musical movement known as Impressionism?",
+      "answers": {
+        "A": "Debussy",
+        "B": "Brahms",
+        "C": "Mahler",
+        "D": "Liszt"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q340",
+      "category": "entertainment",
+      "difficulty": "hard",
+      "question": "Which film won the Academy Award for Best Picture in 2020?",
+      "answers": {
+        "A": "1917",
+        "B": "Parasite",
+        "C": "Joker",
+        "D": "Ford v Ferrari"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q341",
+      "category": "history",
+      "difficulty": "hard",
+      "question": "Which Chinese dynasty preceded the Ming dynasty?",
+      "answers": {
+        "A": "Tang",
+        "B": "Song",
+        "C": "Yuan",
+        "D": "Qing"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q342",
+      "category": "literature",
+      "difficulty": "hard",
+      "question": "Which author wrote 'Ulysses'?",
+      "answers": {
+        "A": "James Joyce",
+        "B": "T.S. Eliot",
+        "C": "Ezra Pound",
+        "D": "Virginia Woolf"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q343",
+      "category": "logic_math",
+      "difficulty": "hard",
+      "question": "What is the least common multiple of 6 and 8?",
+      "answers": {
+        "A": "12",
+        "B": "18",
+        "C": "24",
+        "D": "48"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q344",
+      "category": "music",
+      "difficulty": "normal",
+      "question": "Which band released the album 'OK Computer'?",
+      "answers": {
+        "A": "Radiohead",
+        "B": "Coldplay",
+        "C": "The Killers",
+        "D": "Arctic Monkeys"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q345",
+      "category": "entertainment",
+      "difficulty": "normal",
+      "question": "Which actor portrayed the character of Gandalf in the film adaptations of 'The Lord of the Rings'?",
+      "answers": {
+        "A": "Patrick Stewart",
+        "B": "Ian McKellen",
+        "C": "Anthony Hopkins",
+        "D": "Christopher Lee"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q346",
+      "category": "history",
+      "difficulty": "normal",
+      "question": "Which city was divided by a wall from 1961 to 1989?",
+      "answers": {
+        "A": "Vienna",
+        "B": "Prague",
+        "C": "Berlin",
+        "D": "Warsaw"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q347",
+      "category": "literature",
+      "difficulty": "normal",
+      "question": "Who wrote 'Brave New World'?",
+      "answers": {
+        "A": "George Orwell",
+        "B": "Aldous Huxley",
+        "C": "Ray Bradbury",
+        "D": "Kurt Vonnegut"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q348",
+      "category": "logic_math",
+      "difficulty": "easy",
+      "question": "What is 25% of 80?",
+      "answers": {
+        "A": "15",
+        "B": "18",
+        "C": "20",
+        "D": "25"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q349",
+      "category": "music",
+      "difficulty": "hard",
+      "question": "Which composer wrote the 'Goldberg Variations'?",
+      "answers": {
+        "A": "Bach",
+        "B": "Mozart",
+        "C": "Haydn",
+        "D": "Schumann"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q350",
+      "category": "entertainment",
+      "difficulty": "hard",
+      "question": "Which filmmaker directed the 2019 film 'Joker'?",
+      "answers": {
+        "A": "Todd Phillips",
+        "B": "Christopher Nolan",
+        "C": "Denis Villeneuve",
+        "D": "David Fincher"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q351",
+      "category": "history",
+      "difficulty": "easy",
+      "question": "Which empire built the Hagia Sophia in the 6th century?",
+      "answers": {
+        "A": "Roman Empire",
+        "B": "Byzantine Empire",
+        "C": "Ottoman Empire",
+        "D": "Persian Empire"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q352",
+      "category": "literature",
+      "difficulty": "easy",
+      "question": "Who wrote 'The War of the Worlds'?",
+      "answers": {
+        "A": "H.G. Wells",
+        "B": "Jules Verne",
+        "C": "Isaac Asimov",
+        "D": "Arthur C. Clarke"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q353",
+      "category": "logic_math",
+      "difficulty": "easy",
+      "question": "What is 18 ÷ 3?",
+      "answers": {
+        "A": "5",
+        "B": "6",
+        "C": "7",
+        "D": "8"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q354",
+      "category": "history",
+      "difficulty": "normal",
+      "question": "Which country was ruled by Tsars before the Russian Revolution?",
+      "answers": {
+        "A": "Poland",
+        "B": "Russia",
+        "C": "Austria",
+        "D": "Hungary"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q355",
+      "category": "literature",
+      "difficulty": "normal",
+      "question": "Which author wrote 'The Metamorphosis'?",
+      "answers": {
+        "A": "Franz Kafka",
+        "B": "Thomas Mann",
+        "C": "Hermann Hesse",
+        "D": "Albert Camus"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q356",
+      "category": "logic_math",
+      "difficulty": "normal",
+      "question": "If a rectangle has sides 7 and 9, what is its perimeter?",
+      "answers": {
+        "A": "28",
+        "B": "30",
+        "C": "32",
+        "D": "34"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q357",
+      "category": "music",
+      "difficulty": "normal",
+      "question": "Which composer wrote the opera 'Carmen'?",
+      "answers": {
+        "A": "Puccini",
+        "B": "Bizet",
+        "C": "Verdi",
+        "D": "Rossini"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q358",
+      "category": "history",
+      "difficulty": "hard",
+      "question": "Which conference in 1945 divided Germany into occupation zones?",
+      "answers": {
+        "A": "Yalta Conference",
+        "B": "Tehran Conference",
+        "C": "Potsdam Conference",
+        "D": "Geneva Conference"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q359",
+      "category": "literature",
+      "difficulty": "hard",
+      "question": "Who wrote 'The Stranger' (L'Étranger)?",
+      "answers": {
+        "A": "Jean-Paul Sartre",
+        "B": "Albert Camus",
+        "C": "Simone de Beauvoir",
+        "D": "André Gide"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q360",
+      "category": "logic_math",
+      "difficulty": "hard",
+      "question": "If 5^2 + 3^2 equals what number?",
+      "answers": {
+        "A": "28",
+        "B": "30",
+        "C": "34",
+        "D": "36"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q361",
+      "category": "history",
+      "difficulty": "hard",
+      "question": "Which African leader became President of South Africa in 1994 after the end of apartheid?",
+      "answers": {
+        "A": "Desmond Tutu",
+        "B": "Nelson Mandela",
+        "C": "Thabo Mbeki",
+        "D": "Robert Mugabe"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q362",
+      "category": "literature",
+      "difficulty": "hard",
+      "question": "Who wrote the novel 'The Name of the Rose'?",
+      "answers": {
+        "A": "Italo Calvino",
+        "B": "Umberto Eco",
+        "C": "Gabriel García Márquez",
+        "D": "Milan Kundera"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q363",
+      "category": "logic_math",
+      "difficulty": "hard",
+      "question": "What is the sum of the interior angles of a pentagon?",
+      "answers": {
+        "A": "360°",
+        "B": "450°",
+        "C": "540°",
+        "D": "600°"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q364",
+      "category": "history",
+      "difficulty": "normal",
+      "question": "Which country launched the first artificial satellite, Sputnik 1?",
+      "answers": {
+        "A": "United States",
+        "B": "Soviet Union",
+        "C": "China",
+        "D": "Germany"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q365",
+      "category": "literature",
+      "difficulty": "normal",
+      "question": "Who wrote 'Lord of the Flies'?",
+      "answers": {
+        "A": "William Golding",
+        "B": "George Orwell",
+        "C": "J.D. Salinger",
+        "D": "Joseph Conrad"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q366",
+      "category": "logic_math",
+      "difficulty": "normal",
+      "question": "If a circle has a radius of 7, what is its diameter?",
+      "answers": {
+        "A": "7",
+        "B": "10",
+        "C": "12",
+        "D": "14"
+      },
+      "correct": "D"
+    },
+    {
+      "id": "q367",
+      "category": "music",
+      "difficulty": "hard",
+      "question": "Which composer wrote 'The Rite of Spring'?",
+      "answers": {
+        "A": "Stravinsky",
+        "B": "Ravel",
+        "C": "Mahler",
+        "D": "Sibelius"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q368",
+      "category": "history",
+      "difficulty": "hard",
+      "question": "Which civilization developed the first known written legal code, the Code of Hammurabi?",
+      "answers": {
+        "A": "Assyrians",
+        "B": "Babylonians",
+        "C": "Sumerians",
+        "D": "Hittites"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q369",
+      "category": "literature",
+      "difficulty": "hard",
+      "question": "Who wrote 'Don Quixote'?",
+      "answers": {
+        "A": "Miguel de Cervantes",
+        "B": "Lope de Vega",
+        "C": "Federico García Lorca",
+        "D": "Gabriel García Márquez"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q370",
+      "category": "logic_math",
+      "difficulty": "hard",
+      "question": "If a sequence increases by doubling each time starting from 5, what is the fourth number?",
+      "answers": {
+        "A": "20",
+        "B": "30",
+        "C": "40",
+        "D": "50"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q371",
+      "category": "history",
+      "difficulty": "hard",
+      "question": "Which naval battle in 1588 marked the defeat of the Spanish Armada?",
+      "answers": {
+        "A": "Battle of Lepanto",
+        "B": "Battle of Gravelines",
+        "C": "Battle of Trafalgar",
+        "D": "Battle of Cádiz"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q372",
+      "category": "literature",
+      "difficulty": "hard",
+      "question": "Which author wrote 'The Trial' and 'The Castle'?",
+      "answers": {
+        "A": "Franz Kafka",
+        "B": "Thomas Mann",
+        "C": "Rainer Maria Rilke",
+        "D": "Stefan Zweig"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q373",
+      "category": "logic_math",
+      "difficulty": "hard",
+      "question": "If 12 workers can complete a task in 10 days, how many days would it take 6 workers at the same rate?",
+      "answers": {
+        "A": "12",
+        "B": "15",
+        "C": "20",
+        "D": "24"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q374",
+      "category": "music",
+      "difficulty": "normal",
+      "question": "Which composer wrote the 'Moonlight Sonata'?",
+      "answers": {
+        "A": "Mozart",
+        "B": "Beethoven",
+        "C": "Chopin",
+        "D": "Schubert"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q375",
+      "category": "entertainment",
+      "difficulty": "normal",
+      "question": "Which film was directed by Denis Villeneuve and released in 2021 based on a science fiction novel?",
+      "answers": {
+        "A": "Arrival",
+        "B": "Blade Runner 2049",
+        "C": "Dune",
+        "D": "Interstellar"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q376",
+      "category": "logic_math",
+      "difficulty": "easy",
+      "question": "What is 11 × 11?",
+      "answers": {
+        "A": "111",
+        "B": "121",
+        "C": "131",
+        "D": "141"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q377",
+      "category": "history",
+      "difficulty": "easy",
+      "question": "Which wall divided Berlin during the Cold War?",
+      "answers": {
+        "A": "Iron Curtain",
+        "B": "Berlin Wall",
+        "C": "Atlantic Wall",
+        "D": "Western Wall"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q378",
+      "category": "literature",
+      "difficulty": "easy",
+      "question": "Who wrote 'Dracula'?",
+      "answers": {
+        "A": "Mary Shelley",
+        "B": "Bram Stoker",
+        "C": "Edgar Allan Poe",
+        "D": "Oscar Wilde"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q379",
+      "category": "logic_math",
+      "difficulty": "normal",
+      "question": "If a number is divisible by 9, which of the following must also be true?",
+      "answers": {
+        "A": "It is even",
+        "B": "Its digits sum to a multiple of 9",
+        "C": "It ends in 0",
+        "D": "It is prime"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q380",
+      "category": "history",
+      "difficulty": "normal",
+      "question": "Which empire was ruled by Suleiman the Magnificent?",
+      "answers": {
+        "A": "Mughal Empire",
+        "B": "Ottoman Empire",
+        "C": "Byzantine Empire",
+        "D": "Safavid Empire"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q381",
+      "category": "literature",
+      "difficulty": "normal",
+      "question": "Which novel features the character Captain Ahab?",
+      "answers": {
+        "A": "Treasure Island",
+        "B": "Moby-Dick",
+        "C": "The Old Man and the Sea",
+        "D": "Robinson Crusoe"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q382",
+      "category": "music",
+      "difficulty": "normal",
+      "question": "Which composer wrote 'Boléro'?",
+      "answers": {
+        "A": "Debussy",
+        "B": "Ravel",
+        "C": "Stravinsky",
+        "D": "Grieg"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q383",
+      "category": "logic_math",
+      "difficulty": "hard",
+      "question": "What is the next number in the sequence: 1, 1, 2, 3, 5, 8, ?",
+      "answers": {
+        "A": "11",
+        "B": "12",
+        "C": "13",
+        "D": "15"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q384",
+      "category": "history",
+      "difficulty": "hard",
+      "question": "Which city served as the capital of the Western Roman Empire after 402 AD?",
+      "answers": {
+        "A": "Rome",
+        "B": "Milan",
+        "C": "Ravenna",
+        "D": "Constantinople"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q385",
+      "category": "literature",
+      "difficulty": "hard",
+      "question": "Who wrote 'Waiting for Godot'?",
+      "answers": {
+        "A": "Samuel Beckett",
+        "B": "Jean Genet",
+        "C": "Arthur Miller",
+        "D": "Eugène Ionesco"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q386",
+      "category": "logic_math",
+      "difficulty": "hard",
+      "question": "If the area of a circle is 49π, what is its radius?",
+      "answers": {
+        "A": "5",
+        "B": "6",
+        "C": "7",
+        "D": "8"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q387",
+      "category": "history",
+      "difficulty": "hard",
+      "question": "Which conflict was known as the 'War of the Roses'?",
+      "answers": {
+        "A": "A war between England and France",
+        "B": "A civil war between rival English houses",
+        "C": "A rebellion in Scotland",
+        "D": "A colonial uprising"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q388",
+      "category": "literature",
+      "difficulty": "hard",
+      "question": "Which author wrote 'Madame Bovary'?",
+      "answers": {
+        "A": "Honoré de Balzac",
+        "B": "Gustave Flaubert",
+        "C": "Victor Hugo",
+        "D": "Émile Zola"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q389",
+      "category": "music",
+      "difficulty": "hard",
+      "question": "Which composer wrote the 'Brandenburg Concertos'?",
+      "answers": {
+        "A": "Bach",
+        "B": "Handel",
+        "C": "Telemann",
+        "D": "Vivaldi"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q390",
+      "category": "logic_math",
+      "difficulty": "hard",
+      "question": "If x + 2 = 10 and y = x - 3, what is the value of y?",
+      "answers": {
+        "A": "3",
+        "B": "4",
+        "C": "5",
+        "D": "6"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q391",
+      "category": "history",
+      "difficulty": "hard",
+      "question": "Which empire was defeated at the Battle of Vienna in 1683?",
+      "answers": {
+        "A": "Mughal Empire",
+        "B": "Ottoman Empire",
+        "C": "Russian Empire",
+        "D": "Holy Roman Empire"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q392",
+      "category": "literature",
+      "difficulty": "hard",
+      "question": "Who wrote the epic poem 'Paradise Lost'?",
+      "answers": {
+        "A": "John Milton",
+        "B": "Geoffrey Chaucer",
+        "C": "William Blake",
+        "D": "Alexander Pope"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q393",
+      "category": "logic_math",
+      "difficulty": "hard",
+      "question": "What is the least prime number greater than 50?",
+      "answers": {
+        "A": "51",
+        "B": "52",
+        "C": "53",
+        "D": "55"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q394",
+      "category": "history",
+      "difficulty": "normal",
+      "question": "Which revolution led to the rise of Napoleon Bonaparte?",
+      "answers": {
+        "A": "American Revolution",
+        "B": "French Revolution",
+        "C": "Russian Revolution",
+        "D": "Industrial Revolution"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q395",
+      "category": "literature",
+      "difficulty": "normal",
+      "question": "Which author wrote 'The Grapes of Wrath'?",
+      "answers": {
+        "A": "John Steinbeck",
+        "B": "William Faulkner",
+        "C": "Ernest Hemingway",
+        "D": "Jack London"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q396",
+      "category": "logic_math",
+      "difficulty": "normal",
+      "question": "If a cube has edges of length 4, what is its volume?",
+      "answers": {
+        "A": "32",
+        "B": "48",
+        "C": "64",
+        "D": "96"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q397",
+      "category": "entertainment",
+      "difficulty": "hard",
+      "question": "Which film won the Academy Award for Best Picture in 1999?",
+      "answers": {
+        "A": "Saving Private Ryan",
+        "B": "The Matrix",
+        "C": "Shakespeare in Love",
+        "D": "American Beauty"
+      },
+      "correct": "D"
+    },
+    {
+      "id": "q398",
+      "category": "history",
+      "difficulty": "hard",
+      "question": "Which empire controlled much of South America before Spanish conquest?",
+      "answers": {
+        "A": "Aztec",
+        "B": "Maya",
+        "C": "Inca",
+        "D": "Olmec"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q399",
+      "category": "literature",
+      "difficulty": "hard",
+      "question": "Who wrote 'The Iliad'?",
+      "answers": {
+        "A": "Virgil",
+        "B": "Homer",
+        "C": "Sophocles",
+        "D": "Herodotus"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q400",
+      "category": "logic_math",
+      "difficulty": "hard",
+      "question": "If the angles of a quadrilateral sum to 360°, and three angles are 90°, 80°, and 70°, what is the fourth angle?",
+      "answers": {
+        "A": "100°",
+        "B": "110°",
+        "C": "120°",
+        "D": "130°"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q401",
+      "category": "history",
+      "difficulty": "normal",
+      "question": "Machu Picchu was built at high altitude in which modern-day country?",
+      "answers": {
+        "A": "Mexico",
+        "B": "Peru",
+        "C": "Chile",
+        "D": "Bolivia"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q402",
+      "category": "literature",
+      "difficulty": "easy",
+      "question": "Who wrote 'The Odyssey'?",
+      "answers": {
+        "A": "Homer",
+        "B": "Virgil",
+        "C": "Sophocles",
+        "D": "Plato"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q403",
+      "category": "logic_math",
+      "difficulty": "easy",
+      "question": "What is 30% of 50?",
+      "answers": {
+        "A": "10",
+        "B": "12",
+        "C": "15",
+        "D": "18"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q404",
+      "category": "history",
+      "difficulty": "normal",
+      "question": "Which empire constructed the famous road network known as the Royal Road?",
+      "answers": {
+        "A": "Roman Empire",
+        "B": "Persian Empire",
+        "C": "Mongol Empire",
+        "D": "Ottoman Empire"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q405",
+      "category": "literature",
+      "difficulty": "normal",
+      "question": "Who wrote 'Heart of Darkness'?",
+      "answers": {
+        "A": "Joseph Conrad",
+        "B": "Graham Greene",
+        "C": "Rudyard Kipling",
+        "D": "E.M. Forster"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q406",
+      "category": "logic_math",
+      "difficulty": "normal",
+      "question": "If a number increases by 20% and becomes 120, what was the original number?",
+      "answers": {
+        "A": "90",
+        "B": "95",
+        "C": "100",
+        "D": "110"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q407",
+      "category": "history",
+      "difficulty": "hard",
+      "question": "Which empire was ruled by Charlemagne in the 8th and 9th centuries?",
+      "answers": {
+        "A": "Holy Roman Empire",
+        "B": "Carolingian Empire",
+        "C": "Frankish Kingdom",
+        "D": "Byzantine Empire"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q408",
+      "category": "literature",
+      "difficulty": "hard",
+      "question": "Who wrote 'Invisible Man' (1952)?",
+      "answers": {
+        "A": "Ralph Ellison",
+        "B": "James Baldwin",
+        "C": "Richard Wright",
+        "D": "Langston Hughes"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q409",
+      "category": "logic_math",
+      "difficulty": "hard",
+      "question": "What is the smallest positive integer divisible by both 8 and 12?",
+      "answers": {
+        "A": "16",
+        "B": "24",
+        "C": "32",
+        "D": "48"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q410",
+      "category": "history",
+      "difficulty": "hard",
+      "question": "Which city was the capital of the Byzantine Empire?",
+      "answers": {
+        "A": "Athens",
+        "B": "Rome",
+        "C": "Constantinople",
+        "D": "Alexandria"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q411",
+      "category": "literature",
+      "difficulty": "hard",
+      "question": "Who wrote 'The Master and Margarita'?",
+      "answers": {
+        "A": "Leo Tolstoy",
+        "B": "Mikhail Bulgakov",
+        "C": "Boris Pasternak",
+        "D": "Anton Chekhov"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q412",
+      "category": "logic_math",
+      "difficulty": "hard",
+      "question": "If a triangle has sides 3, 4, and 5, what type of triangle is it?",
+      "answers": {
+        "A": "Equilateral",
+        "B": "Isosceles",
+        "C": "Right-angled",
+        "D": "Obtuse"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q413",
+      "category": "history",
+      "difficulty": "normal",
+      "question": "Which revolution began in 1917 and led to the rise of the Soviet Union?",
+      "answers": {
+        "A": "French Revolution",
+        "B": "Russian Revolution",
+        "C": "Chinese Revolution",
+        "D": "Mexican Revolution"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q414",
+      "category": "literature",
+      "difficulty": "normal",
+      "question": "In 'The Old Man and the Sea', what type of fish does Santiago struggle to catch?",
+      "answers": {
+        "A": "Tuna",
+        "B": "Marlin",
+        "C": "Swordfish",
+        "D": "Shark"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q415",
+      "category": "logic_math",
+      "difficulty": "normal",
+      "question": "If 2x = 14, what is the value of x?",
+      "answers": {
+        "A": "5",
+        "B": "6",
+        "C": "7",
+        "D": "8"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q416",
+      "category": "history",
+      "difficulty": "hard",
+      "question": "Which battle in 1066 led to Norman control of England?",
+      "answers": {
+        "A": "Battle of Hastings",
+        "B": "Battle of Agincourt",
+        "C": "Battle of Bosworth Field",
+        "D": "Battle of Bannockburn"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q417",
+      "category": "literature",
+      "difficulty": "hard",
+      "question": "Which author wrote 'The Sound and the Fury'?",
+      "answers": {
+        "A": "William Faulkner",
+        "B": "Ernest Hemingway",
+        "C": "John Steinbeck",
+        "D": "Tennessee Williams"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q418",
+      "category": "logic_math",
+      "difficulty": "hard",
+      "question": "What is the derivative of x²?",
+      "answers": {
+        "A": "x",
+        "B": "2x",
+        "C": "x²",
+        "D": "2"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q419",
+      "category": "history",
+      "difficulty": "hard",
+      "question": "Which empire fell in 476 AD?",
+      "answers": {
+        "A": "Western Roman Empire",
+        "B": "Eastern Roman Empire",
+        "C": "Byzantine Empire",
+        "D": "Ottoman Empire"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q420",
+      "category": "literature",
+      "difficulty": "hard",
+      "question": "Who wrote 'The Divine Comedy'?",
+      "answers": {
+        "A": "Dante Alighieri",
+        "B": "Giovanni Boccaccio",
+        "C": "Petrarch",
+        "D": "Virgil"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q421",
+      "category": "logic_math",
+      "difficulty": "hard",
+      "question": "If the sum of three consecutive integers is 72, what is the middle number?",
+      "answers": {
+        "A": "23",
+        "B": "24",
+        "C": "25",
+        "D": "26"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q422",
+      "category": "music",
+      "difficulty": "normal",
+      "question": "Which composer wrote the 'New World Symphony'?",
+      "answers": {
+        "A": "Dvořák",
+        "B": "Brahms",
+        "C": "Mahler",
+        "D": "Chopin"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q423",
+      "category": "entertainment",
+      "difficulty": "hard",
+      "question": "Which film won the Palme d'Or at Cannes in 2019?",
+      "answers": {
+        "A": "Parasite",
+        "B": "Joker",
+        "C": "1917",
+        "D": "Once Upon a Time in Hollywood"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q424",
+      "category": "history",
+      "difficulty": "hard",
+      "question": "Which empire was centered in Tenochtitlán before Spanish conquest?",
+      "answers": {
+        "A": "Inca",
+        "B": "Maya",
+        "C": "Aztec",
+        "D": "Toltec"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q425",
+      "category": "logic_math",
+      "difficulty": "hard",
+      "question": "What is the next prime number after 97?",
+      "answers": {
+        "A": "99",
+        "B": "100",
+        "C": "101",
+        "D": "103"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q426",
+      "category": "history",
+      "difficulty": "easy",
+      "question": "Which country was home to the pharaohs?",
+      "answers": {
+        "A": "Greece",
+        "B": "Egypt",
+        "C": "Persia",
+        "D": "Rome"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q427",
+      "category": "literature",
+      "difficulty": "easy",
+      "question": "Who wrote 'Alice's Adventures in Wonderland'?",
+      "answers": {
+        "A": "Lewis Carroll",
+        "B": "J.M. Barrie",
+        "C": "C.S. Lewis",
+        "D": "Roald Dahl"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q428",
+      "category": "logic_math",
+      "difficulty": "easy",
+      "question": "What is 7 × 8?",
+      "answers": {
+        "A": "54",
+        "B": "56",
+        "C": "58",
+        "D": "60"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q429",
+      "category": "music",
+      "difficulty": "easy",
+      "question": "Which instrument is commonly associated with jazz improvisation?",
+      "answers": {
+        "A": "Saxophone",
+        "B": "Violin",
+        "C": "Tuba",
+        "D": "Harp"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q430",
+      "category": "entertainment",
+      "difficulty": "easy",
+      "question": "Which superhero is known as the Dark Knight?",
+      "answers": {
+        "A": "Spider-Man",
+        "B": "Batman",
+        "C": "Superman",
+        "D": "Iron Man"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q431",
+      "category": "history",
+      "difficulty": "hard",
+      "question": "Which vast trade network flourished under the stability created by the Mongol Empire?",
+      "answers": {
+        "A": "Trans-Saharan routes",
+        "B": "Silk Road",
+        "C": "Amber Road",
+        "D": "Incense Route"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q432",
+      "category": "literature",
+      "difficulty": "normal",
+      "question": "In 'The Catcher in the Rye', what is the name of the protagonist?",
+      "answers": {
+        "A": "Holden Caulfield",
+        "B": "Jay Gatsby",
+        "C": "Nick Carraway",
+        "D": "Atticus Finch"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q433",
+      "category": "logic_math",
+      "difficulty": "normal",
+      "question": "If a train travels 60 km per hour, how far does it travel in 2.5 hours?",
+      "answers": {
+        "A": "120 km",
+        "B": "130 km",
+        "C": "140 km",
+        "D": "150 km"
+      },
+      "correct": "D"
+    },
+    {
+      "id": "q434",
+      "category": "music",
+      "difficulty": "normal",
+      "question": "'The Four Seasons' is a set of violin concertos composed during which musical period?",
+      "answers": {
+        "A": "Baroque",
+        "B": "Classical",
+        "C": "Romantic",
+        "D": "Modern"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q435",
+      "category": "entertainment",
+      "difficulty": "normal",
+      "question": "Which actor won a posthumous Academy Award for portraying the Joker?",
+      "answers": {
+        "A": "Jack Nicholson",
+        "B": "Jared Leto",
+        "C": "Heath Ledger",
+        "D": "Joaquin Phoenix"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q436",
+      "category": "history",
+      "difficulty": "hard",
+      "question": "Which empire was centered in Cusco before the Spanish conquest?",
+      "answers": {
+        "A": "Aztec",
+        "B": "Inca",
+        "C": "Maya",
+        "D": "Toltec"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q437",
+      "category": "literature",
+      "difficulty": "hard",
+      "question": "Who wrote 'The Republic'?",
+      "answers": {
+        "A": "Aristotle",
+        "B": "Socrates",
+        "C": "Plato",
+        "D": "Herodotus"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q438",
+      "category": "logic_math",
+      "difficulty": "hard",
+      "question": "What is the sum of the first 10 positive integers?",
+      "answers": {
+        "A": "45",
+        "B": "50",
+        "C": "55",
+        "D": "60"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q439",
+      "category": "history",
+      "difficulty": "hard",
+      "question": "Which treaty ended the Thirty Years' War in 1648?",
+      "answers": {
+        "A": "Treaty of Utrecht",
+        "B": "Treaty of Westphalia",
+        "C": "Treaty of Vienna",
+        "D": "Treaty of Versailles"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q440",
+      "category": "literature",
+      "difficulty": "hard",
+      "question": "Who wrote 'Crime and Punishment'?",
+      "answers": {
+        "A": "Leo Tolstoy",
+        "B": "Fyodor Dostoevsky",
+        "C": "Anton Chekhov",
+        "D": "Ivan Turgenev"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q441",
+      "category": "logic_math",
+      "difficulty": "hard",
+      "question": "If the probability of an event is 0.75, what is the probability it does NOT occur?",
+      "answers": {
+        "A": "0.10",
+        "B": "0.20",
+        "C": "0.25",
+        "D": "0.30"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q442",
+      "category": "history",
+      "difficulty": "normal",
+      "question": "Which ancient civilization built the Parthenon?",
+      "answers": {
+        "A": "Romans",
+        "B": "Greeks",
+        "C": "Persians",
+        "D": "Egyptians"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q443",
+      "category": "literature",
+      "difficulty": "normal",
+      "question": "Who wrote 'Fahrenheit 451'?",
+      "answers": {
+        "A": "George Orwell",
+        "B": "Ray Bradbury",
+        "C": "Aldous Huxley",
+        "D": "Philip K. Dick"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q444",
+      "category": "logic_math",
+      "difficulty": "normal",
+      "question": "If a number is squared and equals 81, what is the positive root?",
+      "answers": {
+        "A": "7",
+        "B": "8",
+        "C": "9",
+        "D": "10"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q445",
+      "category": "music",
+      "difficulty": "hard",
+      "question": "Which composer wrote the opera 'The Marriage of Figaro'?",
+      "answers": {
+        "A": "Mozart",
+        "B": "Verdi",
+        "C": "Rossini",
+        "D": "Puccini"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q446",
+      "category": "history",
+      "difficulty": "hard",
+      "question": "Which empire was defeated by Hernán Cortés in the early 16th century?",
+      "answers": {
+        "A": "Inca",
+        "B": "Aztec",
+        "C": "Maya",
+        "D": "Olmec"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q447",
+      "category": "literature",
+      "difficulty": "hard",
+      "question": "Which literary genre is most closely associated with 'One Hundred Years of Solitude'?",
+      "answers": {
+        "A": "Naturalism",
+        "B": "Magical Realism",
+        "C": "Modernism",
+        "D": "Existentialism"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q448",
+      "category": "logic_math",
+      "difficulty": "hard",
+      "question": "What is the value of 2^5?",
+      "answers": {
+        "A": "16",
+        "B": "24",
+        "C": "32",
+        "D": "64"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q449",
+      "category": "history",
+      "difficulty": "easy",
+      "question": "Which country is home to the Great Wall?",
+      "answers": {
+        "A": "Japan",
+        "B": "China",
+        "C": "India",
+        "D": "Mongolia"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q450",
+      "category": "entertainment",
+      "difficulty": "easy",
+      "question": "Which animated film features a snowman named Olaf?",
+      "answers": {
+        "A": "Frozen",
+        "B": "Moana",
+        "C": "Encanto",
+        "D": "Tangled"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q451",
+      "category": "history",
+      "difficulty": "easy",
+      "question": "Which country was the first to land a human on the Moon?",
+      "answers": {
+        "A": "Soviet Union",
+        "B": "United States",
+        "C": "China",
+        "D": "Germany"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q452",
+      "category": "literature",
+      "difficulty": "easy",
+      "question": "What is the name of the dragon in 'The Hobbit'?",
+      "answers": {
+        "A": "Smaug",
+        "B": "Glaurung",
+        "C": "Ancalagon",
+        "D": "Drogon"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q453",
+      "category": "logic_math",
+      "difficulty": "easy",
+      "question": "What is the square of 9?",
+      "answers": {
+        "A": "72",
+        "B": "81",
+        "C": "90",
+        "D": "99"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q454",
+      "category": "music",
+      "difficulty": "easy",
+      "question": "Which instrument has six strings and is commonly used in rock music?",
+      "answers": {
+        "A": "Violin",
+        "B": "Guitar",
+        "C": "Cello",
+        "D": "Clarinet"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q455",
+      "category": "entertainment",
+      "difficulty": "easy",
+      "question": "Which film franchise features a character named Luke Skywalker?",
+      "answers": {
+        "A": "Star Trek",
+        "B": "Star Wars",
+        "C": "Avatar",
+        "D": "The Matrix"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q456",
+      "category": "history",
+      "difficulty": "normal",
+      "question": "Which empire was ruled by Augustus as its first emperor?",
+      "answers": {
+        "A": "Byzantine Empire",
+        "B": "Roman Empire",
+        "C": "Ottoman Empire",
+        "D": "Holy Roman Empire"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q457",
+      "category": "literature",
+      "difficulty": "normal",
+      "question": "Who wrote 'A Clockwork Orange'?",
+      "answers": {
+        "A": "Anthony Burgess",
+        "B": "George Orwell",
+        "C": "Aldous Huxley",
+        "D": "Philip K. Dick"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q458",
+      "category": "logic_math",
+      "difficulty": "normal",
+      "question": "If a shirt costs 80 and is discounted by 25%, what is the sale price?",
+      "answers": {
+        "A": "55",
+        "B": "60",
+        "C": "65",
+        "D": "70"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q459",
+      "category": "music",
+      "difficulty": "normal",
+      "question": "Which composer wrote the 'Symphony No. 9' that includes 'Ode to Joy'?",
+      "answers": {
+        "A": "Mozart",
+        "B": "Beethoven",
+        "C": "Haydn",
+        "D": "Schumann"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q460",
+      "category": "entertainment",
+      "difficulty": "normal",
+      "question": "Which film directed by Christopher Nolan features a dream-within-a-dream concept?",
+      "answers": {
+        "A": "Tenet",
+        "B": "Inception",
+        "C": "Interstellar",
+        "D": "Memento"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q461",
+      "category": "history",
+      "difficulty": "hard",
+      "question": "Which battle marked the turning point of the American Civil War in 1863?",
+      "answers": {
+        "A": "Battle of Antietam",
+        "B": "Battle of Gettysburg",
+        "C": "Battle of Shiloh",
+        "D": "Battle of Bull Run"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q462",
+      "category": "literature",
+      "difficulty": "hard",
+      "question": "Which literary movement is most closely associated with Franz Kafka's novel 'The Trial'?",
+      "answers": {
+        "A": "Romanticism",
+        "B": "Existentialism",
+        "C": "Modernism",
+        "D": "Realism"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q463",
+      "category": "logic_math",
+      "difficulty": "hard",
+      "question": "If the sum of the angles in a triangle is 180°, what is the third angle if the other two are 50° and 60°?",
+      "answers": {
+        "A": "60°",
+        "B": "65°",
+        "C": "70°",
+        "D": "75°"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q464",
+      "category": "history",
+      "difficulty": "hard",
+      "question": "Which empire was ruled by Mehmed II when Constantinople fell in 1453?",
+      "answers": {
+        "A": "Ottoman Empire",
+        "B": "Byzantine Empire",
+        "C": "Persian Empire",
+        "D": "Mongol Empire"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q465",
+      "category": "literature",
+      "difficulty": "hard",
+      "question": "In 'The Brothers Karamazov', which theme is central to the novel?",
+      "answers": {
+        "A": "Industrial progress",
+        "B": "Religious faith and doubt",
+        "C": "Colonial expansion",
+        "D": "Scientific discovery"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q466",
+      "category": "logic_math",
+      "difficulty": "hard",
+      "question": "What is the next number in the sequence: 2, 6, 12, 20, 30, ?",
+      "answers": {
+        "A": "36",
+        "B": "40",
+        "C": "42",
+        "D": "48"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q467",
+      "category": "history",
+      "difficulty": "normal",
+      "question": "Which country was unified under Otto von Bismarck in 1871?",
+      "answers": {
+        "A": "Italy",
+        "B": "Germany",
+        "C": "Austria",
+        "D": "Hungary"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q468",
+      "category": "literature",
+      "difficulty": "normal",
+      "question": "In 'The Picture of Dorian Gray', what changes as Dorian remains young?",
+      "answers": {
+        "A": "His reflection",
+        "B": "His shadow",
+        "C": "His portrait",
+        "D": "His voice"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q469",
+      "category": "logic_math",
+      "difficulty": "normal",
+      "question": "If 5 workers can complete a task in 12 days, how many days would 10 workers need at the same rate?",
+      "answers": {
+        "A": "4",
+        "B": "5",
+        "C": "6",
+        "D": "8"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q470",
+      "category": "music",
+      "difficulty": "hard",
+      "question": "Which composer wrote the opera 'La Traviata'?",
+      "answers": {
+        "A": "Puccini",
+        "B": "Verdi",
+        "C": "Bizet",
+        "D": "Rossini"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q471",
+      "category": "history",
+      "difficulty": "easy",
+      "question": "Which country is home to the Colosseum?",
+      "answers": {
+        "A": "Spain",
+        "B": "France",
+        "C": "Italy",
+        "D": "Greece"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q472",
+      "category": "literature",
+      "difficulty": "easy",
+      "question": "In 'Romeo and Juliet', which two families are in conflict?",
+      "answers": {
+        "A": "York and Lancaster",
+        "B": "Montague and Capulet",
+        "C": "Stark and Lannister",
+        "D": "Percy and Neville"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q473",
+      "category": "logic_math",
+      "difficulty": "easy",
+      "question": "What is 100 ÷ 4?",
+      "answers": {
+        "A": "20",
+        "B": "25",
+        "C": "30",
+        "D": "40"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q474",
+      "category": "entertainment",
+      "difficulty": "normal",
+      "question": "Which film features the character Tyler Durden?",
+      "answers": {
+        "A": "Se7en",
+        "B": "Fight Club",
+        "C": "The Prestige",
+        "D": "American Psycho"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q475",
+      "category": "history",
+      "difficulty": "easy",
+      "question": "Which ancient civilization built pyramids at Giza?",
+      "answers": {
+        "A": "Romans",
+        "B": "Babylonians",
+        "C": "Egyptians",
+        "D": "Greeks"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q476",
+      "category": "history",
+      "difficulty": "easy",
+      "question": "Which country was ruled by the Pharaoh Ramses II?",
+      "answers": {
+        "A": "Greece",
+        "B": "Egypt",
+        "C": "Persia",
+        "D": "Turkey"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q477",
+      "category": "literature",
+      "difficulty": "easy",
+      "question": "Who wrote 'The Chronicles of Narnia'?",
+      "answers": {
+        "A": "J.R.R. Tolkien",
+        "B": "C.S. Lewis",
+        "C": "Philip Pullman",
+        "D": "Roald Dahl"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q478",
+      "category": "logic_math",
+      "difficulty": "easy",
+      "question": "What is 15 × 4?",
+      "answers": {
+        "A": "45",
+        "B": "50",
+        "C": "60",
+        "D": "65"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q479",
+      "category": "music",
+      "difficulty": "easy",
+      "question": "Which instrument is played with a bow and has four strings in an orchestra?",
+      "answers": {
+        "A": "Flute",
+        "B": "Violin",
+        "C": "Trumpet",
+        "D": "Clarinet"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q480",
+      "category": "entertainment",
+      "difficulty": "easy",
+      "question": "Which film series features a character named Harry Potter?",
+      "answers": {
+        "A": "The Hunger Games",
+        "B": "Harry Potter",
+        "C": "The Chronicles of Narnia",
+        "D": "Fantastic Beasts"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q481",
+      "category": "history",
+      "difficulty": "normal",
+      "question": "Which empire was ruled by Peter the Great?",
+      "answers": {
+        "A": "Ottoman Empire",
+        "B": "Russian Empire",
+        "C": "Persian Empire",
+        "D": "Holy Roman Empire"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q482",
+      "category": "literature",
+      "difficulty": "normal",
+      "question": "Who wrote 'The Alchemist'?",
+      "answers": {
+        "A": "Paulo Coelho",
+        "B": "Gabriel García Márquez",
+        "C": "Isabel Allende",
+        "D": "Jorge Luis Borges"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q483",
+      "category": "logic_math",
+      "difficulty": "normal",
+      "question": "If a car uses 6 liters of fuel per 100 km, how many liters are needed for 250 km?",
+      "answers": {
+        "A": "12",
+        "B": "15",
+        "C": "18",
+        "D": "20"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q484",
+      "category": "music",
+      "difficulty": "normal",
+      "question": "Which composer wrote the opera 'Aida'?",
+      "answers": {
+        "A": "Verdi",
+        "B": "Puccini",
+        "C": "Mozart",
+        "D": "Rossini"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q485",
+      "category": "entertainment",
+      "difficulty": "normal",
+      "question": "Which director made the film 'Pulp Fiction'?",
+      "answers": {
+        "A": "Martin Scorsese",
+        "B": "Steven Spielberg",
+        "C": "Quentin Tarantino",
+        "D": "Guy Ritchie"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q486",
+      "category": "history",
+      "difficulty": "hard",
+      "question": "Which empire was ruled by Suleiman the Magnificent in the 16th century?",
+      "answers": {
+        "A": "Safavid Empire",
+        "B": "Ottoman Empire",
+        "C": "Mughal Empire",
+        "D": "Byzantine Empire"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q487",
+      "category": "literature",
+      "difficulty": "hard",
+      "question": "Who wrote 'The Trial'?",
+      "answers": {
+        "A": "Franz Kafka",
+        "B": "Thomas Mann",
+        "C": "Albert Camus",
+        "D": "Hermann Hesse"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q488",
+      "category": "logic_math",
+      "difficulty": "hard",
+      "question": "What is the smallest prime number greater than 200?",
+      "answers": {
+        "A": "201",
+        "B": "209",
+        "C": "211",
+        "D": "223"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q489",
+      "category": "history",
+      "difficulty": "hard",
+      "question": "Which empire was ruled by Justinian I?",
+      "answers": {
+        "A": "Roman Empire",
+        "B": "Byzantine Empire",
+        "C": "Ottoman Empire",
+        "D": "Persian Empire"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q490",
+      "category": "literature",
+      "difficulty": "normal",
+      "question": "In Dante's 'Divine Comedy', which realm is visited first?",
+      "answers": {
+        "A": "Purgatory",
+        "B": "Heaven",
+        "C": "Inferno",
+        "D": "Limbo"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q491",
+      "category": "logic_math",
+      "difficulty": "hard",
+      "question": "If the area of a square is 144, what is the length of one side?",
+      "answers": {
+        "A": "10",
+        "B": "11",
+        "C": "12",
+        "D": "14"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q492",
+      "category": "history",
+      "difficulty": "normal",
+      "question": "Which war was fought between the North and South regions of the United States?",
+      "answers": {
+        "A": "Revolutionary War",
+        "B": "Civil War",
+        "C": "World War I",
+        "D": "War of 1812"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q493",
+      "category": "literature",
+      "difficulty": "normal",
+      "question": "Who wrote 'The Great Gatsby'?",
+      "answers": {
+        "A": "F. Scott Fitzgerald",
+        "B": "Ernest Hemingway",
+        "C": "John Steinbeck",
+        "D": "William Faulkner"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q494",
+      "category": "logic_math",
+      "difficulty": "normal",
+      "question": "If a number is multiplied by 3 and becomes 27, what was the original number?",
+      "answers": {
+        "A": "6",
+        "B": "7",
+        "C": "8",
+        "D": "9"
+      },
+      "correct": "D"
+    },
+    {
+      "id": "q495",
+      "category": "music",
+      "difficulty": "normal",
+      "question": "In Mozart's opera 'The Magic Flute', what does the Queen of the Night demand?",
+      "answers": {
+        "A": "A royal marriage",
+        "B": "The defeat of Sarastro",
+        "C": "The destruction of the temple",
+        "D": "A journey to Vienna"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q496",
+      "category": "history",
+      "difficulty": "easy",
+      "question": "Which country is home to the Eiffel Tower?",
+      "answers": {
+        "A": "Spain",
+        "B": "Italy",
+        "C": "France",
+        "D": "Belgium"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q497",
+      "category": "literature",
+      "difficulty": "easy",
+      "question": "Who wrote 'Moby-Dick'?",
+      "answers": {
+        "A": "Herman Melville",
+        "B": "Mark Twain",
+        "C": "Nathaniel Hawthorne",
+        "D": "Edgar Allan Poe"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q498",
+      "category": "logic_math",
+      "difficulty": "easy",
+      "question": "What is 50% of 200?",
+      "answers": {
+        "A": "50",
+        "B": "75",
+        "C": "100",
+        "D": "150"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q499",
+      "category": "entertainment",
+      "difficulty": "normal",
+      "question": "Which film features the character Vito Corleone?",
+      "answers": {
+        "A": "Scarface",
+        "B": "The Godfather",
+        "C": "Goodfellas",
+        "D": "Casino"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q500",
+      "category": "history",
+      "difficulty": "easy",
+      "question": "Which continent is the Sahara Desert located on?",
+      "answers": {
+        "A": "Asia",
+        "B": "Africa",
+        "C": "Australia",
+        "D": "South America"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q501",
+      "category": "philosophy",
+      "difficulty": "easy",
+      "question": "Which ancient Greek philosopher was a student of Socrates?",
+      "answers": {
+        "A": "Aristotle",
+        "B": "Plato",
+        "C": "Epicurus",
+        "D": "Zeno"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q502",
+      "category": "philosophy",
+      "difficulty": "easy",
+      "question": "Which philosopher is known for the statement 'I think, therefore I am'?",
+      "answers": {
+        "A": "Immanuel Kant",
+        "B": "René Descartes",
+        "C": "David Hume",
+        "D": "John Locke"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q503",
+      "category": "philosophy",
+      "difficulty": "easy",
+      "question": "Which branch of philosophy studies moral principles?",
+      "answers": {
+        "A": "Metaphysics",
+        "B": "Epistemology",
+        "C": "Ethics",
+        "D": "Logic"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q504",
+      "category": "philosophy",
+      "difficulty": "easy",
+      "question": "Which philosopher taught Alexander the Great?",
+      "answers": {
+        "A": "Socrates",
+        "B": "Plato",
+        "C": "Aristotle",
+        "D": "Heraclitus"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q505",
+      "category": "philosophy",
+      "difficulty": "easy",
+      "question": "Which philosophy emphasizes the pursuit of pleasure as the highest good?",
+      "answers": {
+        "A": "Stoicism",
+        "B": "Epicureanism",
+        "C": "Existentialism",
+        "D": "Rationalism"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q506",
+      "category": "philosophy",
+      "difficulty": "normal",
+      "question": "Which philosopher wrote 'Critique of Pure Reason'?",
+      "answers": {
+        "A": "Hegel",
+        "B": "Kant",
+        "C": "Nietzsche",
+        "D": "Schopenhauer"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q507",
+      "category": "philosophy",
+      "difficulty": "normal",
+      "question": "Which concept is central to existentialist philosophy?",
+      "answers": {
+        "A": "Divine order",
+        "B": "Predestination",
+        "C": "Individual freedom",
+        "D": "Material wealth"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q508",
+      "category": "philosophy",
+      "difficulty": "normal",
+      "question": "Which philosopher is associated with utilitarianism?",
+      "answers": {
+        "A": "Jeremy Bentham",
+        "B": "Karl Marx",
+        "C": "Thomas Aquinas",
+        "D": "Jean-Paul Sartre"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q509",
+      "category": "philosophy",
+      "difficulty": "normal",
+      "question": "Which philosophical term refers to the study of knowledge?",
+      "answers": {
+        "A": "Ontology",
+        "B": "Epistemology",
+        "C": "Aesthetics",
+        "D": "Phenomenology"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q510",
+      "category": "philosophy",
+      "difficulty": "normal",
+      "question": "Which philosopher developed the concept of the 'Übermensch'?",
+      "answers": {
+        "A": "Kant",
+        "B": "Nietzsche",
+        "C": "Heidegger",
+        "D": "Camus"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q511",
+      "category": "philosophy",
+      "difficulty": "hard",
+      "question": "Which philosopher wrote 'Being and Nothingness'?",
+      "answers": {
+        "A": "Sartre",
+        "B": "Camus",
+        "C": "Heidegger",
+        "D": "Foucault"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q512",
+      "category": "philosophy",
+      "difficulty": "hard",
+      "question": "Which philosopher introduced the idea of the 'categorical imperative'?",
+      "answers": {
+        "A": "Hume",
+        "B": "Locke",
+        "C": "Kant",
+        "D": "Spinoza"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q513",
+      "category": "philosophy",
+      "difficulty": "hard",
+      "question": "Which philosopher is associated with the concept of 'tabula rasa'?",
+      "answers": {
+        "A": "Locke",
+        "B": "Descartes",
+        "C": "Plato",
+        "D": "Aristotle"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q514",
+      "category": "philosophy",
+      "difficulty": "normal",
+      "question": "Which school of philosophy emphasizes virtue and self-control?",
+      "answers": {
+        "A": "Stoicism",
+        "B": "Hedonism",
+        "C": "Nihilism",
+        "D": "Relativism"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q515",
+      "category": "philosophy",
+      "difficulty": "normal",
+      "question": "Which philosopher is known for the concept of the 'social contract'?",
+      "answers": {
+        "A": "Hobbes",
+        "B": "Plato",
+        "C": "Aristotle",
+        "D": "Epicurus"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q516",
+      "category": "philosophy",
+      "difficulty": "easy",
+      "question": "Which philosopher drank hemlock as a death sentence?",
+      "answers": {
+        "A": "Plato",
+        "B": "Socrates",
+        "C": "Aristotle",
+        "D": "Pythagoras"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q517",
+      "category": "philosophy",
+      "difficulty": "hard",
+      "question": "Which philosopher wrote 'Phenomenology of Spirit'?",
+      "answers": {
+        "A": "Hegel",
+        "B": "Marx",
+        "C": "Kierkegaard",
+        "D": "Schopenhauer"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q518",
+      "category": "philosophy",
+      "difficulty": "easy",
+      "question": "Which philosopher founded the Academy in Athens?",
+      "answers": {
+        "A": "Socrates",
+        "B": "Aristotle",
+        "C": "Plato",
+        "D": "Pericles"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q519",
+      "category": "philosophy",
+      "difficulty": "normal",
+      "question": "Which philosopher is most closely associated with logical positivism?",
+      "answers": {
+        "A": "Wittgenstein",
+        "B": "Descartes",
+        "C": "Aquinas",
+        "D": "Spinoza"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q520",
+      "category": "philosophy",
+      "difficulty": "hard",
+      "question": "Which philosopher introduced the concept of 'the will to power'?",
+      "answers": {
+        "A": "Nietzsche",
+        "B": "Kant",
+        "C": "Hegel",
+        "D": "Sartre"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q521",
+      "category": "science",
+      "difficulty": "normal",
+      "question": "The chemical symbol 'Au' comes from the Latin name of which metal?",
+      "answers": {
+        "A": "Silver",
+        "B": "Copper",
+        "C": "Gold",
+        "D": "Platinum"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q522",
+      "category": "science",
+      "difficulty": "easy",
+      "question": "Mars appears red primarily because of the presence of which substance on its surface?",
+      "answers": {
+        "A": "Sulfur crystals",
+        "B": "Iron oxide",
+        "C": "Copper deposits",
+        "D": "Methane ice"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q523",
+      "category": "science",
+      "difficulty": "easy",
+      "question": "What gas do plants absorb during photosynthesis?",
+      "answers": {
+        "A": "Oxygen",
+        "B": "Nitrogen",
+        "C": "Carbon dioxide",
+        "D": "Hydrogen"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q524",
+      "category": "science",
+      "difficulty": "easy",
+      "question": "What part of the cell contains genetic material?",
+      "answers": {
+        "A": "Ribosome",
+        "B": "Nucleus",
+        "C": "Cytoplasm",
+        "D": "Membrane"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q525",
+      "category": "science",
+      "difficulty": "easy",
+      "question": "What is the speed of light approximately in km per second?",
+      "answers": {
+        "A": "30,000",
+        "B": "300,000",
+        "C": "3,000",
+        "D": "3,000,000"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q526",
+      "category": "science",
+      "difficulty": "hard",
+      "question": "General relativity explains gravity primarily as what?",
+      "answers": {
+        "A": "A force between masses",
+        "B": "The curvature of spacetime",
+        "C": "Magnetic attraction",
+        "D": "Atomic interaction"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q527",
+      "category": "science",
+      "difficulty": "normal",
+      "question": "Which element, the most abundant in the universe, has the atomic number 1?",
+      "answers": {
+        "A": "Helium",
+        "B": "Hydrogen",
+        "C": "Oxygen",
+        "D": "Carbon"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q528",
+      "category": "science",
+      "difficulty": "normal",
+      "question": "Which organ is primarily responsible for detoxifying chemicals in the human body?",
+      "answers": {
+        "A": "Kidney",
+        "B": "Liver",
+        "C": "Heart",
+        "D": "Lung"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q529",
+      "category": "science",
+      "difficulty": "normal",
+      "question": "Which type of electromagnetic radiation has the shortest wavelength?",
+      "answers": {
+        "A": "Radio waves",
+        "B": "Infrared",
+        "C": "Ultraviolet",
+        "D": "Gamma rays"
+      },
+      "correct": "D"
+    },
+    {
+      "id": "q530",
+      "category": "science",
+      "difficulty": "normal",
+      "question": "What is the main function of red blood cells?",
+      "answers": {
+        "A": "Fight infection",
+        "B": "Carry oxygen",
+        "C": "Digest nutrients",
+        "D": "Produce hormones"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q531",
+      "category": "science",
+      "difficulty": "hard",
+      "question": "What is the term for a star that suddenly increases greatly in brightness due to a catastrophic explosion?",
+      "answers": {
+        "A": "Nebula",
+        "B": "Supernova",
+        "C": "Quasar",
+        "D": "Pulsar"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q532",
+      "category": "science",
+      "difficulty": "hard",
+      "question": "Which law states that for every action there is an equal and opposite reaction?",
+      "answers": {
+        "A": "Newton's First Law",
+        "B": "Newton's Second Law",
+        "C": "Newton's Third Law",
+        "D": "Law of Gravitation"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q533",
+      "category": "science",
+      "difficulty": "hard",
+      "question": "Which biological molecule carries genetic information in most living organisms?",
+      "answers": {
+        "A": "RNA",
+        "B": "Protein",
+        "C": "DNA",
+        "D": "Lipid"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q534",
+      "category": "science",
+      "difficulty": "easy",
+      "question": "What force pulls objects toward the center of the Earth?",
+      "answers": {
+        "A": "Magnetism",
+        "B": "Friction",
+        "C": "Gravity",
+        "D": "Electricity"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q535",
+      "category": "science",
+      "difficulty": "easy",
+      "question": "Water boils at 100 degrees on which temperature scale at sea level?",
+      "answers": {
+        "A": "Fahrenheit",
+        "B": "Kelvin",
+        "C": "Celsius",
+        "D": "Rankine"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q536",
+      "category": "art_architecture",
+      "difficulty": "easy",
+      "question": "Which Italian city is home to the famous Leaning Tower?",
+      "answers": {
+        "A": "Rome",
+        "B": "Venice",
+        "C": "Pisa",
+        "D": "Florence"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q537",
+      "category": "art_architecture",
+      "difficulty": "easy",
+      "question": "Which artist painted the ceiling of the Sistine Chapel?",
+      "answers": {
+        "A": "Leonardo da Vinci",
+        "B": "Michelangelo",
+        "C": "Raphael",
+        "D": "Donatello"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q538",
+      "category": "art_architecture",
+      "difficulty": "easy",
+      "question": "Which art movement is Salvador Dalí associated with?",
+      "answers": {
+        "A": "Impressionism",
+        "B": "Cubism",
+        "C": "Surrealism",
+        "D": "Baroque"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q539",
+      "category": "art_architecture",
+      "difficulty": "easy",
+      "question": "The Louvre Museum is located in which city?",
+      "answers": {
+        "A": "Madrid",
+        "B": "Paris",
+        "C": "London",
+        "D": "Rome"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q540",
+      "category": "art_architecture",
+      "difficulty": "easy",
+      "question": "Which structure is a famous symbol of ancient Roman architecture?",
+      "answers": {
+        "A": "Acropolis",
+        "B": "Pantheon",
+        "C": "Stonehenge",
+        "D": "Parthenon"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q541",
+      "category": "art_architecture",
+      "difficulty": "normal",
+      "question": "Which architectural style is characterized by pointed arches and flying buttresses?",
+      "answers": {
+        "A": "Romanesque",
+        "B": "Baroque",
+        "C": "Gothic",
+        "D": "Neoclassical"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q542",
+      "category": "art_architecture",
+      "difficulty": "normal",
+      "question": "Which painter is associated with the artwork 'Guernica'?",
+      "answers": {
+        "A": "Henri Matisse",
+        "B": "Pablo Picasso",
+        "C": "Claude Monet",
+        "D": "Edvard Munch"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q543",
+      "category": "art_architecture",
+      "difficulty": "normal",
+      "question": "Which Renaissance artist created the sculpture 'David' that stands in Florence?",
+      "answers": {
+        "A": "Donatello",
+        "B": "Michelangelo",
+        "C": "Bernini",
+        "D": "Brunelleschi"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q544",
+      "category": "art_architecture",
+      "difficulty": "normal",
+      "question": "Which art movement focused on capturing light and everyday scenes in the late 19th century?",
+      "answers": {
+        "A": "Impressionism",
+        "B": "Expressionism",
+        "C": "Futurism",
+        "D": "Dadaism"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q545",
+      "category": "art_architecture",
+      "difficulty": "normal",
+      "question": "Which architect designed the Sagrada Família in Barcelona?",
+      "answers": {
+        "A": "Le Corbusier",
+        "B": "Antonio Gaudí",
+        "C": "Frank Lloyd Wright",
+        "D": "Renzo Piano"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q546",
+      "category": "art_architecture",
+      "difficulty": "hard",
+      "question": "Which artistic movement is characterized by geometric abstraction and artists like Piet Mondrian?",
+      "answers": {
+        "A": "Constructivism",
+        "B": "De Stijl",
+        "C": "Suprematism",
+        "D": "Art Nouveau"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q547",
+      "category": "art_architecture",
+      "difficulty": "hard",
+      "question": "Which architect is associated with the concept of 'form follows function'?",
+      "answers": {
+        "A": "Frank Gehry",
+        "B": "Zaha Hadid",
+        "C": "Louis Sullivan",
+        "D": "Mies van der Rohe"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q548",
+      "category": "art_architecture",
+      "difficulty": "hard",
+      "question": "Which Baroque sculptor created the work 'The Ecstasy of Saint Teresa'?",
+      "answers": {
+        "A": "Donatello",
+        "B": "Bernini",
+        "C": "Caravaggio",
+        "D": "Cellini"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q549",
+      "category": "art_architecture",
+      "difficulty": "normal",
+      "question": "Which painter is known for the technique of pointillism?",
+      "answers": {
+        "A": "Paul Cézanne",
+        "B": "Georges Seurat",
+        "C": "Vincent van Gogh",
+        "D": "Paul Gauguin"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q550",
+      "category": "art_architecture",
+      "difficulty": "hard",
+      "question": "Which ancient structure in Athens is considered the pinnacle of Doric architecture?",
+      "answers": {
+        "A": "Colosseum",
+        "B": "Pantheon",
+        "C": "Parthenon",
+        "D": "Hagia Sophia"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q551",
+      "category": "psychology",
+      "difficulty": "easy",
+      "question": "Which psychologist developed the theory of classical conditioning?",
+      "answers": {
+        "A": "Sigmund Freud",
+        "B": "Ivan Pavlov",
+        "C": "Carl Jung",
+        "D": "Jean Piaget"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q552",
+      "category": "psychology",
+      "difficulty": "easy",
+      "question": "Which part of the brain is primarily responsible for memory formation?",
+      "answers": {
+        "A": "Cerebellum",
+        "B": "Hippocampus",
+        "C": "Medulla",
+        "D": "Amygdala"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q553",
+      "category": "psychology",
+      "difficulty": "easy",
+      "question": "What term describes a sudden realization of a solution to a problem?",
+      "answers": {
+        "A": "Insight",
+        "B": "Repression",
+        "C": "Projection",
+        "D": "Cognition"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q554",
+      "category": "psychology",
+      "difficulty": "easy",
+      "question": "Which psychologist is associated with psychoanalysis?",
+      "answers": {
+        "A": "Freud",
+        "B": "Skinner",
+        "C": "Watson",
+        "D": "Maslow"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q555",
+      "category": "psychology",
+      "difficulty": "easy",
+      "question": "Which hormone is commonly associated with stress?",
+      "answers": {
+        "A": "Insulin",
+        "B": "Cortisol",
+        "C": "Dopamine",
+        "D": "Serotonin"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q556",
+      "category": "psychology",
+      "difficulty": "normal",
+      "question": "Which psychologist proposed the hierarchy of needs?",
+      "answers": {
+        "A": "Maslow",
+        "B": "Adler",
+        "C": "Erikson",
+        "D": "Bandura"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q557",
+      "category": "psychology",
+      "difficulty": "normal",
+      "question": "Which concept refers to holding two conflicting beliefs at the same time?",
+      "answers": {
+        "A": "Cognitive bias",
+        "B": "Cognitive dissonance",
+        "C": "Dual processing",
+        "D": "Conditioning"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q558",
+      "category": "psychology",
+      "difficulty": "normal",
+      "question": "Which memory system is responsible for short-term information storage?",
+      "answers": {
+        "A": "Semantic memory",
+        "B": "Working memory",
+        "C": "Procedural memory",
+        "D": "Episodic memory"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q559",
+      "category": "psychology",
+      "difficulty": "normal",
+      "question": "Which psychologist is known for operant conditioning?",
+      "answers": {
+        "A": "Pavlov",
+        "B": "Skinner",
+        "C": "Freud",
+        "D": "Piaget"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q560",
+      "category": "psychology",
+      "difficulty": "normal",
+      "question": "Which part of the brain is primarily associated with emotional processing?",
+      "answers": {
+        "A": "Amygdala",
+        "B": "Occipital lobe",
+        "C": "Parietal lobe",
+        "D": "Pons"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q561",
+      "category": "psychology",
+      "difficulty": "hard",
+      "question": "Which psychologist conducted the Stanford prison experiment?",
+      "answers": {
+        "A": "Milgram",
+        "B": "Zimbardo",
+        "C": "Festinger",
+        "D": "Rogers"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q562",
+      "category": "psychology",
+      "difficulty": "hard",
+      "question": "Which concept refers to the tendency to overestimate the accuracy of one's beliefs?",
+      "answers": {
+        "A": "Confirmation bias",
+        "B": "Overconfidence bias",
+        "C": "Anchoring",
+        "D": "Availability heuristic"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q563",
+      "category": "psychology",
+      "difficulty": "hard",
+      "question": "Which psychologist emphasized unconditional positive regard?",
+      "answers": {
+        "A": "Freud",
+        "B": "Skinner",
+        "C": "Carl Rogers",
+        "D": "Watson"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q564",
+      "category": "psychology",
+      "difficulty": "normal",
+      "question": "Which theory explains behavior as learned through observation?",
+      "answers": {
+        "A": "Behaviorism",
+        "B": "Social learning theory",
+        "C": "Psychoanalysis",
+        "D": "Humanism"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q565",
+      "category": "psychology",
+      "difficulty": "normal",
+      "question": "Which neurotransmitter is associated with reward and motivation?",
+      "answers": {
+        "A": "Dopamine",
+        "B": "GABA",
+        "C": "Acetylcholine",
+        "D": "Melatonin"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q566",
+      "category": "psychology",
+      "difficulty": "easy",
+      "question": "Which sleep stage is most associated with vivid dreaming?",
+      "answers": {
+        "A": "REM",
+        "B": "Stage 1",
+        "C": "Stage 2",
+        "D": "Deep sleep"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q567",
+      "category": "psychology",
+      "difficulty": "hard",
+      "question": "Which cognitive bias involves relying too heavily on the first piece of information received?",
+      "answers": {
+        "A": "Anchoring bias",
+        "B": "Hindsight bias",
+        "C": "Framing effect",
+        "D": "Halo effect"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q568",
+      "category": "psychology",
+      "difficulty": "easy",
+      "question": "Which psychologist is associated with stages of cognitive development in children?",
+      "answers": {
+        "A": "Piaget",
+        "B": "Erikson",
+        "C": "Bandura",
+        "D": "Freud"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q569",
+      "category": "psychology",
+      "difficulty": "normal",
+      "question": "Which concept describes learning through rewards and punishments?",
+      "answers": {
+        "A": "Classical conditioning",
+        "B": "Operant conditioning",
+        "C": "Habituation",
+        "D": "Insight learning"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q570",
+      "category": "psychology",
+      "difficulty": "hard",
+      "question": "Which theory proposes that intelligence is composed of multiple distinct abilities?",
+      "answers": {
+        "A": "Spearman's g",
+        "B": "Gardner's multiple intelligences",
+        "C": "Triarchic theory",
+        "D": "Behaviorism"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q571",
+      "category": "economics",
+      "difficulty": "easy",
+      "question": "What is the term for a sustained increase in the general price level of goods and services?",
+      "answers": {
+        "A": "Inflation",
+        "B": "Deflation",
+        "C": "Recession",
+        "D": "Stagnation"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q572",
+      "category": "economics",
+      "difficulty": "easy",
+      "question": "What is the currency used in most European Union countries?",
+      "answers": {
+        "A": "Pound",
+        "B": "Dollar",
+        "C": "Euro",
+        "D": "Franc"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q573",
+      "category": "economics",
+      "difficulty": "easy",
+      "question": "What does GDP stand for?",
+      "answers": {
+        "A": "General Development Product",
+        "B": "Gross Domestic Product",
+        "C": "Global Demand Price",
+        "D": "Gross Distribution Profit"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q574",
+      "category": "economics",
+      "difficulty": "easy",
+      "question": "What is the basic economic problem related to limited resources called?",
+      "answers": {
+        "A": "Scarcity",
+        "B": "Surplus",
+        "C": "Inflation",
+        "D": "Monopoly"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q575",
+      "category": "economics",
+      "difficulty": "easy",
+      "question": "What is it called when a single company dominates a market?",
+      "answers": {
+        "A": "Oligopoly",
+        "B": "Cartel",
+        "C": "Monopoly",
+        "D": "Free market"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q576",
+      "category": "economics",
+      "difficulty": "normal",
+      "question": "Which economic concept describes the additional benefit gained from consuming one more unit of a good?",
+      "answers": {
+        "A": "Marginal utility",
+        "B": "Opportunity cost",
+        "C": "Elasticity",
+        "D": "Equilibrium"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q577",
+      "category": "economics",
+      "difficulty": "normal",
+      "question": "What does a central bank primarily control to influence inflation?",
+      "answers": {
+        "A": "Unemployment rate",
+        "B": "Exchange rate",
+        "C": "Interest rates",
+        "D": "Corporate taxes"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q578",
+      "category": "economics",
+      "difficulty": "normal",
+      "question": "Which term describes a period of negative economic growth for two consecutive quarters?",
+      "answers": {
+        "A": "Depression",
+        "B": "Recession",
+        "C": "Boom",
+        "D": "Expansion"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q579",
+      "category": "economics",
+      "difficulty": "normal",
+      "question": "Which economist wrote 'The Wealth of Nations'?",
+      "answers": {
+        "A": "Karl Marx",
+        "B": "John Maynard Keynes",
+        "C": "Adam Smith",
+        "D": "Milton Friedman"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q580",
+      "category": "economics",
+      "difficulty": "normal",
+      "question": "What is the term for the cost of the next best alternative foregone?",
+      "answers": {
+        "A": "Marginal cost",
+        "B": "Opportunity cost",
+        "C": "Fixed cost",
+        "D": "Sunk cost"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q581",
+      "category": "economics",
+      "difficulty": "hard",
+      "question": "Which economic theory advocates minimal government intervention in markets?",
+      "answers": {
+        "A": "Keynesianism",
+        "B": "Mercantilism",
+        "C": "Laissez-faire",
+        "D": "Socialism"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q582",
+      "category": "economics",
+      "difficulty": "hard",
+      "question": "Which index measures the performance of 500 large publicly traded companies in the United States?",
+      "answers": {
+        "A": "Dow Jones Industrial Average",
+        "B": "NASDAQ",
+        "C": "FTSE 100",
+        "D": "S&P 500"
+      },
+      "correct": "D"
+    },
+    {
+      "id": "q583",
+      "category": "economics",
+      "difficulty": "hard",
+      "question": "Which economic term describes a situation where prices rise due to increased production costs?",
+      "answers": {
+        "A": "Demand-pull inflation",
+        "B": "Cost-push inflation",
+        "C": "Hyperinflation",
+        "D": "Stagflation"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q584",
+      "category": "economics",
+      "difficulty": "normal",
+      "question": "Which organization regulates international trade between nations?",
+      "answers": {
+        "A": "IMF",
+        "B": "World Bank",
+        "C": "WTO",
+        "D": "OECD"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q585",
+      "category": "economics",
+      "difficulty": "hard",
+      "question": "What is the term for a market structure dominated by a few large firms?",
+      "answers": {
+        "A": "Monopoly",
+        "B": "Oligopoly",
+        "C": "Perfect competition",
+        "D": "Cartel"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q586",
+      "category": "world_culture",
+      "difficulty": "easy",
+      "question": "In which country did the tradition of sushi originate?",
+      "answers": {
+        "A": "China",
+        "B": "Japan",
+        "C": "South Korea",
+        "D": "Thailand"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q587",
+      "category": "world_culture",
+      "difficulty": "easy",
+      "question": "Which festival is known as the Festival of Lights in India?",
+      "answers": {
+        "A": "Holi",
+        "B": "Diwali",
+        "C": "Navratri",
+        "D": "Vaisakhi"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q588",
+      "category": "world_culture",
+      "difficulty": "easy",
+      "question": "Which traditional garment is commonly worn in Scotland?",
+      "answers": {
+        "A": "Kimono",
+        "B": "Sari",
+        "C": "Kilt",
+        "D": "Poncho"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q589",
+      "category": "world_culture",
+      "difficulty": "easy",
+      "question": "Which Brazilian festival is famous for parades and samba music?",
+      "answers": {
+        "A": "Oktoberfest",
+        "B": "Carnival",
+        "C": "Hanami",
+        "D": "Ramadan"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q590",
+      "category": "world_culture",
+      "difficulty": "easy",
+      "question": "Which country is home to the traditional tea ceremony known as 'chanoyu'?",
+      "answers": {
+        "A": "Japan",
+        "B": "China",
+        "C": "Vietnam",
+        "D": "India"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q591",
+      "category": "world_culture",
+      "difficulty": "normal",
+      "question": "Which religion originated in the Punjab region in the 15th century?",
+      "answers": {
+        "A": "Hinduism",
+        "B": "Sikhism",
+        "C": "Jainism",
+        "D": "Buddhism"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q592",
+      "category": "world_culture",
+      "difficulty": "normal",
+      "question": "Which traditional dance is associated with Argentina?",
+      "answers": {
+        "A": "Flamenco",
+        "B": "Tango",
+        "C": "Salsa",
+        "D": "Rumba"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q593",
+      "category": "world_culture",
+      "difficulty": "normal",
+      "question": "Which architectural style is strongly associated with Islamic mosques featuring domes and minarets?",
+      "answers": {
+        "A": "Gothic",
+        "B": "Baroque",
+        "C": "Islamic architecture",
+        "D": "Brutalism"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q594",
+      "category": "world_culture",
+      "difficulty": "normal",
+      "question": "Which Mexican holiday honors deceased loved ones and features colorful altars?",
+      "answers": {
+        "A": "Cinco de Mayo",
+        "B": "Día de los Muertos",
+        "C": "Semana Santa",
+        "D": "Las Posadas"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q595",
+      "category": "world_culture",
+      "difficulty": "normal",
+      "question": "Which Middle Eastern dish is made from ground chickpeas and is often served in pita bread?",
+      "answers": {
+        "A": "Falafel",
+        "B": "Shawarma",
+        "C": "Kebab",
+        "D": "Tabbouleh"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q596",
+      "category": "world_culture",
+      "difficulty": "hard",
+      "question": "Which West African musical style heavily influenced blues and jazz in the United States?",
+      "answers": {
+        "A": "Highlife",
+        "B": "Griot traditions",
+        "C": "Afrobeat",
+        "D": "Soukous"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q597",
+      "category": "world_culture",
+      "difficulty": "hard",
+      "question": "Which Southeast Asian temple complex is the largest religious monument in the world?",
+      "answers": {
+        "A": "Borobudur",
+        "B": "Bagan",
+        "C": "Angkor Wat",
+        "D": "Shwedagon"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q598",
+      "category": "world_culture",
+      "difficulty": "hard",
+      "question": "Which traditional Chinese philosophy emphasizes harmony with the Tao?",
+      "answers": {
+        "A": "Confucianism",
+        "B": "Legalism",
+        "C": "Taoism",
+        "D": "Mohism"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q599",
+      "category": "world_culture",
+      "difficulty": "normal",
+      "question": "Which African country is known for the ancient rock-hewn churches of Lalibela?",
+      "answers": {
+        "A": "Kenya",
+        "B": "Nigeria",
+        "C": "Ethiopia",
+        "D": "Ghana"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q600",
+      "category": "world_culture",
+      "difficulty": "hard",
+      "question": "Which Japanese aesthetic principle values imperfection and transience?",
+      "answers": {
+        "A": "Zen",
+        "B": "Ikigai",
+        "C": "Wabi-sabi",
+        "D": "Bushido"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q601",
+      "category": "history",
+      "difficulty": "hard",
+      "question": "How did the fall of Constantinople in 1453 most directly impact Western Europe?",
+      "answers": {
+        "A": "It ended the Renaissance",
+        "B": "It disrupted trade routes and encouraged exploration",
+        "C": "It unified European kingdoms",
+        "D": "It stopped maritime trade entirely"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q602",
+      "category": "science",
+      "difficulty": "hard",
+      "question": "Why does increasing velocity significantly affect time according to special relativity?",
+      "answers": {
+        "A": "Because gravity increases",
+        "B": "Because spacetime contracts",
+        "C": "Because time dilates at high speeds",
+        "D": "Because mass disappears"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q603",
+      "category": "economics",
+      "difficulty": "hard",
+      "question": "Why can lowering interest rates stimulate economic growth?",
+      "answers": {
+        "A": "It increases taxes",
+        "B": "It reduces savings automatically",
+        "C": "It encourages borrowing and investment",
+        "D": "It eliminates inflation"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q604",
+      "category": "psychology",
+      "difficulty": "hard",
+      "question": "Why does confirmation bias make objective decision-making difficult?",
+      "answers": {
+        "A": "People forget information quickly",
+        "B": "People seek evidence supporting existing beliefs",
+        "C": "People ignore emotions",
+        "D": "People rely only on statistics"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q605",
+      "category": "philosophy",
+      "difficulty": "hard",
+      "question": "Why does utilitarianism sometimes conflict with individual rights?",
+      "answers": {
+        "A": "It prioritizes tradition",
+        "B": "It values authority",
+        "C": "It seeks the greatest good for the greatest number",
+        "D": "It rejects moral reasoning"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q606",
+      "category": "science",
+      "difficulty": "hard",
+      "question": "Why does increasing surface area speed up a chemical reaction?",
+      "answers": {
+        "A": "It lowers temperature",
+        "B": "It increases particle collisions",
+        "C": "It changes atomic structure",
+        "D": "It reduces energy"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q607",
+      "category": "economics",
+      "difficulty": "hard",
+      "question": "Why can excessive money printing lead to hyperinflation?",
+      "answers": {
+        "A": "It increases exports",
+        "B": "It strengthens currency value",
+        "C": "It reduces supply of goods",
+        "D": "It decreases purchasing power of currency"
+      },
+      "correct": "D"
+    },
+    {
+      "id": "q608",
+      "category": "history",
+      "difficulty": "hard",
+      "question": "Why did industrialization significantly accelerate urbanization in the 19th century?",
+      "answers": {
+        "A": "Agricultural production collapsed",
+        "B": "Factories concentrated jobs in cities",
+        "C": "Governments forced relocation",
+        "D": "Rural land disappeared"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q609",
+      "category": "science",
+      "difficulty": "hard",
+      "question": "Why does quantum mechanics challenge classical determinism?",
+      "answers": {
+        "A": "It removes gravity",
+        "B": "It introduces probability at fundamental levels",
+        "C": "It eliminates motion",
+        "D": "It increases mass"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q610",
+      "category": "psychology",
+      "difficulty": "hard",
+      "question": "Why does scarcity increase perceived value in consumer behavior?",
+      "answers": {
+        "A": "Because products improve in quality",
+        "B": "Because limited availability increases desirability",
+        "C": "Because prices automatically fall",
+        "D": "Because advertising stops"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q611",
+      "category": "philosophy",
+      "difficulty": "hard",
+      "question": "Why does existentialism emphasize personal responsibility?",
+      "answers": {
+        "A": "Because fate determines actions",
+        "B": "Because society defines identity",
+        "C": "Because individuals create meaning through choices",
+        "D": "Because morality is fixed"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q612",
+      "category": "economics",
+      "difficulty": "hard",
+      "question": "Why can trade specialization increase overall economic efficiency?",
+      "answers": {
+        "A": "It reduces labor",
+        "B": "It lowers wages",
+        "C": "It allows comparative advantage",
+        "D": "It eliminates competition"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q613",
+      "category": "science",
+      "difficulty": "hard",
+      "question": "Why does increasing greenhouse gas concentration affect global temperature?",
+      "answers": {
+        "A": "It increases solar radiation",
+        "B": "It traps infrared radiation in the atmosphere",
+        "C": "It cools oceans directly",
+        "D": "It blocks oxygen flow"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q614",
+      "category": "history",
+      "difficulty": "hard",
+      "question": "Why did colonial trade systems reshape global economic power structures?",
+      "answers": {
+        "A": "They eliminated local markets",
+        "B": "They concentrated wealth in imperial centers",
+        "C": "They ended industrialization",
+        "D": "They reduced global shipping"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q615",
+      "category": "psychology",
+      "difficulty": "hard",
+      "question": "Why does groupthink reduce critical evaluation in decision-making groups?",
+      "answers": {
+        "A": "Because groups lack information",
+        "B": "Because consensus pressure suppresses dissent",
+        "C": "Because leaders are absent",
+        "D": "Because members are uneducated"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q616",
+      "category": "technology",
+      "difficulty": "hard",
+      "question": "Why does encryption rely on computational complexity?",
+      "answers": {
+        "A": "To increase file size",
+        "B": "To ensure decryption is time-consuming without a key",
+        "C": "To store data faster",
+        "D": "To eliminate algorithms"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q617",
+      "category": "art_architecture",
+      "difficulty": "hard",
+      "question": "Why did modernist architecture reject ornamentation?",
+      "answers": {
+        "A": "To reduce building costs only",
+        "B": "To emphasize function and simplicity",
+        "C": "To imitate classical Greece",
+        "D": "To use more materials"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q618",
+      "category": "world_culture",
+      "difficulty": "hard",
+      "question": "Why do many traditional societies use oral storytelling to preserve history?",
+      "answers": {
+        "A": "Because writing is forbidden",
+        "B": "Because memory techniques strengthen cultural continuity",
+        "C": "Because printing is expensive",
+        "D": "Because literacy lowers status"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q619",
+      "category": "science",
+      "difficulty": "hard",
+      "question": "Why does entropy tend to increase in closed systems?",
+      "answers": {
+        "A": "Because energy disappears",
+        "B": "Because systems move toward disorder statistically",
+        "C": "Because gravity dominates",
+        "D": "Because temperature drops"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q620",
+      "category": "economics",
+      "difficulty": "hard",
+      "question": "Why can price ceilings lead to shortages in competitive markets?",
+      "answers": {
+        "A": "Because demand decreases",
+        "B": "Because supply exceeds demand",
+        "C": "Because quantity demanded exceeds quantity supplied",
+        "D": "Because markets disappear"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q621",
+      "category": "philosophy",
+      "difficulty": "hard",
+      "question": "Why does the 'veil of ignorance' aim to produce fairer political principles?",
+      "answers": {
+        "A": "It removes economic incentives",
+        "B": "It eliminates democracy",
+        "C": "It prevents bias from personal advantage",
+        "D": "It guarantees equal wealth"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q622",
+      "category": "science",
+      "difficulty": "hard",
+      "question": "Why does increasing atmospheric pressure raise the boiling point of a liquid?",
+      "answers": {
+        "A": "It reduces molecular motion",
+        "B": "It strengthens intermolecular forces",
+        "C": "It requires higher energy for vaporization",
+        "D": "It lowers temperature automatically"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q623",
+      "category": "economics",
+      "difficulty": "hard",
+      "question": "Why does diversification reduce investment risk?",
+      "answers": {
+        "A": "It increases returns automatically",
+        "B": "It spreads exposure across uncorrelated assets",
+        "C": "It eliminates market volatility",
+        "D": "It prevents inflation"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q624",
+      "category": "psychology",
+      "difficulty": "hard",
+      "question": "Why does the bystander effect reduce the likelihood of intervention?",
+      "answers": {
+        "A": "People lack empathy",
+        "B": "Responsibility becomes diffused among observers",
+        "C": "Crowds increase aggression",
+        "D": "Fear overrides memory"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q624",
+      "category": "psychology",
+      "difficulty": "hard",
+      "question": "In emergency situations, why does increasing group size often decrease individual accountability?",
+      "answers": {
+        "A": "Because fear increases proportionally",
+        "B": "Because responsibility becomes psychologically diffused",
+        "C": "Because people lack information",
+        "D": "Because authority figures intervene"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q625",
+      "category": "technology",
+      "difficulty": "hard",
+      "question": "Why are asymmetric encryption systems computationally more secure than symmetric ones for key exchange?",
+      "answers": {
+        "A": "They use shorter keys",
+        "B": "They rely on one-way mathematical problems",
+        "C": "They avoid algorithms",
+        "D": "They require no processing power"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q626",
+      "category": "history",
+      "difficulty": "hard",
+      "question": "Why did maritime technology give European powers an advantage in global expansion?",
+      "answers": {
+        "A": "It reduced agricultural dependency",
+        "B": "It enabled long-distance naval dominance",
+        "C": "It increased population growth",
+        "D": "It eliminated land warfare"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q627",
+      "category": "science",
+      "difficulty": "hard",
+      "question": "Why does genetic variation increase a population's chance of survival?",
+      "answers": {
+        "A": "It prevents reproduction",
+        "B": "It allows adaptation to environmental changes",
+        "C": "It reduces mutation",
+        "D": "It stabilizes ecosystems permanently"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q628",
+      "category": "economics",
+      "difficulty": "hard",
+      "question": "Why can trade tariffs sometimes harm domestic consumers?",
+      "answers": {
+        "A": "They lower domestic production",
+        "B": "They increase government debt",
+        "C": "They raise prices of imported goods",
+        "D": "They reduce exports automatically"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q629",
+      "category": "philosophy",
+      "difficulty": "hard",
+      "question": "Why does skepticism challenge claims of absolute knowledge?",
+      "answers": {
+        "A": "It promotes tradition",
+        "B": "It questions the certainty of perception and reasoning",
+        "C": "It rejects logic entirely",
+        "D": "It denies morality"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q630",
+      "category": "psychology",
+      "difficulty": "hard",
+      "question": "Why does intermittent reinforcement create stronger behavioral persistence?",
+      "answers": {
+        "A": "Rewards are predictable",
+        "B": "Uncertainty increases engagement",
+        "C": "Punishment increases compliance",
+        "D": "Memory weakens"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q631",
+      "category": "science",
+      "difficulty": "hard",
+      "question": "Why does gravitational time dilation occur near massive objects?",
+      "answers": {
+        "A": "Mass increases temperature",
+        "B": "Spacetime curvature affects the passage of time",
+        "C": "Light slows randomly",
+        "D": "Energy vanishes"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q632",
+      "category": "art_architecture",
+      "difficulty": "hard",
+      "question": "Why did the Bauhaus movement emphasize integration of art and industry?",
+      "answers": {
+        "A": "To revive medieval craft traditions",
+        "B": "To align design with modern industrial production",
+        "C": "To reject mass production",
+        "D": "To imitate classical sculpture"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q633",
+      "category": "world_culture",
+      "difficulty": "hard",
+      "question": "Why do many cultures develop initiation rites during adolescence?",
+      "answers": {
+        "A": "To increase economic productivity",
+        "B": "To formalize transition into social adulthood",
+        "C": "To discourage education",
+        "D": "To reduce population size"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q634",
+      "category": "technology",
+      "difficulty": "hard",
+      "question": "Why does distributed computing increase system resilience?",
+      "answers": {
+        "A": "It eliminates network traffic",
+        "B": "It centralizes processing",
+        "C": "It removes single points of failure",
+        "D": "It reduces encryption"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q635",
+      "category": "economics",
+      "difficulty": "hard",
+      "question": "Why can network effects create barriers to entry in digital markets?",
+      "answers": {
+        "A": "They increase production costs",
+        "B": "They discourage innovation",
+        "C": "User value grows as more users join",
+        "D": "They reduce consumer choice"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q636",
+      "category": "politics",
+      "difficulty": "easy",
+      "question": "What is the primary function of a constitution?",
+      "answers": {
+        "A": "To collect taxes",
+        "B": "To define the structure and powers of government",
+        "C": "To regulate trade only",
+        "D": "To appoint judges"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q637",
+      "category": "innovation",
+      "difficulty": "easy",
+      "question": "Which invention is most directly associated with Johannes Gutenberg?",
+      "answers": {
+        "A": "Steam engine",
+        "B": "Printing press",
+        "C": "Compass",
+        "D": "Telescope"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q638",
+      "category": "mythology",
+      "difficulty": "easy",
+      "question": "In Greek mythology, who is the king of the gods?",
+      "answers": {
+        "A": "Apollo",
+        "B": "Zeus",
+        "C": "Hades",
+        "D": "Poseidon"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q639",
+      "category": "environment",
+      "difficulty": "easy",
+      "question": "Which gas is the largest contributor to the greenhouse effect?",
+      "answers": {
+        "A": "Oxygen",
+        "B": "Carbon dioxide",
+        "C": "Nitrogen",
+        "D": "Hydrogen"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q640",
+      "category": "global_systems",
+      "difficulty": "easy",
+      "question": "Which organization was founded after World War II to promote international peace and cooperation?",
+      "answers": {
+        "A": "NATO",
+        "B": "European Union",
+        "C": "United Nations",
+        "D": "World Bank"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q641",
+      "category": "politics",
+      "difficulty": "normal",
+      "question": "Which political system features multiple parties competing in elections?",
+      "answers": {
+        "A": "Authoritarianism",
+        "B": "Monarchy",
+        "C": "Multiparty democracy",
+        "D": "Oligarchy"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q642",
+      "category": "innovation",
+      "difficulty": "normal",
+      "question": "Which technological development enabled global positioning systems (GPS)?",
+      "answers": {
+        "A": "Fiber optics",
+        "B": "Satellites",
+        "C": "Blockchain",
+        "D": "Steam turbines"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q643",
+      "category": "mythology",
+      "difficulty": "normal",
+      "question": "In Norse mythology, what is the name of the great battle at the end of the world?",
+      "answers": {
+        "A": "Valhalla",
+        "B": "Ragnarök",
+        "C": "Midgard",
+        "D": "Asgard"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q644",
+      "category": "environment",
+      "difficulty": "normal",
+      "question": "Which renewable energy source relies directly on the movement of air?",
+      "answers": {
+        "A": "Hydroelectric",
+        "B": "Solar",
+        "C": "Wind",
+        "D": "Geothermal"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q645",
+      "category": "global_systems",
+      "difficulty": "normal",
+      "question": "Which international financial institution provides loans to developing countries?",
+      "answers": {
+        "A": "IMF",
+        "B": "World Bank",
+        "C": "WTO",
+        "D": "OPEC"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q646",
+      "category": "politics",
+      "difficulty": "normal",
+      "question": "What is the term for the division of government into executive, legislative, and judicial branches?",
+      "answers": {
+        "A": "Federalism",
+        "B": "Separation of powers",
+        "C": "Popular sovereignty",
+        "D": "Bicameralism"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q647",
+      "category": "innovation",
+      "difficulty": "hard",
+      "question": "Why did the invention of the steam engine significantly accelerate industrial production?",
+      "answers": {
+        "A": "It eliminated human labor",
+        "B": "It enabled mechanized manufacturing independent of water power",
+        "C": "It reduced global trade",
+        "D": "It prevented urbanization"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q648",
+      "category": "environment",
+      "difficulty": "hard",
+      "question": "Why can deforestation contribute to increased atmospheric carbon levels?",
+      "answers": {
+        "A": "Trees produce methane",
+        "B": "Forests absorb carbon dioxide during photosynthesis",
+        "C": "Deforestation increases ocean salinity",
+        "D": "It lowers oxygen production only"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q649",
+      "category": "mythology",
+      "difficulty": "normal",
+      "question": "In Egyptian mythology, who is the god associated with the afterlife and resurrection?",
+      "answers": {
+        "A": "Ra",
+        "B": "Anubis",
+        "C": "Osiris",
+        "D": "Horus"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q650",
+      "category": "global_systems",
+      "difficulty": "easy",
+      "question": "Which agreement aims to limit global temperature rise by reducing greenhouse gas emissions?",
+      "answers": {
+        "A": "Kyoto Protocol",
+        "B": "Paris Agreement",
+        "C": "Geneva Convention",
+        "D": "Bretton Woods Agreement"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q651",
+      "category": "geography",
+      "difficulty": "easy",
+      "question": "Which continent is Brazil located on?",
+      "answers": {
+        "A": "North America",
+        "B": "South America",
+        "C": "Africa",
+        "D": "Europe"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q652",
+      "category": "science",
+      "difficulty": "easy",
+      "question": "What is the largest planet in our solar system?",
+      "answers": {
+        "A": "Saturn",
+        "B": "Earth",
+        "C": "Jupiter",
+        "D": "Neptune"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q653",
+      "category": "history",
+      "difficulty": "normal",
+      "question": "What was the primary purpose of the Berlin Wall when it was built in 1961?",
+      "answers": {
+        "A": "To prevent Western military invasion",
+        "B": "To stop East Germans from emigrating to the West",
+        "C": "To expand industrial production",
+        "D": "To unify Germany politically"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q654",
+      "category": "literature",
+      "difficulty": "easy",
+      "question": "Which fictional detective was created by Arthur Conan Doyle?",
+      "answers": {
+        "A": "Hercule Poirot",
+        "B": "Sherlock Holmes",
+        "C": "James Bond",
+        "D": "Miss Marple"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q655",
+      "category": "sports",
+      "difficulty": "easy",
+      "question": "How many players are on a standard soccer team on the field?",
+      "answers": {
+        "A": "9",
+        "B": "10",
+        "C": "11",
+        "D": "12"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q656",
+      "category": "technology",
+      "difficulty": "normal",
+      "question": "What is the primary purpose of HTTP in web communication?",
+      "answers": {
+        "A": "To encrypt data automatically",
+        "B": "To transfer web pages between client and server",
+        "C": "To store website files permanently",
+        "D": "To block unauthorized users"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q657",
+      "category": "music",
+      "difficulty": "normal",
+      "question": "Why does a standard piano have 88 keys?",
+      "answers": {
+        "A": "To match orchestral tuning only",
+        "B": "To cover a wide range of musical frequencies",
+        "C": "Because of historical keyboard limitations",
+        "D": "To simplify composition"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q658",
+      "category": "environment",
+      "difficulty": "easy",
+      "question": "Which renewable energy source uses sunlight to generate electricity?",
+      "answers": {
+        "A": "Wind",
+        "B": "Hydro",
+        "C": "Solar",
+        "D": "Geothermal"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q659",
+      "category": "general_knowledge",
+      "difficulty": "easy",
+      "question": "How many days are there in a leap year?",
+      "answers": {
+        "A": "365",
+        "B": "366",
+        "C": "364",
+        "D": "367"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q660",
+      "category": "politics",
+      "difficulty": "easy",
+      "question": "What is the term length of a U.S. President?",
+      "answers": {
+        "A": "2 years",
+        "B": "4 years",
+        "C": "5 years",
+        "D": "6 years"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q661",
+      "category": "science",
+      "difficulty": "easy",
+      "question": "What part of the plant conducts photosynthesis?",
+      "answers": {
+        "A": "Root",
+        "B": "Stem",
+        "C": "Leaf",
+        "D": "Flower"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q662",
+      "category": "mythology",
+      "difficulty": "easy",
+      "question": "In Roman mythology, who is the equivalent of the Greek god Zeus?",
+      "answers": {
+        "A": "Mars",
+        "B": "Jupiter",
+        "C": "Neptune",
+        "D": "Apollo"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q663",
+      "category": "economics",
+      "difficulty": "normal",
+      "question": "What does a rise in demand typically cause if supply remains constant?",
+      "answers": {
+        "A": "Prices fall",
+        "B": "Prices rise",
+        "C": "Supply increases automatically",
+        "D": "Inflation disappears"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q664",
+      "category": "psychology",
+      "difficulty": "normal",
+      "question": "Which memory type stores personal life experiences?",
+      "answers": {
+        "A": "Procedural memory",
+        "B": "Episodic memory",
+        "C": "Working memory",
+        "D": "Semantic memory"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q665",
+      "category": "history",
+      "difficulty": "normal",
+      "question": "Which war was primarily fought between the Allies and the Axis powers?",
+      "answers": {
+        "A": "World War I",
+        "B": "World War II",
+        "C": "Cold War",
+        "D": "Korean War"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q666",
+      "category": "technology",
+      "difficulty": "normal",
+      "question": "Which programming language is primarily used for styling web pages?",
+      "answers": {
+        "A": "HTML",
+        "B": "CSS",
+        "C": "Python",
+        "D": "C++"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q667",
+      "category": "science",
+      "difficulty": "normal",
+      "question": "Which organ system is responsible for transporting oxygen and nutrients in the body?",
+      "answers": {
+        "A": "Respiratory system",
+        "B": "Digestive system",
+        "C": "Circulatory system",
+        "D": "Nervous system"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q668",
+      "category": "geography",
+      "difficulty": "normal",
+      "question": "Which river flows through Cairo?",
+      "answers": {
+        "A": "Amazon",
+        "B": "Danube",
+        "C": "Nile",
+        "D": "Tigris"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q669",
+      "category": "economics",
+      "difficulty": "hard",
+      "question": "Why can increasing minimum wages sometimes reduce employment in certain markets?",
+      "answers": {
+        "A": "Because demand rises too quickly",
+        "B": "Because labor costs increase beyond equilibrium levels",
+        "C": "Because inflation disappears",
+        "D": "Because taxes are eliminated"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q670",
+      "category": "science",
+      "difficulty": "hard",
+      "question": "Why does increasing altitude lower atmospheric pressure?",
+      "answers": {
+        "A": "Because gravity weakens instantly",
+        "B": "Because there is less air mass above",
+        "C": "Because temperature always rises",
+        "D": "Because oxygen disappears"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q671",
+      "category": "geography",
+      "difficulty": "normal",
+      "question": "Which demographic factor most strongly influences a country's long-term population growth?",
+      "answers": {
+        "A": "Climate only",
+        "B": "Land area size",
+        "C": "Birth rate and life expectancy",
+        "D": "Number of cities"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q672",
+      "category": "science",
+      "difficulty": "easy",
+      "question": "What is the freezing point of water in Celsius?",
+      "answers": {
+        "A": "0",
+        "B": "10",
+        "C": "32",
+        "D": "100"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q673",
+      "category": "sports",
+      "difficulty": "normal",
+      "question": "In baseball, what must a player achieve for a hit to count as a home run?",
+      "answers": {
+        "A": "Hit the ball twice",
+        "B": "Run between bases without stopping",
+        "C": "Hit the ball out of the field of play",
+        "D": "Strike the catcher"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q674",
+      "category": "technology",
+      "difficulty": "easy",
+      "question": "What device is primarily used to convert digital signals into printed documents?",
+      "answers": {
+        "A": "Scanner",
+        "B": "Monitor",
+        "C": "Printer",
+        "D": "Router"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q675",
+      "category": "geography",
+      "difficulty": "normal",
+      "question": "Why does the number of recognized continents vary between different educational systems?",
+      "answers": {
+        "A": "Because continents change size",
+        "B": "Because continental definitions depend on geological and cultural criteria",
+        "C": "Because new continents are forming",
+        "D": "Because maps are inaccurate"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q676",
+      "category": "environment",
+      "difficulty": "easy",
+      "question": "Which ocean is the largest by surface area?",
+      "answers": {
+        "A": "Atlantic",
+        "B": "Indian",
+        "C": "Pacific",
+        "D": "Arctic"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q677",
+      "category": "history",
+      "difficulty": "easy",
+      "question": "Which ancient civilization built the Colosseum?",
+      "answers": {
+        "A": "Greeks",
+        "B": "Romans",
+        "C": "Egyptians",
+        "D": "Persians"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q678",
+      "category": "politics",
+      "difficulty": "easy",
+      "question": "What is the name of the lower house of the United States Congress?",
+      "answers": {
+        "A": "Senate",
+        "B": "House of Representatives",
+        "C": "Parliament",
+        "D": "Assembly"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q679",
+      "category": "music",
+      "difficulty": "easy",
+      "question": "Which musical symbol indicates silence?",
+      "answers": {
+        "A": "Sharp",
+        "B": "Flat",
+        "C": "Rest",
+        "D": "Clef"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q680",
+      "category": "innovation",
+      "difficulty": "easy",
+      "question": "Which invention made long-distance voice communication possible in the 19th century?",
+      "answers": {
+        "A": "Telegraph",
+        "B": "Telephone",
+        "C": "Radio",
+        "D": "Satellite"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q681",
+      "category": "economics",
+      "difficulty": "normal",
+      "question": "What happens to supply when production costs decrease?",
+      "answers": {
+        "A": "Supply decreases",
+        "B": "Supply increases",
+        "C": "Demand disappears",
+        "D": "Prices freeze"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q682",
+      "category": "psychology",
+      "difficulty": "normal",
+      "question": "Which concept describes the tendency to judge others based on first impressions?",
+      "answers": {
+        "A": "Halo effect",
+        "B": "Operant conditioning",
+        "C": "Habituation",
+        "D": "Projection"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q683",
+      "category": "science",
+      "difficulty": "normal",
+      "question": "Which process converts glucose into energy inside cells?",
+      "answers": {
+        "A": "Photosynthesis",
+        "B": "Respiration",
+        "C": "Fermentation",
+        "D": "Diffusion"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q684",
+      "category": "geography",
+      "difficulty": "normal",
+      "question": "Which mountain range separates Europe and Asia in Russia?",
+      "answers": {
+        "A": "Alps",
+        "B": "Himalayas",
+        "C": "Ural Mountains",
+        "D": "Carpathians"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q685",
+      "category": "technology",
+      "difficulty": "normal",
+      "question": "Which programming paradigm focuses on objects and classes?",
+      "answers": {
+        "A": "Procedural programming",
+        "B": "Functional programming",
+        "C": "Object-oriented programming",
+        "D": "Assembly programming"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q686",
+      "category": "history",
+      "difficulty": "normal",
+      "question": "Which event marked the beginning of World War I?",
+      "answers": {
+        "A": "Invasion of Poland",
+        "B": "Assassination of Archduke Franz Ferdinand",
+        "C": "Fall of Berlin",
+        "D": "Treaty of Versailles"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q687",
+      "category": "world_culture",
+      "difficulty": "normal",
+      "question": "Which Asian country celebrates Lunar New Year with dragon dances?",
+      "answers": {
+        "A": "Japan",
+        "B": "China",
+        "C": "India",
+        "D": "Thailand"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q688",
+      "category": "science",
+      "difficulty": "normal",
+      "question": "Which blood type is known as the universal donor?",
+      "answers": {
+        "A": "A",
+        "B": "B",
+        "C": "AB",
+        "D": "O negative"
+      },
+      "correct": "D"
+    },
+    {
+      "id": "q689",
+      "category": "economics",
+      "difficulty": "normal",
+      "question": "Which market structure has many buyers and many sellers with identical products?",
+      "answers": {
+        "A": "Monopoly",
+        "B": "Oligopoly",
+        "C": "Perfect competition",
+        "D": "Cartel"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q690",
+      "category": "innovation",
+      "difficulty": "normal",
+      "question": "Which technology enables wireless short-range communication between devices?",
+      "answers": {
+        "A": "Ethernet",
+        "B": "Bluetooth",
+        "C": "Fiber optic",
+        "D": "DSL"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q691",
+      "category": "science",
+      "difficulty": "hard",
+      "question": "Why does increasing salinity lower the freezing point of water?",
+      "answers": {
+        "A": "Salt absorbs heat",
+        "B": "Salt disrupts ice crystal formation",
+        "C": "Salt increases pressure",
+        "D": "Salt evaporates quickly"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q692",
+      "category": "economics",
+      "difficulty": "hard",
+      "question": "Why can high government debt influence long-term interest rates?",
+      "answers": {
+        "A": "It eliminates inflation",
+        "B": "It increases demand for borrowing",
+        "C": "It reduces supply of money",
+        "D": "It stabilizes currency automatically"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q693",
+      "category": "psychology",
+      "difficulty": "hard",
+      "question": "Why does sleep deprivation impair decision-making?",
+      "answers": {
+        "A": "It increases adrenaline permanently",
+        "B": "It reduces activity in the prefrontal cortex",
+        "C": "It improves emotional control",
+        "D": "It increases memory capacity"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q694",
+      "category": "general_knowledge",
+      "difficulty": "normal",
+      "question": "Which metal is liquid at room temperature?",
+      "answers": {
+        "A": "Iron",
+        "B": "Mercury",
+        "C": "Aluminum",
+        "D": "Copper"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q695",
+      "category": "geography",
+      "difficulty": "normal",
+      "question": "Which natural boundary is traditionally considered the dividing line between Europe and Asia?",
+      "answers": {
+        "A": "Alps",
+        "B": "Ural Mountains",
+        "C": "Pyrenees",
+        "D": "Carpathians"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q696",
+      "category": "history",
+      "difficulty": "normal",
+      "question": "Which empire was centered in present-day Turkey before World War I?",
+      "answers": {
+        "A": "Roman Empire",
+        "B": "Ottoman Empire",
+        "C": "Persian Empire",
+        "D": "Mongol Empire"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q697",
+      "category": "technology",
+      "difficulty": "normal",
+      "question": "Which device stores data permanently even when powered off?",
+      "answers": {
+        "A": "RAM",
+        "B": "Hard drive",
+        "C": "CPU",
+        "D": "Cache"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q698",
+      "category": "science",
+      "difficulty": "normal",
+      "question": "Which gas is most abundant in Earth's atmosphere?",
+      "answers": {
+        "A": "Oxygen",
+        "B": "Nitrogen",
+        "C": "Carbon dioxide",
+        "D": "Argon"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q699",
+      "category": "politics",
+      "difficulty": "normal",
+      "question": "Which principle ensures that no branch of government becomes too powerful?",
+      "answers": {
+        "A": "Federalism",
+        "B": "Checks and balances",
+        "C": "Monarchy",
+        "D": "Direct democracy"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q700",
+      "category": "innovation",
+      "difficulty": "easy",
+      "question": "Which invention made personal computing widely accessible in the late 20th century?",
+      "answers": {
+        "A": "Mainframe",
+        "B": "Personal computer",
+        "C": "Fax machine",
+        "D": "Pager"
+      },
+      "correct": "B"
     }
   ]
 }
