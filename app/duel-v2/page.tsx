@@ -93,7 +93,6 @@ setTimeLeft(remaining > 0 ? remaining : 0);
 const timeExpired =
 Date.now() - start >= roundData.duration_sec * 1000;
 
-// RESOLVE ROUND
 if (!roundData.resolved && !resolvingRef.current) {
 
 const { count } = await supabase
@@ -114,7 +113,6 @@ resolvingRef.current = false;
 }
 }
 
-// SHOW RESULT ONLY ONCE PER ROUND
 if (roundData.resolved && handledRound !== roundData.round_index) {
 
 setHandledRound(roundData.round_index);
@@ -265,6 +263,15 @@ return (
 <div style={containerStyle}>
  <div style={cardStyle}>
  <h1>Duel</h1>
+
+ <div style={{ marginBottom: 20, lineHeight: 1.6 }}>
+ <strong>Duel Rules</strong><br/>
+ 2 players compete in 3 rounds.<br/>
+ Each round lasts 10 seconds.<br/>
+ Closest answer wins the round.<br/>
+Are you ready?
+ </div>
+
  <button style={buttonStyle} onClick={createRoom}>
  Create Room
  </button>
@@ -281,6 +288,7 @@ return (
  </div>
 );
 }
+
 
 if (room?.status === "waiting") {
 return (
