@@ -1,33 +1,46 @@
 const fs = require("fs");
 
-const questions = JSON.parse(
-  fs.readFileSync("./data/questions_converted.json", "utf8")
+const data = JSON.parse(
+  fs.readFileSync("./public/questions.json", "utf8")
 );
 
-const byCategory = {};
-const byDifficulty = {};
-const combo = {};
+const questions = data.questions;
 
-questions.forEach((q) => {
-  // category count
-  byCategory[q.category] = (byCategory[q.category] || 0) + 1;
+console.log("TOTAL QUESTIONS:", questions.length);
 
-  // difficulty count
-  byDifficulty[q.difficulty] = (byDifficulty[q.difficulty] || 0) + 1;
-
-  // category + difficulty
-  const key = `${q.category} - ${q.difficulty}`;
-  combo[key] = (combo[key] || 0) + 1;
+// Difficulty count
+const difficultyCount = {};
+questions.forEach(q => {
+  difficultyCount[q.difficulty] =
+    (difficultyCount[q.difficulty] || 0) + 1;
 });
 
-console.log("=== TOTAL ===");
-console.log(questions.length);
+console.log("\nBY DIFFICULTY:");
+console.log(difficultyCount);
 
-console.log("\n=== BY CATEGORY ===");
-console.log(byCategory);
+// Category count
+const categoryCount = {};
+questions.forEach(q => {
+  categoryCount[q.category] =
+    (categoryCount[q.category] || 0) + 1;
+});
 
-console.log("\n=== BY DIFFICULTY ===");
-console.log(byDifficulty);
+console.log("\nBY CATEGORY:");
+console.log(categoryCount);
 
-console.log("\n=== CATEGORY + DIFFICULTY ===");
-console.log(combo);
+// Duplicate check by question text
+const questionTextMap = {};
+const duplicates = [];
+
+questions.forEach(q => {
+  if (questionTextMap[q.question]) {
+    duplicates.push(q.question);
+  } else {
+    questionTextMap[q.question] = true;
+  }
+});
+
+console.log("\nDUPLICATES FOUND:", duplicates.length);
+if (duplicates.length > 0) {
+  console.log(duplicates);
+}

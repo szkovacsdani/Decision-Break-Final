@@ -1036,4 +1036,2285 @@
       },
       "correct": "C"
     },
-    
+    {
+      "id": "q101",
+      "category": "geography",
+      "difficulty": "easy",
+      "question": "Which country has the city of Rome?",
+      "answers": { "A": "Spain", "B": "Italy", "C": "France", "D": "Greece" },
+      "correct": "B"
+    },
+    {
+      "id": "q102",
+      "category": "geography",
+      "difficulty": "easy",
+      "question": "Which continent is Brazil located in?",
+      "answers": {
+        "A": "North America",
+        "B": "Europe",
+        "C": "South America",
+        "D": "Africa"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q103",
+      "category": "geography",
+      "difficulty": "easy",
+      "question": "Which country has the city of Bangkok?",
+      "answers": {
+        "A": "Vietnam",
+        "B": "Thailand",
+        "C": "Malaysia",
+        "D": "Indonesia"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q104",
+      "category": "geography",
+      "difficulty": "easy",
+      "question": "Which ocean borders the west coast of the United States?",
+      "answers": {
+        "A": "Atlantic",
+        "B": "Indian",
+        "C": "Pacific",
+        "D": "Arctic"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q105",
+      "category": "geography",
+      "difficulty": "easy",
+      "question": "Which country is home to the city of Buenos Aires?",
+      "answers": { "A": "Chile", "B": "Argentina", "C": "Brazil", "D": "Peru" },
+      "correct": "B"
+    },
+    {
+      "id": "q106",
+      "category": "geography",
+      "difficulty": "normal",
+      "question": "Which country has the longest coastline in the world?",
+      "answers": {
+        "A": "Russia",
+        "B": "Australia",
+        "C": "Canada",
+        "D": "United States"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q107",
+      "category": "geography",
+      "difficulty": "normal",
+      "question": "Which desert is the largest hot desert in the world?",
+      "answers": {
+        "A": "Gobi",
+        "B": "Sahara",
+        "C": "Kalahari",
+        "D": "Arabian"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q108",
+      "category": "geography",
+      "difficulty": "normal",
+      "question": "Which river is the longest in the world according to most modern measurements?",
+      "answers": {
+        "A": "Amazon",
+        "B": "Nile",
+        "C": "Yangtze",
+        "D": "Mississippi"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q109",
+      "category": "geography",
+      "difficulty": "normal",
+      "question": "Which country does not share a border with Germany?",
+      "answers": { "A": "France", "B": "Poland", "C": "Italy", "D": "Austria" },
+      "correct": "C"
+    },
+    {
+      "id": "q110",
+      "category": "geography",
+      "difficulty": "normal",
+      "question": "Which capital city is located on the Danube River?",
+      "answers": { "A": "Budapest", "B": "Madrid", "C": "Lisbon", "D": "Oslo" },
+      "correct": "A"
+    },
+    {
+      "id": "q111",
+      "category": "geography",
+      "difficulty": "normal",
+      "question": "Which country has the most population in the world as of recent estimates?",
+      "answers": {
+        "A": "India",
+        "B": "United States",
+        "C": "China",
+        "D": "Indonesia"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q112",
+      "category": "geography",
+      "difficulty": "normal",
+      "question": "Which mountain is the highest in Africa?",
+      "answers": {
+        "A": "Mount Kenya",
+        "B": "Mount Kilimanjaro",
+        "C": "Atlas Peak",
+        "D": "Rwenzori"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q113",
+      "category": "geography",
+      "difficulty": "normal",
+      "question": "Which country is both in Europe and Asia?",
+      "answers": { "A": "Greece", "B": "Turkey", "C": "Egypt", "D": "Morocco" },
+      "correct": "B"
+    },
+    {
+      "id": "q114",
+      "category": "geography",
+      "difficulty": "normal",
+      "question": "Which sea separates Saudi Arabia from Africa?",
+      "answers": {
+        "A": "Arabian Sea",
+        "B": "Mediterranean Sea",
+        "C": "Red Sea",
+        "D": "Black Sea"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q115",
+      "category": "geography",
+      "difficulty": "normal",
+      "question": "Which country has the largest land area in the world?",
+      "answers": {
+        "A": "United States",
+        "B": "Canada",
+        "C": "China",
+        "D": "Russia"
+      },
+      "correct": "D"
+    },
+    {
+      "id": "q116",
+      "category": "geography",
+      "difficulty": "hard",
+      "question": "Which African country was formerly known as Abyssinia?",
+      "answers": {
+        "A": "Ethiopia",
+        "B": "Sudan",
+        "C": "Somalia",
+        "D": "Eritrea"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q117",
+      "category": "geography",
+      "difficulty": "hard",
+      "question": "Which strait separates Asia from North America?",
+      "answers": {
+        "A": "Strait of Gibraltar",
+        "B": "Bering Strait",
+        "C": "Strait of Hormuz",
+        "D": "Malacca Strait"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q118",
+      "category": "geography",
+      "difficulty": "hard",
+      "question": "Which country has the most time zones?",
+      "answers": {
+        "A": "United States",
+        "B": "Russia",
+        "C": "France",
+        "D": "China"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q119",
+      "category": "geography",
+      "difficulty": "hard",
+      "question": "Which is the smallest independent country in the world by area?",
+      "answers": {
+        "A": "Monaco",
+        "B": "Vatican City",
+        "C": "San Marino",
+        "D": "Liechtenstein"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q120",
+      "category": "geography",
+      "difficulty": "hard",
+      "question": "Which river flows through the Grand Canyon?",
+      "answers": {
+        "A": "Missouri River",
+        "B": "Colorado River",
+        "C": "Columbia River",
+        "D": "Rio Grande"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q121",
+      "category": "history",
+      "difficulty": "easy",
+      "question": "Who was the first President of the United States?",
+      "answers": {
+        "A": "Thomas Jefferson",
+        "B": "George Washington",
+        "C": "Abraham Lincoln",
+        "D": "John Adams"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q122",
+      "category": "history",
+      "difficulty": "easy",
+      "question": "In which country did the Renaissance begin?",
+      "answers": { "A": "France", "B": "England", "C": "Italy", "D": "Spain" },
+      "correct": "C"
+    },
+    {
+      "id": "q123",
+      "category": "history",
+      "difficulty": "easy",
+      "question": "Which war was fought between the North and South regions in the United States?",
+      "answers": {
+        "A": "World War I",
+        "B": "American Civil War",
+        "C": "Revolutionary War",
+        "D": "Vietnam War"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q124",
+      "category": "history",
+      "difficulty": "easy",
+      "question": "The pyramids of Giza were built in which ancient civilization?",
+      "answers": {
+        "A": "Roman",
+        "B": "Greek",
+        "C": "Egyptian",
+        "D": "Persian"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q125",
+      "category": "history",
+      "difficulty": "easy",
+      "question": "Which empire was ruled by Julius Caesar?",
+      "answers": {
+        "A": "Ottoman Empire",
+        "B": "Roman Republic",
+        "C": "British Empire",
+        "D": "Mongol Empire"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q126",
+      "category": "history",
+      "difficulty": "normal",
+      "question": "In which year did World War II end?",
+      "answers": { "A": "1943", "B": "1945", "C": "1947", "D": "1950" },
+      "correct": "B"
+    },
+    {
+      "id": "q127",
+      "category": "history",
+      "difficulty": "normal",
+      "question": "Which explorer is credited with reaching the Americas in 1492?",
+      "answers": {
+        "A": "Ferdinand Magellan",
+        "B": "Christopher Columbus",
+        "C": "Marco Polo",
+        "D": "James Cook"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q128",
+      "category": "history",
+      "difficulty": "normal",
+      "question": "Which revolution began in France in 1789?",
+      "answers": {
+        "A": "Industrial Revolution",
+        "B": "American Revolution",
+        "C": "French Revolution",
+        "D": "Russian Revolution"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q129",
+      "category": "history",
+      "difficulty": "normal",
+      "question": "Who was the leader of Nazi Germany during World War II?",
+      "answers": {
+        "A": "Joseph Stalin",
+        "B": "Adolf Hitler",
+        "C": "Benito Mussolini",
+        "D": "Winston Churchill"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q130",
+      "category": "history",
+      "difficulty": "normal",
+      "question": "Which ancient civilization developed cuneiform writing?",
+      "answers": {
+        "A": "Egyptians",
+        "B": "Greeks",
+        "C": "Sumerians",
+        "D": "Romans"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q131",
+      "category": "history",
+      "difficulty": "normal",
+      "question": "The Berlin Wall fell in which year?",
+      "answers": { "A": "1985", "B": "1987", "C": "1989", "D": "1991" },
+      "correct": "C"
+    },
+    {
+      "id": "q132",
+      "category": "history",
+      "difficulty": "normal",
+      "question": "Which empire was founded by Genghis Khan?",
+      "answers": {
+        "A": "Ottoman Empire",
+        "B": "Roman Empire",
+        "C": "Mongol Empire",
+        "D": "Persian Empire"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q133",
+      "category": "history",
+      "difficulty": "normal",
+      "question": "Who was the first woman to win a Nobel Prize?",
+      "answers": {
+        "A": "Marie Curie",
+        "B": "Rosalind Franklin",
+        "C": "Ada Lovelace",
+        "D": "Florence Nightingale"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q134",
+      "category": "history",
+      "difficulty": "normal",
+      "question": "Which country was formerly known as Persia?",
+      "answers": { "A": "Iraq", "B": "Iran", "C": "Turkey", "D": "Syria" },
+      "correct": "B"
+    },
+    {
+      "id": "q135",
+      "category": "history",
+      "difficulty": "normal",
+      "question": "Who was the British Prime Minister during most of World War II?",
+      "answers": {
+        "A": "Neville Chamberlain",
+        "B": "Winston Churchill",
+        "C": "Margaret Thatcher",
+        "D": "Tony Blair"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q136",
+      "category": "history",
+      "difficulty": "hard",
+      "question": "Which treaty ended World War I in 1919?",
+      "answers": {
+        "A": "Treaty of Paris",
+        "B": "Treaty of Versailles",
+        "C": "Treaty of Vienna",
+        "D": "Treaty of Rome"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q137",
+      "category": "history",
+      "difficulty": "hard",
+      "question": "Which civilization built Machu Picchu?",
+      "answers": { "A": "Aztec", "B": "Maya", "C": "Inca", "D": "Olmec" },
+      "correct": "C"
+    },
+    {
+      "id": "q138",
+      "category": "history",
+      "difficulty": "hard",
+      "question": "Who was the first Emperor of Rome?",
+      "answers": {
+        "A": "Nero",
+        "B": "Augustus",
+        "C": "Caligula",
+        "D": "Constantine"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q139",
+      "category": "history",
+      "difficulty": "hard",
+      "question": "Which war was fought between Athens and Sparta?",
+      "answers": {
+        "A": "Punic War",
+        "B": "Peloponnesian War",
+        "C": "Trojan War",
+        "D": "Hundred Years' War"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q140",
+      "category": "history",
+      "difficulty": "hard",
+      "question": "Which dynasty ruled China when the Great Wall was first built?",
+      "answers": { "A": "Ming", "B": "Tang", "C": "Qin", "D": "Han" },
+      "correct": "C"
+    },
+    {
+      "id": "q141",
+      "category": "technology",
+      "difficulty": "easy",
+      "question": "Which company developed the Windows operating system?",
+      "answers": { "A": "Apple", "B": "Microsoft", "C": "IBM", "D": "Google" },
+      "correct": "B"
+    },
+    {
+      "id": "q142",
+      "category": "technology",
+      "difficulty": "easy",
+      "question": "What does 'USB' stand for?",
+      "answers": {
+        "A": "Universal Serial Bus",
+        "B": "Unified System Base",
+        "C": "Universal Storage Block",
+        "D": "User Service Bridge"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q143",
+      "category": "technology",
+      "difficulty": "easy",
+      "question": "Which device is primarily used to print documents?",
+      "answers": {
+        "A": "Router",
+        "B": "Monitor",
+        "C": "Printer",
+        "D": "Scanner"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q144",
+      "category": "technology",
+      "difficulty": "easy",
+      "question": "What is the name of Apple's mobile operating system?",
+      "answers": { "A": "MacOS", "B": "iOS", "C": "SafariOS", "D": "WatchOS" },
+      "correct": "B"
+    },
+    {
+      "id": "q145",
+      "category": "technology",
+      "difficulty": "easy",
+      "question": "Which company created the Android operating system?",
+      "answers": { "A": "Google", "B": "Samsung", "C": "Nokia", "D": "Sony" },
+      "correct": "A"
+    },
+    {
+      "id": "q146",
+      "category": "technology",
+      "difficulty": "normal",
+      "question": "What does 'RAM' stand for?",
+      "answers": {
+        "A": "Read Access Memory",
+        "B": "Random Access Memory",
+        "C": "Rapid Allocation Module",
+        "D": "Remote Access Mode"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q147",
+      "category": "technology",
+      "difficulty": "normal",
+      "question": "Which programming language is primarily used for web page structure?",
+      "answers": { "A": "CSS", "B": "Python", "C": "HTML", "D": "C++" },
+      "correct": "C"
+    },
+    {
+      "id": "q148",
+      "category": "technology",
+      "difficulty": "normal",
+      "question": "What is the main function of a router?",
+      "answers": {
+        "A": "Store files",
+        "B": "Process graphics",
+        "C": "Connect networks",
+        "D": "Cool hardware"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q149",
+      "category": "technology",
+      "difficulty": "normal",
+      "question": "Which company is known for developing the Tesla electric car?",
+      "answers": {
+        "A": "Ford",
+        "B": "Toyota",
+        "C": "Tesla",
+        "D": "BMW"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q150",
+      "category": "technology",
+      "difficulty": "normal",
+      "question": "What does 'AI' stand for in technology?",
+      "answers": {
+        "A": "Automatic Input",
+        "B": "Artificial Intelligence",
+        "C": "Advanced Interface",
+        "D": "Applied Internet"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q151",
+      "category": "technology",
+      "difficulty": "normal",
+      "question": "Which company developed the PlayStation console?",
+      "answers": {
+        "A": "Nintendo",
+        "B": "Microsoft",
+        "C": "Sony",
+        "D": "Sega"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q152",
+      "category": "technology",
+      "difficulty": "normal",
+      "question": "Which technology is used for short-range wireless communication between devices?",
+      "answers": {
+        "A": "Bluetooth",
+        "B": "Ethernet",
+        "C": "Fiber optic",
+        "D": "Satellite"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q153",
+      "category": "technology",
+      "difficulty": "normal",
+      "question": "Which company owns the video platform YouTube?",
+      "answers": {
+        "A": "Meta",
+        "B": "Google",
+        "C": "Amazon",
+        "D": "Apple"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q154",
+      "category": "technology",
+      "difficulty": "normal",
+      "question": "What is the primary purpose of a firewall in computing?",
+      "answers": {
+        "A": "Increase screen brightness",
+        "B": "Protect against unauthorized access",
+        "C": "Speed up downloads",
+        "D": "Store passwords"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q155",
+      "category": "technology",
+      "difficulty": "normal",
+      "question": "Which company produces the iPad?",
+      "answers": {
+        "A": "Samsung",
+        "B": "Apple",
+        "C": "Microsoft",
+        "D": "Google"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q156",
+      "category": "technology",
+      "difficulty": "hard",
+      "question": "What does 'GPU' stand for?",
+      "answers": {
+        "A": "General Processing Unit",
+        "B": "Graphics Processing Unit",
+        "C": "Global Performance Utility",
+        "D": "Graphical Power Unit"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q157",
+      "category": "technology",
+      "difficulty": "hard",
+      "question": "Which data structure operates on a First-In, First-Out principle?",
+      "answers": { "A": "Stack", "B": "Queue", "C": "Tree", "D": "Graph" },
+      "correct": "B"
+    },
+    {
+      "id": "q158",
+      "category": "technology",
+      "difficulty": "hard",
+      "question": "What is the name of the protocol used to securely transfer web pages?",
+      "answers": {
+        "A": "FTP",
+        "B": "HTTP",
+        "C": "HTTPS",
+        "D": "SMTP"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q159",
+      "category": "technology",
+      "difficulty": "hard",
+      "question": "Which programming language is known for its use in data science and machine learning?",
+      "answers": {
+        "A": "C",
+        "B": "Python",
+        "C": "Java",
+        "D": "Assembly"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q160",
+      "category": "technology",
+      "difficulty": "hard",
+      "question": "What does 'DNS' stand for?",
+      "answers": {
+        "A": "Dynamic Network System",
+        "B": "Digital Naming Service",
+        "C": "Domain Name System",
+        "D": "Data Node Server"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q161",
+      "category": "business",
+      "difficulty": "easy",
+      "question": "What is the term for money earned from selling goods or services?",
+      "answers": { "A": "Expense", "B": "Revenue", "C": "Debt", "D": "Tax" },
+      "correct": "B"
+    },
+    {
+      "id": "q162",
+      "category": "business",
+      "difficulty": "easy",
+      "question": "What is a person who starts a new business called?",
+      "answers": {
+        "A": "Investor",
+        "B": "Entrepreneur",
+        "C": "Employee",
+        "D": "Supplier"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q163",
+      "category": "business",
+      "difficulty": "easy",
+      "question": "What is the main goal of most for-profit companies?",
+      "answers": {
+        "A": "Increase taxes",
+        "B": "Maximize profit",
+        "C": "Reduce staff",
+        "D": "Avoid competition"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q164",
+      "category": "business",
+      "difficulty": "easy",
+      "question": "What does 'CEO' stand for?",
+      "answers": {
+        "A": "Chief Executive Officer",
+        "B": "Central Economic Officer",
+        "C": "Corporate Executive Operator",
+        "D": "Chief Employment Organizer"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q165",
+      "category": "business",
+      "difficulty": "easy",
+      "question": "What is money invested in a business called?",
+      "answers": { "A": "Capital", "B": "Salary", "C": "Tax", "D": "Bonus" },
+      "correct": "A"
+    },
+    {
+      "id": "q166",
+      "category": "business",
+      "difficulty": "normal",
+      "question": "What is the difference between revenue and expenses called?",
+      "answers": { "A": "Equity", "B": "Profit", "C": "Capital", "D": "Debt" },
+      "correct": "B"
+    },
+    {
+      "id": "q167",
+      "category": "business",
+      "difficulty": "normal",
+      "question": "Which financial statement shows a company's assets and liabilities?",
+      "answers": {
+        "A": "Income statement",
+        "B": "Balance sheet",
+        "C": "Cash flow statement",
+        "D": "Tax report"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q168",
+      "category": "business",
+      "difficulty": "normal",
+      "question": "What does 'IPO' stand for?",
+      "answers": {
+        "A": "Initial Public Offering",
+        "B": "Internal Profit Operation",
+        "C": "International Purchase Order",
+        "D": "Immediate Price Option"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q169",
+      "category": "business",
+      "difficulty": "normal",
+      "question": "What term describes a market with only one seller?",
+      "answers": {
+        "A": "Oligopoly",
+        "B": "Monopoly",
+        "C": "Duopoly",
+        "D": "Free market"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q170",
+      "category": "business",
+      "difficulty": "normal",
+      "question": "What is the percentage increase in prices over time called?",
+      "answers": {
+        "A": "Deflation",
+        "B": "Inflation",
+        "C": "Depreciation",
+        "D": "Equity"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q171",
+      "category": "business",
+      "difficulty": "normal",
+      "question": "What does 'HR' stand for in a company?",
+      "answers": {
+        "A": "High Revenue",
+        "B": "Human Resources",
+        "C": "Holding Reserve",
+        "D": "Hiring Regulation"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q172",
+      "category": "business",
+      "difficulty": "normal",
+      "question": "Which term describes reducing the value of an asset over time?",
+      "answers": {
+        "A": "Appreciation",
+        "B": "Depreciation",
+        "C": "Inflation",
+        "D": "Speculation"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q173",
+      "category": "business",
+      "difficulty": "normal",
+      "question": "What is the term for money borrowed that must be repaid?",
+      "answers": { "A": "Equity", "B": "Credit", "C": "Debt", "D": "Revenue" },
+      "correct": "C"
+    },
+    {
+      "id": "q174",
+      "category": "business",
+      "difficulty": "normal",
+      "question": "What is the term for the total value of a company's shares?",
+      "answers": {
+        "A": "Market capitalization",
+        "B": "Net income",
+        "C": "Operating cost",
+        "D": "Revenue stream"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q175",
+      "category": "business",
+      "difficulty": "normal",
+      "question": "What is diversification in business primarily used for?",
+      "answers": {
+        "A": "Reducing risk",
+        "B": "Increasing taxes",
+        "C": "Hiring staff",
+        "D": "Closing branches"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q176",
+      "category": "business",
+      "difficulty": "hard",
+      "question": "Which economic system is based on private ownership and free markets?",
+      "answers": {
+        "A": "Socialism",
+        "B": "Communism",
+        "C": "Capitalism",
+        "D": "Feudalism"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q177",
+      "category": "business",
+      "difficulty": "hard",
+      "question": "What does EBITDA stand for?",
+      "answers": {
+        "A": "Earnings Before Interest, Taxes, Depreciation, and Amortization",
+        "B": "Estimated Business Income and Total Debt Analysis",
+        "C": "Equity Balance in Domestic Trade Agreement",
+        "D": "Economic Benefit in Direct Tax Allocation"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q178",
+      "category": "business",
+      "difficulty": "hard",
+      "question": "Which organization sets global monetary policy for the Eurozone?",
+      "answers": {
+        "A": "World Bank",
+        "B": "European Central Bank",
+        "C": "Federal Reserve",
+        "D": "IMF"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q179",
+      "category": "business",
+      "difficulty": "hard",
+      "question": "What term describes the point at which total costs equal total revenue?",
+      "answers": {
+        "A": "Break-even point",
+        "B": "Profit margin",
+        "C": "Liquidity ratio",
+        "D": "Equity balance"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q180",
+      "category": "business",
+      "difficulty": "hard",
+      "question": "What is the primary purpose of a hedge in finance?",
+      "answers": {
+        "A": "Increase profits",
+        "B": "Reduce risk",
+        "C": "Avoid taxes",
+        "D": "Expand markets"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q181",
+      "category": "sports",
+      "difficulty": "easy",
+      "question": "How many players are on a basketball team on the court at one time?",
+      "answers": { "A": "4", "B": "5", "C": "6", "D": "7" },
+      "correct": "B"
+    },
+    {
+      "id": "q182",
+      "category": "sports",
+      "difficulty": "easy",
+      "question": "Which sport uses a bat, ball, and wickets?",
+      "answers": {
+        "A": "Baseball",
+        "B": "Cricket",
+        "C": "Tennis",
+        "D": "Hockey"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q183",
+      "category": "sports",
+      "difficulty": "easy",
+      "question": "In which sport would you perform a slam dunk?",
+      "answers": {
+        "A": "Volleyball",
+        "B": "Basketball",
+        "C": "Handball",
+        "D": "Rugby"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q184",
+      "category": "sports",
+      "difficulty": "easy",
+      "question": "Which country won the FIFA World Cup in 2018?",
+      "answers": {
+        "A": "Brazil",
+        "B": "Germany",
+        "C": "France",
+        "D": "Argentina"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q185",
+      "category": "sports",
+      "difficulty": "easy",
+      "question": "In tennis, how many sets are typically needed to win a men's Grand Slam final?",
+      "answers": { "A": "2", "B": "3", "C": "4", "D": "5" },
+      "correct": "D"
+    },
+    {
+      "id": "q186",
+      "category": "sports",
+      "difficulty": "normal",
+      "question": "How long is a standard marathon?",
+      "answers": {
+        "A": "40.2 km",
+        "B": "41.2 km",
+        "C": "42.195 km",
+        "D": "43 km"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q187",
+      "category": "sports",
+      "difficulty": "normal",
+      "question": "Which country hosts the Tour de France cycling race?",
+      "answers": { "A": "Italy", "B": "France", "C": "Spain", "D": "Belgium" },
+      "correct": "B"
+    },
+    {
+      "id": "q188",
+      "category": "sports",
+      "difficulty": "normal",
+      "question": "In which sport is the term 'home run' used?",
+      "answers": {
+        "A": "Baseball",
+        "B": "Cricket",
+        "C": "Rugby",
+        "D": "Tennis"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q189",
+      "category": "sports",
+      "difficulty": "normal",
+      "question": "Which Olympic sport includes the events vault, bars, beam, and floor?",
+      "answers": {
+        "A": "Diving",
+        "B": "Gymnastics",
+        "C": "Athletics",
+        "D": "Figure skating"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q190",
+      "category": "sports",
+      "difficulty": "normal",
+      "question": "Which country has won the most FIFA World Cup titles?",
+      "answers": {
+        "A": "Germany",
+        "B": "Argentina",
+        "C": "Brazil",
+        "D": "Italy"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q191",
+      "category": "sports",
+      "difficulty": "normal",
+      "question": "In Formula 1, what color flag signals the end of a race?",
+      "answers": { "A": "Red", "B": "Blue", "C": "Yellow", "D": "Checkered" },
+      "correct": "D"
+    },
+    {
+      "id": "q192",
+      "category": "sports",
+      "difficulty": "normal",
+      "question": "How many players are on a rugby union team on the field?",
+      "answers": { "A": "13", "B": "14", "C": "15", "D": "16" },
+      "correct": "C"
+    },
+    {
+      "id": "q193",
+      "category": "sports",
+      "difficulty": "normal",
+      "question": "Which sport is associated with the Wimbledon tournament?",
+      "answers": { "A": "Golf", "B": "Tennis", "C": "Cricket", "D": "Squash" },
+      "correct": "B"
+    },
+    {
+      "id": "q194",
+      "category": "sports",
+      "difficulty": "normal",
+      "question": "In which sport would you use a foil, épée, or sabre?",
+      "answers": { "A": "Fencing", "B": "Archery", "C": "Judo", "D": "Boxing" },
+      "correct": "A"
+    },
+    {
+      "id": "q195",
+      "category": "sports",
+      "difficulty": "normal",
+      "question": "Which city hosted the 2016 Summer Olympics?",
+      "answers": {
+        "A": "London",
+        "B": "Tokyo",
+        "C": "Rio de Janeiro",
+        "D": "Beijing"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q196",
+      "category": "sports",
+      "difficulty": "hard",
+      "question": "Which tennis player has won the most men's Grand Slam singles titles (as of recent records)?",
+      "answers": {
+        "A": "Roger Federer",
+        "B": "Rafael Nadal",
+        "C": "Novak Djokovic",
+        "D": "Pete Sampras"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q197",
+      "category": "sports",
+      "difficulty": "hard",
+      "question": "In which sport would you compete in the decathlon?",
+      "answers": {
+        "A": "Swimming",
+        "B": "Cycling",
+        "C": "Athletics",
+        "D": "Gymnastics"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q198",
+      "category": "sports",
+      "difficulty": "hard",
+      "question": "Which country has won the most Olympic gold medals overall?",
+      "answers": {
+        "A": "China",
+        "B": "United States",
+        "C": "Russia",
+        "D": "Germany"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q199",
+      "category": "sports",
+      "difficulty": "hard",
+      "question": "What is the maximum break possible in a single frame of snooker?",
+      "answers": { "A": "137", "B": "140", "C": "147", "D": "155" },
+      "correct": "C"
+    },
+    {
+      "id": "q200",
+      "category": "sports",
+      "difficulty": "hard",
+      "question": "In chess, what is the name of the special move involving both the king and a rook?",
+      "answers": {
+        "A": "Promotion",
+        "B": "Castling",
+        "C": "En passant",
+        "D": "Fork"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q201",
+      "category": "entertainment",
+      "difficulty": "easy",
+      "question": "Which movie features the character Jack Dawson?",
+      "answers": {
+        "A": "Avatar",
+        "B": "Titanic",
+        "C": "Gladiator",
+        "D": "Inception"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q202",
+      "category": "entertainment",
+      "difficulty": "easy",
+      "question": "Which superhero is known as the 'Man of Steel'?",
+      "answers": {
+        "A": "Batman",
+        "B": "Thor",
+        "C": "Superman",
+        "D": "Iron Man"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q203",
+      "category": "entertainment",
+      "difficulty": "easy",
+      "question": "Which TV series features the Stark family?",
+      "answers": {
+        "A": "Vikings",
+        "B": "Game of Thrones",
+        "C": "The Witcher",
+        "D": "Breaking Bad"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q204",
+      "category": "entertainment",
+      "difficulty": "easy",
+      "question": "Which movie franchise features the character Harry Potter?",
+      "answers": {
+        "A": "The Hobbit",
+        "B": "Fantastic Beasts",
+        "C": "Harry Potter",
+        "D": "Twilight"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q205",
+      "category": "entertainment",
+      "difficulty": "easy",
+      "question": "Which animated movie features the character Elsa?",
+      "answers": {
+        "A": "Moana",
+        "B": "Frozen",
+        "C": "Encanto",
+        "D": "Tangled"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q206",
+      "category": "entertainment",
+      "difficulty": "normal",
+      "question": "Who directed the movie 'Inception'?",
+      "answers": {
+        "A": "Steven Spielberg",
+        "B": "Christopher Nolan",
+        "C": "James Cameron",
+        "D": "Ridley Scott"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q207",
+      "category": "entertainment",
+      "difficulty": "normal",
+      "question": "Which actor played Iron Man in the Marvel Cinematic Universe?",
+      "answers": {
+        "A": "Chris Evans",
+        "B": "Chris Hemsworth",
+        "C": "Robert Downey Jr.",
+        "D": "Mark Ruffalo"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q208",
+      "category": "entertainment",
+      "difficulty": "normal",
+      "question": "Which TV show is set in the fictional town of Hawkins?",
+      "answers": {
+        "A": "Stranger Things",
+        "B": "The X-Files",
+        "C": "Lost",
+        "D": "Dark"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q209",
+      "category": "entertainment",
+      "difficulty": "normal",
+      "question": "Which movie won the Academy Award for Best Picture in 1994?",
+      "answers": {
+        "A": "Forrest Gump",
+        "B": "Pulp Fiction",
+        "C": "The Shawshank Redemption",
+        "D": "Braveheart"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q210",
+      "category": "entertainment",
+      "difficulty": "normal",
+      "question": "Which character says, 'May the Force be with you'?",
+      "answers": {
+        "A": "Spock",
+        "B": "Neo",
+        "C": "Various characters in Star Wars",
+        "D": "Gandalf"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q211",
+      "category": "entertainment",
+      "difficulty": "normal",
+      "question": "Which streaming platform produced the series 'The Crown'?",
+      "answers": {
+        "A": "HBO",
+        "B": "Netflix",
+        "C": "Amazon Prime",
+        "D": "Disney+"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q212",
+      "category": "entertainment",
+      "difficulty": "normal",
+      "question": "Which actor played the Joker in 'The Dark Knight' (2008)?",
+      "answers": {
+        "A": "Joaquin Phoenix",
+        "B": "Heath Ledger",
+        "C": "Jared Leto",
+        "D": "Jack Nicholson"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q213",
+      "category": "entertainment",
+      "difficulty": "normal",
+      "question": "Which movie features a park filled with cloned dinosaurs?",
+      "answers": {
+        "A": "King Kong",
+        "B": "Jurassic Park",
+        "C": "Godzilla",
+        "D": "Avatar"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q214",
+      "category": "entertainment",
+      "difficulty": "normal",
+      "question": "Which TV series follows a high school chemistry teacher turned meth producer?",
+      "answers": {
+        "A": "Narcos",
+        "B": "Ozark",
+        "C": "Breaking Bad",
+        "D": "Better Call Saul"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q215",
+      "category": "entertainment",
+      "difficulty": "normal",
+      "question": "Which animated series features the character Homer Simpson?",
+      "answers": {
+        "A": "Family Guy",
+        "B": "The Simpsons",
+        "C": "South Park",
+        "D": "Futurama"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q216",
+      "category": "entertainment",
+      "difficulty": "hard",
+      "question": "Which director made the 1994 film 'Pulp Fiction'?",
+      "answers": {
+        "A": "Martin Scorsese",
+        "B": "Quentin Tarantino",
+        "C": "Francis Ford Coppola",
+        "D": "David Fincher"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q217",
+      "category": "entertainment",
+      "difficulty": "hard",
+      "question": "Which movie holds the record for the highest box office gross worldwide (unadjusted for inflation)?",
+      "answers": {
+        "A": "Titanic",
+        "B": "Avatar",
+        "C": "Avengers: Endgame",
+        "D": "Star Wars: The Force Awakens"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q218",
+      "category": "entertainment",
+      "difficulty": "hard",
+      "question": "Which series is based on books by George R.R. Martin?",
+      "answers": {
+        "A": "The Witcher",
+        "B": "Game of Thrones",
+        "C": "The Rings of Power",
+        "D": "Shadow and Bone"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q219",
+      "category": "entertainment",
+      "difficulty": "hard",
+      "question": "Who composed the original score for 'Star Wars'?",
+      "answers": {
+        "A": "Hans Zimmer",
+        "B": "John Williams",
+        "C": "Howard Shore",
+        "D": "James Horner"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q220",
+      "category": "entertainment",
+      "difficulty": "hard",
+      "question": "Which film won the first Academy Award for Best Picture in 1929?",
+      "answers": {
+        "A": "Metropolis",
+        "B": "Wings",
+        "C": "Citizen Kane",
+        "D": "Gone with the Wind"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q221",
+      "category": "music",
+      "difficulty": "easy",
+      "question": "Which instrument has black and white keys?",
+      "answers": { "A": "Violin", "B": "Piano", "C": "Flute", "D": "Drums" },
+      "correct": "B"
+    },
+    {
+      "id": "q222",
+      "category": "music",
+      "difficulty": "easy",
+      "question": "Which pop star is known as the 'Queen of Pop'?",
+      "answers": {
+        "A": "Madonna",
+        "B": "Adele",
+        "C": "Rihanna",
+        "D": "Beyoncé"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q223",
+      "category": "music",
+      "difficulty": "easy",
+      "question": "Which band sang 'Hey Jude'?",
+      "answers": {
+        "A": "The Rolling Stones",
+        "B": "The Beatles",
+        "C": "Queen",
+        "D": "ABBA"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q224",
+      "category": "music",
+      "difficulty": "easy",
+      "question": "How many strings does a standard guitar have?",
+      "answers": { "A": "4", "B": "5", "C": "6", "D": "7" },
+      "correct": "C"
+    },
+    {
+      "id": "q225",
+      "category": "music",
+      "difficulty": "easy",
+      "question": "Which singer released the album 'Thriller'?",
+      "answers": {
+        "A": "Prince",
+        "B": "Michael Jackson",
+        "C": "Elvis Presley",
+        "D": "Justin Timberlake"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q226",
+      "category": "music",
+      "difficulty": "normal",
+      "question": "Which composer wrote the symphony known as 'Ode to Joy'?",
+      "answers": {
+        "A": "Mozart",
+        "B": "Bach",
+        "C": "Beethoven",
+        "D": "Chopin"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q227",
+      "category": "music",
+      "difficulty": "normal",
+      "question": "Which band is Freddie Mercury most associated with?",
+      "answers": { "A": "The Who", "B": "Queen", "C": "Pink Floyd", "D": "U2" },
+      "correct": "B"
+    },
+    {
+      "id": "q228",
+      "category": "music",
+      "difficulty": "normal",
+      "question": "Which instrument is Yo-Yo Ma famous for playing?",
+      "answers": { "A": "Violin", "B": "Cello", "C": "Piano", "D": "Clarinet" },
+      "correct": "B"
+    },
+    {
+      "id": "q229",
+      "category": "music",
+      "difficulty": "normal",
+      "question": "Which genre originated in Jamaica and influenced reggae?",
+      "answers": { "A": "Ska", "B": "Blues", "C": "Country", "D": "Techno" },
+      "correct": "A"
+    },
+    {
+      "id": "q230",
+      "category": "music",
+      "difficulty": "normal",
+      "question": "Which artist is known for the song 'Rolling in the Deep'?",
+      "answers": {
+        "A": "Taylor Swift",
+        "B": "Adele",
+        "C": "Katy Perry",
+        "D": "Lady Gaga"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q231",
+      "category": "music",
+      "difficulty": "normal",
+      "question": "Which country won the Eurovision Song Contest 2023?",
+      "answers": {
+        "A": "Finland",
+        "B": "Sweden",
+        "C": "Italy",
+        "D": "Ukraine"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q232",
+      "category": "music",
+      "difficulty": "normal",
+      "question": "Which band released the album 'The Dark Side of the Moon'?",
+      "answers": {
+        "A": "Led Zeppelin",
+        "B": "Pink Floyd",
+        "C": "Metallica",
+        "D": "Nirvana"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q233",
+      "category": "music",
+      "difficulty": "normal",
+      "question": "Which singer is known as 'The King of Rock and Roll'?",
+      "answers": {
+        "A": "Chuck Berry",
+        "B": "Elvis Presley",
+        "C": "Johnny Cash",
+        "D": "Little Richard"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q234",
+      "category": "music",
+      "difficulty": "normal",
+      "question": "What does 'DJ' stand for?",
+      "answers": {
+        "A": "Digital Jockey",
+        "B": "Disc Jockey",
+        "C": "Dynamic Jammer",
+        "D": "Dual Jam"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q235",
+      "category": "music",
+      "difficulty": "normal",
+      "question": "Which instrument family does the trumpet belong to?",
+      "answers": {
+        "A": "String",
+        "B": "Woodwind",
+        "C": "Brass",
+        "D": "Percussion"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q236",
+      "category": "music",
+      "difficulty": "hard",
+      "question": "Which composer wrote 'The Four Seasons'?",
+      "answers": {
+        "A": "Vivaldi",
+        "B": "Handel",
+        "C": "Haydn",
+        "D": "Tchaikovsky"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q237",
+      "category": "music",
+      "difficulty": "hard",
+      "question": "Which band performed the song 'Bohemian Rhapsody'?",
+      "answers": {
+        "A": "The Beatles",
+        "B": "Queen",
+        "C": "Aerosmith",
+        "D": "The Doors"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q238",
+      "category": "music",
+      "difficulty": "hard",
+      "question": "Which artist has won the most Grammy Awards overall (as of recent records)?",
+      "answers": {
+        "A": "Beyoncé",
+        "B": "Michael Jackson",
+        "C": "Stevie Wonder",
+        "D": "Taylor Swift"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q239",
+      "category": "music",
+      "difficulty": "hard",
+      "question": "Which musical term indicates gradually getting louder?",
+      "answers": {
+        "A": "Allegro",
+        "B": "Crescendo",
+        "C": "Piano",
+        "D": "Adagio"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q240",
+      "category": "music",
+      "difficulty": "hard",
+      "question": "Which composer became deaf later in life yet continued to compose music?",
+      "answers": {
+        "A": "Mozart",
+        "B": "Beethoven",
+        "C": "Bach",
+        "D": "Schubert"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q241",
+      "category": "literature",
+      "difficulty": "easy",
+      "question": "Who wrote 'Romeo and Juliet'?",
+      "answers": {
+        "A": "Charles Dickens",
+        "B": "William Shakespeare",
+        "C": "Jane Austen",
+        "D": "Mark Twain"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q242",
+      "category": "literature",
+      "difficulty": "easy",
+      "question": "Who is the author of the 'Harry Potter' series?",
+      "answers": {
+        "A": "J.R.R. Tolkien",
+        "B": "J.K. Rowling",
+        "C": "Stephen King",
+        "D": "Suzanne Collins"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q243",
+      "category": "literature",
+      "difficulty": "easy",
+      "question": "Which novel features the character Atticus Finch?",
+      "answers": {
+        "A": "1984",
+        "B": "The Great Gatsby",
+        "C": "To Kill a Mockingbird",
+        "D": "Moby-Dick"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q244",
+      "category": "literature",
+      "difficulty": "easy",
+      "question": "Who wrote 'The Hobbit'?",
+      "answers": {
+        "A": "C.S. Lewis",
+        "B": "J.R.R. Tolkien",
+        "C": "George R.R. Martin",
+        "D": "J.K. Rowling"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q245",
+      "category": "literature",
+      "difficulty": "easy",
+      "question": "Which book begins with the line 'Call me Ishmael'?",
+      "answers": {
+        "A": "Dracula",
+        "B": "Moby-Dick",
+        "C": "Frankenstein",
+        "D": "The Odyssey"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q246",
+      "category": "literature",
+      "difficulty": "normal",
+      "question": "Who wrote the dystopian novel '1984'?",
+      "answers": {
+        "A": "George Orwell",
+        "B": "Aldous Huxley",
+        "C": "Ray Bradbury",
+        "D": "H.G. Wells"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q247",
+      "category": "literature",
+      "difficulty": "normal",
+      "question": "Which novel features the character Jay Gatsby?",
+      "answers": {
+        "A": "The Catcher in the Rye",
+        "B": "The Great Gatsby",
+        "C": "Of Mice and Men",
+        "D": "The Sun Also Rises"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q248",
+      "category": "literature",
+      "difficulty": "normal",
+      "question": "Who wrote 'Pride and Prejudice'?",
+      "answers": {
+        "A": "Emily Brontë",
+        "B": "Jane Austen",
+        "C": "Virginia Woolf",
+        "D": "Mary Shelley"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q249",
+      "category": "literature",
+      "difficulty": "normal",
+      "question": "Which epic poem is traditionally attributed to Homer?",
+      "answers": {
+        "A": "The Aeneid",
+        "B": "The Divine Comedy",
+        "C": "The Odyssey",
+        "D": "Paradise Lost"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q250",
+      "category": "literature",
+      "difficulty": "normal",
+      "question": "Who wrote 'The Catcher in the Rye'?",
+      "answers": {
+        "A": "J.D. Salinger",
+        "B": "Ernest Hemingway",
+        "C": "F. Scott Fitzgerald",
+        "D": "John Steinbeck"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q251",
+      "category": "literature",
+      "difficulty": "normal",
+      "question": "Which novel is set in the fictional land of Narnia?",
+      "answers": {
+        "A": "The Golden Compass",
+        "B": "The Chronicles of Narnia",
+        "C": "His Dark Materials",
+        "D": "The Neverending Story"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q252",
+      "category": "literature",
+      "difficulty": "normal",
+      "question": "Who wrote 'Frankenstein'?",
+      "answers": {
+        "A": "Mary Shelley",
+        "B": "Bram Stoker",
+        "C": "Edgar Allan Poe",
+        "D": "H.P. Lovecraft"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q253",
+      "category": "literature",
+      "difficulty": "normal",
+      "question": "Which Shakespeare play features the character Hamlet?",
+      "answers": {
+        "A": "Macbeth",
+        "B": "Othello",
+        "C": "Hamlet",
+        "D": "King Lear"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q254",
+      "category": "literature",
+      "difficulty": "normal",
+      "question": "Who wrote 'The Lord of the Rings'?",
+      "answers": {
+        "A": "C.S. Lewis",
+        "B": "J.R.R. Tolkien",
+        "C": "George R.R. Martin",
+        "D": "Terry Pratchett"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q255",
+      "category": "literature",
+      "difficulty": "normal",
+      "question": "Which novel features Big Brother as a character?",
+      "answers": {
+        "A": "Brave New World",
+        "B": "Fahrenheit 451",
+        "C": "1984",
+        "D": "The Handmaid’s Tale"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q256",
+      "category": "literature",
+      "difficulty": "hard",
+      "question": "Who wrote 'One Hundred Years of Solitude'?",
+      "answers": {
+        "A": "Pablo Neruda",
+        "B": "Gabriel García Márquez",
+        "C": "Jorge Luis Borges",
+        "D": "Mario Vargas Llosa"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q257",
+      "category": "literature",
+      "difficulty": "hard",
+      "question": "Which Russian author wrote 'Crime and Punishment'?",
+      "answers": {
+        "A": "Leo Tolstoy",
+        "B": "Anton Chekhov",
+        "C": "Fyodor Dostoevsky",
+        "D": "Ivan Turgenev"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q258",
+      "category": "literature",
+      "difficulty": "hard",
+      "question": "Who wrote the epic poem 'The Divine Comedy'?",
+      "answers": {
+        "A": "Virgil",
+        "B": "Dante Alighieri",
+        "C": "Geoffrey Chaucer",
+        "D": "John Milton"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q259",
+      "category": "literature",
+      "difficulty": "hard",
+      "question": "Which author created the detective Sherlock Holmes?",
+      "answers": {
+        "A": "Agatha Christie",
+        "B": "Arthur Conan Doyle",
+        "C": "Edgar Allan Poe",
+        "D": "Wilkie Collins"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q260",
+      "category": "literature",
+      "difficulty": "hard",
+      "question": "Which novel by George Orwell features talking farm animals?",
+      "answers": {
+        "A": "1984",
+        "B": "Animal Farm",
+        "C": "Brave New World",
+        "D": "Lord of the Flies"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q261",
+      "category": "logic_math",
+      "difficulty": "easy",
+      "question": "What is 15 + 27?",
+      "answers": { "A": "40", "B": "41", "C": "42", "D": "43" },
+      "correct": "C"
+    },
+    {
+      "id": "q262",
+      "category": "logic_math",
+      "difficulty": "easy",
+      "question": "What is 9 × 6?",
+      "answers": { "A": "54", "B": "56", "C": "48", "D": "60" },
+      "correct": "A"
+    },
+    {
+      "id": "q263",
+      "category": "logic_math",
+      "difficulty": "easy",
+      "question": "If you have 10 apples and give away 4, how many do you have left?",
+      "answers": { "A": "4", "B": "5", "C": "6", "D": "7" },
+      "correct": "C"
+    },
+    {
+      "id": "q264",
+      "category": "logic_math",
+      "difficulty": "easy",
+      "question": "What is 100 minus 45?",
+      "answers": { "A": "45", "B": "50", "C": "55", "D": "65" },
+      "correct": "C"
+    },
+    {
+      "id": "q265",
+      "category": "logic_math",
+      "difficulty": "easy",
+      "question": "How many sides does a square have?",
+      "answers": { "A": "3", "B": "4", "C": "5", "D": "6" },
+      "correct": "B"
+    },
+    {
+      "id": "q266",
+      "category": "logic_math",
+      "difficulty": "normal",
+      "question": "What is 20% of 150?",
+      "answers": { "A": "20", "B": "25", "C": "30", "D": "35" },
+      "correct": "C"
+    },
+    {
+      "id": "q267",
+      "category": "logic_math",
+      "difficulty": "normal",
+      "question": "What is the next number in the sequence: 3, 6, 12, 24, ?",
+      "answers": { "A": "36", "B": "42", "C": "48", "D": "50" },
+      "correct": "C"
+    },
+    {
+      "id": "q268",
+      "category": "logic_math",
+      "difficulty": "normal",
+      "question": "If a train travels 60 km in 1 hour, how far will it travel in 3 hours at the same speed?",
+      "answers": { "A": "120 km", "B": "150 km", "C": "160 km", "D": "180 km" },
+      "correct": "D"
+    },
+    {
+      "id": "q269",
+      "category": "logic_math",
+      "difficulty": "normal",
+      "question": "What is the square of 12?",
+      "answers": { "A": "124", "B": "132", "C": "144", "D": "156" },
+      "correct": "C"
+    },
+    {
+      "id": "q270",
+      "category": "logic_math",
+      "difficulty": "normal",
+      "question": "If a shirt costs 50 and is discounted by 10%, what is the new price?",
+      "answers": { "A": "40", "B": "45", "C": "48", "D": "49" },
+      "correct": "B"
+    },
+    {
+      "id": "q271",
+      "category": "logic_math",
+      "difficulty": "normal",
+      "question": "How many degrees are in a right angle?",
+      "answers": { "A": "45", "B": "60", "C": "90", "D": "120" },
+      "correct": "C"
+    },
+    {
+      "id": "q272",
+      "category": "logic_math",
+      "difficulty": "normal",
+      "question": "If 5 workers build 5 walls in 5 days, how many days would it take 5 workers to build 5 walls?",
+      "answers": { "A": "1", "B": "3", "C": "5", "D": "10" },
+      "correct": "C"
+    },
+    {
+      "id": "q273",
+      "category": "logic_math",
+      "difficulty": "normal",
+      "question": "What is the next prime number after 7?",
+      "answers": { "A": "9", "B": "10", "C": "11", "D": "13" },
+      "correct": "C"
+    },
+    {
+      "id": "q274",
+      "category": "logic_math",
+      "difficulty": "normal",
+      "question": "If you flip a fair coin once, what is the probability of heads?",
+      "answers": { "A": "1/4", "B": "1/3", "C": "1/2", "D": "2/3" },
+      "correct": "C"
+    },
+    {
+      "id": "q275",
+      "category": "logic_math",
+      "difficulty": "normal",
+      "question": "What is 7² (7 squared)?",
+      "answers": { "A": "42", "B": "49", "C": "56", "D": "64" },
+      "correct": "B"
+    },
+    {
+      "id": "q276",
+      "category": "logic_math",
+      "difficulty": "hard",
+      "question": "If a rectangle has a length of 8 and width of 5, what is its area?",
+      "answers": { "A": "26", "B": "30", "C": "40", "D": "45" },
+      "correct": "C"
+    },
+    {
+      "id": "q277",
+      "category": "logic_math",
+      "difficulty": "hard",
+      "question": "What is the value of π (pi) approximately to two decimal places?",
+      "answers": { "A": "3.12", "B": "3.14", "C": "3.16", "D": "3.18" },
+      "correct": "B"
+    },
+    {
+      "id": "q278",
+      "category": "logic_math",
+      "difficulty": "hard",
+      "question": "If 2x = 10, what is the value of x?",
+      "answers": { "A": "2", "B": "3", "C": "4", "D": "5" },
+      "correct": "D"
+    },
+    {
+      "id": "q279",
+      "category": "logic_math",
+      "difficulty": "hard",
+      "question": "What is the cube of 3?",
+      "answers": { "A": "9", "B": "18", "C": "27", "D": "36" },
+      "correct": "C"
+    },
+    {
+      "id": "q280",
+      "category": "logic_math",
+      "difficulty": "hard",
+      "question": "If the angles of a triangle sum to 180°, and two angles are 50° and 60°, what is the third angle?",
+      "answers": { "A": "60°", "B": "65°", "C": "70°", "D": "75°" },
+      "correct": "C"
+    },
+    {
+      "id": "q281",
+      "category": "general_knowledge",
+      "difficulty": "easy",
+      "question": "How many days are in a week?",
+      "answers": { "A": "5", "B": "6", "C": "7", "D": "8" },
+      "correct": "C"
+    },
+    {
+      "id": "q282",
+      "category": "general_knowledge",
+      "difficulty": "easy",
+      "question": "Which planet do humans live on?",
+      "answers": { "A": "Mars", "B": "Earth", "C": "Venus", "D": "Jupiter" },
+      "correct": "B"
+    },
+    {
+      "id": "q283",
+      "category": "general_knowledge",
+      "difficulty": "easy",
+      "question": "How many hours are in one day?",
+      "answers": { "A": "12", "B": "18", "C": "24", "D": "36" },
+      "correct": "C"
+    },
+    {
+      "id": "q284",
+      "category": "general_knowledge",
+      "difficulty": "easy",
+      "question": "What color do you get when you mix red and white?",
+      "answers": { "A": "Purple", "B": "Pink", "C": "Orange", "D": "Brown" },
+      "correct": "B"
+    },
+    {
+      "id": "q285",
+      "category": "general_knowledge",
+      "difficulty": "easy",
+      "question": "Which metal is attracted to magnets?",
+      "answers": { "A": "Plastic", "B": "Iron", "C": "Wood", "D": "Glass" },
+      "correct": "B"
+    },
+    {
+      "id": "q286",
+      "category": "general_knowledge",
+      "difficulty": "normal",
+      "question": "Which country has the largest population in the world?",
+      "answers": {
+        "A": "India",
+        "B": "China",
+        "C": "United States",
+        "D": "Indonesia"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q287",
+      "category": "general_knowledge",
+      "difficulty": "normal",
+      "question": "Which year did World War II end?",
+      "answers": { "A": "1944", "B": "1945", "C": "1946", "D": "1950" },
+      "correct": "B"
+    },
+    {
+      "id": "q288",
+      "category": "general_knowledge",
+      "difficulty": "normal",
+      "question": "What is the largest desert in the world?",
+      "answers": {
+        "A": "Sahara",
+        "B": "Arabian",
+        "C": "Gobi",
+        "D": "Antarctic Desert"
+      },
+      "correct": "D"
+    },
+    {
+      "id": "q289",
+      "category": "general_knowledge",
+      "difficulty": "normal",
+      "question": "Which country is home to the Amazon rainforest?",
+      "answers": {
+        "A": "Peru",
+        "B": "Colombia",
+        "C": "Brazil",
+        "D": "Ecuador"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q290",
+      "category": "general_knowledge",
+      "difficulty": "normal",
+      "question": "How many bones are in the adult human body?",
+      "answers": { "A": "196", "B": "206", "C": "216", "D": "226" },
+      "correct": "B"
+    },
+    {
+      "id": "q291",
+      "category": "general_knowledge",
+      "difficulty": "normal",
+      "question": "Which country hosted the 2022 FIFA World Cup?",
+      "answers": { "A": "Russia", "B": "Brazil", "C": "Qatar", "D": "Germany" },
+      "correct": "C"
+    },
+    {
+      "id": "q292",
+      "category": "general_knowledge",
+      "difficulty": "normal",
+      "question": "Which is the smallest prime number?",
+      "answers": { "A": "0", "B": "1", "C": "2", "D": "3" },
+      "correct": "C"
+    },
+    {
+      "id": "q293",
+      "category": "general_knowledge",
+      "difficulty": "normal",
+      "question": "Which ocean is the deepest in the world?",
+      "answers": {
+        "A": "Atlantic",
+        "B": "Indian",
+        "C": "Arctic",
+        "D": "Pacific"
+      },
+      "correct": "D"
+    },
+    {
+      "id": "q294",
+      "category": "general_knowledge",
+      "difficulty": "normal",
+      "question": "What is the chemical symbol for gold?",
+      "answers": { "A": "Go", "B": "Au", "C": "Ag", "D": "Gd" },
+      "correct": "B"
+    },
+    {
+      "id": "q295",
+      "category": "general_knowledge",
+      "difficulty": "normal",
+      "question": "Which continent is the largest by area?",
+      "answers": {
+        "A": "Africa",
+        "B": "Europe",
+        "C": "Asia",
+        "D": "North America"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q296",
+      "category": "general_knowledge",
+      "difficulty": "hard",
+      "question": "Which scientist developed the theory of general relativity?",
+      "answers": {
+        "A": "Isaac Newton",
+        "B": "Albert Einstein",
+        "C": "Niels Bohr",
+        "D": "Galileo Galilei"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q297",
+      "category": "general_knowledge",
+      "difficulty": "hard",
+      "question": "Which country has the longest border with the United States",
+      "answers": {
+        "A": "Peru",
+        "B": "Russia",
+        "C": "Mexico",
+        "D": "Canada"
+      },
+      "correct": "D"
+    },
+    {
+      "id": "q298",
+      "category": "general_knowledge",
+      "difficulty": "hard",
+      "question": "What is the capital city of South Korea?",
+      "answers": { "A": "Busan", "B": "Seoul", "C": "Incheon", "D": "Daegu" },
+      "correct": "B"
+    },
+    {
+      "id": "q299",
+      "category": "general_knowledge",
+      "difficulty": "hard",
+      "question": "Which element has the atomic number 1?",
+      "answers": {
+        "A": "Helium",
+        "B": "Hydrogen",
+        "C": "Oxygen",
+        "D": "Carbon"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q300",
+      "category": "general_knowledge",
+      "difficulty": "hard",
+      "question": "Which empire was ruled by Genghis Khan?",
+      "answers": {
+        "A": "Roman Empire",
+        "B": "Ottoman Empire",
+        "C": "Mongol Empire",
+        "D": "Persian Empire"
+      },
+      "correct": "C"
+    }
+  ]
+}
