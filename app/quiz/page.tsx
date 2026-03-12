@@ -236,11 +236,10 @@ export default function QuizPage() {
       }}
     >
       <div style={{ maxWidth: 860, margin: "0 auto" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <a href="/" style={{ color: "#fff", textDecoration: "none", opacity: 0.85 }}>
-            ← Home
-            </Link>
-          </a>
+  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+    <Link href="/" style={{ color: "#fff", textDecoration: "none", opacity: 0.85 }}>
+      ← Home
+    </Link>
 
           {status === "playing" && (
             <div style={{ opacity: 0.75, fontWeight: 800 }}>
