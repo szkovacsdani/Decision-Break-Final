@@ -6450,14 +6450,14 @@
       "id": "q541",
       "category": "art_architecture",
       "difficulty": "normal",
-      "question": "Which architectural style is characterized by pointed arches and flying buttresses?",
+      "question": "Which medieval architectural style is famous for tall cathedrals, stained glass windows, and flying buttresses?",
       "answers": {
         "A": "Romanesque",
         "B": "Baroque",
         "C": "Gothic",
         "D": "Neoclassical"
       },
-      "correct": "C"
+      "correct": "B"
     },
     {
       "id": "q542",
@@ -7539,7 +7539,7 @@
       "correct": "B"
     },
     {
-      "id": "q624",
+      "id": "q1001",
       "category": "psychology",
       "difficulty": "hard",
       "question": "In emergency situations, why does increasing group size often decrease individual accountability?",
@@ -7983,15 +7983,15 @@
     {
       "id": "q658",
       "category": "environment",
-      "difficulty": "easy",
-      "question": "Which renewable energy source uses sunlight to generate electricity?",
+      "difficulty": "normal",
+      "question": "What is the term for electricity generated directly from sunlight using photovoltaic cells?",
       "answers": {
-        "A": "Wind",
-        "B": "Hydro",
-        "C": "Solar",
-        "D": "Geothermal"
+        "A": "Hydropower",
+        "B": "Solar power",
+        "C": "Wind power",
+        "D": "Geothermal energy"
       },
-      "correct": "C"
+      "correct": "B"
     },
     {
       "id": "q659",
@@ -8504,14 +8504,14 @@
       "id": "q698",
       "category": "science",
       "difficulty": "normal",
-      "question": "Which gas is most abundant in Earth's atmosphere?",
+      "question": "Approximately what percentage of Earth's atmosphere is composed of nitrogen?",
       "answers": {
-        "A": "Oxygen",
-        "B": "Nitrogen",
-        "C": "Carbon dioxide",
-        "D": "Argon"
+        "A": "21%",
+        "B": "50%",
+        "C": "78%",
+        "D": "90%"
       },
-      "correct": "B"
+      "correct": "C"
     },
     {
       "id": "q699",
@@ -8536,6 +8536,19 @@
         "B": "Personal computer",
         "C": "Fax machine",
         "D": "Pager"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q701",
+      "category": "global_systems",
+      "difficulty": "hard",
+      "question": "Which international agreement established the modern framework for global climate action in 2015?",
+      "answers": {
+        "A": "Kyoto Protocol",
+        "B": "Paris Agreement",
+        "C": "Montreal Protocol",
+        "D": "Doha Amendment"
       },
       "correct": "B"
     },
@@ -9056,6 +9069,3373 @@
         "B": "Referendum",
         "C": "Mandate",
         "D": "Legislation"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q742",
+      "category": "mythology",
+      "difficulty": "easy",
+      "question": "In Roman mythology, what is the name of the god equivalent to the Greek Zeus?",
+      "answers": {
+        "A": "Mars",
+        "B": "Jupiter",
+        "C": "Neptune",
+        "D": "Mercury"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q743",
+      "category": "environment",
+      "difficulty": "normal",
+      "question": "What term describes the gradual increase in Earth's average surface temperature?",
+      "answers": {
+        "A": "Climate drift",
+        "B": "Global warming",
+        "C": "Thermal inversion",
+        "D": "Solar expansion"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q744",
+      "category": "politics",
+      "difficulty": "normal",
+      "question": "What is the term for the division of government into separate branches?",
+      "answers": {
+        "A": "Federalism",
+        "B": "Separation of powers",
+        "C": "Centralization",
+        "D": "Legislation"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q745",
+      "category": "innovation",
+      "difficulty": "normal",
+      "question": "Which technology is used to create immersive simulated environments?",
+      "answers": {
+        "A": "Artificial intelligence",
+        "B": "Virtual reality",
+        "C": "Blockchain",
+        "D": "Cloud computing"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q746",
+      "category": "art_architecture",
+      "difficulty": "normal",
+      "question": "Which architectural style is characterized by pointed arches and flying buttresses?",
+      "answers": {
+        "A": "Baroque",
+        "B": "Gothic",
+        "C": "Renaissance",
+        "D": "Modernist"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q747",
+      "category": "world_culture",
+      "difficulty": "easy",
+      "question": "Which country is known for the traditional dish paella?",
+      "answers": {
+        "A": "Spain",
+        "B": "Portugal",
+        "C": "Italy",
+        "D": "France"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q748",
+      "category": "economics",
+      "difficulty": "normal",
+      "question": "What term describes the total value of goods and services produced by a country in one year?",
+      "answers": {
+        "A": "GDP",
+        "B": "CPI",
+        "C": "PPP",
+        "D": "FDI"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q749",
+      "category": "psychology",
+      "difficulty": "normal",
+      "question": "Which term refers to a mental shortcut that helps people make decisions quickly?",
+      "answers": {
+        "A": "Heuristic",
+        "B": "Reflex",
+        "C": "Impulse",
+        "D": "Instinct"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q750",
+      "category": "global_systems",
+      "difficulty": "normal",
+      "question": "Which organization regulates international civil aviation standards?",
+      "answers": {
+        "A": "ICAO",
+        "B": "WTO",
+        "C": "NATO",
+        "D": "OECD"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q751",
+      "category": "mythology",
+      "difficulty": "normal",
+      "question": "In Greek mythology, what monster had many heads that grew back when cut off?",
+      "answers": {
+        "A": "Cerberus",
+        "B": "Hydra",
+        "C": "Chimera",
+        "D": "Cyclops"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q752",
+      "category": "environment",
+      "difficulty": "easy",
+      "question": "Which renewable energy source uses sunlight to generate electricity?",
+      "answers": {
+        "A": "Wind",
+        "B": "Solar",
+        "C": "Hydro",
+        "D": "Geothermal"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q753",
+      "category": "politics",
+      "difficulty": "easy",
+      "question": "What is the name of the elected leader of a republic called?",
+      "answers": {
+        "A": "Prime Minister",
+        "B": "President",
+        "C": "Chancellor",
+        "D": "Governor"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q754",
+      "category": "innovation",
+      "difficulty": "normal",
+      "question": "Which term describes computers performing tasks that typically require human intelligence?",
+      "answers": {
+        "A": "Automation",
+        "B": "Artificial intelligence",
+        "C": "Digitization",
+        "D": "Virtualization"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q755",
+      "category": "art_architecture",
+      "difficulty": "easy",
+      "question": "Which famous Italian artist sculpted the statue of David?",
+      "answers": {
+        "A": "Leonardo da Vinci",
+        "B": "Michelangelo",
+        "C": "Donatello",
+        "D": "Caravaggio"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q756",
+      "category": "world_culture",
+      "difficulty": "normal",
+      "question": "Which country is home to the traditional martial art called taekwondo?",
+      "answers": {
+        "A": "Japan",
+        "B": "China",
+        "C": "South Korea",
+        "D": "Thailand"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q757",
+      "category": "economics",
+      "difficulty": "normal",
+      "question": "What term describes a situation where demand exceeds supply?",
+      "answers": {
+        "A": "Surplus",
+        "B": "Shortage",
+        "C": "Equilibrium",
+        "D": "Inflation"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q758",
+      "category": "psychology",
+      "difficulty": "easy",
+      "question": "Which term describes the ability of the brain to reorganize itself by forming new neural connections?",
+      "answers": {
+        "A": "Plasticity",
+        "B": "Reflexivity",
+        "C": "Adaptation",
+        "D": "Cognition"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q759",
+      "category": "environment",
+      "difficulty": "hard",
+      "question": "Which international treaty focuses on protecting the ozone layer?",
+      "answers": {
+        "A": "Kyoto Protocol",
+        "B": "Montreal Protocol",
+        "C": "Paris Agreement",
+        "D": "Rio Convention"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q760",
+      "category": "global_systems",
+      "difficulty": "normal",
+      "question": "Which international body settles disputes between countries over maritime boundaries?",
+      "answers": {
+        "A": "International Court of Justice",
+        "B": "European Court of Human Rights",
+        "C": "World Trade Organization",
+        "D": "Interpol"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q761",
+      "category": "mythology",
+      "difficulty": "normal",
+      "question": "In Norse mythology, what is the name of the world tree connecting the nine realms?",
+      "answers": {
+        "A": "Yggdrasil",
+        "B": "Valhalla",
+        "C": "Midgard",
+        "D": "Bifrost"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q762",
+      "category": "environment",
+      "difficulty": "easy",
+      "question": "Which gas do plants absorb from the atmosphere during photosynthesis?",
+      "answers": {
+        "A": "Oxygen",
+        "B": "Carbon dioxide",
+        "C": "Nitrogen",
+        "D": "Hydrogen"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q763",
+      "category": "politics",
+      "difficulty": "normal",
+      "question": "What is the term for a political system where power is shared between national and regional governments?",
+      "answers": {
+        "A": "Federalism",
+        "B": "Autocracy",
+        "C": "Socialism",
+        "D": "Anarchy"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q764",
+      "category": "innovation",
+      "difficulty": "easy",
+      "question": "Which company created the electric car brand Tesla?",
+      "answers": {
+        "A": "General Motors",
+        "B": "Ford",
+        "C": "Tesla Inc.",
+        "D": "Toyota"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q765",
+      "category": "art_architecture",
+      "difficulty": "normal",
+      "question": "Which Italian city is famous for the Leaning Tower?",
+      "answers": {
+        "A": "Rome",
+        "B": "Pisa",
+        "C": "Florence",
+        "D": "Venice"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q766",
+      "category": "world_culture",
+      "difficulty": "normal",
+      "question": "Which country is known for the traditional clothing called a kimono?",
+      "answers": {
+        "A": "China",
+        "B": "Japan",
+        "C": "Vietnam",
+        "D": "Thailand"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q767",
+      "category": "economics",
+      "difficulty": "normal",
+      "question": "What does CPI measure in economics?",
+      "answers": {
+        "A": "Corporate profit index",
+        "B": "Consumer price index",
+        "C": "Capital production indicator",
+        "D": "Currency parity index"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q768",
+      "category": "psychology",
+      "difficulty": "normal",
+      "question": "Which psychologist is known for founding psychoanalysis?",
+      "answers": {
+        "A": "Sigmund Freud",
+        "B": "B.F. Skinner",
+        "C": "Jean Piaget",
+        "D": "Ivan Pavlov"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q769",
+      "category": "global_systems",
+      "difficulty": "normal",
+      "question": "Which organization manages global postal services cooperation?",
+      "answers": {
+        "A": "UPU",
+        "B": "UNESCO",
+        "C": "WTO",
+        "D": "WHO"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q770",
+      "category": "mythology",
+      "difficulty": "easy",
+      "question": "In Greek mythology, who is the goddess of wisdom?",
+      "answers": {
+        "A": "Hera",
+        "B": "Athena",
+        "C": "Artemis",
+        "D": "Aphrodite"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q771",
+      "category": "environment",
+      "difficulty": "normal",
+      "question": "Which ecosystem is characterized by frozen ground known as permafrost?",
+      "answers": {
+        "A": "Tundra",
+        "B": "Savanna",
+        "C": "Rainforest",
+        "D": "Grassland"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q772",
+      "category": "politics",
+      "difficulty": "normal",
+      "question": "How many years does a single term of a U.S. president last?",
+      "answers": {
+        "A": "2 years",
+        "B": "4 years",
+        "C": "6 years",
+        "D": "8 years"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q773",
+      "category": "innovation",
+      "difficulty": "normal",
+      "question": "Which technology enables decentralized digital currencies like Bitcoin?",
+      "answers": {
+        "A": "Blockchain",
+        "B": "Cloud computing",
+        "C": "5G networks",
+        "D": "Satellite communication"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q774",
+      "category": "art_architecture",
+      "difficulty": "easy",
+      "question": "Which country is home to the Taj Mahal?",
+      "answers": {
+        "A": "India",
+        "B": "Iran",
+        "C": "Turkey",
+        "D": "Pakistan"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q775",
+      "category": "world_culture",
+      "difficulty": "easy",
+      "question": "Which holiday celebrates Irish culture with parades and green clothing?",
+      "answers": {
+        "A": "Oktoberfest",
+        "B": "St. Patrick's Day",
+        "C": "Carnival",
+        "D": "Thanksgiving"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q776",
+      "category": "economics",
+      "difficulty": "normal",
+      "question": "What is the term for the total supply of money in an economy?",
+      "answers": {
+        "A": "Money supply",
+        "B": "Fiscal balance",
+        "C": "Market capital",
+        "D": "Trade reserve"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q777",
+      "category": "psychology",
+      "difficulty": "normal",
+      "question": "Which developmental psychologist proposed stages of cognitive development in children?",
+      "answers": {
+        "A": "Jean Piaget",
+        "B": "Carl Jung",
+        "C": "Erik Erikson",
+        "D": "Albert Bandura"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q778",
+      "category": "global_systems",
+      "difficulty": "normal",
+      "question": "Which global organization focuses on education, science, and culture?",
+      "answers": {
+        "A": "UNESCO",
+        "B": "IMF",
+        "C": "WTO",
+        "D": "Interpol"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q779",
+      "category": "mythology",
+      "difficulty": "normal",
+      "question": "In Greek mythology, who completed twelve famous labors?",
+      "answers": {
+        "A": "Achilles",
+        "B": "Heracles",
+        "C": "Odysseus",
+        "D": "Perseus"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q780",
+      "category": "environment",
+      "difficulty": "hard",
+      "question": "Which term describes species that are at risk of extinction in the near future?",
+      "answers": {
+        "A": "Invasive species",
+        "B": "Endangered species",
+        "C": "Native species",
+        "D": "Dominant species"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q781",
+      "category": "politics",
+      "difficulty": "normal",
+      "question": "What is the term for a formal agreement between two or more countries?",
+      "answers": {
+        "A": "Treaty",
+        "B": "Coalition",
+        "C": "Mandate",
+        "D": "Protocol"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q782",
+      "category": "environment",
+      "difficulty": "normal",
+      "question": "Which process converts atmospheric nitrogen into forms usable by plants?",
+      "answers": {
+        "A": "Photosynthesis",
+        "B": "Nitrogen fixation",
+        "C": "Respiration",
+        "D": "Transpiration"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q783",
+      "category": "politics",
+      "difficulty": "normal",
+      "question": "What term describes the process of removing a public official from office before their term ends?",
+      "answers": {
+        "A": "Impeachment",
+        "B": "Ratification",
+        "C": "Amendment",
+        "D": "Mandate"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q784",
+      "category": "innovation",
+      "difficulty": "normal",
+      "question": "Which technology allows secure communication over the internet through encrypted connections, often shown as 'HTTPS'?",
+      "answers": {
+        "A": "SSL/TLS",
+        "B": "FTP",
+        "C": "SMTP",
+        "D": "NFC"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q785",
+      "category": "art_architecture",
+      "difficulty": "normal",
+      "question": "Which artist is associated with the painting style known as Cubism along with Pablo Picasso?",
+      "answers": {
+        "A": "Henri Matisse",
+        "B": "Georges Braque",
+        "C": "Claude Monet",
+        "D": "Salvador Dalí"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q786",
+      "category": "world_culture",
+      "difficulty": "normal",
+      "question": "Which country celebrates the festival of Songkran as its traditional New Year?",
+      "answers": {
+        "A": "Thailand",
+        "B": "Indonesia",
+        "C": "Philippines",
+        "D": "Malaysia"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q787",
+      "category": "economics",
+      "difficulty": "hard",
+      "question": "What economic concept describes the additional benefit gained from consuming one more unit of a good?",
+      "answers": {
+        "A": "Marginal utility",
+        "B": "Opportunity cost",
+        "C": "Comparative advantage",
+        "D": "Elastic demand"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q788",
+      "category": "psychology",
+      "difficulty": "normal",
+      "question": "Which psychological concept refers to the tendency to favor information that confirms one's existing beliefs?",
+      "answers": {
+        "A": "Cognitive dissonance",
+        "B": "Confirmation bias",
+        "C": "Selective perception",
+        "D": "Availability heuristic"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q789",
+      "category": "global_systems",
+      "difficulty": "normal",
+      "question": "Which international organization coordinates global telecommunications standards?",
+      "answers": {
+        "A": "ITU",
+        "B": "WIPO",
+        "C": "OECD",
+        "D": "UNHCR"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q790",
+      "category": "mythology",
+      "difficulty": "normal",
+      "question": "In Greek mythology, which hero slew the Minotaur in the Labyrinth of Crete?",
+      "answers": {
+        "A": "Theseus",
+        "B": "Perseus",
+        "C": "Jason",
+        "D": "Achilles"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q791",
+      "category": "environment",
+      "difficulty": "easy",
+      "question": "Which natural resource is primarily used to produce paper?",
+      "answers": {
+        "A": "Sand",
+        "B": "Wood",
+        "C": "Coal",
+        "D": "Iron"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q792",
+      "category": "politics",
+      "difficulty": "normal",
+      "question": "What is the term for a vote by citizens to decide on a specific law or policy?",
+      "answers": {
+        "A": "Referendum",
+        "B": "Election",
+        "C": "Mandate",
+        "D": "Coalition"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q793",
+      "category": "innovation",
+      "difficulty": "easy",
+      "question": "Which device is commonly used to measure heart rate and steps in modern fitness tracking?",
+      "answers": {
+        "A": "Smartwatch",
+        "B": "Pager",
+        "C": "Calculator",
+        "D": "Router"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q794",
+      "category": "art_architecture",
+      "difficulty": "easy",
+      "question": "Which city is famous for the ancient amphitheater known as the Colosseum?",
+      "answers": {
+        "A": "Athens",
+        "B": "Rome",
+        "C": "Istanbul",
+        "D": "Alexandria"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q795",
+      "category": "world_culture",
+      "difficulty": "normal",
+      "question": "Which South American country is the origin of the tango dance?",
+      "answers": {
+        "A": "Brazil",
+        "B": "Argentina",
+        "C": "Chile",
+        "D": "Peru"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q796",
+      "category": "economics",
+      "difficulty": "normal",
+      "question": "What term describes the loss of purchasing power of money over time due to rising prices?",
+      "answers": {
+        "A": "Inflation",
+        "B": "Deflation",
+        "C": "Depreciation",
+        "D": "Subsidy"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q797",
+      "category": "psychology",
+      "difficulty": "normal",
+      "question": "Which psychologist introduced the concept of the collective unconscious?",
+      "answers": {
+        "A": "Carl Jung",
+        "B": "Sigmund Freud",
+        "C": "B.F. Skinner",
+        "D": "Ivan Pavlov"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q798",
+      "category": "global_systems",
+      "difficulty": "normal",
+      "question": "Which organization oversees international monetary cooperation and financial stability?",
+      "answers": {
+        "A": "IMF",
+        "B": "UNESCO",
+        "C": "NATO",
+        "D": "Interpol"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q799",
+      "category": "mythology",
+      "difficulty": "easy",
+      "question": "In Greek mythology, who is the god of the sea?",
+      "answers": {
+        "A": "Zeus",
+        "B": "Poseidon",
+        "C": "Apollo",
+        "D": "Hades"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q800",
+      "category": "environment",
+      "difficulty": "normal",
+      "question": "What term describes the cutting down of forests on a large scale?",
+      "answers": {
+        "A": "Urbanization",
+        "B": "Deforestation",
+        "C": "Erosion",
+        "D": "Industrialization"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q801",
+      "category": "innovation",
+      "difficulty": "normal",
+      "question": "Which concept describes connecting everyday objects to the internet so they can send and receive data?",
+      "answers": {
+        "A": "Internet of Things",
+        "B": "Edge computing",
+        "C": "Data mining",
+        "D": "Quantum networking"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q802",
+      "category": "psychology",
+      "difficulty": "normal",
+      "question": "What term describes the tendency for people to rely heavily on the first piece of information they receive?",
+      "answers": {
+        "A": "Anchoring bias",
+        "B": "Confirmation bias",
+        "C": "Recency effect",
+        "D": "Projection bias"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q803",
+      "category": "economics",
+      "difficulty": "normal",
+      "question": "Which economic system is characterized by private ownership of most resources and free markets?",
+      "answers": {
+        "A": "Capitalism",
+        "B": "Communism",
+        "C": "Feudalism",
+        "D": "Mercantilism"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q804",
+      "category": "innovation",
+      "difficulty": "normal",
+      "question": "Which technology is most associated with solving extremely complex calculations using quantum bits?",
+      "answers": {
+        "A": "Artificial intelligence",
+        "B": "Quantum computing",
+        "C": "Edge computing",
+        "D": "Cloud storage"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q805",
+      "category": "environment",
+      "difficulty": "normal",
+      "question": "Which natural phenomenon is measured using the Richter scale?",
+      "answers": {
+        "A": "Hurricanes",
+        "B": "Earthquakes",
+        "C": "Volcano eruptions",
+        "D": "Tornadoes"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q806",
+      "category": "politics",
+      "difficulty": "normal",
+      "question": "What is the term for a temporary alliance between political parties to form a government?",
+      "answers": {
+        "A": "Federation",
+        "B": "Coalition",
+        "C": "Mandate",
+        "D": "Union"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q807",
+      "category": "mythology",
+      "difficulty": "normal",
+      "question": "In Greek mythology, who is the god of the underworld?",
+      "answers": {
+        "A": "Ares",
+        "B": "Hades",
+        "C": "Hermes",
+        "D": "Dionysus"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q808",
+      "category": "world_culture",
+      "difficulty": "easy",
+      "question": "Which country is famous for the traditional dish sushi?",
+      "answers": {
+        "A": "China",
+        "B": "Japan",
+        "C": "South Korea",
+        "D": "Thailand"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q809",
+      "category": "art_architecture",
+      "difficulty": "normal",
+      "question": "Which architectural style dominated European cathedrals during the Middle Ages with pointed arches and stained glass?",
+      "answers": {
+        "A": "Baroque",
+        "B": "Romanesque",
+        "C": "Gothic",
+        "D": "Neoclassical"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q810",
+      "category": "global_systems",
+      "difficulty": "normal",
+      "question": "Which international organization coordinates global responses to health crises such as pandemics?",
+      "answers": {
+        "A": "WHO",
+        "B": "WTO",
+        "C": "OECD",
+        "D": "Interpol"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q811",
+      "category": "environment",
+      "difficulty": "normal",
+      "question": "Which term describes the natural habitat where an organism lives?",
+      "answers": {
+        "A": "Biome",
+        "B": "Niche",
+        "C": "Ecosystem",
+        "D": "Habitat"
+      },
+      "correct": "D"
+    },
+    {
+      "id": "q812",
+      "category": "psychology",
+      "difficulty": "normal",
+      "question": "Which theory suggests that people are motivated by a hierarchy of needs from basic survival to self-fulfillment?",
+      "answers": {
+        "A": "Freud's structural theory",
+        "B": "Maslow's hierarchy of needs",
+        "C": "Piaget's stages",
+        "D": "Behaviorism"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q813",
+      "category": "economics",
+      "difficulty": "normal",
+      "question": "What is the term for a situation where prices fall due to reduced demand or excess supply?",
+      "answers": {
+        "A": "Inflation",
+        "B": "Deflation",
+        "C": "Recession",
+        "D": "Expansion"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q814",
+      "category": "innovation",
+      "difficulty": "normal",
+      "question": "Which technology enables secure, decentralized record-keeping used in cryptocurrencies?",
+      "answers": {
+        "A": "Cloud computing",
+        "B": "Blockchain",
+        "C": "Edge networks",
+        "D": "5G infrastructure"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q815",
+      "category": "politics",
+      "difficulty": "normal",
+      "question": "What term describes the right of a country to govern itself without external interference?",
+      "answers": {
+        "A": "Diplomacy",
+        "B": "Sovereignty",
+        "C": "Federalism",
+        "D": "Mandate"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q816",
+      "category": "mythology",
+      "difficulty": "easy",
+      "question": "Which Norse god is associated with wisdom and sacrifice, and lost one eye?",
+      "answers": {
+        "A": "Thor",
+        "B": "Loki",
+        "C": "Odin",
+        "D": "Balder"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q817",
+      "category": "world_culture",
+      "difficulty": "normal",
+      "question": "Which traditional Japanese theater form uses elaborate masks and slow stylized movements?",
+      "answers": {
+        "A": "Kabuki",
+        "B": "Noh",
+        "C": "Bunraku",
+        "D": "Kyogen"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q818",
+      "category": "art_architecture",
+      "difficulty": "easy",
+      "question": "Which famous sculpture depicts a thinker sitting with his chin on his hand?",
+      "answers": {
+        "A": "David",
+        "B": "The Thinker",
+        "C": "Venus de Milo",
+        "D": "Winged Victory"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q819",
+      "category": "global_systems",
+      "difficulty": "normal",
+      "question": "Which international court settles disputes between states under the United Nations system?",
+      "answers": {
+        "A": "International Criminal Court",
+        "B": "International Court of Justice",
+        "C": "European Court of Justice",
+        "D": "Permanent Court of Arbitration"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q820",
+      "category": "environment",
+      "difficulty": "hard",
+      "question": "Which environmental concept describes the maximum population size that an ecosystem can sustain indefinitely?",
+      "answers": {
+        "A": "Ecological footprint",
+        "B": "Carrying capacity",
+        "C": "Biological surplus",
+        "D": "Sustainability threshold"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q821",
+      "category": "innovation",
+      "difficulty": "normal",
+      "question": "Which term describes software development where programmers publicly share and collaborate on code?",
+      "answers": {
+        "A": "Closed source",
+        "B": "Open source",
+        "C": "Encrypted software",
+        "D": "Private framework"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q822",
+      "category": "economics",
+      "difficulty": "normal",
+      "question": "What economic term describes the value of the next best alternative that is given up when making a choice?",
+      "answers": {
+        "A": "Marginal cost",
+        "B": "Opportunity cost",
+        "C": "Comparative advantage",
+        "D": "Utility loss"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q823",
+      "category": "psychology",
+      "difficulty": "normal",
+      "question": "Which concept describes the discomfort people feel when holding two conflicting beliefs?",
+      "answers": {
+        "A": "Cognitive dissonance",
+        "B": "Emotional bias",
+        "C": "Social conformity",
+        "D": "Behavioral drift"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q824",
+      "category": "innovation",
+      "difficulty": "normal",
+      "question": "Which company developed the first widely used web browser called Mosaic in the early 1990s?",
+      "answers": {
+        "A": "Microsoft",
+        "B": "NCSA",
+        "C": "IBM",
+        "D": "Sun Microsystems"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q825",
+      "category": "environment",
+      "difficulty": "easy",
+      "question": "Which renewable energy source uses flowing water to generate electricity?",
+      "answers": {
+        "A": "Solar",
+        "B": "Hydropower",
+        "C": "Wind",
+        "D": "Biomass"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q826",
+      "category": "politics",
+      "difficulty": "normal",
+      "question": "What term refers to the official approval of a treaty by a country's legislature?",
+      "answers": {
+        "A": "Ratification",
+        "B": "Coalition",
+        "C": "Mandate",
+        "D": "Legislation"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q827",
+      "category": "mythology",
+      "difficulty": "normal",
+      "question": "In Greek mythology, who is the messenger of the gods?",
+      "answers": {
+        "A": "Hermes",
+        "B": "Apollo",
+        "C": "Ares",
+        "D": "Hephaestus"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q828",
+      "category": "world_culture",
+      "difficulty": "normal",
+      "question": "Which country is known for the traditional festival called Diwali?",
+      "answers": {
+        "A": "India",
+        "B": "Nepal",
+        "C": "Sri Lanka",
+        "D": "Bangladesh"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q829",
+      "category": "art_architecture",
+      "difficulty": "normal",
+      "question": "Which Dutch painter is famous for the painting 'The Starry Night'?",
+      "answers": {
+        "A": "Vincent van Gogh",
+        "B": "Rembrandt",
+        "C": "Johannes Vermeer",
+        "D": "Piet Mondrian"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q830",
+      "category": "global_systems",
+      "difficulty": "normal",
+      "question": "Which organization sets global standards for international aviation safety?",
+      "answers": {
+        "A": "ICAO",
+        "B": "IMO",
+        "C": "IATA",
+        "D": "OECD"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q831",
+      "category": "environment",
+      "difficulty": "normal",
+      "question": "Which process describes the wearing away of soil and rock by natural forces such as water and wind?",
+      "answers": {
+        "A": "Erosion",
+        "B": "Sedimentation",
+        "C": "Weathering",
+        "D": "Oxidation"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q832",
+      "category": "psychology",
+      "difficulty": "easy",
+      "question": "Which term describes the ability to understand the feelings of others?",
+      "answers": {
+        "A": "Empathy",
+        "B": "Sympathy",
+        "C": "Reflection",
+        "D": "Awareness"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q833",
+      "category": "economics",
+      "difficulty": "normal",
+      "question": "Which term describes the ability of a country to produce a good at a lower opportunity cost than another country?",
+      "answers": {
+        "A": "Absolute advantage",
+        "B": "Comparative advantage",
+        "C": "Trade surplus",
+        "D": "Productivity gain"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q834",
+      "category": "innovation",
+      "difficulty": "normal",
+      "question": "Which concept refers to storing and processing data closer to where it is generated rather than in a central cloud?",
+      "answers": {
+        "A": "Edge computing",
+        "B": "Cloud storage",
+        "C": "Blockchain",
+        "D": "Neural networking"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q835",
+      "category": "politics",
+      "difficulty": "normal",
+      "question": "What is the term for a political system where citizens elect representatives to make laws?",
+      "answers": {
+        "A": "Direct democracy",
+        "B": "Representative democracy",
+        "C": "Autocracy",
+        "D": "Monarchy"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q836",
+      "category": "mythology",
+      "difficulty": "normal",
+      "question": "In Norse mythology, which realm is the home of humans?",
+      "answers": {
+        "A": "Asgard",
+        "B": "Midgard",
+        "C": "Helheim",
+        "D": "Vanaheim"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q837",
+      "category": "world_culture",
+      "difficulty": "easy",
+      "question": "Which traditional garment is commonly worn in Scotland and associated with tartan patterns?",
+      "answers": {
+        "A": "Kimono",
+        "B": "Kilt",
+        "C": "Poncho",
+        "D": "Sarong"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q838",
+      "category": "art_architecture",
+      "difficulty": "normal",
+      "question": "Which architect designed the famous Guggenheim Museum in Bilbao?",
+      "answers": {
+        "A": "Frank Gehry",
+        "B": "Zaha Hadid",
+        "C": "Norman Foster",
+        "D": "I.M. Pei"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q839",
+      "category": "global_systems",
+      "difficulty": "normal",
+      "question": "Which organization promotes international cooperation in criminal police investigations?",
+      "answers": {
+        "A": "Interpol",
+        "B": "UNESCO",
+        "C": "IMF",
+        "D": "WTO"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q840",
+      "category": "environment",
+      "difficulty": "hard",
+      "question": "Which term describes the long-term average weather patterns of a region?",
+      "answers": {
+        "A": "Climate",
+        "B": "Atmosphere",
+        "C": "Forecast",
+        "D": "Season"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q841",
+      "category": "innovation",
+      "difficulty": "normal",
+      "question": "Which programming language is widely used for data science and machine learning due to its large ecosystem of libraries?",
+      "answers": {
+        "A": "Python",
+        "B": "C++",
+        "C": "Rust",
+        "D": "Swift"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q842",
+      "category": "environment",
+      "difficulty": "normal",
+      "question": "Which layer of Earth's atmosphere is closest to the surface and where most weather occurs?",
+      "answers": {
+        "A": "Stratosphere",
+        "B": "Mesosphere",
+        "C": "Troposphere",
+        "D": "Thermosphere"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q843",
+      "category": "economics",
+      "difficulty": "normal",
+      "question": "Which economic indicator measures the total value of goods and services produced within a country?",
+      "answers": {
+        "A": "GDP",
+        "B": "CPI",
+        "C": "HDI",
+        "D": "PPP"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q844",
+      "category": "psychology",
+      "difficulty": "normal",
+      "question": "Which psychological term describes learning by observing and imitating others?",
+      "answers": {
+        "A": "Classical conditioning",
+        "B": "Operant conditioning",
+        "C": "Observational learning",
+        "D": "Implicit learning"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q845",
+      "category": "innovation",
+      "difficulty": "normal",
+      "question": "Which term refers to a network of computers that share processing power to solve complex tasks?",
+      "answers": {
+        "A": "Distributed computing",
+        "B": "Edge networking",
+        "C": "Quantum processing",
+        "D": "Local clustering"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q846",
+      "category": "politics",
+      "difficulty": "normal",
+      "question": "What term describes the official residence and workplace of the U.S. president?",
+      "answers": {
+        "A": "Capitol Building",
+        "B": "White House",
+        "C": "Pentagon",
+        "D": "Supreme Court"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q847",
+      "category": "mythology",
+      "difficulty": "normal",
+      "question": "In Greek mythology, who is the god of wine and celebration?",
+      "answers": {
+        "A": "Apollo",
+        "B": "Dionysus",
+        "C": "Hermes",
+        "D": "Ares"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q848",
+      "category": "world_culture",
+      "difficulty": "easy",
+      "question": "Which country is famous for the cultural celebration called Carnival in Rio de Janeiro?",
+      "answers": {
+        "A": "Argentina",
+        "B": "Brazil",
+        "C": "Colombia",
+        "D": "Chile"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q849",
+      "category": "art_architecture",
+      "difficulty": "normal",
+      "question": "Which famous architect designed Fallingwater, a house built over a waterfall in Pennsylvania?",
+      "answers": {
+        "A": "Frank Lloyd Wright",
+        "B": "Le Corbusier",
+        "C": "Walter Gropius",
+        "D": "Philip Johnson"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q850",
+      "category": "global_systems",
+      "difficulty": "normal",
+      "question": "Which organization is responsible for regulating international maritime shipping safety?",
+      "answers": {
+        "A": "IMO",
+        "B": "ICAO",
+        "C": "UNESCO",
+        "D": "OECD"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q851",
+      "category": "environment",
+      "difficulty": "easy",
+      "question": "What is the main source of energy for Earth's climate system?",
+      "answers": {
+        "A": "The Moon",
+        "B": "The Sun",
+        "C": "Volcanoes",
+        "D": "Ocean currents"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q852",
+      "category": "economics",
+      "difficulty": "normal",
+      "question": "What is the term for a situation where a small number of firms dominate a market?",
+      "answers": {
+        "A": "Monopoly",
+        "B": "Oligopoly",
+        "C": "Perfect competition",
+        "D": "Free market"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q853",
+      "category": "psychology",
+      "difficulty": "normal",
+      "question": "Which concept refers to the mental framework that helps organize and interpret information?",
+      "answers": {
+        "A": "Schema",
+        "B": "Bias",
+        "C": "Impulse",
+        "D": "Stimulus"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q854",
+      "category": "innovation",
+      "difficulty": "normal",
+      "question": "Which technology allows digital data to be stored in blocks linked together using cryptography?",
+      "answers": {
+        "A": "Blockchain",
+        "B": "Cloud storage",
+        "C": "Edge computing",
+        "D": "5G"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q855",
+      "category": "politics",
+      "difficulty": "normal",
+      "question": "Which political ideology advocates for minimal government intervention in economic affairs?",
+      "answers": {
+        "A": "Liberalism",
+        "B": "Socialism",
+        "C": "Laissez-faire capitalism",
+        "D": "Mercantilism"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q856",
+      "category": "mythology",
+      "difficulty": "easy",
+      "question": "In Greek mythology, which hero killed the Gorgon Medusa?",
+      "answers": {
+        "A": "Perseus",
+        "B": "Theseus",
+        "C": "Jason",
+        "D": "Achilles"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q857",
+      "category": "world_culture",
+      "difficulty": "normal",
+      "question": "Which Middle Eastern city is considered holy in Judaism, Christianity, and Islam?",
+      "answers": {
+        "A": "Jerusalem",
+        "B": "Damascus",
+        "C": "Cairo",
+        "D": "Mecca"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q858",
+      "category": "art_architecture",
+      "difficulty": "normal",
+      "question": "Which Spanish artist is famous for the surrealist painting 'The Persistence of Memory'?",
+      "answers": {
+        "A": "Salvador Dalí",
+        "B": "Pablo Picasso",
+        "C": "Joan Miró",
+        "D": "Francisco Goya"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q859",
+      "category": "global_systems",
+      "difficulty": "normal",
+      "question": "Which international organization manages global trade dispute settlement between member countries?",
+      "answers": {
+        "A": "World Trade Organization",
+        "B": "International Monetary Fund",
+        "C": "World Bank",
+        "D": "United Nations"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q860",
+      "category": "environment",
+      "difficulty": "hard",
+      "question": "What term describes the process by which fertile land becomes desert due to climate change and human activity?",
+      "answers": {
+        "A": "Deforestation",
+        "B": "Desertification",
+        "C": "Urbanization",
+        "D": "Salinization"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q861",
+      "category": "innovation",
+      "difficulty": "normal",
+      "question": "Which field of technology focuses on creating machines that can perform tasks requiring human-like intelligence?",
+      "answers": {
+        "A": "Robotics",
+        "B": "Artificial intelligence",
+        "C": "Automation",
+        "D": "Cybernetics"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q862",
+      "category": "economics",
+      "difficulty": "normal",
+      "question": "What term describes a market where only one seller controls the supply of a product?",
+      "answers": {
+        "A": "Oligopoly",
+        "B": "Monopoly",
+        "C": "Perfect competition",
+        "D": "Free market"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q863",
+      "category": "psychology",
+      "difficulty": "normal",
+      "question": "Which psychologist developed the theory of operant conditioning?",
+      "answers": {
+        "A": "B.F. Skinner",
+        "B": "Ivan Pavlov",
+        "C": "Carl Jung",
+        "D": "Jean Piaget"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q864",
+      "category": "innovation",
+      "difficulty": "normal",
+      "question": "Which term describes technology that allows computers to recognize spoken language?",
+      "answers": {
+        "A": "Speech recognition",
+        "B": "Optical scanning",
+        "C": "Edge processing",
+        "D": "Quantum translation"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q865",
+      "category": "environment",
+      "difficulty": "normal",
+      "question": "Which gas is most abundant in Earth's atmosphere?",
+      "answers": {
+        "A": "Oxygen",
+        "B": "Carbon dioxide",
+        "C": "Nitrogen",
+        "D": "Argon"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q866",
+      "category": "politics",
+      "difficulty": "normal",
+      "question": "What is the name of the upper chamber of the United States Congress?",
+      "answers": {
+        "A": "House of Representatives",
+        "B": "Senate",
+        "C": "Assembly",
+        "D": "Council"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q867",
+      "category": "mythology",
+      "difficulty": "normal",
+      "question": "In Greek mythology, who flew on a winged horse named Pegasus?",
+      "answers": {
+        "A": "Bellerophon",
+        "B": "Perseus",
+        "C": "Theseus",
+        "D": "Heracles"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q868",
+      "category": "world_culture",
+      "difficulty": "normal",
+      "question": "Which country is home to the traditional dance known as the flamenco?",
+      "answers": {
+        "A": "Portugal",
+        "B": "Spain",
+        "C": "Italy",
+        "D": "Greece"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q869",
+      "category": "art_architecture",
+      "difficulty": "normal",
+      "question": "Which French architect designed the glass pyramid entrance to the Louvre Museum?",
+      "answers": {
+        "A": "I.M. Pei",
+        "B": "Jean Nouvel",
+        "C": "Le Corbusier",
+        "D": "Gustave Eiffel"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q870",
+      "category": "global_systems",
+      "difficulty": "normal",
+      "question": "Which international organization is responsible for coordinating global meteorological data and weather forecasting cooperation?",
+      "answers": {
+        "A": "WMO",
+        "B": "WHO",
+        "C": "UNICEF",
+        "D": "WTO"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q871",
+      "category": "environment",
+      "difficulty": "easy",
+      "question": "Which part of a plant absorbs water and nutrients from the soil?",
+      "answers": {
+        "A": "Stem",
+        "B": "Leaf",
+        "C": "Root",
+        "D": "Flower"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q872",
+      "category": "economics",
+      "difficulty": "normal",
+      "question": "What term refers to government payments made to support businesses or industries?",
+      "answers": {
+        "A": "Subsidies",
+        "B": "Tariffs",
+        "C": "Taxes",
+        "D": "Dividends"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q873",
+      "category": "psychology",
+      "difficulty": "normal",
+      "question": "Which concept describes a person's belief in their ability to succeed in specific situations?",
+      "answers": {
+        "A": "Self-efficacy",
+        "B": "Self-esteem",
+        "C": "Self-image",
+        "D": "Self-awareness"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q874",
+      "category": "innovation",
+      "difficulty": "normal",
+      "question": "Which communication technology forms the backbone of modern wireless mobile networks?",
+      "answers": {
+        "A": "Satellite relay",
+        "B": "Cellular networks",
+        "C": "Fiber optic cables",
+        "D": "Bluetooth mesh"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q875",
+      "category": "politics",
+      "difficulty": "normal",
+      "question": "What term describes the process by which citizens choose their leaders through voting?",
+      "answers": {
+        "A": "Referendum",
+        "B": "Election",
+        "C": "Legislation",
+        "D": "Mandate"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q876",
+      "category": "mythology",
+      "difficulty": "normal",
+      "question": "In Greek mythology, which goddess was born from the sea foam?",
+      "answers": {
+        "A": "Athena",
+        "B": "Hera",
+        "C": "Aphrodite",
+        "D": "Artemis"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q877",
+      "category": "world_culture",
+      "difficulty": "easy",
+      "question": "Which country is famous for the landmark known as the Great Wall?",
+      "answers": {
+        "A": "China",
+        "B": "Japan",
+        "C": "Mongolia",
+        "D": "South Korea"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q878",
+      "category": "art_architecture",
+      "difficulty": "normal",
+      "question": "Which Italian artist painted the ceiling of the Sistine Chapel?",
+      "answers": {
+        "A": "Raphael",
+        "B": "Leonardo da Vinci",
+        "C": "Michelangelo",
+        "D": "Caravaggio"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q879",
+      "category": "global_systems",
+      "difficulty": "normal",
+      "question": "Which organization promotes global cooperation in intellectual property protection?",
+      "answers": {
+        "A": "WIPO",
+        "B": "OECD",
+        "C": "NATO",
+        "D": "UNDP"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q880",
+      "category": "environment",
+      "difficulty": "hard",
+      "question": "Which scientific term describes the variety of living species within an ecosystem?",
+      "answers": {
+        "A": "Biomass",
+        "B": "Biodiversity",
+        "C": "Bioaccumulation",
+        "D": "Bioregulation"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q881",
+      "category": "innovation",
+      "difficulty": "normal",
+      "question": "Which technology enables devices to exchange data over short distances using radio waves, commonly used in wireless headphones?",
+      "answers": {
+        "A": "Bluetooth",
+        "B": "Infrared",
+        "C": "Satellite",
+        "D": "DSL"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q882",
+      "category": "economics",
+      "difficulty": "normal",
+      "question": "What term describes the total amount of goods and services consumers are willing to buy at a given price?",
+      "answers": {
+        "A": "Supply",
+        "B": "Demand",
+        "C": "Inflation",
+        "D": "Elasticity"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q883",
+      "category": "psychology",
+      "difficulty": "normal",
+      "question": "Which psychological concept refers to the tendency of people to follow the actions of a larger group?",
+      "answers": {
+        "A": "Conformity",
+        "B": "Projection",
+        "C": "Introspection",
+        "D": "Conditioning"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q884",
+      "category": "innovation",
+      "difficulty": "normal",
+      "question": "Which technology allows computers to understand and process human language?",
+      "answers": {
+        "A": "Natural language processing",
+        "B": "Optical computing",
+        "C": "Edge networking",
+        "D": "Analog processing"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q885",
+      "category": "environment",
+      "difficulty": "normal",
+      "question": "Which natural cycle describes the continuous movement of water on, above, and below Earth's surface?",
+      "answers": {
+        "A": "Carbon cycle",
+        "B": "Water cycle",
+        "C": "Nitrogen cycle",
+        "D": "Oxygen cycle"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q886",
+      "category": "politics",
+      "difficulty": "normal",
+      "question": "What term refers to the authority of a government to create and enforce laws?",
+      "answers": {
+        "A": "Sovereignty",
+        "B": "Legislation",
+        "C": "Jurisdiction",
+        "D": "Mandate"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q887",
+      "category": "mythology",
+      "difficulty": "normal",
+      "question": "In Greek mythology, which titan was punished by having to hold up the sky for eternity?",
+      "answers": {
+        "A": "Atlas",
+        "B": "Cronus",
+        "C": "Prometheus",
+        "D": "Hyperion"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q888",
+      "category": "world_culture",
+      "difficulty": "easy",
+      "question": "Which country is famous for the cultural festival Oktoberfest?",
+      "answers": {
+        "A": "Germany",
+        "B": "Austria",
+        "C": "Switzerland",
+        "D": "Belgium"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q889",
+      "category": "art_architecture",
+      "difficulty": "normal",
+      "question": "Which painter created the famous work 'Girl with a Pearl Earring'?",
+      "answers": {
+        "A": "Johannes Vermeer",
+        "B": "Rembrandt",
+        "C": "Vincent van Gogh",
+        "D": "Claude Monet"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q890",
+      "category": "global_systems",
+      "difficulty": "normal",
+      "question": "Which international organization provides financial assistance to developing countries for infrastructure projects?",
+      "answers": {
+        "A": "World Bank",
+        "B": "NATO",
+        "C": "Interpol",
+        "D": "UNESCO"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q891",
+      "category": "environment",
+      "difficulty": "easy",
+      "question": "Which part of Earth's system includes all living organisms?",
+      "answers": {
+        "A": "Lithosphere",
+        "B": "Biosphere",
+        "C": "Atmosphere",
+        "D": "Hydrosphere"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q892",
+      "category": "economics",
+      "difficulty": "normal",
+      "question": "What is the term for a period of economic decline characterized by falling GDP and rising unemployment?",
+      "answers": {
+        "A": "Expansion",
+        "B": "Recession",
+        "C": "Boom",
+        "D": "Inflation"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q893",
+      "category": "psychology",
+      "difficulty": "normal",
+      "question": "Which concept describes the ability to perceive, understand, and manage emotions effectively?",
+      "answers": {
+        "A": "Emotional intelligence",
+        "B": "Cognitive bias",
+        "C": "Mental resilience",
+        "D": "Psychological projection"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q894",
+      "category": "innovation",
+      "difficulty": "normal",
+      "question": "Which technology uses algorithms and data to improve automatically through experience?",
+      "answers": {
+        "A": "Machine learning",
+        "B": "Data compression",
+        "C": "Analog computing",
+        "D": "Cloud storage"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q895",
+      "category": "politics",
+      "difficulty": "normal",
+      "question": "What term describes a system where political power is concentrated in a central authority?",
+      "answers": {
+        "A": "Federal system",
+        "B": "Unitary state",
+        "C": "Confederation",
+        "D": "Coalition"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q896",
+      "category": "mythology",
+      "difficulty": "normal",
+      "question": "In Norse mythology, what is the name of the bridge connecting Midgard and Asgard?",
+      "answers": {
+        "A": "Yggdrasil",
+        "B": "Bifrost",
+        "C": "Gjallarhorn",
+        "D": "Valhalla"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q897",
+      "category": "world_culture",
+      "difficulty": "normal",
+      "question": "Which country is traditionally associated with the martial art of judo?",
+      "answers": {
+        "A": "China",
+        "B": "Japan",
+        "C": "South Korea",
+        "D": "Thailand"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q898",
+      "category": "art_architecture",
+      "difficulty": "normal",
+      "question": "Which famous Spanish architect designed many buildings in Barcelona including Park Güell?",
+      "answers": {
+        "A": "Antoni Gaudí",
+        "B": "Santiago Calatrava",
+        "C": "Ricardo Bofill",
+        "D": "Rafael Moneo"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q899",
+      "category": "global_systems",
+      "difficulty": "normal",
+      "question": "Which organization was created to promote international cooperation and prevent conflicts after World War II?",
+      "answers": {
+        "A": "United Nations",
+        "B": "European Union",
+        "C": "NATO",
+        "D": "World Bank"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q900",
+      "category": "environment",
+      "difficulty": "hard",
+      "question": "Which phenomenon occurs when excess nutrients in water lead to rapid algae growth that depletes oxygen?",
+      "answers": {
+        "A": "Acidification",
+        "B": "Eutrophication",
+        "C": "Sedimentation",
+        "D": "Desertification"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q901",
+      "category": "innovation",
+      "difficulty": "normal",
+      "question": "Which technology is used to create immersive digital environments experienced through special headsets?",
+      "answers": {
+        "A": "Augmented reality",
+        "B": "Virtual reality",
+        "C": "Mixed computing",
+        "D": "Edge visualization"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q902",
+      "category": "philosophy",
+      "difficulty": "normal",
+      "question": "Which philosopher is famous for the statement 'I think, therefore I am'?",
+      "answers": {
+        "A": "René Descartes",
+        "B": "Immanuel Kant",
+        "C": "Friedrich Nietzsche",
+        "D": "Baruch Spinoza"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q903",
+      "category": "global_systems",
+      "difficulty": "normal",
+      "question": "Which organization coordinates global civil aviation standards and safety?",
+      "answers": {
+        "A": "ICAO",
+        "B": "IATA",
+        "C": "IMO",
+        "D": "UNESCO"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q904",
+      "category": "business",
+      "difficulty": "normal",
+      "question": "What term describes the process of introducing a new product or service to the market?",
+      "answers": {
+        "A": "Market segmentation",
+        "B": "Product launch",
+        "C": "Supply chain",
+        "D": "Asset allocation"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q905",
+      "category": "mythology",
+      "difficulty": "normal",
+      "question": "In Greek mythology, which goddess is associated with hunting and the moon?",
+      "answers": {
+        "A": "Artemis",
+        "B": "Athena",
+        "C": "Demeter",
+        "D": "Hestia"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q906",
+      "category": "politics",
+      "difficulty": "normal",
+      "question": "What term describes the peaceful transfer of power from one government to another after an election?",
+      "answers": {
+        "A": "Succession",
+        "B": "Transition of power",
+        "C": "Ratification",
+        "D": "Delegation"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q907",
+      "category": "sports",
+      "difficulty": "easy",
+      "question": "How many players from each team are on the court in basketball during play?",
+      "answers": {
+        "A": "4",
+        "B": "5",
+        "C": "6",
+        "D": "7"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q908",
+      "category": "philosophy",
+      "difficulty": "normal",
+      "question": "Which philosopher wrote 'The Republic', discussing justice and the ideal state?",
+      "answers": {
+        "A": "Plato",
+        "B": "Aristotle",
+        "C": "Socrates",
+        "D": "Epicurus"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q909",
+      "category": "global_systems",
+      "difficulty": "normal",
+      "question": "Which organization is responsible for coordinating global postal services between countries?",
+      "answers": {
+        "A": "UPU",
+        "B": "UNDP",
+        "C": "OECD",
+        "D": "WTO"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q910",
+      "category": "business",
+      "difficulty": "normal",
+      "question": "What is the term for a company's total revenue minus its total costs?",
+      "answers": {
+        "A": "Equity",
+        "B": "Profit",
+        "C": "Dividend",
+        "D": "Turnover"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q911",
+      "category": "mythology",
+      "difficulty": "normal",
+      "question": "In Norse mythology, which god is associated with thunder?",
+      "answers": {
+        "A": "Thor",
+        "B": "Odin",
+        "C": "Balder",
+        "D": "Tyr"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q912",
+      "category": "politics",
+      "difficulty": "normal",
+      "question": "Which document begins with the phrase 'We the People' in the United States?",
+      "answers": {
+        "A": "Declaration of Independence",
+        "B": "U.S. Constitution",
+        "C": "Bill of Rights",
+        "D": "Federalist Papers"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q913",
+      "category": "sports",
+      "difficulty": "normal",
+      "question": "In which sport is the Ryder Cup contested?",
+      "answers": {
+        "A": "Tennis",
+        "B": "Golf",
+        "C": "Cricket",
+        "D": "Rugby"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q914",
+      "category": "philosophy",
+      "difficulty": "normal",
+      "question": "Which philosophical school teaches that happiness is achieved by minimizing desires and fears?",
+      "answers": {
+        "A": "Stoicism",
+        "B": "Epicureanism",
+        "C": "Existentialism",
+        "D": "Utilitarianism"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q915",
+      "category": "global_systems",
+      "difficulty": "normal",
+      "question": "Which international financial institution monitors global exchange rates and economic stability?",
+      "answers": {
+        "A": "IMF",
+        "B": "WTO",
+        "C": "World Bank",
+        "D": "OECD"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q916",
+      "category": "business",
+      "difficulty": "normal",
+      "question": "What term describes the process of evaluating a company's financial performance using key metrics?",
+      "answers": {
+        "A": "Financial analysis",
+        "B": "Market entry",
+        "C": "Operational scaling",
+        "D": "Asset turnover"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q917",
+      "category": "mythology",
+      "difficulty": "normal",
+      "question": "Which creature in Greek mythology had the body of a lion and the wings of an eagle?",
+      "answers": {
+        "A": "Griffin",
+        "B": "Minotaur",
+        "C": "Centaur",
+        "D": "Hydra"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q918",
+      "category": "politics",
+      "difficulty": "normal",
+      "question": "What is the term for a vote in a legislature where members must vote according to their party leadership?",
+      "answers": {
+        "A": "Whip vote",
+        "B": "Confidence vote",
+        "C": "Mandated vote",
+        "D": "Party mandate"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q919",
+      "category": "sports",
+      "difficulty": "normal",
+      "question": "Which country won the first FIFA World Cup in 1930?",
+      "answers": {
+        "A": "Brazil",
+        "B": "Argentina",
+        "C": "Uruguay",
+        "D": "Italy"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q920",
+      "category": "philosophy",
+      "difficulty": "hard",
+      "question": "Which philosopher argued that moral actions are those that maximize overall happiness?",
+      "answers": {
+        "A": "John Stuart Mill",
+        "B": "Friedrich Nietzsche",
+        "C": "Jean-Paul Sartre",
+        "D": "Martin Heidegger"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q921",
+      "category": "global_systems",
+      "difficulty": "normal",
+      "question": "Which international treaty created the European Union in 1993?",
+      "answers": {
+        "A": "Treaty of Rome",
+        "B": "Maastricht Treaty",
+        "C": "Lisbon Treaty",
+        "D": "Schengen Agreement"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q922",
+      "category": "philosophy",
+      "difficulty": "normal",
+      "question": "Which philosopher is associated with the concept of the 'categorical imperative'?",
+      "answers": {
+        "A": "Immanuel Kant",
+        "B": "Aristotle",
+        "C": "David Hume",
+        "D": "Karl Marx"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q923",
+      "category": "global_systems",
+      "difficulty": "normal",
+      "question": "Which organization is responsible for coordinating global efforts in telecommunications standards?",
+      "answers": {
+        "A": "ITU",
+        "B": "OECD",
+        "C": "UNESCO",
+        "D": "WIPO"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q924",
+      "category": "business",
+      "difficulty": "normal",
+      "question": "What term describes a company's plan for achieving long-term goals and competitive advantage?",
+      "answers": {
+        "A": "Business strategy",
+        "B": "Market share",
+        "C": "Operational budget",
+        "D": "Product margin"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q925",
+      "category": "mythology",
+      "difficulty": "normal",
+      "question": "In Greek mythology, who was the father of the gods Zeus, Poseidon, and Hades?",
+      "answers": {
+        "A": "Cronus",
+        "B": "Atlas",
+        "C": "Uranus",
+        "D": "Hyperion"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q926",
+      "category": "politics",
+      "difficulty": "normal",
+      "question": "What term describes a government's formal statement of policy goals and priorities?",
+      "answers": {
+        "A": "Manifesto",
+        "B": "Protocol",
+        "C": "Amendment",
+        "D": "Directive"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q927",
+      "category": "sports",
+      "difficulty": "normal",
+      "question": "In tennis, what term describes a score of zero?",
+      "answers": {
+        "A": "Nil",
+        "B": "Love",
+        "C": "Blank",
+        "D": "Zero point"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q928",
+      "category": "philosophy",
+      "difficulty": "normal",
+      "question": "Which philosopher is known for teaching through questioning in dialogues recorded by Plato?",
+      "answers": {
+        "A": "Socrates",
+        "B": "Descartes",
+        "C": "Locke",
+        "D": "Spinoza"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q929",
+      "category": "global_systems",
+      "difficulty": "normal",
+      "question": "Which international organization works to combat global poverty and promote economic development?",
+      "answers": {
+        "A": "World Bank",
+        "B": "NATO",
+        "C": "Interpol",
+        "D": "OPEC"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q930",
+      "category": "business",
+      "difficulty": "normal",
+      "question": "What term refers to the process of promoting and selling products or services?",
+      "answers": {
+        "A": "Marketing",
+        "B": "Accounting",
+        "C": "Logistics",
+        "D": "Procurement"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q931",
+      "category": "mythology",
+      "difficulty": "normal",
+      "question": "In Greek mythology, who stole fire from the gods and gave it to humanity?",
+      "answers": {
+        "A": "Prometheus",
+        "B": "Hermes",
+        "C": "Perseus",
+        "D": "Orpheus"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q932",
+      "category": "politics",
+      "difficulty": "normal",
+      "question": "What term describes a formal change or addition to a constitution?",
+      "answers": {
+        "A": "Amendment",
+        "B": "Ratification",
+        "C": "Resolution",
+        "D": "Coalition"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q933",
+      "category": "sports",
+      "difficulty": "normal",
+      "question": "Which sport uses the terms 'birdie' and 'eagle' to describe scores?",
+      "answers": {
+        "A": "Golf",
+        "B": "Badminton",
+        "C": "Cricket",
+        "D": "Baseball"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q934",
+      "category": "philosophy",
+      "difficulty": "normal",
+      "question": "Which philosopher argued that knowledge comes primarily from sensory experience?",
+      "answers": {
+        "A": "John Locke",
+        "B": "Plato",
+        "C": "Kant",
+        "D": "Nietzsche"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q935",
+      "category": "global_systems",
+      "difficulty": "normal",
+      "question": "Which international organization coordinates humanitarian assistance during global crises?",
+      "answers": {
+        "A": "United Nations",
+        "B": "OECD",
+        "C": "NATO",
+        "D": "OPEC"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q936",
+      "category": "business",
+      "difficulty": "normal",
+      "question": "What term describes the total value of a company's outstanding shares of stock?",
+      "answers": {
+        "A": "Market capitalization",
+        "B": "Net profit",
+        "C": "Asset turnover",
+        "D": "Equity ratio"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q937",
+      "category": "mythology",
+      "difficulty": "normal",
+      "question": "In Norse mythology, which hall is where warriors slain in battle are taken by the Valkyries?",
+      "answers": {
+        "A": "Valhalla",
+        "B": "Helheim",
+        "C": "Niflheim",
+        "D": "Asgard"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q938",
+      "category": "politics",
+      "difficulty": "normal",
+      "question": "What term describes a government ruled by a king or queen?",
+      "answers": {
+        "A": "Monarchy",
+        "B": "Republic",
+        "C": "Democracy",
+        "D": "Oligarchy"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q939",
+      "category": "sports",
+      "difficulty": "normal",
+      "question": "Which country has won the most FIFA World Cup titles as of 2022?",
+      "answers": {
+        "A": "Brazil",
+        "B": "Germany",
+        "C": "Italy",
+        "D": "Argentina"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q940",
+      "category": "philosophy",
+      "difficulty": "hard",
+      "question": "Which philosopher wrote the work 'Thus Spoke Zarathustra'?",
+      "answers": {
+        "A": "Friedrich Nietzsche",
+        "B": "Arthur Schopenhauer",
+        "C": "Jean-Paul Sartre",
+        "D": "Karl Marx"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q941",
+      "category": "global_systems",
+      "difficulty": "normal",
+      "question": "Which treaty established the European Economic Community in 1957?",
+      "answers": {
+        "A": "Treaty of Rome",
+        "B": "Treaty of Lisbon",
+        "C": "Maastricht Treaty",
+        "D": "Treaty of Amsterdam"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q942",
+      "category": "philosophy",
+      "difficulty": "normal",
+      "question": "Which ancient Greek philosopher founded the Lyceum in Athens?",
+      "answers": {
+        "A": "Plato",
+        "B": "Aristotle",
+        "C": "Socrates",
+        "D": "Pythagoras"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q943",
+      "category": "global_systems",
+      "difficulty": "normal",
+      "question": "Which international organization sets global standards for civil aviation safety?",
+      "answers": {
+        "A": "ICAO",
+        "B": "IATA",
+        "C": "IMO",
+        "D": "WMO"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q944",
+      "category": "business",
+      "difficulty": "normal",
+      "question": "What term refers to a company's income after all expenses and taxes have been deducted?",
+      "answers": {
+        "A": "Gross revenue",
+        "B": "Operating margin",
+        "C": "Net profit",
+        "D": "Equity"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q945",
+      "category": "mythology",
+      "difficulty": "normal",
+      "question": "In Greek mythology, which hero completed twelve famous labors?",
+      "answers": {
+        "A": "Perseus",
+        "B": "Heracles",
+        "C": "Theseus",
+        "D": "Achilles"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q946",
+      "category": "politics",
+      "difficulty": "normal",
+      "question": "What term describes the division of power between central and regional governments?",
+      "answers": {
+        "A": "Federalism",
+        "B": "Authoritarianism",
+        "C": "Bureaucracy",
+        "D": "Diplomacy"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q947",
+      "category": "sports",
+      "difficulty": "easy",
+      "question": "How many holes are played in a standard round of golf?",
+      "answers": {
+        "A": "9",
+        "B": "12",
+        "C": "18",
+        "D": "24"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q948",
+      "category": "philosophy",
+      "difficulty": "normal",
+      "question": "Which philosopher wrote the work 'Meditations' reflecting on Stoic philosophy?",
+      "answers": {
+        "A": "Seneca",
+        "B": "Marcus Aurelius",
+        "C": "Epictetus",
+        "D": "Cicero"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q949",
+      "category": "global_systems",
+      "difficulty": "normal",
+      "question": "Which organization coordinates international police cooperation?",
+      "answers": {
+        "A": "Interpol",
+        "B": "Europol",
+        "C": "NATO",
+        "D": "UNHCR"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q950",
+      "category": "business",
+      "difficulty": "normal",
+      "question": "What term describes the buying and selling of company shares by the general public?",
+      "answers": {
+        "A": "Stock trading",
+        "B": "Venture capital",
+        "C": "Asset allocation",
+        "D": "Equity financing"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q951",
+      "category": "mythology",
+      "difficulty": "normal",
+      "question": "In Greek mythology, which monster had many heads and grew two more when one was cut off?",
+      "answers": {
+        "A": "Cerberus",
+        "B": "Hydra",
+        "C": "Chimera",
+        "D": "Minotaur"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q952",
+      "category": "politics",
+      "difficulty": "normal",
+      "question": "What term describes a vote by citizens on a specific policy or law rather than electing representatives?",
+      "answers": {
+        "A": "Referendum",
+        "B": "Mandate",
+        "C": "Caucus",
+        "D": "Coalition"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q953",
+      "category": "sports",
+      "difficulty": "normal",
+      "question": "Which country hosts the famous Tour de France cycling race?",
+      "answers": {
+        "A": "Italy",
+        "B": "France",
+        "C": "Spain",
+        "D": "Belgium"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q954",
+      "category": "philosophy",
+      "difficulty": "hard",
+      "question": "Which philosopher wrote the influential work 'Critique of Pure Reason'?",
+      "answers": {
+        "A": "Immanuel Kant",
+        "B": "G.W.F. Hegel",
+        "C": "Arthur Schopenhauer",
+        "D": "John Locke"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q955",
+      "category": "global_systems",
+      "difficulty": "normal",
+      "question": "Which international organization focuses on global public health coordination?",
+      "answers": {
+        "A": "WHO",
+        "B": "WTO",
+        "C": "IMF",
+        "D": "UNESCO"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q956",
+      "category": "business",
+      "difficulty": "normal",
+      "question": "What term refers to the percentage of a market controlled by a particular company?",
+      "answers": {
+        "A": "Market share",
+        "B": "Equity ratio",
+        "C": "Profit margin",
+        "D": "Return rate"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q957",
+      "category": "mythology",
+      "difficulty": "normal",
+      "question": "In Norse mythology, what is the name of the great world tree connecting the nine realms?",
+      "answers": {
+        "A": "Yggdrasil",
+        "B": "Bifrost",
+        "C": "Asgard",
+        "D": "Midgard"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q958",
+      "category": "politics",
+      "difficulty": "normal",
+      "question": "What term describes negotiations between countries to resolve conflicts peacefully?",
+      "answers": {
+        "A": "Diplomacy",
+        "B": "Legislation",
+        "C": "Sanctioning",
+        "D": "Arbitration"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q959",
+      "category": "sports",
+      "difficulty": "normal",
+      "question": "In which sport would you perform a 'slam dunk'?",
+      "answers": {
+        "A": "Basketball",
+        "B": "Volleyball",
+        "C": "Handball",
+        "D": "Water polo"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q960",
+      "category": "philosophy",
+      "difficulty": "hard",
+      "question": "Which philosopher wrote the work 'Thus Spoke Zarathustra' introducing the idea of the Übermensch?",
+      "answers": {
+        "A": "Friedrich Nietzsche",
+        "B": "Jean-Paul Sartre",
+        "C": "Immanuel Kant",
+        "D": "Martin Heidegger"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q961",
+      "category": "global_systems",
+      "difficulty": "normal",
+      "question": "Which international organization regulates global trade rules between member nations?",
+      "answers": {
+        "A": "World Trade Organization",
+        "B": "OECD",
+        "C": "UNDP",
+        "D": "Interpol"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q962",
+      "category": "business",
+      "difficulty": "normal",
+      "question": "What term describes a business owned and operated by a single individual?",
+      "answers": {
+        "A": "Corporation",
+        "B": "Partnership",
+        "C": "Sole proprietorship",
+        "D": "Conglomerate"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q963",
+      "category": "philosophy",
+      "difficulty": "normal",
+      "question": "Which philosopher is associated with the idea of the 'social contract' in political philosophy?",
+      "answers": {
+        "A": "Thomas Hobbes",
+        "B": "Epicurus",
+        "C": "Aristotle",
+        "D": "Plotinus"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q964",
+      "category": "sports",
+      "difficulty": "normal",
+      "question": "Which country won the UEFA European Football Championship in 2016?",
+      "answers": {
+        "A": "Germany",
+        "B": "France",
+        "C": "Portugal",
+        "D": "Spain"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q965",
+      "category": "mythology",
+      "difficulty": "normal",
+      "question": "In Greek mythology, who killed the Minotaur in the labyrinth of Crete?",
+      "answers": {
+        "A": "Theseus",
+        "B": "Perseus",
+        "C": "Jason",
+        "D": "Heracles"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q966",
+      "category": "global_systems",
+      "difficulty": "normal",
+      "question": "Which international organization administers global rules for intellectual property rights?",
+      "answers": {
+        "A": "WIPO",
+        "B": "IMF",
+        "C": "WHO",
+        "D": "UNICEF"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q967",
+      "category": "politics",
+      "difficulty": "normal",
+      "question": "What term describes a government where power is held by a small group of people?",
+      "answers": {
+        "A": "Democracy",
+        "B": "Monarchy",
+        "C": "Oligarchy",
+        "D": "Republic"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q968",
+      "category": "business",
+      "difficulty": "normal",
+      "question": "What term describes the process of dividing a market into distinct groups of customers?",
+      "answers": {
+        "A": "Market segmentation",
+        "B": "Brand positioning",
+        "C": "Capital allocation",
+        "D": "Revenue optimization"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q969",
+      "category": "philosophy",
+      "difficulty": "normal",
+      "question": "Which ancient Greek philosopher taught Alexander the Great?",
+      "answers": {
+        "A": "Socrates",
+        "B": "Aristotle",
+        "C": "Plato",
+        "D": "Zeno"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q970",
+      "category": "sports",
+      "difficulty": "easy",
+      "question": "In which sport does a batter score by hitting the ball and running around four bases?",
+      "answers": {
+        "A": "Cricket",
+        "B": "Baseball",
+        "C": "Softball",
+        "D": "Rugby"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q971",
+      "category": "mythology",
+      "difficulty": "normal",
+      "question": "In Norse mythology, who is the chief god and ruler of Asgard?",
+      "answers": {
+        "A": "Thor",
+        "B": "Loki",
+        "C": "Odin",
+        "D": "Freyr"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q972",
+      "category": "global_systems",
+      "difficulty": "normal",
+      "question": "Which organization provides loans and financial assistance to countries experiencing economic crises?",
+      "answers": {
+        "A": "IMF",
+        "B": "UNESCO",
+        "C": "NATO",
+        "D": "OPEC"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q973",
+      "category": "politics",
+      "difficulty": "normal",
+      "question": "What is the term for the right of citizens to vote in political elections?",
+      "answers": {
+        "A": "Mandate",
+        "B": "Suffrage",
+        "C": "Jurisdiction",
+        "D": "Legitimacy"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q974",
+      "category": "business",
+      "difficulty": "normal",
+      "question": "What term describes the money a company earns from selling goods or services before expenses?",
+      "answers": {
+        "A": "Revenue",
+        "B": "Equity",
+        "C": "Dividend",
+        "D": "Capital"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q975",
+      "category": "philosophy",
+      "difficulty": "hard",
+      "question": "Which philosopher is known for the concept of 'existentialism' emphasizing individual freedom and responsibility?",
+      "answers": {
+        "A": "Jean-Paul Sartre",
+        "B": "John Locke",
+        "C": "David Hume",
+        "D": "Thomas Aquinas"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q976",
+      "category": "sports",
+      "difficulty": "normal",
+      "question": "Which sport features the famous competition known as Wimbledon?",
+      "answers": {
+        "A": "Tennis",
+        "B": "Cricket",
+        "C": "Badminton",
+        "D": "Squash"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q977",
+      "category": "mythology",
+      "difficulty": "normal",
+      "question": "Which Greek hero led the Argonauts in search of the Golden Fleece?",
+      "answers": {
+        "A": "Jason",
+        "B": "Perseus",
+        "C": "Odysseus",
+        "D": "Achilles"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q978",
+      "category": "global_systems",
+      "difficulty": "normal",
+      "question": "Which international organization coordinates global labor standards and workers' rights?",
+      "answers": {
+        "A": "ILO",
+        "B": "IMF",
+        "C": "OECD",
+        "D": "UNHCR"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q979",
+      "category": "politics",
+      "difficulty": "normal",
+      "question": "What term describes a temporary alliance of political parties to form a government?",
+      "answers": {
+        "A": "Coalition",
+        "B": "Mandate",
+        "C": "Protocol",
+        "D": "Referendum"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q980",
+      "category": "business",
+      "difficulty": "normal",
+      "question": "What term refers to a company's ability to meet its short-term financial obligations?",
+      "answers": {
+        "A": "Liquidity",
+        "B": "Leverage",
+        "C": "Depreciation",
+        "D": "Diversification"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q981",
+      "category": "philosophy",
+      "difficulty": "hard",
+      "question": "Which philosopher wrote 'Being and Nothingness', a key work in existentialist philosophy?",
+      "answers": {
+        "A": "Jean-Paul Sartre",
+        "B": "Martin Heidegger",
+        "C": "Albert Camus",
+        "D": "Karl Jaspers"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q982",
+      "category": "philosophy",
+      "difficulty": "normal",
+      "question": "Which philosopher founded the school known as Stoicism in ancient Athens?",
+      "answers": {
+        "A": "Zeno of Citium",
+        "B": "Epicurus",
+        "C": "Plato",
+        "D": "Aristotle"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q983",
+      "category": "global_systems",
+      "difficulty": "normal",
+      "question": "Which organization oversees global financial stability and cooperation between central banks?",
+      "answers": {
+        "A": "Bank for International Settlements",
+        "B": "World Bank",
+        "C": "International Labour Organization",
+        "D": "OECD"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q984",
+      "category": "business",
+      "difficulty": "normal",
+      "question": "What term describes the practice of spreading investments to reduce financial risk?",
+      "answers": {
+        "A": "Diversification",
+        "B": "Capitalization",
+        "C": "Monetization",
+        "D": "Leverage"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q985",
+      "category": "mythology",
+      "difficulty": "normal",
+      "question": "In Greek mythology, which river did souls cross to reach the underworld?",
+      "answers": {
+        "A": "Styx",
+        "B": "Lethe",
+        "C": "Acheron",
+        "D": "Phlegethon"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q986",
+      "category": "politics",
+      "difficulty": "normal",
+      "question": "What term describes the division of government powers into legislative, executive, and judicial branches?",
+      "answers": {
+        "A": "Separation of powers",
+        "B": "Federalism",
+        "C": "Pluralism",
+        "D": "Centralization"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q987",
+      "category": "sports",
+      "difficulty": "normal",
+      "question": "Which country has won the most Olympic gold medals in men's ice hockey?",
+      "answers": {
+        "A": "Canada",
+        "B": "USA",
+        "C": "Russia",
+        "D": "Sweden"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q988",
+      "category": "philosophy",
+      "difficulty": "hard",
+      "question": "Which philosopher argued that history progresses through a dialectical process of thesis, antithesis, and synthesis?",
+      "answers": {
+        "A": "G.W.F. Hegel",
+        "B": "John Locke",
+        "C": "David Hume",
+        "D": "Jeremy Bentham"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q989",
+      "category": "global_systems",
+      "difficulty": "normal",
+      "question": "Which organization manages the global system of internet domain names?",
+      "answers": {
+        "A": "ICANN",
+        "B": "ITU",
+        "C": "WTO",
+        "D": "ISO"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q990",
+      "category": "business",
+      "difficulty": "normal",
+      "question": "What term refers to the total value of goods and services a company sells in a given period?",
+      "answers": {
+        "A": "Revenue",
+        "B": "Equity",
+        "C": "Dividend",
+        "D": "Depreciation"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q991",
+      "category": "mythology",
+      "difficulty": "normal",
+      "question": "Which Norse god is known as the trickster deity?",
+      "answers": {
+        "A": "Loki",
+        "B": "Thor",
+        "C": "Balder",
+        "D": "Tyr"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q992",
+      "category": "politics",
+      "difficulty": "normal",
+      "question": "What term describes the official policy of a country to remain neutral in military conflicts?",
+      "answers": {
+        "A": "Neutrality",
+        "B": "Isolationism",
+        "C": "Imperialism",
+        "D": "Expansionism"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q993",
+      "category": "sports",
+      "difficulty": "normal",
+      "question": "Which athlete holds the record for the most Olympic gold medals in history?",
+      "answers": {
+        "A": "Michael Phelps",
+        "B": "Usain Bolt",
+        "C": "Carl Lewis",
+        "D": "Mark Spitz"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q994",
+      "category": "philosophy",
+      "difficulty": "normal",
+      "question": "Which philosopher wrote the famous work 'Leviathan'?",
+      "answers": {
+        "A": "Thomas Hobbes",
+        "B": "Jean-Jacques Rousseau",
+        "C": "Montesquieu",
+        "D": "John Stuart Mill"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q995",
+      "category": "global_systems",
+      "difficulty": "normal",
+      "question": "Which global organization sets international standards for measurement and units?",
+      "answers": {
+        "A": "International Bureau of Weights and Measures",
+        "B": "UNESCO",
+        "C": "World Bank",
+        "D": "WTO"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q996",
+      "category": "business",
+      "difficulty": "normal",
+      "question": "What term refers to a company's profit divided by its total revenue?",
+      "answers": {
+        "A": "Profit margin",
+        "B": "Market share",
+        "C": "Equity ratio",
+        "D": "Liquidity"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q997",
+      "category": "mythology",
+      "difficulty": "normal",
+      "question": "In Greek mythology, what creature had the head of a bull and the body of a man?",
+      "answers": {
+        "A": "Minotaur",
+        "B": "Centaur",
+        "C": "Satyr",
+        "D": "Cyclops"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q998",
+      "category": "politics",
+      "difficulty": "normal",
+      "question": "Which political thinker wrote 'The Prince', a treatise on power and leadership?",
+      "answers": {
+        "A": "Niccolò Machiavelli",
+        "B": "Thomas More",
+        "C": "Francis Bacon",
+        "D": "Hugo Grotius"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q999",
+      "category": "sports",
+      "difficulty": "normal",
+      "question": "In which sport would you compete for the Stanley Cup?",
+      "answers": {
+        "A": "Ice hockey",
+        "B": "Basketball",
+        "C": "Baseball",
+        "D": "American football"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q1000",
+      "category": "global_systems",
+      "difficulty": "hard",
+      "question": "Which agreement created the framework for the modern World Trade Organization in 1995?",
+      "answers": {
+        "A": "General Agreement on Tariffs and Trade",
+        "B": "Uruguay Round Agreement",
+        "C": "Bretton Woods Agreement",
+        "D": "Doha Development Round"
       },
       "correct": "B"
     }
