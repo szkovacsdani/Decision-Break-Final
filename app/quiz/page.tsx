@@ -2,6 +2,7 @@
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 type Question = {
   id: string;
@@ -238,6 +239,7 @@ export default function QuizPage() {
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <a href="/" style={{ color: "#fff", textDecoration: "none", opacity: 0.85 }}>
             ← Home
+            </Link>
           </a>
 
           {status === "playing" && (
