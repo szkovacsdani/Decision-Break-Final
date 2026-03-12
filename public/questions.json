@@ -8538,6 +8538,525 @@
         "D": "Pager"
       },
       "correct": "B"
-    }
-  ]
-}
+    },
+    {
+      "id": "q702",
+      "category": "mythology",
+      "difficulty": "easy",
+      "question": "In Greek mythology, who is the king of the gods?",
+      "answers": {
+      "A": "Zeus",
+      "B": "Apollo",
+      "C": "Hermes",
+      "D": "Ares"
+      },
+      "correct": "A"
+      },
+      {
+      "id": "q703",
+      "category": "mythology",
+      "difficulty": "normal",
+      "question": "Which creature in Greek mythology has the body of a lion and the head of a human?",
+      "answers": {
+      "A": "Minotaur",
+      "B": "Sphinx",
+      "C": "Centaur",
+      "D": "Hydra"
+      },
+      "correct": "B"
+      },
+      {
+      "id": "q704",
+      "category": "global_systems",
+      "difficulty": "normal",
+      "question": "Which organization manages international trade rules?",
+      "answers": {
+      "A": "UNESCO",
+      "B": "WTO",
+      "C": "NATO",
+      "D": "Interpol"
+      },
+      "correct": "B"
+      },
+      {
+      "id": "q705",
+      "category": "environment",
+      "difficulty": "easy",
+      "question": "Which gas is the primary contributor to the greenhouse effect?",
+      "answers": {
+      "A": "Oxygen",
+      "B": "Nitrogen",
+      "C": "Carbon dioxide",
+      "D": "Helium"
+      },
+      "correct": "C"
+      },
+      {
+      "id": "q706",
+      "category": "politics",
+      "difficulty": "normal",
+      "question": "What is the term for the right to vote in political elections?",
+      "answers": {
+      "A": "Suffrage",
+      "B": "Mandate",
+      "C": "Diplomacy",
+      "D": "Referendum"
+      },
+      "correct": "A"
+      },
+      {
+      "id": "q707",
+      "category": "innovation",
+      "difficulty": "easy",
+      "question": "Which company developed the first iPhone?",
+      "answers": {
+      "A": "Apple",
+      "B": "Microsoft",
+      "C": "Nokia",
+      "D": "Samsung"
+      },
+      "correct": "A"
+      },
+      {
+      "id": "q708",
+      "category": "art_architecture",
+      "difficulty": "easy",
+      "question": "Who painted the Mona Lisa?",
+      "answers": {
+      "A": "Leonardo da Vinci",
+      "B": "Michelangelo",
+      "C": "Raphael",
+      "D": "Donatello"
+      },
+      "correct": "A"
+      },
+      {
+      "id": "q709",
+      "category": "world_culture",
+      "difficulty": "normal",
+      "question": "Which festival is widely celebrated in India with colored powders?",
+      "answers": {
+      "A": "Diwali",
+      "B": "Holi",
+      "C": "Navratri",
+      "D": "Durga Puja"
+      },
+      "correct": "B"
+      },
+      {
+      "id": "q710",
+      "category": "economics",
+      "difficulty": "normal",
+      "question": "What term describes a continuous increase in general price levels?",
+      "answers": {
+      "A": "Inflation",
+      "B": "Deflation",
+      "C": "Recession",
+      "D": "Stagnation"
+      },
+      "correct": "A"
+      },
+      {
+      "id": "q711",
+      "category": "psychology",
+      "difficulty": "easy",
+      "question": "Which part of the brain is primarily responsible for memory formation?",
+      "answers": {
+      "A": "Hippocampus",
+      "B": "Cerebellum",
+      "C": "Medulla",
+      "D": "Amygdala"
+      },
+      "correct": "A"
+      },
+      {
+      "id": "q712",
+      "category": "environment",
+      "difficulty": "normal",
+      "question": "Which renewable energy source uses moving air to generate electricity?",
+      "answers": {
+      "A": "Hydropower",
+      "B": "Solar",
+      "C": "Wind",
+      "D": "Geothermal"
+      },
+      "correct": "C"
+      },
+      {
+      "id": "q713",
+      "category": "politics",
+      "difficulty": "easy",
+      "question": "What is the main legislative body of the United States called?",
+      "answers": {
+      "A": "Congress",
+      "B": "Senate",
+      "C": "Cabinet",
+      "D": "Supreme Court"
+      },
+      "correct": "A"
+      },
+      {
+      "id": "q714",
+      "category": "innovation",
+      "difficulty": "normal",
+      "question": "Which technology is most associated with cryptocurrencies?",
+      "answers": {
+      "A": "Blockchain",
+      "B": "Cloud storage",
+      "C": "Virtual reality",
+      "D": "Satellite networks"
+      },
+      "correct": "A"
+      },
+      {
+      "id": "q715",
+      "category": "mythology",
+      "difficulty": "normal",
+      "question": "In Norse mythology, who wields the hammer Mjölnir?",
+      "answers": {
+      "A": "Odin",
+      "B": "Thor",
+      "C": "Loki",
+      "D": "Balder"
+      },
+      "correct": "B"
+      },
+      {
+      "id": "q716",
+      "category": "global_systems",
+      "difficulty": "normal",
+      "question": "Which organization is responsible for maintaining international peace and security?",
+      "answers": {
+      "A": "UN",
+      "B": "EU",
+      "C": "WTO",
+      "D": "OECD"
+      },
+      "correct": "A"
+      },
+      {
+      "id": "q717",
+      "category": "art_architecture",
+      "difficulty": "normal",
+      "question": "Which famous building in Paris was designed by Gustave Eiffel?",
+      "answers": {
+      "A": "Louvre Pyramid",
+      "B": "Eiffel Tower",
+      "C": "Notre-Dame Cathedral",
+      "D": "Arc de Triomphe"
+      },
+      "correct": "B"
+      },
+      {
+      "id": "q718",
+      "category": "world_culture",
+      "difficulty": "easy",
+      "question": "Sushi is a traditional cuisine from which country?",
+      "answers": {
+      "A": "Japan",
+      "B": "China",
+      "C": "Thailand",
+      "D": "Vietnam"
+      },
+      "correct": "A"
+      },
+      {
+      "id": "q719",
+      "category": "psychology",
+      "difficulty": "normal",
+      "question": "Which psychologist is known for the theory of classical conditioning?",
+      "answers": {
+      "A": "Sigmund Freud",
+      "B": "Ivan Pavlov",
+      "C": "Carl Jung",
+      "D": "B.F. Skinner"
+      },
+      "correct": "B"
+      },
+      {
+      "id": "q720",
+      "category": "environment",
+      "difficulty": "hard",
+      "question": "Which international agreement aims to limit global warming to below 2°C above pre-industrial levels?",
+      "answers": {
+      "A": "Kyoto Protocol",
+      "B": "Paris Agreement",
+      "C": "Montreal Protocol",
+      "D": "Rio Declaration"
+      },
+      "correct": "B"
+      },
+      {
+      "id": "q721",
+      "category": "economics",
+      "difficulty": "normal",
+      "question": "What term describes government spending exceeding its revenue?",
+      "answers": {
+      "A": "Trade surplus",
+      "B": "Budget deficit",
+      "C": "Fiscal balance",
+      "D": "Capital gain"
+      },
+      "correct": "B"
+      },
+      {
+        "id": "q722",
+        "category": "mythology",
+        "difficulty": "normal",
+        "question": "In Greek mythology, who flew too close to the Sun with wings made of wax?",
+        "answers": {
+        "A": "Daedalus",
+        "B": "Icarus",
+        "C": "Perseus",
+        "D": "Theseus"
+        },
+        "correct": "B"
+        },
+        {
+        "id": "q723",
+        "category": "environment",
+        "difficulty": "easy",
+        "question": "What process do plants use to convert sunlight into chemical energy?",
+        "answers": {
+        "A": "Respiration",
+        "B": "Photosynthesis",
+        "C": "Fermentation",
+        "D": "Transpiration"
+        },
+        "correct": "B"
+        },
+        {
+        "id": "q724",
+        "category": "politics",
+        "difficulty": "normal",
+        "question": "What is a political system ruled by a single leader with absolute power called?",
+        "answers": {
+        "A": "Democracy",
+        "B": "Monarchy",
+        "C": "Dictatorship",
+        "D": "Republic"
+        },
+        "correct": "C"
+        },
+        {
+        "id": "q725",
+        "category": "innovation",
+        "difficulty": "easy",
+        "question": "Which technology allows computers to learn from data without explicit programming?",
+        "answers": {
+        "A": "Machine learning",
+        "B": "Blockchain",
+        "C": "Quantum computing",
+        "D": "Satellite communication"
+        },
+        "correct": "A"
+        },
+        {
+        "id": "q726",
+        "category": "art_architecture",
+        "difficulty": "normal",
+        "question": "Which Spanish architect designed the Sagrada Família in Barcelona?",
+        "answers": {
+        "A": "Santiago Calatrava",
+        "B": "Antoni Gaudí",
+        "C": "Rafael Moneo",
+        "D": "Ricardo Bofill"
+        },
+        "correct": "B"
+        },
+        {
+        "id": "q727",
+        "category": "world_culture",
+        "difficulty": "normal",
+        "question": "Which country is famous for the traditional dance called flamenco?",
+        "answers": {
+        "A": "Spain",
+        "B": "Italy",
+        "C": "Argentina",
+        "D": "Mexico"
+        },
+        "correct": "A"
+        },
+        {
+        "id": "q728",
+        "category": "economics",
+        "difficulty": "normal",
+        "question": "What does GDP stand for in economics?",
+        "answers": {
+        "A": "Global Development Policy",
+        "B": "Gross Domestic Product",
+        "C": "General Demand Price",
+        "D": "Gross Distribution Plan"
+        },
+        "correct": "B"
+        },
+        {
+        "id": "q729",
+        "category": "psychology",
+        "difficulty": "normal",
+        "question": "Which term describes the ability to understand and manage one's own emotions?",
+        "answers": {
+        "A": "Cognitive bias",
+        "B": "Emotional intelligence",
+        "C": "Behavioral instinct",
+        "D": "Subconscious response"
+        },
+        "correct": "B"
+        },
+        {
+        "id": "q730",
+        "category": "environment",
+        "difficulty": "normal",
+        "question": "Which layer of Earth's atmosphere contains the ozone layer?",
+        "answers": {
+        "A": "Troposphere",
+        "B": "Stratosphere",
+        "C": "Mesosphere",
+        "D": "Thermosphere"
+        },
+        "correct": "B"
+        },
+        {
+        "id": "q731",
+        "category": "politics",
+        "difficulty": "easy",
+        "question": "Which document begins with the words 'We the People' in the United States?",
+        "answers": {
+        "A": "Bill of Rights",
+        "B": "Declaration of Independence",
+        "C": "U.S. Constitution",
+        "D": "Federalist Papers"
+        },
+        "correct": "C"
+        },
+        {
+        "id": "q732",
+        "category": "global_systems",
+        "difficulty": "normal",
+        "question": "Which international organization provides loans and financial assistance to developing countries?",
+        "answers": {
+        "A": "World Bank",
+        "B": "Interpol",
+        "C": "UNICEF",
+        "D": "WHO"
+        },
+        "correct": "A"
+        },
+        {
+        "id": "q733",
+        "category": "innovation",
+        "difficulty": "normal",
+        "question": "Which company is known for developing the Android operating system?",
+        "answers": {
+        "A": "Apple",
+        "B": "Google",
+        "C": "Microsoft",
+        "D": "IBM"
+        },
+        "correct": "B"
+        },
+        {
+        "id": "q734",
+        "category": "mythology",
+        "difficulty": "normal",
+        "question": "In Egyptian mythology, who is the god of the afterlife and resurrection?",
+        "answers": {
+        "A": "Ra",
+        "B": "Horus",
+        "C": "Osiris",
+        "D": "Anubis"
+        },
+        "correct": "C"
+        },
+        {
+        "id": "q735",
+        "category": "art_architecture",
+        "difficulty": "easy",
+        "question": "Which famous museum in Paris houses the Mona Lisa?",
+        "answers": {
+        "A": "Musée d'Orsay",
+        "B": "Louvre",
+        "C": "Pompidou Center",
+        "D": "Versailles Palace"
+        },
+        "correct": "B"
+        },
+        {
+        "id": "q736",
+        "category": "world_culture",
+        "difficulty": "easy",
+        "question": "Which country celebrates the Day of the Dead (Día de los Muertos)?",
+        "answers": {
+        "A": "Mexico",
+        "B": "Spain",
+        "C": "Peru",
+        "D": "Brazil"
+        },
+        "correct": "A"
+        },
+        {
+        "id": "q737",
+        "category": "economics",
+        "difficulty": "hard",
+        "question": "What economic term describes a sustained decline in economic activity lasting several months or years?",
+        "answers": {
+        "A": "Inflation",
+        "B": "Recession",
+        "C": "Boom",
+        "D": "Stagnation"
+        },
+        "correct": "B"
+        },
+        {
+        "id": "q738",
+        "category": "psychology",
+        "difficulty": "easy",
+        "question": "Which famous psychologist developed the hierarchy of needs theory?",
+        "answers": {
+        "A": "Sigmund Freud",
+        "B": "Abraham Maslow",
+        "C": "Jean Piaget",
+        "D": "Carl Rogers"
+        },
+        "correct": "B"
+        },
+        {
+        "id": "q739",
+        "category": "environment",
+        "difficulty": "normal",
+        "question": "What term describes the variety of life in a particular ecosystem?",
+        "answers": {
+        "A": "Biodiversity",
+        "B": "Biomass",
+        "C": "Biotope",
+        "D": "Bioaccumulation"
+        },
+        "correct": "A"
+        },
+        {
+        "id": "q740",
+        "category": "global_systems",
+        "difficulty": "normal",
+        "question": "Which global organization coordinates responses to international public health emergencies?",
+        "answers": {
+        "A": "WHO",
+        "B": "IMF",
+        "C": "WTO",
+        "D": "NATO"
+        },
+        "correct": "A"
+        },
+        {
+        "id": "q741",
+        "category": "politics",
+        "difficulty": "normal",
+        "question": "What is the term for citizens voting directly on a policy issue rather than through representatives?",
+        "answers": {
+        "A": "Election",
+        "B": "Referendum",
+        "C": "Mandate",
+        "D": "Legislation"
+        },
+        "correct": "B"
+        }
+    ]
