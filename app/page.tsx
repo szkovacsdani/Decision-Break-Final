@@ -1,5 +1,11 @@
 "use client";
 
+import Link from "next/link";
+
+<Link href="/duel">
+  <button>DUEL</button>
+</Link>;
+
 import { useEffect } from "react";
 import { supabase } from "@/lib/supabase";
 
@@ -121,9 +127,7 @@ export default function Home() {
             }}
           >
             <div style={{ fontWeight: 900 }}>Hybrid</div>
-            <div style={{ opacity: 0.8, fontSize: 12 }}>
-              Physical + Digital
-            </div>
+            <div style={{ opacity: 0.8, fontSize: 12 }}>Physical + Digital</div>
           </div>
         </div>
       </div>
