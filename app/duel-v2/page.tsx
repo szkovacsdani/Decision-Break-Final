@@ -4,7 +4,7 @@ import { useEffect, useState, useRef } from "react";
 import { getSupabase } from "@/lib/supabase";
 
 export default function DuelPage() {
-  const supabase = getSupabase();
+  const supabase = useRef(getSupabase()).current;
 
   function generateCode() {
     const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
@@ -19,9 +19,9 @@ export default function DuelPage() {
   const [slot, setSlot] = useState<"A" | "B" | null>(null);
   const [roomCodeInput, setRoomCodeInput] = useState("");
 
-  const [room, setRoom] = useState<any>(null);
-  const [round, setRound] = useState<any>(null);
-  const [question, setQuestion] = useState<any>(null);
+  const [room, setRoom] = useState<any | null>(null);
+  const [round, setRound] = useState<any | null>(null);
+  const [question, setQuestion] = useState<any | null>(null);
   const [players, setPlayers] = useState<any[]>([]);
 
   const [guess, setGuess] = useState("");
@@ -48,6 +48,7 @@ export default function DuelPage() {
         .single();
 
       if (!roomData) return;
+
       setRoom(roomData);
 
       const { data: playersData } = await supabase
@@ -89,6 +90,7 @@ export default function DuelPage() {
       const start = new Date(roundData.started_at).getTime();
       const elapsed = Math.floor((Date.now() - start) / 1000);
       const remaining = roundData.duration_sec - elapsed;
+
       setTimeLeft(remaining > 0 ? remaining : 0);
 
       const timeExpired = Date.now() - start >= roundData.duration_sec * 1000;
@@ -121,8 +123,15 @@ export default function DuelPage() {
           .eq("duel_id", duelId)
           .eq("q_index", roundData.round_index);
 
-        const guessA = submissions?.find((s) => s.slot === "A")?.guess ?? "-";
-        const guessB = submissions?.find((s) => s.slot === "B")?.guess ?? "-";
+        const guessA =
+          submissions?.find(
+            (s: { slot: string; guess: number }) => s.slot === "A"
+          )?.guess ?? "-";
+
+        const guessB =
+          submissions?.find(
+            (s: { slot: string; guess: number }) => s.slot === "B"
+          )?.guess ?? "-";
 
         setRound({
           ...roundData,
@@ -143,7 +152,7 @@ export default function DuelPage() {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [duelId, isShowingResult, handledRound]);
+  }, [duelId, isShowingResult, handledRound, supabase]);
 
   async function createRoom() {
     const code = generateCode();
@@ -264,19 +273,19 @@ export default function DuelPage() {
             Each round lasts 10 seconds.
             <br />
             Closest answer wins the round.
-            <br />
-            Are you ready?
           </div>
 
           <button style={buttonStyle} onClick={createRoom}>
             Create Room
           </button>
+
           <input
             placeholder="Enter Room Code"
             value={roomCodeInput}
             onChange={(e) => setRoomCodeInput(e.target.value)}
             style={{ ...inputStyle, marginTop: 20 }}
           />
+
           <button style={buttonStyle} onClick={joinRoom}>
             Join
           </button>
@@ -292,123 +301,6 @@ export default function DuelPage() {
           <h3>You are Player {slot}</h3>
           <h2>Room Code: {room.code}</h2>
           <p>Waiting for opponent...</p>
-        </div>
-      </div>
-    );
-  }
-
-  if (room?.status === "playing") {
-    const danger = timeLeft <= 3 && !isShowingResult;
-    const blink = timeLeft <= 3 && timeLeft % 2 === 0;
-
-    return (
-      <div style={containerStyle}>
-        <div style={cardStyle}>
-          <h3>You are Player {slot}</h3>
-          <h2>Round {room.current_q}</h2>
-
-          <p>Player A: {playerA?.round_points || 0}</p>
-          <p>Player B: {playerB?.round_points || 0}</p>
-
-          {question && <p>{question.question}</p>}
-
-          {!isShowingResult && !round?.resolved && (
-            <>
-              <h1
-                style={{
-                  fontSize: 60,
-                  color: danger ? "#ff1a1a" : "white",
-                  opacity: blink ? 0.4 : 1,
-                }}
-              >
-                {timeLeft}
-              </h1>
-
-              {!submitted ? (
-                <>
-                  <input
-                    type="number"
-                    value={guess}
-                    onChange={(e) => setGuess(e.target.value)}
-                    style={inputStyle}
-                  />
-                  <button style={buttonStyle} onClick={submitGuess}>
-                    Submit
-                  </button>
-                </>
-              ) : (
-                <p>Waiting for opponent...</p>
-              )}
-            </>
-          )}
-
-          {isShowingResult && (
-            <div style={{ textAlign: "center", marginTop: 20 }}>
-              <h3>Round Result</h3>
-              <p>Correct answer: {round?.correct_answer}</p>
-              <p>Player A guessed: {round?.guessA}</p>
-              <p>Player B guessed: {round?.guessB}</p>
-              <p>Player A diff: {round?.diff_a}</p>
-              <p>Player B diff: {round?.diff_b}</p>
-              <h2>
-                {round?.winner_slot === "DRAW"
-                  ? "Draw"
-                  : `Winner: Player ${round?.winner_slot}`}
-              </h2>
-              <p>Next round in 5 seconds...</p>
-            </div>
-          )}
-        </div>
-      </div>
-    );
-  }
-
-  if (room?.status === "finished") {
-    const aScore = playerA?.round_points || 0;
-    const bScore = playerB?.round_points || 0;
-
-    let winner: "A" | "B" | "DRAW" = "DRAW";
-    if (aScore > bScore) winner = "A";
-    if (bScore > aScore) winner = "B";
-
-    return (
-      <div style={containerStyle}>
-        <div style={cardStyle}>
-          <h2>Game Finished</h2>
-          <p>Player A: {aScore}</p>
-          <p>Player B: {bScore}</p>
-
-          <h2>{winner === "DRAW" ? "Draw" : `Winner: Player ${winner}`}</h2>
-
-          {aScore === 3 && (
-            <>
-              <p>Winner: Move +2 spaces forward.</p>
-              <p>Loser: Move -1 space backward.</p>
-            </>
-          )}
-
-          {bScore === 3 && (
-            <>
-              <p>Winner: Move +2 spaces forward.</p>
-              <p>Loser: Move -1 space backward.</p>
-            </>
-          )}
-
-          {aScore === 2 && bScore === 1 && (
-            <p>Winner: Move +1 space forward.</p>
-          )}
-
-          {bScore === 2 && aScore === 1 && (
-            <p>Winner: Move +1 space forward.</p>
-          )}
-
-          {aScore === 1 && bScore === 1 && <p>Draw: Both move +1 space.</p>}
-          <button
-            style={buttonStyle}
-            onClick={() => (window.location.href = "/")}
-          >
-            Back to Home
-          </button>
         </div>
       </div>
     );
