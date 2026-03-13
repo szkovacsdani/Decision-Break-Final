@@ -7,7 +7,7 @@ import Link from "next/link";
 </Link>;
 
 import { useEffect } from "react";
-import { supabase } from "@/lib/supabase";
+import { getsupabase } from "@/lib/supabase";
 
 export default function Home() {
   useEffect(() => {
