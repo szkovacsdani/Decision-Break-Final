@@ -3,8 +3,9 @@
 import { useEffect, useState, useRef } from "react";
 import { getSupabase } from "@/lib/supabase";
 
-export default function DuelPage() {
-  const supabase = useRef(getSupabase()).current;
+export default function Page() {
+  const supabaseRef = useRef(getSupabase());
+  const supabase = supabaseRef.current;
 
   function generateCode() {
     const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
@@ -124,14 +125,10 @@ export default function DuelPage() {
           .eq("q_index", roundData.round_index);
 
         const guessA =
-          submissions?.find(
-            (s: { slot: string; guess: number }) => s.slot === "A"
-          )?.guess ?? "-";
+          submissions?.find((s: any) => s.slot === "A")?.guess ?? "-";
 
         const guessB =
-          submissions?.find(
-            (s: { slot: string; guess: number }) => s.slot === "B"
-          )?.guess ?? "-";
+          submissions?.find((s: any) => s.slot === "B")?.guess ?? "-";
 
         setRound({
           ...roundData,
@@ -152,7 +149,7 @@ export default function DuelPage() {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [duelId, isShowingResult, handledRound, supabase]);
+  }, [duelId, isShowingResult, handledRound]);
 
   async function createRoom() {
     const code = generateCode();
