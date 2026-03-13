@@ -3,7 +3,7 @@
 export const dynamic = "force-dynamic";
 
 import { useEffect, useState, useRef } from "react";
-import { getsupabase } from "@/lib/supabase";
+import { getSupabase } from "@/lib/supabase";
 
 function generateCode() {
   const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
