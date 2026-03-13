@@ -18,7 +18,7 @@ type DuelRound = {
   duration_sec: number;
 };
 
-export default function DuelPage({ params }: { params: { id: string } }) {
+export default function DuelPage({ params }: any) {
   const duelId = params.id;
 
   const [room, setRoom] = useState<DuelRoom | null>(null);
