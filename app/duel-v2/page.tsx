@@ -3,7 +3,7 @@
 export const dynamic = "force-dynamic";
 
 import { useEffect, useState, useRef } from "react";
-import { supabase } from "@/lib/supabase";
+import { getsupabase } from "@/lib/supabase";
 
 function generateCode() {
   const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
@@ -15,6 +15,11 @@ function generateCode() {
 }
 
 export default function DuelPage() {
+  const supabase = getSupabase();
+
+  if (!supabase) {
+    return <div>Loading...</div>;
+  }
   const [duelId, setDuelId] = useState<string | null>(null);
   const [slot, setSlot] = useState<"A" | "B" | null>(null);
   const [roomCodeInput, setRoomCodeInput] = useState("");
