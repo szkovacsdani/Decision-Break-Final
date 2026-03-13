@@ -1,11 +1,5 @@
 "use client";
 
-import Link from "next/link";
-
-<Link href="/duel">
-  <button>DUEL</button>
-</Link>;
-
 import { useEffect } from "react";
 import { getsupabase } from "@/lib/supabase";
 
@@ -44,7 +38,7 @@ export default function Home() {
             flexWrap: "wrap",
           }}
         >
-          {/* PLAY QUIZ - GREEN */}
+          {/* PLAY QUIZ */}
           <a
             href="/quiz"
             style={{
@@ -60,7 +54,7 @@ export default function Home() {
             PLAY QUIZ
           </a>
 
-          {/* PLAY DUEL - RED */}
+          {/* PLAY DUEL */}
           <a
             href="/duel-v2"
             style={{
