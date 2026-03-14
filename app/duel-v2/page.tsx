@@ -291,7 +291,17 @@ export default function Page() {
     );
   }
 
-  if (room?.status === "waiting") {
+  if (!room) {
+    return (
+      <div style={containerStyle}>
+        <div style={cardStyle}>
+          <h2>Loading room...</h2>
+        </div>
+      </div>
+    );
+  }
+
+  if (room.status === "waiting") {
     return (
       <div style={containerStyle}>
         <div style={cardStyle}>
@@ -303,5 +313,11 @@ export default function Page() {
     );
   }
 
-  return null;
+  return (
+    <div style={containerStyle}>
+      <div style={cardStyle}>
+        <h2>Game starting...</h2>
+      </div>
+    </div>
+  );
 }
