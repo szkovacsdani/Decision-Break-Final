@@ -71,7 +71,7 @@ export default function Page() {
         .from("duel_rounds")
         .select("*")
         .eq("duel_id", duelId)
-        .order("round_index", { ascending: true })
+        .order("round_index", { ascending: false })
         .limit(1)
         .maybeSingle();
 
@@ -104,7 +104,9 @@ export default function Page() {
           .eq("duel_id", duelId)
           .eq("q_index", roundData.round_index);
 
-        if (count === 2 || timeExpired) {
+        const submissions = count ?? 0;
+
+        if (submissions >= 2 || timeExpired) {
           resolvingRef.current = true;
 
           await supabase.rpc("resolve_round", {
@@ -323,7 +325,6 @@ export default function Page() {
       </div>
     );
   }
-
   return (
     <div style={containerStyle}>
       <div style={cardStyle}>
@@ -333,7 +334,15 @@ export default function Page() {
 
         <p>Time left: {timeLeft}</p>
 
-        {!submitted && (
+        {isShowingResult && (
+          <div style={{ marginTop: 20 }}>
+            <h3>Round Result</h3>
+            <p>Player A guess: {round.guessA}</p>
+            <p>Player B guess: {round.guessB}</p>
+          </div>
+        )}
+
+        {!submitted && !isShowingResult && (
           <>
             <input
               style={inputStyle}
@@ -348,7 +357,9 @@ export default function Page() {
           </>
         )}
 
-        {submitted && <p>Answer submitted. Waiting for opponent...</p>}
+        {submitted && !isShowingResult && (
+          <p>Answer submitted. Waiting for opponent...</p>
+        )}
       </div>
     </div>
   );
