@@ -30,6 +30,7 @@ export default function Page() {
   const [timeLeft, setTimeLeft] = useState(10);
   const [isShowingResult, setIsShowingResult] = useState(false);
   const [handledRound, setHandledRound] = useState<number | null>(null);
+  const [gameOver, setGameOver] = useState(false);
 
   const resolvingRef = useRef(false);
 
@@ -83,7 +84,7 @@ export default function Page() {
 
       const { data: questionData } = await supabase
         .from("duel_questions")
-        .select("question")
+        .select("question, answer")
         .eq("id", roundData.question_id)
         .single();
 
@@ -140,6 +141,11 @@ export default function Page() {
         });
 
         setIsShowingResult(true);
+
+        if (roundData.round_index === 3) {
+          setGameOver(true);
+          return;
+        }
 
         setTimeout(async () => {
           await supabase.rpc("advance_round", {
@@ -237,106 +243,35 @@ export default function Page() {
     border: "1px solid rgba(255,0,0,0.2)",
   };
 
-  const buttonStyle = {
-    width: "100%",
-    padding: 12,
-    background: "#b30000",
-    color: "white",
-    fontWeight: "bold",
-    borderRadius: 8,
-    border: "none",
-    cursor: "pointer",
-  };
-
-  const inputStyle = {
-    width: "100%",
-    padding: 12,
-    marginBottom: 10,
-    background: "#ffffff",
-    color: "#000000",
-    fontSize: 18,
-    borderRadius: 8,
-    border: "none",
-  };
-
-  if (!duelId) {
+  if (gameOver) {
     return (
       <div style={containerStyle}>
         <div style={cardStyle}>
-          <h1>Duel</h1>
-
-          <div style={{ marginBottom: 20, lineHeight: 1.6 }}>
-            <strong>Duel Rules</strong>
-            <br />
-            2 players compete in 3 rounds.
-            <br />
-            Each round lasts 10 seconds.
-            <br />
-            Closest answer wins the round.
-          </div>
-
-          <button style={buttonStyle} onClick={createRoom}>
-            Create Room
-          </button>
-
-          <input
-            placeholder="Enter Room Code"
-            value={roomCodeInput}
-            onChange={(e) => setRoomCodeInput(e.target.value)}
-            style={{ ...inputStyle, marginTop: 20 }}
-          />
-
-          <button style={buttonStyle} onClick={joinRoom}>
-            Join
-          </button>
+          <h2>Game Over</h2>
+          <p>Player A score: {playerA?.position ?? 0}</p>
+          <p>Player B score: {playerB?.position ?? 0}</p>
         </div>
       </div>
     );
   }
 
-  if (!room) {
-    return (
-      <div style={containerStyle}>
-        <div style={cardStyle}>
-          <h2>Loading room...</h2>
-        </div>
-      </div>
-    );
-  }
-
-  if (room.status === "waiting") {
-    return (
-      <div style={containerStyle}>
-        <div style={cardStyle}>
-          <h3>You are Player {slot}</h3>
-          <h2>Room Code: {room.code}</h2>
-          <p>Waiting for opponent...</p>
-        </div>
-      </div>
-    );
-  }
-
-  if (!round || !question) {
-    return (
-      <div style={containerStyle}>
-        <div style={cardStyle}>
-          <h2>Game starting...</h2>
-        </div>
-      </div>
-    );
-  }
   return (
     <div style={containerStyle}>
       <div style={cardStyle}>
         <h2>Round {round.round_index}</h2>
 
-        <p style={{ marginBottom: 20 }}>{question.question}</p>
+        <p>{question.question}</p>
 
         <p>Time left: {timeLeft}</p>
 
+        <p>Score</p>
+        <p>Player A: {playerA?.position ?? 0}</p>
+        <p>Player B: {playerB?.position ?? 0}</p>
+
         {isShowingResult && (
-          <div style={{ marginTop: 20 }}>
+          <div>
             <h3>Round Result</h3>
+            <p>Correct answer: {question.answer}</p>
             <p>Player A guess: {round.guessA}</p>
             <p>Player B guess: {round.guessB}</p>
           </div>
@@ -345,15 +280,12 @@ export default function Page() {
         {!submitted && !isShowingResult && (
           <>
             <input
-              style={inputStyle}
               value={guess}
               onChange={(e) => setGuess(e.target.value)}
               placeholder="Enter your guess"
             />
 
-            <button style={buttonStyle} onClick={submitGuess}>
-              Submit
-            </button>
+            <button onClick={submitGuess}>Submit</button>
           </>
         )}
 
