@@ -338,7 +338,21 @@ export default function Page() {
     );
   }
 
-  /* ---------- WAITING ---------- */
+  /* ---------- WAITING ROOM ---------- */
+
+  if (room?.status === "waiting") {
+    return (
+      <div style={containerStyle}>
+        <div style={cardStyle}>
+          <h3>You are Player {slot}</h3>
+          <h2>Room Code: {room?.code}</h2>
+          <p>Waiting for opponent...</p>
+        </div>
+      </div>
+    );
+  }
+
+  /* ---------- GAME START ---------- */
 
   if (!round || !question) {
     return (
