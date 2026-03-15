@@ -126,20 +126,19 @@ export default function Page() {
 
         const { data: submissions } = await supabase
           .from("duel_submissions")
-          .select("slot, guess")
+          .select("slot, guess, response_time")
           .eq("duel_id", duelId)
           .eq("q_index", roundData.round_index);
 
-        const guessA =
-          submissions?.find((s: any) => s.slot === "A")?.guess ?? "-";
-
-        const guessB =
-          submissions?.find((s: any) => s.slot === "B")?.guess ?? "-";
+        const subA = submissions?.find((s: any) => s.slot === "A");
+        const subB = submissions?.find((s: any) => s.slot === "B");
 
         setRound({
           ...roundData,
-          guessA,
-          guessB,
+          guessA: subA?.guess ?? "-",
+          guessB: subB?.guess ?? "-",
+          timeA: subA?.response_time ?? "-",
+          timeB: subB?.response_time ?? "-",
         });
 
         setIsShowingResult(true);
@@ -272,37 +271,67 @@ export default function Page() {
       <div style={cardStyle}>
         <h2>Round {round?.round_index ?? "-"}</h2>
 
-        <p>{question.question}</p>
+        <p>{question?.question ?? "-"}</p>
 
         <p>Time left: {timeLeft}</p>
 
-        <p>Score</p>
-        <p>Player A: {playerA?.position ?? 0}</p>
-        <p>Player B: {playerB?.position ?? 0}</p>
+        <div style={{ marginTop: 10 }}>
+          <h3>Score</h3>
+          <p>Player A: {playerA?.position ?? 0}</p>
+          <p>Player B: {playerB?.position ?? 0}</p>
+        </div>
 
         {isShowingResult && (
-          <div>
+          <div style={{ marginTop: 20 }}>
             <h3>Round Result</h3>
-            <p>Correct answer: {question?.answer}</p>
-            <p>Player A guess: {round?.guessA}</p>
-            <p>Player B guess: {round?.guessB}</p>
+
+            <p>Correct answer: {question?.answer ?? "-"}</p>
+
+            <p>Player A guess: {round?.guessA ?? "-"}</p>
+            <p>Player B guess: {round?.guessB ?? "-"}</p>
+
+            <p>Player A time: {round?.timeA ?? "-"} s</p>
+            <p>Player B time: {round?.timeB ?? "-"} s</p>
           </div>
         )}
 
         {!submitted && !isShowingResult && (
-          <>
+          <div style={{ marginTop: 20 }}>
             <input
               value={guess}
               onChange={(e) => setGuess(e.target.value)}
               placeholder="Enter your guess"
+              style={{
+                width: "100%",
+                padding: 12,
+                marginBottom: 10,
+                borderRadius: 6,
+                border: "none",
+              }}
             />
 
-            <button onClick={submitGuess}>Submit</button>
-          </>
+            <button
+              onClick={submitGuess}
+              style={{
+                width: "100%",
+                padding: 12,
+                background: "#b30000",
+                color: "white",
+                border: "none",
+                borderRadius: 6,
+                cursor: "pointer",
+                fontWeight: "bold",
+              }}
+            >
+              Submit
+            </button>
+          </div>
         )}
 
         {submitted && !isShowingResult && (
-          <p>Answer submitted. Waiting for opponent...</p>
+          <p style={{ marginTop: 20 }}>
+            Answer submitted. Waiting for opponent...
+          </p>
         )}
       </div>
     </div>
