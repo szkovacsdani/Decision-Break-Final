@@ -313,10 +313,41 @@ export default function Page() {
     );
   }
 
+  if (!round || !question) {
+    return (
+      <div style={containerStyle}>
+        <div style={cardStyle}>
+          <h2>Game starting...</h2>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div style={containerStyle}>
       <div style={cardStyle}>
-        <h2>Game starting...</h2>
+        <h2>Round {round.round_index}</h2>
+
+        <p style={{ marginBottom: 20 }}>{question.question}</p>
+
+        <p>Time left: {timeLeft}</p>
+
+        {!submitted && (
+          <>
+            <input
+              style={inputStyle}
+              value={guess}
+              onChange={(e) => setGuess(e.target.value)}
+              placeholder="Enter your guess"
+            />
+
+            <button style={buttonStyle} onClick={submitGuess}>
+              Submit
+            </button>
+          </>
+        )}
+
+        {submitted && <p>Answer submitted. Waiting for opponent...</p>}
       </div>
     </div>
   );
