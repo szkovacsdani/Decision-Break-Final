@@ -144,7 +144,7 @@ export default function Page() {
         setIsShowingResult(true);
 
         if (roundData.round_index === 3) {
-          setGameOver(true);
+          setTimeout(() => setGameOver(true), 5000);
           return;
         }
 
@@ -244,6 +244,88 @@ export default function Page() {
     border: "1px solid rgba(255,0,0,0.2)",
   };
 
+  /* ---------- LOBBY ---------- */
+
+  if (!duelId) {
+    return (
+      <div style={containerStyle}>
+        <div style={cardStyle}>
+          <h2>Duel</h2>
+
+          <button
+            onClick={createRoom}
+            style={{
+              width: "100%",
+              padding: 12,
+              background: "#b30000",
+              color: "white",
+              border: "none",
+              borderRadius: 6,
+              cursor: "pointer",
+              fontWeight: "bold",
+              marginBottom: 20,
+            }}
+          >
+            Create Room
+          </button>
+
+          <input
+            placeholder="Enter Room Code"
+            value={roomCodeInput}
+            onChange={(e) => setRoomCodeInput(e.target.value)}
+            style={{
+              width: "100%",
+              padding: 12,
+              marginBottom: 10,
+              borderRadius: 6,
+              border: "none",
+            }}
+          />
+
+          <button
+            onClick={joinRoom}
+            style={{
+              width: "100%",
+              padding: 12,
+              background: "#444",
+              color: "white",
+              border: "none",
+              borderRadius: 6,
+              cursor: "pointer",
+              fontWeight: "bold",
+            }}
+          >
+            Join Room
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  /* ---------- LOBBY ---------- */
+
+  if (!duelId) {
+    return (
+      <div style={containerStyle}>
+        <div style={cardStyle}>
+          <h2>Duel</h2>
+
+          <button onClick={createRoom}>Create Room</button>
+
+          <input
+            placeholder="Enter Room Code"
+            value={roomCodeInput}
+            onChange={(e) => setRoomCodeInput(e.target.value)}
+          />
+
+          <button onClick={joinRoom}>Join Room</button>
+        </div>
+      </div>
+    );
+  }
+
+  /* ---------- GAME OVER ---------- */
+
   if (gameOver) {
     return (
       <div style={containerStyle}>
@@ -256,6 +338,8 @@ export default function Page() {
     );
   }
 
+  /* ---------- WAITING ---------- */
+
   if (!round || !question) {
     return (
       <div style={containerStyle}>
@@ -265,6 +349,7 @@ export default function Page() {
       </div>
     );
   }
+  /* ---------- GAME ---------- */
 
   return (
     <div style={containerStyle}>
