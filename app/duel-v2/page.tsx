@@ -1,6 +1,7 @@
 "use client";
 
 export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 import { useEffect, useState, useRef } from "react";
 import { getSupabase } from "@/lib/supabase";
@@ -257,10 +258,20 @@ export default function Page() {
     );
   }
 
+  if (!round || !question) {
+    return (
+      <div style={containerStyle}>
+        <div style={cardStyle}>
+          <h2>Game starting...</h2>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div style={containerStyle}>
       <div style={cardStyle}>
-        <h2>Round {round.round_index}</h2>
+        <h2>Round {round?.round_index ?? "-"}</h2>
 
         <p>{question.question}</p>
 
