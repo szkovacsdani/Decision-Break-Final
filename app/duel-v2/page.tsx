@@ -71,7 +71,7 @@ export default function Page() {
         .from("duel_rounds")
         .select("*")
         .eq("duel_id", duelId)
-        .eq("round_index", roomData.current_q)
+        .eq("round_index", roomData.current_q + 1)
         .maybeSingle();
 
       if (!roundData) return;
