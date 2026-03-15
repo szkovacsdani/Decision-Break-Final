@@ -87,7 +87,7 @@ export default function Page() {
       const { data: questionData } = await supabase
         .from("duel_questions")
         .select("question, answer")
-        .eq("id", roundData.question_id)
+        .eq("id", roundData?.question_id)
         .single();
 
       setQuestion(questionData);
@@ -273,9 +273,9 @@ export default function Page() {
         {isShowingResult && (
           <div>
             <h3>Round Result</h3>
-            <p>Correct answer: {question.answer}</p>
-            <p>Player A guess: {round.guessA}</p>
-            <p>Player B guess: {round.guessB}</p>
+            <p>Correct answer: {question?.answer}</p>
+            <p>Player A guess: {round?.guessA}</p>
+            <p>Player B guess: {round?.guessB}</p>
           </div>
         )}
 
