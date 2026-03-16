@@ -26,6 +26,7 @@ export default function Page() {
   const [round, setRound] = useState<any | null>(null);
   const [question, setQuestion] = useState<any | null>(null);
   const [players, setPlayers] = useState<any[]>([]);
+  const [rounds, setRounds] = useState<any[]>([]);
 
   const [guess, setGuess] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -61,6 +62,14 @@ export default function Page() {
         .eq("duel_id", duelId);
 
       setPlayers(playersData || []);
+
+      const { data: roundsData } = await supabase
+        .from("duel_rounds")
+        .select("round_index,winner_slot")
+        .eq("duel_id", duelId)
+        .order("round_index", { ascending: true });
+
+      setRounds(roundsData || []);
 
       if (playersData?.length === 2 && roomData.status === "waiting") {
         await supabase.rpc("start_duel", {
@@ -365,6 +374,36 @@ export default function Page() {
             }}
           >
             {room?.duel_result}
+          </div>
+          <div style={{ marginTop: 25 }}>
+            <h3>Round Results</h3>
+
+            {rounds.map((r) => (
+              <div
+                key={r.round_index}
+                style={{
+                  padding: "8px 12px",
+                  marginBottom: 6,
+                  borderRadius: 6,
+                  background:
+                    r.winner_slot === "A"
+                      ? "#0f3d1f"
+                      : r.winner_slot === "B"
+                      ? "#3d0f0f"
+                      : "#333",
+                  display: "flex",
+                  justifyContent: "space-between",
+                }}
+              >
+                <span>Round {r.round_index}</span>
+
+                <span>
+                  {r.winner_slot === "A" && "Player A wins"}
+                  {r.winner_slot === "B" && "Player B wins"}
+                  {r.winner_slot === "DRAW" && "Draw"}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
