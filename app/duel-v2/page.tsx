@@ -352,8 +352,20 @@ export default function Page() {
       <div style={containerStyle}>
         <div style={cardStyle}>
           <h2>Game Over</h2>
-          <p>Player A score: {playerA?.position ?? 0}</p>
-          <p>Player B score: {playerB?.position ?? 0}</p>
+
+          <p>Player A: {playerA?.round_points ?? 0}</p>
+          <p>Player B: {playerB?.round_points ?? 0}</p>
+
+          <div
+            style={{
+              marginTop: 25,
+              padding: 15,
+              background: "#1a1a1a",
+              borderRadius: 10,
+            }}
+          >
+            {room?.duel_result}
+          </div>
         </div>
       </div>
     );
@@ -395,27 +407,27 @@ export default function Page() {
 
         <p>Time left: {timeLeft}</p>
 
-<div style={{ height: 10 }} />
+        <div style={{ height: 10 }} />
 
-<div style={{ marginTop: 20 }}>
-  <h3>Score</h3>
-  <p>Player A: {playerA?.position ?? 0}</p>
-  <p>Player B: {playerB?.position ?? 0}</p>
-</div>
+        <div style={{ marginTop: 20 }}>
+          <h3>Score</h3>
+          <p>Player A: {playerA?.position ?? 0}</p>
+          <p>Player B: {playerB?.position ?? 0}</p>
+        </div>
 
-{round?.resolved && (
-  <div style={{ marginTop: 30, lineHeight: 1.6 }}>
-    <h3>Round Result</h3>
+        {round?.resolved && (
+          <div style={{ marginTop: 30, lineHeight: 1.6 }}>
+            <h3>Round Result</h3>
 
-    <p>Correct answer: {question?.answer ?? "-"}</p>
+            <p>Correct answer: {question?.answer ?? "-"}</p>
 
-    <p>Player A guess: {round?.guessA ?? "-"}</p>
-    <p>Player B guess: {round?.guessB ?? "-"}</p>
+            <p>Player A guess: {round?.guessA ?? "-"}</p>
+            <p>Player B guess: {round?.guessB ?? "-"}</p>
 
-    <p>Player A time: {round?.timeA ?? "-"} s</p>
-    <p>Player B time: {round?.timeB ?? "-"} s</p>
-  </div>
-)}
+            <p>Player A time: {round?.timeA ?? "-"} s</p>
+            <p>Player B time: {round?.timeB ?? "-"} s</p>
+          </div>
+        )}
 
         {!submitted && !isShowingResult && (
           <div style={{ marginTop: 20 }}>
