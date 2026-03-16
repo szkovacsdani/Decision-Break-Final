@@ -74,7 +74,7 @@ export default function Page() {
         .from("duel_rounds")
         .select("*")
         .eq("duel_id", duelId)
-        .order("round_index", { ascending: true })
+        .order("round_index", { ascending: false })
         .limit(1)
         .maybeSingle();
 
@@ -395,25 +395,27 @@ export default function Page() {
 
         <p>Time left: {timeLeft}</p>
 
-        <div style={{ marginTop: 10 }}>
-          <h3>Score</h3>
-          <p>Player A: {playerA?.position ?? 0}</p>
-          <p>Player B: {playerB?.position ?? 0}</p>
-        </div>
+<div style={{ height: 10 }} />
 
-        {round?.resolved && (
-          <div style={{ marginTop: 20 }}>
-            <h3>Round Result</h3>
+<div style={{ marginTop: 20 }}>
+  <h3>Score</h3>
+  <p>Player A: {playerA?.position ?? 0}</p>
+  <p>Player B: {playerB?.position ?? 0}</p>
+</div>
 
-            <p>Correct answer: {question?.answer ?? "-"}</p>
+{round?.resolved && (
+  <div style={{ marginTop: 30, lineHeight: 1.6 }}>
+    <h3>Round Result</h3>
 
-            <p>Player A guess: {round?.guessA ?? "-"}</p>
-            <p>Player B guess: {round?.guessB ?? "-"}</p>
+    <p>Correct answer: {question?.answer ?? "-"}</p>
 
-            <p>Player A time: {round?.timeA ?? "-"} s</p>
-            <p>Player B time: {round?.timeB ?? "-"} s</p>
-          </div>
-        )}
+    <p>Player A guess: {round?.guessA ?? "-"}</p>
+    <p>Player B guess: {round?.guessB ?? "-"}</p>
+
+    <p>Player A time: {round?.timeA ?? "-"} s</p>
+    <p>Player B time: {round?.timeB ?? "-"} s</p>
+  </div>
+)}
 
         {!submitted && !isShowingResult && (
           <div style={{ marginTop: 20 }}>
