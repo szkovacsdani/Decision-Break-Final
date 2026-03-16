@@ -74,7 +74,6 @@ export default function Page() {
         .from("duel_rounds")
         .select("*")
         .eq("duel_id", duelId)
-        .eq("resolved", false)
         .order("round_index", { ascending: true })
         .limit(1)
         .maybeSingle();
@@ -402,7 +401,7 @@ export default function Page() {
           <p>Player B: {playerB?.position ?? 0}</p>
         </div>
 
-        {isShowingResult && (
+        {round?.resolved && (
           <div style={{ marginTop: 20 }}>
             <h3>Round Result</h3>
 
@@ -428,6 +427,8 @@ export default function Page() {
                 marginBottom: 10,
                 borderRadius: 6,
                 border: "none",
+                color: "black",
+                background: "white",
               }}
             />
 
