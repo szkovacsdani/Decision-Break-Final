@@ -74,6 +74,7 @@ export default function Page() {
         .from("duel_rounds")
         .select("*")
         .eq("duel_id", duelId)
+        .eq("resolved", false)
         .order("round_index", { ascending: true })
         .limit(1)
         .maybeSingle();
@@ -252,18 +253,24 @@ export default function Page() {
         <div style={cardStyle}>
           <h2>Duel</h2>
 
+          <p style={{ opacity: 0.8, marginBottom: 20 }}>
+            Two players compete across 3 rounds. Each round you must guess the
+            answer to a real-world question. The closest answer wins the round.
+            If guesses are equally close, the faster player wins.
+          </p>
+
           <button
             onClick={createRoom}
             style={{
               width: "100%",
-              padding: 12,
+              padding: 14,
               background: "#b30000",
-              color: "white",
               border: "none",
-              borderRadius: 6,
-              cursor: "pointer",
+              borderRadius: 8,
+              color: "white",
               fontWeight: "bold",
-              marginBottom: 20,
+              cursor: "pointer",
+              marginBottom: 15,
             }}
           >
             Create Room
@@ -275,10 +282,11 @@ export default function Page() {
             onChange={(e) => setRoomCodeInput(e.target.value)}
             style={{
               width: "100%",
-              padding: 12,
-              marginBottom: 10,
-              borderRadius: 6,
+              padding: 14,
+              borderRadius: 8,
               border: "none",
+              marginBottom: 10,
+              color: "black",
             }}
           />
 
@@ -286,13 +294,13 @@ export default function Page() {
             onClick={joinRoom}
             style={{
               width: "100%",
-              padding: 12,
+              padding: 14,
               background: "#444",
-              color: "white",
               border: "none",
-              borderRadius: 6,
-              cursor: "pointer",
+              borderRadius: 8,
+              color: "white",
               fontWeight: "bold",
+              cursor: "pointer",
             }}
           >
             Join Room
@@ -316,6 +324,15 @@ export default function Page() {
             placeholder="Enter Room Code"
             value={roomCodeInput}
             onChange={(e) => setRoomCodeInput(e.target.value)}
+            style={{
+              width: "100%",
+              padding: 14,
+              borderRadius: 8,
+              border: "none",
+              marginBottom: 10,
+              background: "#ffffff",
+              color: "#000000",
+            }}
           />
 
           <button onClick={joinRoom}>Join Room</button>
