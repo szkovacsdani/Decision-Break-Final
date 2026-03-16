@@ -130,6 +130,14 @@ export default function Page() {
             p_duel_id: duelId,
             p_round_index: roundData.round_index,
           });
+          /* score update */
+
+          const { data: playersData } = await supabase
+            .from("duel_players")
+            .select("*")
+            .eq("duel_id", duelId);
+
+          setPlayers(playersData || []);
 
           resolvingRef.current = false;
         }
@@ -450,8 +458,8 @@ export default function Page() {
 
         <div style={{ marginTop: 20 }}>
           <h3>Score</h3>
-          <p>Player A: {playerA?.position ?? 0}</p>
-          <p>Player B: {playerB?.position ?? 0}</p>
+          <p>Player A: {playerA?.round_points ?? 0}</p>
+          <p>Player B: {playerB?.round_points ?? 0}</p>
         </div>
 
         {round?.resolved && (
