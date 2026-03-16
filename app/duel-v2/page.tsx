@@ -63,13 +63,15 @@ export default function Page() {
 
       setPlayers(playersData || []);
 
-      const { data: roundsData } = await supabase
-        .from("duel_rounds")
-        .select("round_index,winner_slot")
-        .eq("duel_id", duelId)
-        .order("round_index", { ascending: true });
+      if (gameOver) {
+        const { data: roundsData } = await supabase
+          .from("duel_rounds")
+          .select("round_index,winner_slot")
+          .eq("duel_id", duelId)
+          .order("round_index", { ascending: true });
 
-      setRounds(roundsData || []);
+        setRounds(roundsData || []);
+      }
 
       if (playersData?.length === 2 && roomData.status === "waiting") {
         await supabase.rpc("start_duel", {
@@ -93,17 +95,20 @@ export default function Page() {
         setRound(roundData);
       }
 
-      const { data: questionData } = await supabase
-        .from("duel_questions")
-        .select("question, correct_answer")
-        .eq("id", roundData?.question_id)
-        .single();
+      if (!question || question.question_id !== roundData.question_id) {
+        const { data: questionData } = await supabase
+          .from("duel_questions")
+          .select("question, correct_answer")
+          .eq("id", roundData?.question_id)
+          .single();
 
-      if (questionData) {
-        setQuestion({
-          question: questionData.question,
-          answer: questionData.correct_answer,
-        });
+        if (questionData) {
+          setQuestion({
+            question: questionData.question,
+            answer: questionData.correct_answer,
+            question_id: roundData.question_id,
+          });
+        }
       }
 
       const start = new Date(roundData.started_at).getTime();
@@ -326,37 +331,6 @@ export default function Page() {
           >
             Join Room
           </button>
-        </div>
-      </div>
-    );
-  }
-
-  /* ---------- LOBBY ---------- */
-
-  if (!duelId) {
-    return (
-      <div style={containerStyle}>
-        <div style={cardStyle}>
-          <h2>Duel</h2>
-
-          <button onClick={createRoom}>Create Room</button>
-
-          <input
-            placeholder="Enter Room Code"
-            value={roomCodeInput}
-            onChange={(e) => setRoomCodeInput(e.target.value)}
-            style={{
-              width: "100%",
-              padding: 14,
-              borderRadius: 8,
-              border: "none",
-              marginBottom: 10,
-              background: "#ffffff",
-              color: "#000000",
-            }}
-          />
-
-          <button onClick={joinRoom}>Join Room</button>
         </div>
       </div>
     );
