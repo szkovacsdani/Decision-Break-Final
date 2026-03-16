@@ -87,11 +87,16 @@ export default function Page() {
 
       const { data: questionData } = await supabase
         .from("duel_questions")
-        .select("question, answer")
+        .select("question, correct_answer")
         .eq("id", roundData?.question_id)
         .single();
 
-      setQuestion(questionData);
+      if (questionData) {
+        setQuestion({
+          question: questionData.question,
+          answer: questionData.correct_answer,
+        });
+      }
 
       const start = new Date(roundData.started_at).getTime();
       const elapsed = Math.floor((Date.now() - start) / 1000);
@@ -371,7 +376,7 @@ export default function Page() {
 
   /* ---------- GAME START ---------- */
 
-  if (!round || !question) {
+  if (!round || !question?.question) {
     return (
       <div style={containerStyle}>
         <div style={cardStyle}>
