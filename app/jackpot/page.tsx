@@ -12,6 +12,7 @@ export default function JackpotPage() {
 
     const data = {
       name: form.get("name"),
+      code: form.get("code"),
       email: form.get("email"),
       message: form.get("message"),
     };
@@ -22,6 +23,8 @@ export default function JackpotPage() {
       `A Jackpot Card has been found.
 
 Name: ${data.name}
+
+Jackpot Card Code: ${data.code}
 
 Email: ${data.email}
 
@@ -65,6 +68,13 @@ ${data.message}`
           <input
             name="name"
             placeholder="Your name"
+            required
+            className="w-full p-3 rounded-lg bg-zinc-800 border border-zinc-700 outline-none focus:border-red-600"
+          />
+
+          <input
+            name="code"
+            placeholder="Enter your Jackpot Card code"
             required
             className="w-full p-3 rounded-lg bg-zinc-800 border border-zinc-700 outline-none focus:border-red-600"
           />
