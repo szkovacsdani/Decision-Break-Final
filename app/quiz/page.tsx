@@ -83,7 +83,9 @@ export default function QuizPage() {
 
   const tickRef = useRef<HTMLAudioElement | null>(null);
   const buzzerRef = useRef<HTMLAudioElement | null>(null);
-
+  const correctRef = useRef<HTMLAudioElement | null>(null);
+  const wrongRef = useRef<HTMLAudioElement | null>(null);
+  const victoryRef = useRef<HTMLAudioElement | null>(null);
   const current = useMemo(() => round[idx], [round, idx]);
   const correctCount = useMemo(
     () => answers.filter((a) => a.correct).length,
@@ -94,6 +96,20 @@ export default function QuizPage() {
     if (roundType === "checkpoint") return scoreCheckpoint(correctCount);
     return scoreQuizSpace(roundSize, correctCount);
   }, [roundType, roundSize, correctCount]);
+  useEffect(() => {
+    if (status !== "result") return;
+
+    const perfectQuiz =
+      roundType === "quizSpace" && roundSize === 5 && correctCount === 5;
+
+    const perfectCheckpoint = roundType === "checkpoint" && correctCount === 3;
+
+    if (perfectQuiz || perfectCheckpoint) {
+      setTimeout(() => {
+        playVictory();
+      }, 180);
+    }
+  }, [status, roundType, roundSize, correctCount]);
 
   useEffect(() => {
     fetch("/questions.json")
@@ -132,9 +148,14 @@ export default function QuizPage() {
     tickRef.current = new Audio(
       "https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3"
     );
+
     buzzerRef.current = new Audio(
       "https://assets.mixkit.co/active_storage/sfx/2955/2955-preview.mp3"
     );
+
+    correctRef.current = new Audio("/sounds/correct.mp3");
+    wrongRef.current = new Audio("/sounds/wrong.mp3");
+    victoryRef.current = new Audio("/sounds/victory.mp3");
   }, []);
 
   function playTick() {
@@ -146,6 +167,25 @@ export default function QuizPage() {
 
   function playBuzzer() {
     const a = buzzerRef.current;
+    if (!a) return;
+    a.currentTime = 0;
+    a.play().catch(() => {});
+  }
+  function playCorrect() {
+    const a = correctRef.current;
+    if (!a) return;
+    a.currentTime = 0;
+    a.play().catch(() => {});
+  }
+
+  function playWrong() {
+    const a = wrongRef.current;
+    if (!a) return;
+    a.currentTime = 0;
+    a.play().catch(() => {});
+  }
+  function playVictory() {
+    const a = victoryRef.current;
     if (!a) return;
     a.currentTime = 0;
     a.play().catch(() => {});
@@ -200,6 +240,7 @@ export default function QuizPage() {
       setStatus("result");
       return;
     }
+
     setIdx(nextIdx);
   }
 
@@ -212,6 +253,11 @@ export default function QuizPage() {
 
     const isCorrect =
       !isTimeout && choice !== null && choice === current.correct;
+    if (isCorrect) {
+      playCorrect();
+    } else {
+      playWrong();
+    }
 
     setAnswers((prev) => [...prev, { id: current.id, correct: isCorrect }]);
     setLastWasCorrect(isCorrect);
@@ -219,9 +265,10 @@ export default function QuizPage() {
 
     setTimeout(() => {
       setShowFeedback(false);
+
       const nextIdx = idx + 1;
       goNextOrFinish(nextIdx, round.length);
-    }, 450);
+    }, 900);
   }
 
   useEffect(() => {
@@ -242,6 +289,7 @@ export default function QuizPage() {
 
           setFlash(true);
           playBuzzer();
+
           setTimeout(() => setFlash(false), 250);
 
           submitAnswer(null, true);
@@ -464,7 +512,12 @@ export default function QuizPage() {
                 {(["A", "B", "C", "D"] as const).map((k) => (
                   <button
                     key={k}
-                    onClick={() => setSelected(k)}
+                    onClick={() => {
+                      if (showFeedback) return;
+
+                      setSelected(k);
+                      submitAnswer(k, false);
+                    }}
                     disabled={showFeedback}
                     style={{
                       textAlign: "left",
@@ -494,26 +547,6 @@ export default function QuizPage() {
                   flexWrap: "wrap",
                 }}
               >
-                <button
-                  onClick={() => submitAnswer(selected, false)}
-                  disabled={!selected || showFeedback}
-                  style={{
-                    background:
-                      selected && !showFeedback
-                        ? "#C1121F"
-                        : "rgba(255,255,255,0.12)",
-                    color: "#fff",
-                    border: 0,
-                    padding: "12px 16px",
-                    borderRadius: 12,
-                    fontWeight: 900,
-                    cursor:
-                      selected && !showFeedback ? "pointer" : "not-allowed",
-                  }}
-                >
-                  NEXT
-                </button>
-
                 <div style={{ opacity: 0.8, alignSelf: "center" }}>
                   Correct so far: {correctCount}
                 </div>
