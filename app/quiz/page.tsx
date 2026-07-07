@@ -87,6 +87,8 @@ export default function QuizPage() {
   const wrongRef = useRef<HTMLAudioElement | null>(null);
   const victoryRef = useRef<HTMLAudioElement | null>(null);
   const disappointmentRef = useRef<HTMLAudioElement | null>(null);
+  const countdownRef = useRef<HTMLAudioElement | null>(null);
+  const goRef = useRef<HTMLAudioElement | null>(null);
   const current = useMemo(() => round[idx], [round, idx]);
   const correctCount = useMemo(
     () => answers.filter((a) => a.correct).length,
@@ -129,6 +131,9 @@ export default function QuizPage() {
   }, []);
   useEffect(() => {
     if (countdown === null) return;
+    if (countdown > 0) {
+      playCountdown();
+    }
 
     if (countdown > 0) {
       const timer = setTimeout(() => {
@@ -143,6 +148,8 @@ export default function QuizPage() {
     }
 
     // 0-nál indul a játék
+    playGo();
+
     setRound(pendingRound);
     setIdx(0);
     setAnswers([]);
@@ -167,6 +174,8 @@ export default function QuizPage() {
     wrongRef.current = new Audio("/sounds/wrong.mp3");
     victoryRef.current = new Audio("/sounds/victory.mp3");
     disappointmentRef.current = new Audio("/sounds/disappointment.mp3");
+    countdownRef.current = new Audio("/sounds/beep.wav");
+    goRef.current = new Audio("/sounds/go.wav");
   }, []);
 
   function playTick() {
@@ -201,7 +210,19 @@ export default function QuizPage() {
     a.currentTime = 0;
     a.play().catch(() => {});
   }
+  function playCountdown() {
+    const a = countdownRef.current;
+    if (!a) return;
+    a.currentTime = 0;
+    a.play().catch(() => {});
+  }
 
+  function playGo() {
+    const a = goRef.current;
+    if (!a) return;
+    a.currentTime = 0;
+    a.play().catch(() => {});
+  }
   function playDisappointment() {
     const a = disappointmentRef.current;
     if (!a) return;
