@@ -120,10 +120,10 @@ export default function Home() {
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
             gap: 18,
-            marginTop: 60,
+            marginTop: 40,
           }}
         >
-                    {[
+          {[
             ["2–8", "Players"],
             ["14+", "Age"],
             ["60–120", "Minutes"],
@@ -136,14 +136,14 @@ export default function Home() {
                 backdropFilter: "blur(10px)",
                 border: "1px solid rgba(255,255,255,.12)",
                 borderRadius: 16,
-                padding: "24px 16px",
+                padding: "18px 12px",
               }}
             >
               <div
                 style={{
                   color: "#fff",
                   fontWeight: 800,
-                  fontSize: "clamp(24px, 5vw, 30px)",
+                  fontSize: "clamp(20px, 4vw, 26px)",
                 }}
               >
                 {title}
@@ -163,27 +163,26 @@ export default function Home() {
         </div>
 
         <a
-  href="/rulebook"
-  style={{
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: 12,
-    marginTop: 32,
-    background: "#d4af37",
-    color: "#111",
-    textDecoration: "none",
-    fontWeight: 900,
-    fontSize: 18,
-    padding: "18px 24px",
-    borderRadius: 16,
-    boxShadow:
-      "0 0 12px rgba(255,215,0,.6), 0 0 28px rgba(255,200,0,.35)",
-  }}
->
-  📖 OFFICIAL RULEBOOK →
-</a>
-
+          href="/rulebook"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: 12,
+            marginTop: 26,
+            background: "#d4af37",
+            color: "#111",
+            textDecoration: "none",
+            fontWeight: 900,
+            fontSize: 18,
+            padding: "18px 24px",
+            borderRadius: 16,
+            boxShadow:
+              "0 0 12px rgba(255,215,0,.6), 0 0 28px rgba(255,200,0,.35)",
+          }}
+        >
+          📖 OFFICIAL RULEBOOK →
+        </a>
       </div>
     </main>
   );
