@@ -86,6 +86,7 @@ export default function QuizPage() {
   const correctRef = useRef<HTMLAudioElement | null>(null);
   const wrongRef = useRef<HTMLAudioElement | null>(null);
   const victoryRef = useRef<HTMLAudioElement | null>(null);
+  const disappointmentRef = useRef<HTMLAudioElement | null>(null);
   const current = useMemo(() => round[idx], [round, idx]);
   const correctCount = useMemo(
     () => answers.filter((a) => a.correct).length,
@@ -104,11 +105,20 @@ export default function QuizPage() {
 
     const perfectCheckpoint = roundType === "checkpoint" && correctCount === 3;
 
-    if (perfectQuiz || perfectCheckpoint) {
-      setTimeout(() => {
+    const disasterQuiz =
+      roundType === "quizSpace" && roundSize === 5 && correctCount === 0;
+
+    const disasterCheckpoint = roundType === "checkpoint" && correctCount === 0;
+
+    const timer = setTimeout(() => {
+      if (perfectQuiz || perfectCheckpoint) {
         playVictory();
-      }, 180);
-    }
+      } else if (disasterQuiz || disasterCheckpoint) {
+        playDisappointment();
+      }
+    }, 180);
+
+    return () => clearTimeout(timer);
   }, [status, roundType, roundSize, correctCount]);
 
   useEffect(() => {
@@ -156,6 +166,7 @@ export default function QuizPage() {
     correctRef.current = new Audio("/sounds/correct.mp3");
     wrongRef.current = new Audio("/sounds/wrong.mp3");
     victoryRef.current = new Audio("/sounds/victory.mp3");
+    disappointmentRef.current = new Audio("/sounds/disappointment.mp3");
   }, []);
 
   function playTick() {
@@ -186,6 +197,13 @@ export default function QuizPage() {
   }
   function playVictory() {
     const a = victoryRef.current;
+    if (!a) return;
+    a.currentTime = 0;
+    a.play().catch(() => {});
+  }
+
+  function playDisappointment() {
+    const a = disappointmentRef.current;
     if (!a) return;
     a.currentTime = 0;
     a.play().catch(() => {});
