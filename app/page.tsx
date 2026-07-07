@@ -28,7 +28,6 @@ export default function Home() {
           maxWidth: 900,
           width: "100%",
           padding: "0 8px",
-          width: "100%",
           textAlign: "center",
         }}
       >
