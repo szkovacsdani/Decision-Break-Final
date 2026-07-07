@@ -5,6 +5,8 @@ export const dynamic = "force-dynamic";
 import { useEffect, useState, useRef } from "react";
 import { getSupabase } from "@/lib/supabase";
 
+console.log("Supabase:", getSupabase());
+
 export default function Page() {
   const supabaseRef = useRef(getSupabase());
   const supabase = supabaseRef.current;
@@ -189,6 +191,9 @@ export default function Page() {
   }, [duelId, isShowingResult, handledRound]);
 
   async function createRoom() {
+    console.log("supabase =", supabase);
+console.log("URL =", process.env.NEXT_PUBLIC_SUPABASE_URL);
+console.log("KEY =", process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
     const code = generateCode();
 
     const { data } = await supabase
@@ -386,6 +391,30 @@ export default function Page() {
                 </span>
               </div>
             ))}
+            <div
+  style={{
+    marginTop: 30,
+    display: "flex",
+    justifyContent: "center",
+  }}
+>
+  <a
+    href="/"
+    style={{
+      display: "inline-block",
+      background: "#b30000",
+      color: "#fff",
+      textDecoration: "none",
+      padding: "14px 30px",
+      borderRadius: 12,
+      fontWeight: 800,
+      boxShadow: "0 0 25px rgba(255,0,0,.35)",
+      transition: ".25s",
+    }}
+  >
+    ← Main Menu
+  </a>
+</div>
           </div>
         </div>
       </div>
@@ -430,25 +459,25 @@ export default function Page() {
 
         <div style={{ height: 10 }} />
 
-        <div style={{ marginTop: 20 }}>
-          <h3>Score</h3>
-          <p>Player A: {playerA?.round_points ?? 0}</p>
-          <p>Player B: {playerB?.round_points ?? 0}</p>
-        </div>
-
         {round?.resolved && (
-          <div style={{ marginTop: 30, lineHeight: 1.6 }}>
-            <h3>Round Result</h3>
+  <div style={{ marginTop: 20, lineHeight: 1.6 }}>
+    <h3>Round Result</h3>
 
-            <p>Correct answer: {question?.answer ?? "-"}</p>
+    <p>Correct answer: {question?.answer ?? "-"}</p>
 
-            <p>Player A guess: {round?.guessA ?? "-"}</p>
-            <p>Player B guess: {round?.guessB ?? "-"}</p>
+    <p>Player A guess: {round?.guessA ?? "-"}</p>
+    <p>Player B guess: {round?.guessB ?? "-"}</p>
 
-            <p>Player A time: {round?.timeA ?? "-"} s</p>
-            <p>Player B time: {round?.timeB ?? "-"} s</p>
-          </div>
-        )}
+    <p>Player A time: {round?.timeA ?? "-"} s</p>
+    <p>Player B time: {round?.timeB ?? "-"} s</p>
+  </div>
+)}
+
+<div style={{ marginTop: 30 }}>
+  <h3>Score</h3>
+  <p>Player A: {playerA?.round_points ?? 0}</p>
+  <p>Player B: {playerB?.round_points ?? 0}</p>
+</div>
 
         {!submitted && !isShowingResult && (
           <div style={{ marginTop: 20 }}>

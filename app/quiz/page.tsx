@@ -78,6 +78,9 @@ export default function QuizPage() {
   const [roundType, setRoundType] = useState<RoundType>("quizSpace");
   const [roundSize, setRoundSize] = useState<1 | 3 | 5>(3);
 
+  const [countdown, setCountdown] = useState<number | null>(null);
+  const [pendingRound, setPendingRound] = useState<Question[]>([]);
+
   const tickRef = useRef<HTMLAudioElement | null>(null);
   const buzzerRef = useRef<HTMLAudioElement | null>(null);
 
@@ -98,6 +101,31 @@ export default function QuizPage() {
       .then((data) => setQuestions((data?.questions || []) as Question[]))
       .catch(() => setQuestions([]));
   }, []);
+  useEffect(() => {
+    if (countdown === null) return;
+  
+    if (countdown > 0) {
+      const timer = setTimeout(() => {
+        setCountdown((prev) => {
+          if (prev === null) return null;
+          if (prev === 1) return 0;
+          return prev - 1;
+        });      }, 1000);
+  
+      return () => clearTimeout(timer);
+    }
+  
+    // 0-nál indul a játék
+    setRound(pendingRound);
+    setIdx(0);
+    setAnswers([]);
+    setSelected(null);
+    setShowFeedback(false);
+    setLastWasCorrect(null);
+  
+    setStatus("playing");
+    setCountdown(null);
+  }, [countdown, pendingRound]);
 
   useEffect(() => {
     tickRef.current = new Audio(
@@ -129,15 +157,17 @@ export default function QuizPage() {
     const pick = pool.slice(0, mode);
 
     setRoundType("quizSpace");
-    setRoundSize(mode);
+setRoundSize(mode);
 
-    setRound(pick);
-    setIdx(0);
-    setAnswers([]);
-    setSelected(null);
-    setShowFeedback(false);
-    setLastWasCorrect(null);
-    setStatus("playing");
+setPendingRound(pick);
+
+setIdx(0);
+setAnswers([]);
+setSelected(null);
+setShowFeedback(false);
+setLastWasCorrect(null);
+
+setCountdown(3);
   }
 
   function startCheckpointRound() {
@@ -147,15 +177,17 @@ export default function QuizPage() {
     const pick = pool.slice(0, 3);
 
     setRoundType("checkpoint");
-    setRoundSize(3);
+setRoundSize(3);
 
-    setRound(pick);
-    setIdx(0);
-    setAnswers([]);
-    setSelected(null);
-    setShowFeedback(false);
-    setLastWasCorrect(null);
-    setStatus("playing");
+setPendingRound(pick);
+
+setIdx(0);
+setAnswers([]);
+setSelected(null);
+setShowFeedback(false);
+setLastWasCorrect(null);
+
+setCountdown(3);
   }
 
   function backHome() {
@@ -246,15 +278,22 @@ export default function QuizPage() {
 
   return (
     <main
-      style={{
-        minHeight: "100vh",
-        background: bg,
-        transition: "background 0.15s ease",
-        color: "#fff",
-        padding: 24,
-      }}
+    style={{
+      minHeight: "100vh",
+  
+      backgroundImage: "url('/images/hero-bg.png')",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+  
+      backgroundColor: status === "playing" ? bg : "transparent",
+      transition: "background-color 0.15s ease",
+  
+      color: "#fff",
+      padding: 32,
+    }}
     >
-      <div style={{ maxWidth: 860, margin: "0 auto" }}>
+      <div style={{ maxWidth: 760, margin: "0 auto" }}>
         <div
           style={{
             display: "flex",
@@ -262,12 +301,23 @@ export default function QuizPage() {
             alignItems: "center",
           }}
         >
-          <Link
-            href="/"
-            style={{ color: "#fff", textDecoration: "none", opacity: 0.85 }}
-          >
-            ← Home
-          </Link>
+         <Link
+  href="/"
+  style={{
+    display: "inline-block",
+    background: "rgba(20,20,20,.60)",
+    backdropFilter: "blur(10px)",
+    color: "#fff",
+    textDecoration: "none",
+    padding: "10px 18px",
+    borderRadius: 10,
+    border: "1px solid rgba(255,255,255,.10)",
+    fontWeight: 700,
+    transition: "0.2s",
+  }}
+>
+  ← Main menu
+</Link>
 
           {status === "playing" && (
             <div style={{ opacity: 0.75, fontWeight: 800 }}>
@@ -279,10 +329,12 @@ export default function QuizPage() {
         <div
           style={{
             marginTop: 18,
-            background: "rgba(255,255,255,0.06)",
-            borderRadius: 16,
-            padding: 18,
-            border: feedbackBorder,
+            background: "rgba(20,20,20,.55)",
+backdropFilter: "blur(10px)",
+border: feedbackBorder,
+borderRadius: 18,
+padding: 24,
+boxShadow: "0 10px 40px rgba(0,0,0,.35)",
           }}
         >
           {feedbackLabel && (
@@ -304,7 +356,9 @@ export default function QuizPage() {
                 <button
                   type="button"
                   style={{
-                    background: "#16a34a",
+                    background: "#1c8d37",
+boxShadow:
+  "0 0 10px rgba(0,255,80,.45), 0 0 25px rgba(0,255,80,.35), 0 0 45px rgba(0,255,80,.20)",
                     color: "#fff",
                     border: 0,
                     padding: "10px 14px",
@@ -355,9 +409,11 @@ export default function QuizPage() {
                 <button
                   onClick={startQuizSpaceRound}
                   style={{
-                    background: "rgba(255,255,255,0.06)",
-                    color: "#16a34a",
-                    border: "1px solid rgba(22,163,74,0.85)",
+                    background: "#1c8d37",
+color: "#fff",
+border: 0,
+boxShadow:
+  "0 0 10px rgba(0,255,80,.45), 0 0 25px rgba(0,255,80,.35)",
                     padding: "10px 14px",
                     borderRadius: 10,
                     fontWeight: 900,
@@ -469,17 +525,20 @@ export default function QuizPage() {
           <div
             style={{
               marginTop: 14,
-              background: "rgba(255,255,255,0.04)",
-              borderRadius: 16,
-              padding: 18,
-              border: "1px solid rgba(255,255,255,0.10)",
+              background: "rgba(20,20,20,.55)",
+backdropFilter: "blur(10px)",
+borderRadius: 18,
+padding: 24,
+border: "1px solid rgba(255,255,255,.10)",
+boxShadow: "0 10px 40px rgba(0,0,0,.35)",
             }}
           >
             <button
               onClick={startCheckpointRound}
               style={{
                 background: "#f97316",
-                color: "#fff",
+boxShadow:
+  "0 0 10px rgba(249,115,22,.45), 0 0 25px rgba(249,115,22,.35), 0 0 45px rgba(249,115,22,.20)",
                 border: 0,
                 padding: "12px 16px",
                 borderRadius: 12,
@@ -563,7 +622,7 @@ export default function QuizPage() {
                   cursor: "pointer",
                 }}
               >
-                Back Home
+                Main menu
               </button>
             </div>
 
@@ -596,6 +655,33 @@ export default function QuizPage() {
           </p>
         )}
       </div>
+      {countdown !== null && (
+  <div
+    style={{
+      position: "fixed",
+      inset: 0,
+      background: "rgba(0,0,0,0.88)",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      zIndex: 9999,
+    }}
+  >
+    <div
+      style={{
+        fontSize: 220,
+        fontWeight: 900,
+        color: "#ff2a2a",
+        textShadow:
+          "0 0 20px rgba(255,0,0,.8), 0 0 50px rgba(255,0,0,.7), 0 0 90px rgba(255,0,0,.5)",
+        userSelect: "none",
+        animation: "countdownPop 1s ease",
+      }}
+    >
+      {countdown === 0 ? null : countdown}
+    </div>
+  </div>
+)}
     </main>
   );
 }

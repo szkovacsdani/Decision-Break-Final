@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-import { getSupabase } from "@/lib/supabase";
 
 export default function Home() {
   useEffect(() => {
@@ -12,117 +11,143 @@ export default function Home() {
     <main
       style={{
         minHeight: "100vh",
-        background: "#0B0B0D",
-        color: "#fff",
+        backgroundImage: "url('/images/hero-bg.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
         display: "flex",
-        alignItems: "center",
         justifyContent: "center",
-        padding: 24,
+        alignItems: "center",
+        position: "relative",
+        overflow: "hidden",
+        padding: "40px",
       }}
     >
-      <div style={{ maxWidth: 760, width: "100%" }}>
-        <h1 style={{ fontSize: 56, margin: 0, letterSpacing: 1 }}>
+      <div
+        style={{
+          maxWidth: 820,
+          width: "100%",
+          textAlign: "center",
+        }}
+      >
+        <h1
+          style={{
+            fontSize: 72,
+            fontWeight: 900,
+            color: "#fff",
+            margin: 0,
+            letterSpacing: 1,
+            textShadow: "0 0 18px rgba(255,255,255,.18)",
+          }}
+        >
           Decision Break
         </h1>
 
-        <p style={{ fontSize: 24, marginTop: 16, opacity: 0.9 }}>
+        <p
+          style={{
+            marginTop: 18,
+            fontSize: 26,
+            color: "#ddd",
+          }}
+        >
           Think fast. Or lose ground.
         </p>
 
         {/* BUTTONS */}
+
         <div
           style={{
-            marginTop: 28,
             display: "flex",
-            gap: 16,
+            justifyContent: "center",
+            gap: 36,
+            marginTop: 40,
             flexWrap: "wrap",
           }}
         >
-          {/* PLAY QUIZ */}
           <a
             href="/quiz"
             style={{
-              display: "inline-block",
-              backgroundColor: "#1f8f3a",
-              color: "#ffffff",
-              padding: "14px 22px",
-              borderRadius: "10px",
-              fontWeight: 900,
+              background: "#1c8d37",
+              color: "#fff",
               textDecoration: "none",
+              padding: "16px 36px",
+              borderRadius: 12,
+              fontWeight: 800,
+              fontSize: 18,
+              boxShadow:
+                "0 0 10px rgba(0,255,80,.45), 0 0 25px rgba(0,255,80,.35), 0 0 45px rgba(0,255,80,.25)",
+              transition: "0.25s",
             }}
           >
             PLAY QUIZ
           </a>
 
-          {/* PLAY DUEL */}
           <a
             href="/duel-v2"
             style={{
-              display: "inline-block",
-              backgroundColor: "#b30000",
-              color: "#ffffff",
-              padding: "14px 22px",
-              borderRadius: "10px",
-              fontWeight: 900,
+              background: "#b30000",
+              color: "#fff",
               textDecoration: "none",
+              padding: "16px 36px",
+              borderRadius: 12,
+              fontWeight: 800,
+              fontSize: 18,
+              boxShadow:
+                "0 0 10px rgba(255,0,0,.45), 0 0 25px rgba(255,0,0,.35), 0 0 45px rgba(255,0,0,.25)",
+              transition: "0.25s",
             }}
           >
             PLAY DUEL
           </a>
         </div>
 
-        {/* INFO GRID */}
+        {/* INFO */}
+
         <div
           style={{
-            marginTop: 28,
             display: "grid",
-            gridTemplateColumns: "repeat(4, minmax(0, 1fr))",
-            gap: 12,
+            gridTemplateColumns: "repeat(4,1fr)",
+            gap: 18,
+            marginTop: 60,
           }}
         >
-          <div
-            style={{
-              background: "rgba(255,255,255,0.06)",
-              padding: 12,
-              borderRadius: 12,
-            }}
-          >
-            <div style={{ fontWeight: 900 }}>2–8</div>
-            <div style={{ opacity: 0.8, fontSize: 12 }}>Players</div>
-          </div>
+          {[
+            ["2–8", "Players"],
+            ["14+", "Age"],
+            ["60–120", "Minutes"],
+            ["Hybrid", "Physical + Digital"],
+          ].map(([title, subtitle]) => (
+            <div
+              key={title}
+              style={{
+                background: "rgba(20,20,20,.55)",
+                backdropFilter: "blur(10px)",
+                border: "1px solid rgba(255,255,255,.12)",
+                borderRadius: 16,
+                padding: "24px 16px",
+              }}
+            >
+              <div
+                style={{
+                  color: "#fff",
+                  fontWeight: 800,
+                  fontSize: 28,
+                }}
+              >
+                {title}
+              </div>
 
-          <div
-            style={{
-              background: "rgba(255,255,255,0.06)",
-              padding: 12,
-              borderRadius: 12,
-            }}
-          >
-            <div style={{ fontWeight: 900 }}>14+</div>
-            <div style={{ opacity: 0.8, fontSize: 12 }}>Age</div>
-          </div>
-
-          <div
-            style={{
-              background: "rgba(255,255,255,0.06)",
-              padding: 12,
-              borderRadius: 12,
-            }}
-          >
-            <div style={{ fontWeight: 900 }}>60–120</div>
-            <div style={{ opacity: 0.8, fontSize: 12 }}>Minutes</div>
-          </div>
-
-          <div
-            style={{
-              background: "rgba(255,255,255,0.06)",
-              padding: 12,
-              borderRadius: 12,
-            }}
-          >
-            <div style={{ fontWeight: 900 }}>Hybrid</div>
-            <div style={{ opacity: 0.8, fontSize: 12 }}>Physical + Digital</div>
-          </div>
+              <div
+                style={{
+                  color: "#cfcfcf",
+                  fontSize: 14,
+                  marginTop: 8,
+                }}
+              >
+                {subtitle}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </main>
