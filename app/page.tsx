@@ -20,19 +20,22 @@ export default function Home() {
         alignItems: "center",
         position: "relative",
         overflow: "hidden",
-        padding: "40px",
+        padding: "20px",
       }}
     >
       <div
         style={{
-          maxWidth: 820,
+          maxWidth: 900,
+          width: "100%",
+          padding: "0 8px",
           width: "100%",
           textAlign: "center",
         }}
       >
         <h1
           style={{
-            fontSize: 72,
+            fontSize: "clamp(42px, 8vw, 72px)",
+            lineHeight: 1.05,
             fontWeight: 900,
             color: "#fff",
             margin: 0,
@@ -46,7 +49,9 @@ export default function Home() {
         <p
           style={{
             marginTop: 18,
-            fontSize: 26,
+            fontSize: "clamp(18px, 4vw, 26px)",
+            padding: "0 12px",
+            lineHeight: 1.5,
             color: "#ddd",
           }}
         >
@@ -59,7 +64,7 @@ export default function Home() {
           style={{
             display: "flex",
             justifyContent: "center",
-            gap: 36,
+            gap: 18,
             marginTop: 40,
             flexWrap: "wrap",
           }}
@@ -73,7 +78,12 @@ export default function Home() {
               padding: "16px 36px",
               borderRadius: 12,
               fontWeight: 800,
+              padding: "18px 32px",
               fontSize: 18,
+              minWidth: 220,
+              width: "100%",
+              maxWidth: 280,
+              textAlign: "center",
               boxShadow:
                 "0 0 10px rgba(0,255,80,.45), 0 0 25px rgba(0,255,80,.35), 0 0 45px rgba(0,255,80,.25)",
               transition: "0.25s",
@@ -91,7 +101,12 @@ export default function Home() {
               padding: "16px 36px",
               borderRadius: 12,
               fontWeight: 800,
+              padding: "18px 32px",
               fontSize: 18,
+              minWidth: 220,
+              width: "100%",
+              maxWidth: 280,
+              textAlign: "center",
               boxShadow:
                 "0 0 10px rgba(255,0,0,.45), 0 0 25px rgba(255,0,0,.35), 0 0 45px rgba(255,0,0,.25)",
               transition: "0.25s",
@@ -106,7 +121,7 @@ export default function Home() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(4,1fr)",
+            gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
             gap: 18,
             marginTop: 60,
           }}
@@ -131,7 +146,7 @@ export default function Home() {
                 style={{
                   color: "#fff",
                   fontWeight: 800,
-                  fontSize: 28,
+                  fontSize: "clamp(24px, 5vw, 30px)",
                 }}
               >
                 {title}
