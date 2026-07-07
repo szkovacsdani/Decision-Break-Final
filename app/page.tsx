@@ -13,7 +13,7 @@ export default function Home() {
         minHeight: "100vh",
         backgroundImage: "url('/images/hero-bg.png')",
         backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundPosition: "50% center",
         backgroundRepeat: "no-repeat",
         display: "flex",
         justifyContent: "center",
