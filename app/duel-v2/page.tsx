@@ -427,7 +427,7 @@ console.log("KEY =", process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
     return (
       <div style={containerStyle}>
         <div style={cardStyle}>
-          <h3>Your role: Challenger {slot}</h3>
+<h3>Role: {slot === "A" ? "Challenger" : "Opponent"}</h3>
           <h2>Room Code: {room?.code}</h2>
           <p>Waiting for Opponent...</p>
         </div>
