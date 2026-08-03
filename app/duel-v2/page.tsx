@@ -349,8 +349,8 @@ console.log("KEY =", process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
         <div style={cardStyle}>
           <h2>Game Over</h2>
 
-          <p>Player A: {playerA?.round_points ?? 0}</p>
-          <p>Player B: {playerB?.round_points ?? 0}</p>
+          <p>Challenger: {playerA?.round_points ?? 0}</p>
+          <p>Opponent: {playerB?.round_points ?? 0}</p>
 
           <div
             style={{
@@ -385,8 +385,8 @@ console.log("KEY =", process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
                 <span>Round {r.round_index}</span>
 
                 <span>
-                  {r.winner_slot === "A" && "Player A wins"}
-                  {r.winner_slot === "B" && "Player B wins"}
+                  {r.winner_slot === "A" && "Challenger wins"}
+                  {r.winner_slot === "B" && "Opponent wins"}
                   {r.winner_slot === "DRAW" && "Draw"}
                 </span>
               </div>
@@ -427,9 +427,9 @@ console.log("KEY =", process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
     return (
       <div style={containerStyle}>
         <div style={cardStyle}>
-          <h3>You are Player {slot}</h3>
+          <h3>Your role: Challenger {slot}</h3>
           <h2>Room Code: {room?.code}</h2>
-          <p>Waiting for opponent...</p>
+          <p>Waiting for Opponent...</p>
         </div>
       </div>
     );
@@ -465,18 +465,18 @@ console.log("KEY =", process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
 
     <p>Correct answer: {question?.answer ?? "-"}</p>
 
-    <p>Player A guess: {round?.guessA ?? "-"}</p>
-    <p>Player B guess: {round?.guessB ?? "-"}</p>
+    <p>Challenger guess: {round?.guessA ?? "-"}</p>
+    <p>Opponent guess: {round?.guessB ?? "-"}</p>
 
-    <p>Player A time: {round?.timeA ?? "-"} s</p>
-    <p>Player B time: {round?.timeB ?? "-"} s</p>
+    <p>Challenger time: {round?.timeA ?? "-"} s</p>
+    <p>Opponent time: {round?.timeB ?? "-"} s</p>
   </div>
 )}
 
 <div style={{ marginTop: 30 }}>
   <h3>Score</h3>
-  <p>Player A: {playerA?.round_points ?? 0}</p>
-  <p>Player B: {playerB?.round_points ?? 0}</p>
+  <p>Challenger: {playerA?.round_points ?? 0}</p>
+  <p>Opponent: {playerB?.round_points ?? 0}</p>
 </div>
 
         {!submitted && !isShowingResult && (
