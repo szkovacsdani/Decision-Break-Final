@@ -5,8 +5,6 @@ export const dynamic = "force-dynamic";
 import { useEffect, useState, useRef } from "react";
 import { getSupabase } from "@/lib/supabase";
 
-console.log("Supabase:", getSupabase());
-
 export default function Page() {
   const supabaseRef = useRef(getSupabase());
   const supabase = supabaseRef.current;
@@ -23,6 +21,7 @@ export default function Page() {
   const [duelId, setDuelId] = useState<string | null>(null);
   const [slot, setSlot] = useState<"A" | "B" | null>(null);
   const [roomCodeInput, setRoomCodeInput] = useState("");
+  const [playerName, setPlayerName] = useState("");
 
   const [room, setRoom] = useState<any | null>(null);
   const [round, setRound] = useState<any | null>(null);
@@ -191,9 +190,6 @@ export default function Page() {
   }, [duelId, isShowingResult, handledRound]);
 
   async function createRoom() {
-    console.log("supabase =", supabase);
-console.log("URL =", process.env.NEXT_PUBLIC_SUPABASE_URL);
-console.log("KEY =", process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
     const code = generateCode();
 
     const { data } = await supabase
@@ -211,6 +207,7 @@ console.log("KEY =", process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
       duel_id: data.id,
       slot: "A",
       position: 0,
+      player_name: playerName.trim(),
     });
 
     setDuelId(data.id);
@@ -230,6 +227,7 @@ console.log("KEY =", process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
       duel_id: data.id,
       slot: "B",
       position: 0,
+      player_name: playerName.trim(),
     });
 
     setDuelId(data.id);
@@ -290,8 +288,24 @@ console.log("KEY =", process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
             If guesses are equally close, the faster player wins.
           </p>
 
+          <input
+            value={playerName}
+            onChange={(e) => setPlayerName(e.target.value)}
+            placeholder="Enter Your Name"
+            maxLength={20}
+            style={{
+              width: "100%",
+              padding: 14,
+              borderRadius: 8,
+              border: "none",
+              marginBottom: 10,
+              color: "black",
+            }}
+          />
+
           <button
             onClick={createRoom}
+            disabled={!playerName.trim()}
             style={{
               width: "100%",
               padding: 14,
@@ -323,6 +337,7 @@ console.log("KEY =", process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
 
           <button
             onClick={joinRoom}
+            disabled={!playerName.trim() || !roomCodeInput.trim()}
             style={{
               width: "100%",
               padding: 14,
@@ -349,8 +364,12 @@ console.log("KEY =", process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
         <div style={cardStyle}>
           <h2>Game Over</h2>
 
-          <p>Challenger: {playerA?.round_points ?? 0}</p>
-          <p>Opponent: {playerB?.round_points ?? 0}</p>
+          <p>
+            {playerA?.player_name ?? "Player A"}: {playerA?.round_points ?? 0}
+          </p>
+          <p>
+            {playerB?.player_name ?? "Player B"}: {playerB?.round_points ?? 0}
+          </p>
 
           <div
             style={{
@@ -385,36 +404,14 @@ console.log("KEY =", process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
                 <span>Round {r.round_index}</span>
 
                 <span>
-                  {r.winner_slot === "A" && "Challenger wins"}
-                  {r.winner_slot === "B" && "Opponent wins"}
+                  {r.winner_slot === "A" &&
+                    `${playerA?.player_name ?? "Player A"} wins`}
+                  {r.winner_slot === "B" &&
+                    `${playerB?.player_name ?? "Player B"} wins`}
                   {r.winner_slot === "DRAW" && "Draw"}
                 </span>
               </div>
             ))}
-            <div
-  style={{
-    marginTop: 30,
-    display: "flex",
-    justifyContent: "center",
-  }}
->
-  <a
-    href="/"
-    style={{
-      display: "inline-block",
-      background: "#b30000",
-      color: "#fff",
-      textDecoration: "none",
-      padding: "14px 30px",
-      borderRadius: 12,
-      fontWeight: 800,
-      boxShadow: "0 0 25px rgba(255,0,0,.35)",
-      transition: ".25s",
-    }}
-  >
-    ← Main Menu
-  </a>
-</div>
           </div>
         </div>
       </div>
@@ -427,9 +424,9 @@ console.log("KEY =", process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
     return (
       <div style={containerStyle}>
         <div style={cardStyle}>
-<h3>Role: {slot === "A" ? "Challenger" : "Opponent"}</h3>
+          <h3>{playerName}</h3>
           <h2>Room Code: {room?.code}</h2>
-          <p>Waiting for Opponent...</p>
+          <p>Waiting for another player...</p>
         </div>
       </div>
     );
@@ -459,25 +456,41 @@ console.log("KEY =", process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
 
         <div style={{ height: 10 }} />
 
+        <div style={{ marginTop: 20 }}>
+          <h3>Score</h3>
+
+          <p>
+            {playerA?.player_name ?? "Player A"}: {playerA?.round_points ?? 0}
+          </p>
+
+          <p>
+            {playerB?.player_name ?? "Player B"}: {playerB?.round_points ?? 0}
+          </p>
+        </div>
+
         {round?.resolved && (
-  <div style={{ marginTop: 20, lineHeight: 1.6 }}>
-    <h3>Round Result</h3>
+          <div style={{ marginTop: 30, lineHeight: 1.6 }}>
+            <h3>Round Result</h3>
 
-    <p>Correct answer: {question?.answer ?? "-"}</p>
+            <p>Correct answer: {question?.answer ?? "-"}</p>
 
-    <p>Challenger guess: {round?.guessA ?? "-"}</p>
-    <p>Opponent guess: {round?.guessB ?? "-"}</p>
+            <p>
+              {playerA?.player_name ?? "Player A"} guess: {round?.guessA ?? "-"}
+            </p>
 
-    <p>Challenger time: {round?.timeA ?? "-"} s</p>
-    <p>Opponent time: {round?.timeB ?? "-"} s</p>
-  </div>
-)}
+            <p>
+              {playerB?.player_name ?? "Player B"} guess: {round?.guessB ?? "-"}
+            </p>
 
-<div style={{ marginTop: 30 }}>
-  <h3>Score</h3>
-  <p>Challenger: {playerA?.round_points ?? 0}</p>
-  <p>Opponent: {playerB?.round_points ?? 0}</p>
-</div>
+            <p>
+              {playerA?.player_name ?? "Player A"} time: {round?.timeA ?? "-"} s
+            </p>
+
+            <p>
+              {playerB?.player_name ?? "Player B"} time: {round?.timeB ?? "-"} s
+            </p>
+          </div>
+        )}
 
         {!submitted && !isShowingResult && (
           <div style={{ marginTop: 20 }}>
