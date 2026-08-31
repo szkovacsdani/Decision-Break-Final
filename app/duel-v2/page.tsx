@@ -279,6 +279,23 @@ export default function Page() {
   if (!duelId) {
     return (
       <div style={containerStyle}>
+        <button
+          onClick={() => (window.location.href = "/")}
+          style={{
+            position: "absolute",
+            top: 20,
+            right: 20,
+            padding: "8px 14px",
+            background: "transparent",
+            border: "1px solid rgba(255, 0, 0, 0.5)",
+            borderRadius: 8,
+            color: "#ddd",
+            fontSize: 14,
+            cursor: "pointer",
+          }}
+        >
+          ← BACK TO MAIN
+        </button>
         <div style={cardStyle}>
           <h2>Duel</h2>
 
