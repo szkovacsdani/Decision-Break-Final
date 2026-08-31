@@ -12584,16 +12584,16 @@
     },
     {
       "id": "q1012",
-      "category": "science",
+      "category": "movies",
       "difficulty": "easy",
-      "question": "Which planet is commonly known as the Red Planet?",
+      "question": "Which actor played the title character in the movie 'Mrs. Doubtfire'?",
       "answers": {
-        "A": "Venus",
-        "B": "Jupiter",
-        "C": "Mercury",
-        "D": "Mars"
+        "A": "Jim Carrey",
+        "B": "Robin Williams",
+        "C": "Tom Hanks",
+        "D": "Steve Martin"
       },
-      "correct": "D"
+      "correct": "B"
     },
     {
       "id": "q1013",
@@ -12610,16 +12610,16 @@
     },
     {
       "id": "q1014",
-      "category": "sports",
+      "category": "music",
       "difficulty": "easy",
-      "question": "In which sport does the score 'love' mean zero?",
+      "question": "Which singer is known for the songs 'Hips Don't Lie' and 'Whenever, Wherever'?",
       "answers": {
-        "A": "Golf",
-        "B": "Tennis",
-        "C": "Baseball",
-        "D": "Volleyball"
+        "A": "Jennifer Lopez",
+        "B": "Beyoncé",
+        "C": "Shakira",
+        "D": "Christina Aguilera"
       },
-      "correct": "B"
+      "correct": "C"
     },
     {
       "id": "q1015",
@@ -12649,16 +12649,16 @@
     },
     {
       "id": "q1017",
-      "category": "geography",
-      "difficulty": "easy",
-      "question": "In which city would you find the Eiffel Tower?",
-      "answers": {
-        "A": "Paris",
-        "B": "Rome",
-        "C": "Brussels",
-        "D": "Vienna"
-      },
-      "correct": "A"
+  "category": "animation",
+  "difficulty": "easy",
+  "question": "What type of animal is Remy in the movie 'Ratatouille'?",
+  "answers": {
+    "A": "Mouse",
+    "B": "Rabbit",
+    "C": "Hamster",
+    "D": "Rat"
+  },
+  "correct": "D"
     },
     {
       "id": "q1018",
@@ -12690,14 +12690,14 @@
       "id": "q1020",
       "category": "general_knowledge",
       "difficulty": "easy",
-      "question": "Which famous passenger ship sank on its maiden voyage in 1912?",
+      "question": "Which board game features suspects such as Colonel Mustard and Miss Scarlet?",
       "answers": {
-        "A": "Britannic",
-        "B": "Queen Mary",
-        "C": "Lusitania",
-        "D": "Titanic"
+        "A": "Cluedo",
+        "B": "Risk",
+        "C": "Scrabble",
+        "D": "Battleship"
       },
-      "correct": "D"
+      "correct": "A"
     },
     {
       "id": "q1021",
@@ -12792,16 +12792,16 @@
     },
     {
       "id": "q1028",
-      "category": "science",
+      "category": "movies",
       "difficulty": "easy",
-      "question": "What is the largest planet in our Solar System?",
+      "question": "Which actress played Katniss Everdeen in 'The Hunger Games' films?",
       "answers": {
-        "A": "Saturn",
-        "B": "Earth",
-        "C": "Neptune",
-        "D": "Jupiter"
+        "A": "Emma Stone",
+        "B": "Jennifer Lawrence",
+        "C": "Anne Hathaway",
+        "D": "Natalie Portman"
       },
-      "correct": "D"
+      "correct": "B"
     },
     {
       "id": "q1029",
@@ -12922,16 +12922,16 @@
     },
     {
       "id": "q1038",
-      "category": "history",
-      "difficulty": "easy",
-      "question": "Who was the first person to walk on the Moon?",
-      "answers": {
-        "A": "Buzz Aldrin",
-        "B": "Neil Armstrong",
-        "C": "Yuri Gagarin",
-        "D": "John Glenn"
-      },
-      "correct": "B"
+  "category": "music",
+  "difficulty": "easy",
+  "question": "Which singer released the hit songs 'Can't Stop the Feeling!' and 'Cry Me a River'?",
+  "answers": {
+    "A": "Justin Bieber",
+    "B": "Bruno Mars",
+    "C": "Justin Timberlake",
+    "D": "Adam Levine"
+  },
+  "correct": "C"
     },
     {
       "id": "q1039",
@@ -13028,27 +13028,27 @@
       "id": "q1046",
       "category": "animation",
       "difficulty": "easy",
-      "question": "Which animated movie follows the adventures of sisters Elsa and Anna?",
+      "question": "Which Disney character has a pet tiger named Rajah?",
       "answers": {
-        "A": "Frozen",
-        "B": "Moana",
-        "C": "Encanto",
-        "D": "Tangled"
+        "A": "Ariel",
+        "B": "Belle",
+        "C": "Mulan",
+        "D": "Jasmine"
       },
-      "correct": "A"
+      "correct": "D"
     },
     {
       "id": "q1047",
-      "category": "sports",
+      "category": "general_knowledge",
       "difficulty": "easy",
-      "question": "How many players from one team are normally on the field at the same time in association football?",
+      "question": "Which Italian dish traditionally consists of layers of pasta, sauce and cheese?",
       "answers": {
-        "A": "9",
-        "B": "10",
-        "C": "12",
-        "D": "11"
+        "A": "Lasagna",
+        "B": "Risotto",
+        "C": "Gnocchi",
+        "D": "Ravioli"
       },
-      "correct": "D"
+      "correct": "A"
     },
     {
       "id": "q1048",
@@ -13130,16 +13130,16 @@
     },
     {
       "id": "q1054",
-      "category": "history",
-      "difficulty": "easy",
-      "question": "Which ancient civilization is most closely associated with the pyramids of Giza?",
-      "answers": {
-        "A": "Romans",
-        "B": "Greeks",
-        "C": "Egyptians",
-        "D": "Vikings"
-      },
-      "correct": "C"
+  "category": "general_knowledge",
+  "difficulty": "easy",
+  "question": "Which famous toy is made of colorful interlocking plastic bricks?",
+  "answers": {
+    "A": "Play-Doh",
+    "B": "LEGO",
+    "C": "Rubik's Cube",
+    "D": "Hot Wheels"
+  },
+  "correct": "B"
     },
     {
       "id": "q1055",
@@ -13156,16 +13156,16 @@
     },
     {
       "id": "q1056",
-      "category": "science",
+      "category": "movies",
       "difficulty": "easy",
-      "question": "Which organ pumps blood around the human body?",
+      "question": "Which actor played the main character in 'Ace Ventura: Pet Detective'?",
       "answers": {
-        "A": "Liver",
-        "B": "Lung",
-        "C": "Kidney",
-        "D": "Heart"
+        "A": "Adam Sandler",
+        "B": "Ben Stiller",
+        "C": "Jim Carrey",
+        "D": "Will Ferrell"
       },
-      "correct": "D"
+      "correct": "C"
     },
     {
       "id": "q1057",
@@ -13481,16 +13481,16 @@
     },
     {
       "id": "q1081",
-      "category": "movies",
-      "difficulty": "easy",
-      "question": "Which actor played the lead role in the Pirates of the Caribbean films as Captain Jack Sparrow?",
-      "answers": {
-        "A": "Orlando Bloom",
-        "B": "Johnny Depp",
-        "C": "Brad Pitt",
-        "D": "Hugh Jackman"
-      },
-      "correct": "B"
+  "category": "animation",
+  "difficulty": "easy",
+  "question": "Which animated film follows a young Viking named Hiccup and his dragon Toothless?",
+  "answers": {
+    "A": "Brave",
+    "B": "The Croods",
+    "C": "Dragonheart",
+    "D": "How to Train Your Dragon"
+  },
+  "correct": "D"
     },
     {
       "id": "q1082",
@@ -13572,16 +13572,16 @@
     },
     {
       "id": "q1088",
-      "category": "science",
-      "difficulty": "easy",
-      "question": "Which planet is famous for its prominent ring system?",
-      "answers": {
-        "A": "Mars",
-        "B": "Venus",
-        "C": "Mercury",
-        "D": "Saturn"
-      },
-      "correct": "D"
+  "category": "music",
+  "difficulty": "easy",
+  "question": "Which singer released the hits 'Genie in a Bottle' and 'Beautiful'?",
+  "answers": {
+    "A": "Christina Aguilera",
+    "B": "Pink",
+    "C": "Avril Lavigne",
+    "D": "Gwen Stefani"
+  },
+  "correct": "A"
     },
     {
       "id": "q1089",
