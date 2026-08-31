@@ -413,6 +413,23 @@ export default function Page() {
               </div>
             ))}
           </div>
+          <button
+            onClick={() => (window.location.href = "/")}
+            style={{
+              width: "100%",
+              padding: 14,
+              marginTop: 25,
+              background: "#b30000",
+              border: "none",
+              borderRadius: 8,
+              color: "white",
+              fontWeight: "bold",
+              cursor: "pointer",
+              fontSize: 16,
+            }}
+          >
+            BACK TO MAIN
+          </button>
         </div>
       </div>
     );
