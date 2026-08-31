@@ -12438,6 +12438,1306 @@
         "D": "Doha Development Round"
       },
       "correct": "B"
+    },
+    {
+      "id": "q1001",
+      "category": "movies",
+      "difficulty": "easy",
+      "question": "Which movie franchise features the character Jack Sparrow?",
+      "answers": {
+        "A": "Indiana Jones",
+        "B": "Pirates of the Caribbean",
+        "C": "Jurassic Park",
+        "D": "Mission: Impossible"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q1002",
+      "category": "animation",
+      "difficulty": "easy",
+      "question": "What is the name of Simba's father in The Lion King?",
+      "answers": {
+        "A": "Scar",
+        "B": "Timon",
+        "C": "Mufasa",
+        "D": "Rafiki"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q1003",
+      "category": "music",
+      "difficulty": "easy",
+      "question": "Which band had Freddie Mercury as its lead singer?",
+      "answers": {
+        "A": "Queen",
+        "B": "U2",
+        "C": "Nirvana",
+        "D": "Coldplay"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q1004",
+      "category": "geography",
+      "difficulty": "easy",
+      "question": "Lisbon is the capital of which country?",
+      "answers": {
+        "A": "Spain",
+        "B": "Italy",
+        "C": "Greece",
+        "D": "Portugal"
+      },
+      "correct": "D"
+    },
+    {
+      "id": "q1005",
+      "category": "movies",
+      "difficulty": "easy",
+      "question": "Which actor played Forrest Gump in the 1994 film?",
+      "answers": {
+        "A": "Tom Hanks",
+        "B": "Tom Cruise",
+        "C": "Brad Pitt",
+        "D": "Matt Damon"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q1006",
+      "category": "animation",
+      "difficulty": "easy",
+      "question": "Which animated movie features the snowman Olaf?",
+      "answers": {
+        "A": "Moana",
+        "B": "Frozen",
+        "C": "Tangled",
+        "D": "Brave"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q1007",
+      "category": "music",
+      "difficulty": "easy",
+      "question": "Who sang the hit song 'Billie Jean'?",
+      "answers": {
+        "A": "Prince",
+        "B": "George Michael",
+        "C": "Michael Jackson",
+        "D": "Elton John"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q1008",
+      "category": "movies",
+      "difficulty": "easy",
+      "question": "In which movie franchise would you find Hogwarts School of Witchcraft and Wizardry?",
+      "answers": {
+        "A": "The Chronicles of Narnia",
+        "B": "The Lord of the Rings",
+        "C": "The Hunger Games",
+        "D": "Harry Potter"
+      },
+      "correct": "D"
+    },
+    {
+      "id": "q1009",
+      "category": "general_knowledge",
+      "difficulty": "easy",
+      "question": "Who painted the Mona Lisa?",
+      "answers": {
+        "A": "Leonardo da Vinci",
+        "B": "Vincent van Gogh",
+        "C": "Pablo Picasso",
+        "D": "Claude Monet"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q1010",
+      "category": "animation",
+      "difficulty": "easy",
+      "question": "What type of animal is Po in Kung Fu Panda?",
+      "answers": {
+        "A": "Tiger",
+        "B": "Panda",
+        "C": "Bear",
+        "D": "Raccoon"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q1011",
+      "category": "music",
+      "difficulty": "easy",
+      "question": "Which Swedish pop group recorded the hit song 'Dancing Queen'?",
+      "answers": {
+        "A": "Roxette",
+        "B": "Ace of Base",
+        "C": "ABBA",
+        "D": "Europe"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q1012",
+      "category": "science",
+      "difficulty": "easy",
+      "question": "Which planet is commonly known as the Red Planet?",
+      "answers": {
+        "A": "Venus",
+        "B": "Jupiter",
+        "C": "Mercury",
+        "D": "Mars"
+      },
+      "correct": "D"
+    },
+    {
+      "id": "q1013",
+      "category": "movies",
+      "difficulty": "easy",
+      "question": "Which superhero has the civilian identity Bruce Wayne?",
+      "answers": {
+        "A": "Batman",
+        "B": "Superman",
+        "C": "Spider-Man",
+        "D": "Iron Man"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q1014",
+      "category": "sports",
+      "difficulty": "easy",
+      "question": "In which sport does the score 'love' mean zero?",
+      "answers": {
+        "A": "Golf",
+        "B": "Tennis",
+        "C": "Baseball",
+        "D": "Volleyball"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q1015",
+      "category": "animation",
+      "difficulty": "easy",
+      "question": "What is the name of the cowboy toy in Toy Story?",
+      "answers": {
+        "A": "Buzz",
+        "B": "Rex",
+        "C": "Woody",
+        "D": "Andy"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q1016",
+      "category": "music",
+      "difficulty": "easy",
+      "question": "Which singer released the hit song 'Rolling in the Deep'?",
+      "answers": {
+        "A": "Rihanna",
+        "B": "Beyoncé",
+        "C": "Lady Gaga",
+        "D": "Adele"
+      },
+      "correct": "D"
+    },
+    {
+      "id": "q1017",
+      "category": "geography",
+      "difficulty": "easy",
+      "question": "In which city would you find the Eiffel Tower?",
+      "answers": {
+        "A": "Paris",
+        "B": "Rome",
+        "C": "Brussels",
+        "D": "Vienna"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q1018",
+      "category": "movies",
+      "difficulty": "easy",
+      "question": "Which movie franchise features Darth Vader?",
+      "answers": {
+        "A": "Star Trek",
+        "B": "Star Wars",
+        "C": "Dune",
+        "D": "The Matrix"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q1019",
+      "category": "music",
+      "difficulty": "normal",
+      "question": "Which rock band recorded the song 'Smells Like Teen Spirit'?",
+      "answers": {
+        "A": "Pearl Jam",
+        "B": "Green Day",
+        "C": "Nirvana",
+        "D": "Radiohead"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q1020",
+      "category": "general_knowledge",
+      "difficulty": "easy",
+      "question": "Which famous passenger ship sank on its maiden voyage in 1912?",
+      "answers": {
+        "A": "Britannic",
+        "B": "Queen Mary",
+        "C": "Lusitania",
+        "D": "Titanic"
+      },
+      "correct": "D"
+    },
+    {
+      "id": "q1021",
+      "category": "movies",
+      "difficulty": "easy",
+      "question": "Which actor played Iron Man in the Marvel Cinematic Universe?",
+      "answers": {
+        "A": "Chris Evans",
+        "B": "Chris Hemsworth",
+        "C": "Robert Downey Jr.",
+        "D": "Mark Ruffalo"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q1022",
+      "category": "geography",
+      "difficulty": "easy",
+      "question": "Which country is famous for the ancient city of Machu Picchu?",
+      "answers": {
+        "A": "Mexico",
+        "B": "Peru",
+        "C": "Brazil",
+        "D": "Argentina"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q1023",
+      "category": "music",
+      "difficulty": "easy",
+      "question": "Which singer is known for the hit songs 'Poker Face' and 'Bad Romance'?",
+      "answers": {
+        "A": "Lady Gaga",
+        "B": "Katy Perry",
+        "C": "Pink",
+        "D": "Miley Cyrus"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q1024",
+      "category": "animation",
+      "difficulty": "easy",
+      "question": "Which Pokémon is famous for its yellow color and electric powers?",
+      "answers": {
+        "A": "Charmander",
+        "B": "Squirtle",
+        "C": "Bulbasaur",
+        "D": "Pikachu"
+      },
+      "correct": "D"
+    },
+    {
+      "id": "q1025",
+      "category": "history",
+      "difficulty": "easy",
+      "question": "Which ancient civilization built the Colosseum?",
+      "answers": {
+        "A": "Romans",
+        "B": "Vikings",
+        "C": "Egyptians",
+        "D": "Aztecs"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q1026",
+      "category": "movies",
+      "difficulty": "easy",
+      "question": "What is the name of the archaeologist played by Harrison Ford in a famous adventure film series?",
+      "answers": {
+        "A": "Ethan Hunt",
+        "B": "Indiana Jones",
+        "C": "John McClane",
+        "D": "Rocky Balboa"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q1027",
+      "category": "sports",
+      "difficulty": "easy",
+      "question": "Which country won the FIFA World Cup in 2022?",
+      "answers": {
+        "A": "France",
+        "B": "Brazil",
+        "C": "Argentina",
+        "D": "Germany"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q1028",
+      "category": "science",
+      "difficulty": "easy",
+      "question": "What is the largest planet in our Solar System?",
+      "answers": {
+        "A": "Saturn",
+        "B": "Earth",
+        "C": "Neptune",
+        "D": "Jupiter"
+      },
+      "correct": "D"
+    },
+    {
+      "id": "q1029",
+      "category": "music",
+      "difficulty": "easy",
+      "question": "Which British band recorded the songs 'Yellow' and 'Viva la Vida'?",
+      "answers": {
+        "A": "Coldplay",
+        "B": "Oasis",
+        "C": "Muse",
+        "D": "Radiohead"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q1030",
+      "category": "animation",
+      "difficulty": "easy",
+      "question": "In Finding Nemo, what type of fish is Nemo?",
+      "answers": {
+        "A": "Goldfish",
+        "B": "Clownfish",
+        "C": "Angelfish",
+        "D": "Swordfish"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q1031",
+      "category": "general_knowledge",
+      "difficulty": "normal",
+      "question": "Which language has the largest number of native speakers in the world?",
+      "answers": {
+        "A": "English",
+        "B": "Spanish",
+        "C": "Mandarin Chinese",
+        "D": "Hindi"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q1032",
+      "category": "movies",
+      "difficulty": "easy",
+      "question": "Which movie features a time-traveling DeLorean?",
+      "answers": {
+        "A": "Ghostbusters",
+        "B": "The Terminator",
+        "C": "Men in Black",
+        "D": "Back to the Future"
+      },
+      "correct": "D"
+    },
+    {
+      "id": "q1033",
+      "category": "geography",
+      "difficulty": "easy",
+      "question": "Which city is famous for the canals and gondolas that run through its historic center?",
+      "answers": {
+        "A": "Venice",
+        "B": "Milan",
+        "C": "Florence",
+        "D": "Naples"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q1034",
+      "category": "music",
+      "difficulty": "easy",
+      "question": "Which band recorded the song 'Wonderwall'?",
+      "answers": {
+        "A": "Blur",
+        "B": "Oasis",
+        "C": "U2",
+        "D": "R.E.M."
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q1035",
+      "category": "general_knowledge",
+      "difficulty": "easy",
+      "question": "Which board game features properties such as Boardwalk and Park Place in its classic US edition?",
+      "answers": {
+        "A": "Clue",
+        "B": "Risk",
+        "C": "Monopoly",
+        "D": "Scrabble"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q1036",
+      "category": "animation",
+      "difficulty": "easy",
+      "question": "What is the name of the princess who loses a glass slipper in the classic fairy tale?",
+      "answers": {
+        "A": "Aurora",
+        "B": "Ariel",
+        "C": "Belle",
+        "D": "Cinderella"
+      },
+      "correct": "D"
+    },
+    {
+      "id": "q1037",
+      "category": "sports",
+      "difficulty": "easy",
+      "question": "Which sport is played at Wimbledon?",
+      "answers": {
+        "A": "Tennis",
+        "B": "Golf",
+        "C": "Cricket",
+        "D": "Rugby"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q1038",
+      "category": "history",
+      "difficulty": "easy",
+      "question": "Who was the first person to walk on the Moon?",
+      "answers": {
+        "A": "Buzz Aldrin",
+        "B": "Neil Armstrong",
+        "C": "Yuri Gagarin",
+        "D": "John Glenn"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q1039",
+      "category": "movies",
+      "difficulty": "normal",
+      "question": "Which actor played the title character in the 2000 film Gladiator?",
+      "answers": {
+        "A": "Gerard Butler",
+        "B": "Mel Gibson",
+        "C": "Russell Crowe",
+        "D": "Joaquin Phoenix"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q1040",
+      "category": "science",
+      "difficulty": "easy",
+      "question": "Which gas do humans need to breathe to survive?",
+      "answers": {
+        "A": "Helium",
+        "B": "Hydrogen",
+        "C": "Nitrogen",
+        "D": "Oxygen"
+      },
+      "correct": "D"
+    },
+    {
+      "id": "q1041",
+      "category": "movies",
+      "difficulty": "easy",
+      "question": "Which actor played the main character in the Mission: Impossible film series?",
+      "answers": {
+        "A": "Brad Pitt",
+        "B": "Matt Damon",
+        "C": "Tom Cruise",
+        "D": "Keanu Reeves"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q1042",
+      "category": "animation",
+      "difficulty": "easy",
+      "question": "What type of animal is Shrek's talkative best friend?",
+      "answers": {
+        "A": "Horse",
+        "B": "Donkey",
+        "C": "Goat",
+        "D": "Mule"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q1043",
+      "category": "music",
+      "difficulty": "easy",
+      "question": "Which singer released the hit song 'Shape of You'?",
+      "answers": {
+        "A": "Ed Sheeran",
+        "B": "Bruno Mars",
+        "C": "Justin Bieber",
+        "D": "Harry Styles"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q1044",
+      "category": "geography",
+      "difficulty": "easy",
+      "question": "Which country has a maple leaf on its national flag?",
+      "answers": {
+        "A": "Australia",
+        "B": "New Zealand",
+        "C": "United States",
+        "D": "Canada"
+      },
+      "correct": "D"
+    },
+    {
+      "id": "q1045",
+      "category": "movies",
+      "difficulty": "easy",
+      "question": "Which actor played the title character in Edward Scissorhands?",
+      "answers": {
+        "A": "Jim Carrey",
+        "B": "Johnny Depp",
+        "C": "Nicolas Cage",
+        "D": "Leonardo DiCaprio"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q1046",
+      "category": "animation",
+      "difficulty": "easy",
+      "question": "Which animated movie follows the adventures of sisters Elsa and Anna?",
+      "answers": {
+        "A": "Frozen",
+        "B": "Moana",
+        "C": "Encanto",
+        "D": "Tangled"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q1047",
+      "category": "sports",
+      "difficulty": "easy",
+      "question": "How many players from one team are normally on the field at the same time in association football?",
+      "answers": {
+        "A": "9",
+        "B": "10",
+        "C": "12",
+        "D": "11"
+      },
+      "correct": "D"
+    },
+    {
+      "id": "q1048",
+      "category": "music",
+      "difficulty": "easy",
+      "question": "Which singer is known for the songs 'Umbrella' and 'Diamonds'?",
+      "answers": {
+        "A": "Adele",
+        "B": "Rihanna",
+        "C": "Beyoncé",
+        "D": "Alicia Keys"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q1049",
+      "category": "general_knowledge",
+      "difficulty": "easy",
+      "question": "What is the main ingredient traditionally used to make guacamole?",
+      "answers": {
+        "A": "Avocado",
+        "B": "Cucumber",
+        "C": "Spinach",
+        "D": "Zucchini"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q1050",
+      "category": "movies",
+      "difficulty": "easy",
+      "question": "Which movie features the characters Neo, Morpheus and Trinity?",
+      "answers": {
+        "A": "Blade Runner",
+        "B": "Inception",
+        "C": "The Matrix",
+        "D": "Minority Report"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q1051",
+      "category": "geography",
+      "difficulty": "easy",
+      "question": "Which European capital is home to the Colosseum?",
+      "answers": {
+        "A": "Athens",
+        "B": "Madrid",
+        "C": "Lisbon",
+        "D": "Rome"
+      },
+      "correct": "D"
+    },
+    {
+      "id": "q1052",
+      "category": "animation",
+      "difficulty": "easy",
+      "question": "Which animated character lives in a pineapple under the sea?",
+      "answers": {
+        "A": "SpongeBob SquarePants",
+        "B": "Patrick Star",
+        "C": "Nemo",
+        "D": "Squidward Tentacles"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q1053",
+      "category": "music",
+      "difficulty": "normal",
+      "question": "Which band recorded the classic song 'Hotel California'?",
+      "answers": {
+        "A": "Fleetwood Mac",
+        "B": "Eagles",
+        "C": "Aerosmith",
+        "D": "Bon Jovi"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q1054",
+      "category": "history",
+      "difficulty": "easy",
+      "question": "Which ancient civilization is most closely associated with the pyramids of Giza?",
+      "answers": {
+        "A": "Romans",
+        "B": "Greeks",
+        "C": "Egyptians",
+        "D": "Vikings"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q1055",
+      "category": "movies",
+      "difficulty": "easy",
+      "question": "Which actor played the lead role in the John Wick films?",
+      "answers": {
+        "A": "Keanu Reeves",
+        "B": "Jason Statham",
+        "C": "Hugh Jackman",
+        "D": "Christian Bale"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q1056",
+      "category": "science",
+      "difficulty": "easy",
+      "question": "Which organ pumps blood around the human body?",
+      "answers": {
+        "A": "Liver",
+        "B": "Lung",
+        "C": "Kidney",
+        "D": "Heart"
+      },
+      "correct": "D"
+    },
+    {
+      "id": "q1057",
+      "category": "animation",
+      "difficulty": "easy",
+      "question": "What is the name of Aladdin's monkey?",
+      "answers": {
+        "A": "Rajah",
+        "B": "Abu",
+        "C": "Iago",
+        "D": "Baloo"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q1058",
+      "category": "sports",
+      "difficulty": "easy",
+      "question": "Which sport is the Tour de France associated with?",
+      "answers": {
+        "A": "Cycling",
+        "B": "Running",
+        "C": "Motor racing",
+        "D": "Skiing"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q1059",
+      "category": "music",
+      "difficulty": "easy",
+      "question": "Which singer released the song 'Toxic'?",
+      "answers": {
+        "A": "Christina Aguilera",
+        "B": "Jennifer Lopez",
+        "C": "Britney Spears",
+        "D": "Avril Lavigne"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q1060",
+      "category": "general_knowledge",
+      "difficulty": "normal",
+      "question": "Which famous detective was created by author Arthur Conan Doyle?",
+      "answers": {
+        "A": "Hercule Poirot",
+        "B": "Philip Marlowe",
+        "C": "Inspector Morse",
+        "D": "Sherlock Holmes"
+      },
+      "correct": "D"
+    },
+    {
+      "id": "q1061",
+      "category": "tv_series",
+      "difficulty": "easy",
+      "question": "Which TV series features the characters Ross, Rachel, Monica, Chandler, Joey and Phoebe?",
+      "answers": {
+        "A": "Friends",
+        "B": "How I Met Your Mother",
+        "C": "The Big Bang Theory",
+        "D": "Modern Family"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q1062",
+      "category": "movies",
+      "difficulty": "easy",
+      "question": "Which actress played Barbie in the 2023 live-action movie?",
+      "answers": {
+        "A": "Emma Stone",
+        "B": "Margot Robbie",
+        "C": "Jennifer Lawrence",
+        "D": "Anne Hathaway"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q1063",
+      "category": "music",
+      "difficulty": "easy",
+      "question": "Which singer released the hit song 'Flowers' in 2023?",
+      "answers": {
+        "A": "Dua Lipa",
+        "B": "Ariana Grande",
+        "C": "Miley Cyrus",
+        "D": "Selena Gomez"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q1064",
+      "category": "general_knowledge",
+      "difficulty": "easy",
+      "question": "Which drink is traditionally made from fermented grapes?",
+      "answers": {
+        "A": "Beer",
+        "B": "Cider",
+        "C": "Sake",
+        "D": "Wine"
+      },
+      "correct": "D"
+    },
+    {
+      "id": "q1065",
+      "category": "tv_series",
+      "difficulty": "easy",
+      "question": "Which TV series follows a chemistry teacher named Walter White who becomes involved in the drug trade?",
+      "answers": {
+        "A": "Breaking Bad",
+        "B": "Narcos",
+        "C": "Ozark",
+        "D": "Dexter"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q1066",
+      "category": "animation",
+      "difficulty": "easy",
+      "question": "Which animated film features a family with magical gifts living in a magical house in Colombia?",
+      "answers": {
+        "A": "Coco",
+        "B": "Encanto",
+        "C": "Moana",
+        "D": "Turning Red"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q1067",
+      "category": "music",
+      "difficulty": "easy",
+      "question": "Which singer is known for the hits 'Just the Way You Are' and 'Uptown Funk'?",
+      "answers": {
+        "A": "The Weeknd",
+        "B": "Justin Timberlake",
+        "C": "Bruno Mars",
+        "D": "Shawn Mendes"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q1068",
+      "category": "geography",
+      "difficulty": "easy",
+      "question": "Which country is home to the city of Barcelona?",
+      "answers": {
+        "A": "Portugal",
+        "B": "France",
+        "C": "Italy",
+        "D": "Spain"
+      },
+      "correct": "D"
+    },
+    {
+      "id": "q1069",
+      "category": "movies",
+      "difficulty": "easy",
+      "question": "Which movie features a theme park filled with cloned dinosaurs?",
+      "answers": {
+        "A": "Jurassic Park",
+        "B": "Jumanji",
+        "C": "King Kong",
+        "D": "Godzilla"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q1070",
+      "category": "tv_series",
+      "difficulty": "easy",
+      "question": "Which TV series features a group of children fighting supernatural forces in the town of Hawkins?",
+      "answers": {
+        "A": "Wednesday",
+        "B": "Stranger Things",
+        "C": "The Umbrella Academy",
+        "D": "Riverdale"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q1071",
+      "category": "sports",
+      "difficulty": "easy",
+      "question": "Which athlete is famous for winning eight Olympic gold medals in sprinting?",
+      "answers": {
+        "A": "Michael Phelps",
+        "B": "Mo Farah",
+        "C": "Usain Bolt",
+        "D": "Carl Lewis"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q1072",
+      "category": "music",
+      "difficulty": "easy",
+      "question": "Which singer released the hit song 'Blinding Lights'?",
+      "answers": {
+        "A": "Drake",
+        "B": "Post Malone",
+        "C": "Harry Styles",
+        "D": "The Weeknd"
+      },
+      "correct": "D"
+    },
+    {
+      "id": "q1073",
+      "category": "general_knowledge",
+      "difficulty": "easy",
+      "question": "Which coffee drink traditionally combines espresso with steamed milk and a layer of milk foam?",
+      "answers": {
+        "A": "Cappuccino",
+        "B": "Espresso",
+        "C": "Americano",
+        "D": "Cold brew"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q1074",
+      "category": "movies",
+      "difficulty": "easy",
+      "question": "Which actor played the Joker in The Dark Knight?",
+      "answers": {
+        "A": "Jared Leto",
+        "B": "Heath Ledger",
+        "C": "Joaquin Phoenix",
+        "D": "Jack Nicholson"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q1075",
+      "category": "animation",
+      "difficulty": "easy",
+      "question": "Which animated movie is set largely in the Land of the Dead and follows a boy named Miguel?",
+      "answers": {
+        "A": "Soul",
+        "B": "The Book of Life",
+        "C": "Coco",
+        "D": "Encanto"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q1076",
+      "category": "science",
+      "difficulty": "easy",
+      "question": "Which part of a plant usually absorbs water from the soil?",
+      "answers": {
+        "A": "Flowers",
+        "B": "Leaves",
+        "C": "Fruit",
+        "D": "Roots"
+      },
+      "correct": "D"
+    },
+    {
+      "id": "q1077",
+      "category": "tv_series",
+      "difficulty": "normal",
+      "question": "In Game of Thrones, which family has the motto 'Winter is Coming'?",
+      "answers": {
+        "A": "Stark",
+        "B": "Lannister",
+        "C": "Targaryen",
+        "D": "Baratheon"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q1078",
+      "category": "music",
+      "difficulty": "easy",
+      "question": "Which singer is known for the songs 'Shake It Off' and 'Blank Space'?",
+      "answers": {
+        "A": "Katy Perry",
+        "B": "Taylor Swift",
+        "C": "Ariana Grande",
+        "D": "Dua Lipa"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q1079",
+      "category": "geography",
+      "difficulty": "easy",
+      "question": "Which ocean lies between Europe and North America?",
+      "answers": {
+        "A": "Indian Ocean",
+        "B": "Pacific Ocean",
+        "C": "Atlantic Ocean",
+        "D": "Arctic Ocean"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q1080",
+      "category": "movies",
+      "difficulty": "normal",
+      "question": "Which director made the films Inception, Interstellar and The Dark Knight?",
+      "answers": {
+        "A": "Steven Spielberg",
+        "B": "James Cameron",
+        "C": "Ridley Scott",
+        "D": "Christopher Nolan"
+      },
+      "correct": "D"
+    },
+    {
+      "id": "q1081",
+      "category": "movies",
+      "difficulty": "easy",
+      "question": "Which actor played the lead role in the Pirates of the Caribbean films as Captain Jack Sparrow?",
+      "answers": {
+        "A": "Orlando Bloom",
+        "B": "Johnny Depp",
+        "C": "Brad Pitt",
+        "D": "Hugh Jackman"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q1082",
+      "category": "geography",
+      "difficulty": "easy",
+      "question": "Which country is home to the Great Pyramids of Giza?",
+      "answers": {
+        "A": "Egypt",
+        "B": "Jordan",
+        "C": "Morocco",
+        "D": "Turkey"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q1083",
+      "category": "music",
+      "difficulty": "easy",
+      "question": "Which singer is known for the hit songs 'Someone Like You' and 'Hello'?",
+      "answers": {
+        "A": "Sia",
+        "B": "Pink",
+        "C": "Adele",
+        "D": "Kelly Clarkson"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q1084",
+      "category": "general_knowledge",
+      "difficulty": "easy",
+      "question": "Which ingredient is traditionally the main base of hummus?",
+      "answers": {
+        "A": "Lentils",
+        "B": "Potatoes",
+        "C": "Rice",
+        "D": "Chickpeas"
+      },
+      "correct": "D"
+    },
+    {
+      "id": "q1085",
+      "category": "animation",
+      "difficulty": "easy",
+      "question": "Which animated film features the emotions Joy, Sadness, Anger, Fear and Disgust?",
+      "answers": {
+        "A": "Inside Out",
+        "B": "Soul",
+        "C": "Up",
+        "D": "Turning Red"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q1086",
+      "category": "sports",
+      "difficulty": "easy",
+      "question": "In which sport would you try to score a touchdown?",
+      "answers": {
+        "A": "Baseball",
+        "B": "American football",
+        "C": "Ice hockey",
+        "D": "Basketball"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q1087",
+      "category": "movies",
+      "difficulty": "easy",
+      "question": "Which actor played Spider-Man in the Marvel Cinematic Universe film Spider-Man: Homecoming?",
+      "answers": {
+        "A": "Andrew Garfield",
+        "B": "Tobey Maguire",
+        "C": "Tom Holland",
+        "D": "Chris Evans"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q1088",
+      "category": "science",
+      "difficulty": "easy",
+      "question": "Which planet is famous for its prominent ring system?",
+      "answers": {
+        "A": "Mars",
+        "B": "Venus",
+        "C": "Mercury",
+        "D": "Saturn"
+      },
+      "correct": "D"
+    },
+    {
+      "id": "q1089",
+      "category": "music",
+      "difficulty": "easy",
+      "question": "Which band recorded the classic song 'Bohemian Rhapsody'?",
+      "answers": {
+        "A": "Queen",
+        "B": "The Beatles",
+        "C": "Led Zeppelin",
+        "D": "The Rolling Stones"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q1090",
+      "category": "general_knowledge",
+      "difficulty": "easy",
+      "question": "Which chess piece moves in an L-shaped pattern?",
+      "answers": {
+        "A": "Bishop",
+        "B": "Knight",
+        "C": "Rook",
+        "D": "Queen"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q1091",
+      "category": "tv_series",
+      "difficulty": "easy",
+      "question": "Which TV series features Sheldon Cooper and Leonard Hofstadter?",
+      "answers": {
+        "A": "Friends",
+        "B": "Brooklyn Nine-Nine",
+        "C": "The Big Bang Theory",
+        "D": "The Office"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q1092",
+      "category": "geography",
+      "difficulty": "easy",
+      "question": "Which European country is often described as being shaped like a boot?",
+      "answers": {
+        "A": "Greece",
+        "B": "Portugal",
+        "C": "Croatia",
+        "D": "Italy"
+      },
+      "correct": "D"
+    },
+    {
+      "id": "q1093",
+      "category": "movies",
+      "difficulty": "easy",
+      "question": "Which film series follows the adventures of a secret agent known as 007?",
+      "answers": {
+        "A": "James Bond",
+        "B": "Mission: Impossible",
+        "C": "Jason Bourne",
+        "D": "Kingsman"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q1094",
+      "category": "music",
+      "difficulty": "easy",
+      "question": "Which singer is known for the songs 'Firework' and 'Roar'?",
+      "answers": {
+        "A": "Taylor Swift",
+        "B": "Katy Perry",
+        "C": "Lady Gaga",
+        "D": "Ariana Grande"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q1095",
+      "category": "history",
+      "difficulty": "easy",
+      "question": "Which city was buried by the eruption of Mount Vesuvius in AD 79?",
+      "answers": {
+        "A": "Sparta",
+        "B": "Troy",
+        "C": "Pompeii",
+        "D": "Carthage"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q1096",
+      "category": "animation",
+      "difficulty": "easy",
+      "question": "What type of animal is Timon in The Lion King?",
+      "answers": {
+        "A": "Warthog",
+        "B": "Hyena",
+        "C": "Baboon",
+        "D": "Meerkat"
+      },
+      "correct": "D"
+    },
+    {
+      "id": "q1097",
+      "category": "sports",
+      "difficulty": "easy",
+      "question": "In which sport would you perform a slam dunk?",
+      "answers": {
+        "A": "Basketball",
+        "B": "Volleyball",
+        "C": "Tennis",
+        "D": "Handball"
+      },
+      "correct": "A"
+    },
+    {
+      "id": "q1098",
+      "category": "general_knowledge",
+      "difficulty": "normal",
+      "question": "Which artist painted The Starry Night?",
+      "answers": {
+        "A": "Claude Monet",
+        "B": "Vincent van Gogh",
+        "C": "Pablo Picasso",
+        "D": "Salvador Dalí"
+      },
+      "correct": "B"
+    },
+    {
+      "id": "q1099",
+      "category": "movies",
+      "difficulty": "easy",
+      "question": "Which film features the characters Rose DeWitt Bukater and Jack Dawson?",
+      "answers": {
+        "A": "The Notebook",
+        "B": "Pearl Harbor",
+        "C": "Titanic",
+        "D": "The Great Gatsby"
+      },
+      "correct": "C"
+    },
+    {
+      "id": "q1100",
+      "category": "general_knowledge",
+      "difficulty": "easy",
+      "question": "Which famous tower in London houses the bell known as Big Ben?",
+      "answers": {
+        "A": "Tower of London",
+        "B": "Victoria Tower",
+        "C": "White Tower",
+        "D": "Elizabeth Tower"
+      },
+      "correct": "D"
     }
-  ]
-}
+      ]
+    }
