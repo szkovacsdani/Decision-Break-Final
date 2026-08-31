@@ -552,10 +552,13 @@ export default function QuizPage() {
                   <button
                     key={k}
                     onClick={() => {
-                      if (showFeedback) return;
+                      if (showFeedback || selected !== null) return;
 
                       setSelected(k);
-                      submitAnswer(k, false);
+
+                      setTimeout(() => {
+                        submitAnswer(k, false);
+                      }, 300);
                     }}
                     disabled={showFeedback}
                     style={{
@@ -563,8 +566,14 @@ export default function QuizPage() {
                       padding: 14,
                       borderRadius: 14,
                       border:
-                        selected === k
-                          ? "2px solid #C1121F"
+                        showFeedback && k === current.correct
+                          ? "2px solid #22c55e"
+                          : showFeedback &&
+                            selected === k &&
+                            k !== current.correct
+                          ? "2px solid #ef4444"
+                          : selected === k
+                          ? "2px solid #ffffff"
                           : "1px solid rgba(255,255,255,0.12)",
                       background: "rgba(255,255,255,0.04)",
                       color: "#fff",
